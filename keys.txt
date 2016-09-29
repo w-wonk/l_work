@@ -1,5 +1,9 @@
-dea1d5a46265be960dcd8d19ad7a0b349a263c987f259e7ff684f0e26e48363dc9a8a5b1f94db08a1f4e1
+https://oauth.vk.com/blank.html#
+access_token=cb5d8b50a44fcb3421e7eedad514989e70580acb41feee41053342b09d2779bf46fc993a26de0c8c3ce34
+&expires_in=86400&user_id=43809114
 
-https://oauth.vk.com/baccess_token=dea1d5a46265be960dcd8d19ad7a0b349a263c987f259e7ff684f0e26e48363dc9a8a5b1f94db08a1f4e1
-&expires_in=86400
-&user_id=43809114
+find all popular songs
+https://api.vk.com/method/audio.getPopular?access_token=cb5d8b50a44fcb3421e7eedad514989e70580acb41feee41053342b09d2779bf46fc993a26de0c8c3ce34&count=20
+
+find songs by query
+https://api.vk.com/method/audio.search?access_token=cb5d8b50a44fcb3421e7eedad514989e70580acb41feee41053342b09d2779bf46fc993a26de0c8c3ce34&count=10&auto_complete=1&q='text'

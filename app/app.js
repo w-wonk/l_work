@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import Greeting from "./components/greeting";
+import Main from "./components/main.jsx";
 
 ReactDOM.render(
-  <Greeting name="World"/>, document.getElementById("content")
+  <Main  name="ann"/>, document.getElementById("content")
 );
