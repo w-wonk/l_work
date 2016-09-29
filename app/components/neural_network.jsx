@@ -34,7 +34,9 @@ class NueralNetwork extends React.Component {
             <div className="search-result">
                 {pageHeaderNN}
                 <Trainer/>
-                <Link to='/' className="pull-right">Link to the Homework #2 - VK saver</Link>
+                <div style={{'margin-top': 6 + 'em'}}>
+                    <Link to='/' className="pull-right">Link to the Homework #2 - VK saver</Link>
+                </div>
             </div>
         );
     }
