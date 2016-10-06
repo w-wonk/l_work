@@ -16,7 +16,7 @@ class Song extends React.Component {
         <Row className="show-grid">
           <Col xs={12} md={10}><h4>{artist} - {title}</h4></Col>
           <Col xs={6} md={2}>
-            <Button bsStyle="primary" href={url}>
+            <Button bsStyle="primary" href={url} target="_blank">
               Download me
             </Button>
           </Col>

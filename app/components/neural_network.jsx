@@ -27,14 +27,14 @@ class NueralNetwork extends React.Component {
 
   render() {
     const pageHeaderNN = (
-      <PageHeader>Neural Network  <small>use brain.js library</small>
+      <PageHeader>Neural Network  <small>use <a href="https://github.com/harthur/brain" target="_blank" >brain.js</a> library</small>
       </PageHeader>
     );
     return (
       <div className="search-result">
         {pageHeaderNN}
         <Trainer/>
-        <div style={{'margin-top': 6 + 'em'}}>
+        <div style={{marginTop: 6 + 'em'}}>
           <Link to='/' className="pull-right">Link to the Homework #2 - VK saver</Link>
         </div>
       </div>

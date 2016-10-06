@@ -9,13 +9,13 @@ class SearchResult extends React.Component {
     this.state = {
       data: [],
       searchText: '',
-      key: ''
+      key: '2b6bb2b521da18617dbe2201d219c41cf0eff74ee551686275a5927930ff441fc5bc1f08805ada98efb99'
     };
   }
 
   loadPopular() {
     $.ajax({
-      url: 'https://api.vk.com/method/audio.getPopular?access_token=b9177787ca7fbb86af9b861a363c6be858c5bc59c0b658abd41ba8b496c875b3fb179643f59e43087fd4b&count=20',
+      url: 'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20',
       cache: false,
       dataType: "jsonp",
       success: function (data) {
@@ -52,8 +52,8 @@ class SearchResult extends React.Component {
   searchSong(ev) {
     ev.preventDefault();
     var url = this.state.searchText == '' ?
-      'https://api.vk.com/method/audio.getPopular?access_token=b9177787ca7fbb86af9b861a363c6be858c5bc59c0b658abd41ba8b496c875b3fb179643f59e43087fd4b&count=20' :
-    'https://api.vk.com/method/audio.search?access_token=b9177787ca7fbb86af9b861a363c6be858c5bc59c0b658abd41ba8b496c875b3fb179643f59e43087fd4b&count=10&auto_complete=0&q=' + this.state.searchText
+      'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20' :
+    'https://api.vk.com/method/audio.search?access_token=' + this.state.key + '&count=10&auto_complete=0&q=' + this.state.searchText
     $.ajax({
       url: url,
       dataType: "jsonp",
