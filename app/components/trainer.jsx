@@ -1,6 +1,5 @@
 import React from 'react';
 import {Table, FormGroup, Button, ControlLabel, FormControl, Col} from 'react-bootstrap';
-import file from '../train1.js';
 import $ from 'jquery';
 
 class Trainer extends React.Component {
