@@ -58,9 +58,22 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
+	var _neural_network = __webpack_require__(491);
+
+	var _neural_network2 = _interopRequireDefault(_neural_network);
+
+	var _reactRouter = __webpack_require__(428);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_main2.default, { name: "ann" }), document.getElementById("content"));
+	_reactDom2.default.render(_react2.default.createElement(
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(_reactRouter.Redirect, { from: "/", to: "/vk" }),
+	  _react2.default.createElement(_reactRouter.Route, { path: "/vk", component: _main2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: "/neural_network", component: _neural_network2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: "*", component: _main2.default })
+	), document.getElementById("content"));
 	;
 
 	var _temp = function () {
@@ -21445,7 +21458,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21456,13 +21469,11 @@
 
 	var _reactBootstrap = __webpack_require__(173);
 
-	var _search_box = __webpack_require__(426);
-
-	var _search_box2 = _interopRequireDefault(_search_box);
-
-	var _search_result = __webpack_require__(427);
+	var _search_result = __webpack_require__(425);
 
 	var _search_result2 = _interopRequireDefault(_search_result);
+
+	var _reactRouter = __webpack_require__(428);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21473,38 +21484,47 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Main = function (_React$Component) {
-	    _inherits(Main, _React$Component);
+	  _inherits(Main, _React$Component);
 
-	    function Main() {
-	        _classCallCheck(this, Main);
+	  function Main() {
+	    _classCallCheck(this, Main);
 
-	        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+	  }
+
+	  _createClass(Main, [{
+	    key: 'render',
+	    value: function render() {
+	      var pageHeaderInstance = _react2.default.createElement(
+	        _reactBootstrap.PageHeader,
+	        null,
+	        'VK saver  ',
+	        _react2.default.createElement(
+	          'small',
+	          null,
+	          'test application use ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://vk.com/dev/main', target: '_blank' },
+	            ' api.vk.com'
+	          )
+	        )
+	      );
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'header' },
+	        pageHeaderInstance,
+	        _react2.default.createElement(_search_result2.default, null),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/neural_network', className: 'pull-right' },
+	          'Link to the Homework #1 - Neural Network'
+	        )
+	      );
 	    }
+	  }]);
 
-	    _createClass(Main, [{
-	        key: 'render',
-	        value: function render() {
-	            var pageHeaderInstance = _react2.default.createElement(
-	                _reactBootstrap.PageHeader,
-	                null,
-	                'VK saver ',
-	                _react2.default.createElement(
-	                    'small',
-	                    null,
-	                    'test application use api.vk.com'
-	                )
-	            );
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'header' },
-	                pageHeaderInstance,
-	                _react2.default.createElement(_search_box2.default, null),
-	                _react2.default.createElement(_search_result2.default, null)
-	            );
-	        }
-	    }]);
-
-	    return Main;
+	  return Main;
 	}(_react2.default.Component);
 
 	;
@@ -21514,13 +21534,13 @@
 	;
 
 	var _temp = function () {
-	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	        return;
-	    }
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
 
-	    __REACT_HOT_LOADER__.register(Main, 'Main', '/home/w-wonk/RubymineProjects/l_work/app/components/main.jsx');
+	  __REACT_HOT_LOADER__.register(Main, 'Main', '/home/nas/www/l_work/app/components/main.jsx');
 
-	    __REACT_HOT_LOADER__.register(_default, 'default', '/home/w-wonk/RubymineProjects/l_work/app/components/main.jsx');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/nas/www/l_work/app/components/main.jsx');
 	}();
 
 	;
@@ -21598,23 +21618,23 @@
 
 	var _Dropdown3 = _interopRequireDefault(_Dropdown2);
 
-	var _DropdownButton2 = __webpack_require__(334);
+	var _DropdownButton2 = __webpack_require__(333);
 
 	var _DropdownButton3 = _interopRequireDefault(_DropdownButton2);
 
-	var _Fade2 = __webpack_require__(336);
+	var _Fade2 = __webpack_require__(335);
 
 	var _Fade3 = _interopRequireDefault(_Fade2);
 
-	var _Form2 = __webpack_require__(337);
+	var _Form2 = __webpack_require__(336);
 
 	var _Form3 = _interopRequireDefault(_Form2);
 
-	var _FormControl2 = __webpack_require__(338);
+	var _FormControl2 = __webpack_require__(337);
 
 	var _FormControl3 = _interopRequireDefault(_FormControl2);
 
-	var _FormGroup2 = __webpack_require__(341);
+	var _FormGroup2 = __webpack_require__(340);
 
 	var _FormGroup3 = _interopRequireDefault(_FormGroup2);
 
@@ -21622,111 +21642,111 @@
 
 	var _Glyphicon3 = _interopRequireDefault(_Glyphicon2);
 
-	var _Grid2 = __webpack_require__(342);
+	var _Grid2 = __webpack_require__(341);
 
 	var _Grid3 = _interopRequireDefault(_Grid2);
 
-	var _HelpBlock2 = __webpack_require__(343);
+	var _HelpBlock2 = __webpack_require__(342);
 
 	var _HelpBlock3 = _interopRequireDefault(_HelpBlock2);
 
-	var _Image2 = __webpack_require__(344);
+	var _Image2 = __webpack_require__(343);
 
 	var _Image3 = _interopRequireDefault(_Image2);
 
-	var _InputGroup2 = __webpack_require__(345);
+	var _InputGroup2 = __webpack_require__(344);
 
 	var _InputGroup3 = _interopRequireDefault(_InputGroup2);
 
-	var _Jumbotron2 = __webpack_require__(348);
+	var _Jumbotron2 = __webpack_require__(347);
 
 	var _Jumbotron3 = _interopRequireDefault(_Jumbotron2);
 
-	var _Label2 = __webpack_require__(349);
+	var _Label2 = __webpack_require__(348);
 
 	var _Label3 = _interopRequireDefault(_Label2);
 
-	var _ListGroup2 = __webpack_require__(350);
+	var _ListGroup2 = __webpack_require__(349);
 
 	var _ListGroup3 = _interopRequireDefault(_ListGroup2);
 
-	var _ListGroupItem2 = __webpack_require__(351);
+	var _ListGroupItem2 = __webpack_require__(350);
 
 	var _ListGroupItem3 = _interopRequireDefault(_ListGroupItem2);
 
-	var _Media2 = __webpack_require__(352);
+	var _Media2 = __webpack_require__(351);
 
 	var _Media3 = _interopRequireDefault(_Media2);
 
-	var _MenuItem2 = __webpack_require__(359);
+	var _MenuItem2 = __webpack_require__(358);
 
 	var _MenuItem3 = _interopRequireDefault(_MenuItem2);
 
-	var _Modal2 = __webpack_require__(360);
+	var _Modal2 = __webpack_require__(359);
 
 	var _Modal3 = _interopRequireDefault(_Modal2);
 
-	var _ModalBody2 = __webpack_require__(378);
+	var _ModalBody2 = __webpack_require__(377);
 
 	var _ModalBody3 = _interopRequireDefault(_ModalBody2);
 
-	var _ModalFooter2 = __webpack_require__(380);
+	var _ModalFooter2 = __webpack_require__(379);
 
 	var _ModalFooter3 = _interopRequireDefault(_ModalFooter2);
 
-	var _ModalHeader2 = __webpack_require__(381);
+	var _ModalHeader2 = __webpack_require__(380);
 
 	var _ModalHeader3 = _interopRequireDefault(_ModalHeader2);
 
-	var _ModalTitle2 = __webpack_require__(382);
+	var _ModalTitle2 = __webpack_require__(381);
 
 	var _ModalTitle3 = _interopRequireDefault(_ModalTitle2);
 
-	var _Nav2 = __webpack_require__(383);
+	var _Nav2 = __webpack_require__(382);
 
 	var _Nav3 = _interopRequireDefault(_Nav2);
 
-	var _Navbar2 = __webpack_require__(384);
+	var _Navbar2 = __webpack_require__(383);
 
 	var _Navbar3 = _interopRequireDefault(_Navbar2);
 
-	var _NavbarBrand2 = __webpack_require__(385);
+	var _NavbarBrand2 = __webpack_require__(384);
 
 	var _NavbarBrand3 = _interopRequireDefault(_NavbarBrand2);
 
-	var _NavDropdown2 = __webpack_require__(389);
+	var _NavDropdown2 = __webpack_require__(388);
 
 	var _NavDropdown3 = _interopRequireDefault(_NavDropdown2);
 
-	var _NavItem2 = __webpack_require__(390);
+	var _NavItem2 = __webpack_require__(389);
 
 	var _NavItem3 = _interopRequireDefault(_NavItem2);
 
-	var _Overlay2 = __webpack_require__(391);
+	var _Overlay2 = __webpack_require__(390);
 
 	var _Overlay3 = _interopRequireDefault(_Overlay2);
 
-	var _OverlayTrigger2 = __webpack_require__(400);
+	var _OverlayTrigger2 = __webpack_require__(399);
 
 	var _OverlayTrigger3 = _interopRequireDefault(_OverlayTrigger2);
 
-	var _PageHeader2 = __webpack_require__(401);
+	var _PageHeader2 = __webpack_require__(400);
 
 	var _PageHeader3 = _interopRequireDefault(_PageHeader2);
 
-	var _PageItem2 = __webpack_require__(402);
+	var _PageItem2 = __webpack_require__(401);
 
 	var _PageItem3 = _interopRequireDefault(_PageItem2);
 
-	var _Pager2 = __webpack_require__(405);
+	var _Pager2 = __webpack_require__(404);
 
 	var _Pager3 = _interopRequireDefault(_Pager2);
 
-	var _Pagination2 = __webpack_require__(406);
+	var _Pagination2 = __webpack_require__(405);
 
 	var _Pagination3 = _interopRequireDefault(_Pagination2);
 
-	var _Panel2 = __webpack_require__(408);
+	var _Panel2 = __webpack_require__(407);
 
 	var _Panel3 = _interopRequireDefault(_Panel2);
 
@@ -21734,23 +21754,23 @@
 
 	var _PanelGroup3 = _interopRequireDefault(_PanelGroup2);
 
-	var _Popover2 = __webpack_require__(409);
+	var _Popover2 = __webpack_require__(408);
 
 	var _Popover3 = _interopRequireDefault(_Popover2);
 
-	var _ProgressBar2 = __webpack_require__(410);
+	var _ProgressBar2 = __webpack_require__(409);
 
 	var _ProgressBar3 = _interopRequireDefault(_ProgressBar2);
 
-	var _Radio2 = __webpack_require__(411);
+	var _Radio2 = __webpack_require__(410);
 
 	var _Radio3 = _interopRequireDefault(_Radio2);
 
-	var _ResponsiveEmbed2 = __webpack_require__(412);
+	var _ResponsiveEmbed2 = __webpack_require__(411);
 
 	var _ResponsiveEmbed3 = _interopRequireDefault(_ResponsiveEmbed2);
 
-	var _Row2 = __webpack_require__(413);
+	var _Row2 = __webpack_require__(412);
 
 	var _Row3 = _interopRequireDefault(_Row2);
 
@@ -21758,47 +21778,47 @@
 
 	var _SafeAnchor3 = _interopRequireDefault(_SafeAnchor2);
 
-	var _SplitButton2 = __webpack_require__(414);
+	var _SplitButton2 = __webpack_require__(413);
 
 	var _SplitButton3 = _interopRequireDefault(_SplitButton2);
 
-	var _Tab2 = __webpack_require__(416);
+	var _Tab2 = __webpack_require__(415);
 
 	var _Tab3 = _interopRequireDefault(_Tab2);
 
-	var _TabContainer2 = __webpack_require__(417);
+	var _TabContainer2 = __webpack_require__(416);
 
 	var _TabContainer3 = _interopRequireDefault(_TabContainer2);
 
-	var _TabContent2 = __webpack_require__(418);
+	var _TabContent2 = __webpack_require__(417);
 
 	var _TabContent3 = _interopRequireDefault(_TabContent2);
 
-	var _Table2 = __webpack_require__(420);
+	var _Table2 = __webpack_require__(419);
 
 	var _Table3 = _interopRequireDefault(_Table2);
 
-	var _TabPane2 = __webpack_require__(419);
+	var _TabPane2 = __webpack_require__(418);
 
 	var _TabPane3 = _interopRequireDefault(_TabPane2);
 
-	var _Tabs2 = __webpack_require__(421);
+	var _Tabs2 = __webpack_require__(420);
 
 	var _Tabs3 = _interopRequireDefault(_Tabs2);
 
-	var _Thumbnail2 = __webpack_require__(422);
+	var _Thumbnail2 = __webpack_require__(421);
 
 	var _Thumbnail3 = _interopRequireDefault(_Thumbnail2);
 
-	var _Tooltip2 = __webpack_require__(423);
+	var _Tooltip2 = __webpack_require__(422);
 
 	var _Tooltip3 = _interopRequireDefault(_Tooltip2);
 
-	var _Well2 = __webpack_require__(424);
+	var _Well2 = __webpack_require__(423);
 
 	var _Well3 = _interopRequireDefault(_Well2);
 
-	var _utils2 = __webpack_require__(425);
+	var _utils2 = __webpack_require__(424);
 
 	var _utils = _interopRequireWildcard(_utils2);
 
@@ -24362,7 +24382,7 @@
 	      _react2['default'].createElement(
 	        'span',
 	        null,
-	        '×'
+	        '\xD7'
 	      )
 	    );
 	  };
@@ -27131,12 +27151,11 @@
 	  Collapse.prototype.handleExit = function handleExit(elem) {
 	    var dimension = this._dimension();
 	    elem.style[dimension] = this.props.getDimensionValue(dimension, elem) + 'px';
+	    triggerBrowserReflow(elem);
 	  };
 
 	  Collapse.prototype.handleExiting = function handleExiting(elem) {
 	    var dimension = this._dimension();
-
-	    triggerBrowserReflow(elem);
 	    elem.style[dimension] = '0';
 	  };
 
@@ -27459,7 +27478,7 @@
 	  function Transition(props, context) {
 	    _classCallCheck(this, Transition);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transition).call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, (Transition.__proto__ || Object.getPrototypeOf(Transition)).call(this, props, context));
 
 	    var initialStatus = void 0;
 	    if (props.in) {
@@ -27926,7 +27945,7 @@
 
 	var _DropdownMenu2 = _interopRequireDefault(_DropdownMenu);
 
-	var _DropdownToggle = __webpack_require__(332);
+	var _DropdownToggle = __webpack_require__(331);
 
 	var _DropdownToggle2 = _interopRequireDefault(_DropdownToggle);
 
@@ -27936,7 +27955,7 @@
 
 	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
 
-	var _PropTypes = __webpack_require__(333);
+	var _PropTypes = __webpack_require__(332);
 
 	var _ValidComponentChildren = __webpack_require__(269);
 
@@ -29002,30 +29021,27 @@
 
 	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {}, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'right')] = pullRight, _extends2));
 
-	    var list = _react2['default'].createElement(
-	      'ul',
-	      (0, _extends4['default'])({}, elementProps, {
-	        role: 'menu',
-	        className: (0, _classnames2['default'])(className, classes),
-	        'aria-labelledby': labelledBy
-	      }),
-	      _ValidComponentChildren2['default'].map(children, function (child) {
-	        return _react2['default'].cloneElement(child, {
-	          onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
-	          onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
-	        });
-	      })
+	    return _react2['default'].createElement(
+	      _RootCloseWrapper2['default'],
+	      {
+	        disabled: !open,
+	        onRootClose: onClose
+	      },
+	      _react2['default'].createElement(
+	        'ul',
+	        (0, _extends4['default'])({}, elementProps, {
+	          role: 'menu',
+	          className: (0, _classnames2['default'])(className, classes),
+	          'aria-labelledby': labelledBy
+	        }),
+	        _ValidComponentChildren2['default'].map(children, function (child) {
+	          return _react2['default'].cloneElement(child, {
+	            onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
+	            onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
+	          });
+	        })
+	      )
 	    );
-
-	    if (open) {
-	      return _react2['default'].createElement(
-	        _RootCloseWrapper2['default'],
-	        { noWrap: true, onRootClose: onClose },
-	        list
-	      );
-	    }
-
-	    return list;
 	  };
 
 	  return DropdownMenu;
@@ -29216,6 +29232,10 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	var _contains = __webpack_require__(311);
+
+	var _contains2 = _interopRequireDefault(_contains);
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -29228,28 +29248,17 @@
 
 	var _addEventListener2 = _interopRequireDefault(_addEventListener);
 
-	var _createChainedFunction = __webpack_require__(330);
-
-	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-
-	var _ownerDocument = __webpack_require__(331);
+	var _ownerDocument = __webpack_require__(330);
 
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// TODO: Consider using an ES6 symbol here, once we use babel-runtime.
-	var CLICK_WAS_INSIDE = '__click_was_inside';
-
-	var counter = 0;
 
 	function isLeftClickEvent(event) {
 	  return event.button === 0;
@@ -29259,126 +29268,92 @@
 	  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 	}
 
-	function getSuppressRootClose() {
-	  var id = CLICK_WAS_INSIDE + '_' + counter++;
-	  return {
-	    id: id,
-	    suppressRootClose: function suppressRootClose(event) {
-	      // Tag the native event to prevent the root close logic on document click.
-	      // This seems safer than using event.nativeEvent.stopImmediatePropagation(),
-	      // which is only supported in IE >= 9.
-	      event.nativeEvent[id] = true;
-	    }
-	  };
-	}
-
 	var RootCloseWrapper = function (_React$Component) {
 	  _inherits(RootCloseWrapper, _React$Component);
 
-	  function RootCloseWrapper(props) {
+	  function RootCloseWrapper(props, context) {
 	    _classCallCheck(this, RootCloseWrapper);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RootCloseWrapper).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props, context));
 
-	    _this.handleDocumentMouse = _this.handleDocumentMouse.bind(_this);
-	    _this.handleDocumentKeyUp = _this.handleDocumentKeyUp.bind(_this);
+	    _this.handleMouseCapture = function (e) {
+	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(_this), e.target);
+	    };
 
-	    var _getSuppressRootClose = getSuppressRootClose();
+	    _this.handleMouse = function () {
+	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
 
-	    var id = _getSuppressRootClose.id;
-	    var suppressRootClose = _getSuppressRootClose.suppressRootClose;
+	    _this.handleKeyUp = function (e) {
+	      if (e.keyCode === 27 && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
 
-
-	    _this._suppressRootId = id;
-
-	    _this._suppressRootCloseHandler = suppressRootClose;
+	    _this.preventMouseRootClose = false;
 	    return _this;
 	  }
 
 	  _createClass(RootCloseWrapper, [{
-	    key: 'bindRootCloseHandlers',
-	    value: function bindRootCloseHandlers() {
-	      var doc = (0, _ownerDocument2.default)(this);
-
-	      this._onDocumentMouseListener = (0, _addEventListener2.default)(doc, this.props.event, this.handleDocumentMouse);
-
-	      this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
-	    }
-	  }, {
-	    key: 'handleDocumentMouse',
-	    value: function handleDocumentMouse(e) {
-	      // This is now the native event.
-	      if (e[this._suppressRootId]) {
-	        return;
-	      }
-
-	      if (this.props.disabled || isModifiedEvent(e) || !isLeftClickEvent(e)) {
-	        return;
-	      }
-
-	      this.props.onRootClose && this.props.onRootClose();
-	    }
-	  }, {
-	    key: 'handleDocumentKeyUp',
-	    value: function handleDocumentKeyUp(e) {
-	      if (e.keyCode === 27 && this.props.onRootClose) {
-	        this.props.onRootClose();
-	      }
-	    }
-	  }, {
-	    key: 'unbindRootCloseHandlers',
-	    value: function unbindRootCloseHandlers() {
-	      if (this._onDocumentMouseListener) {
-	        this._onDocumentMouseListener.remove();
-	      }
-
-	      if (this._onDocumentKeyupListener) {
-	        this._onDocumentKeyupListener.remove();
-	      }
-	    }
-	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.bindRootCloseHandlers();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var event = _props.event;
-	      var noWrap = _props.noWrap;
-	      var children = _props.children;
-
-	      var child = _react2.default.Children.only(children);
-
-	      var handlerName = event == 'click' ? 'onClick' : 'onMouseDown';
-
-	      if (noWrap) {
-	        return _react2.default.cloneElement(child, _defineProperty({}, handlerName, (0, _createChainedFunction2.default)(this._suppressRootCloseHandler, child.props[handlerName])));
+	      if (!this.props.disabled) {
+	        this.addEventListeners();
 	      }
-
-	      // Wrap the child in a new element, so the child won't have to handle
-	      // potentially combining multiple onClick listeners.
-	      return _react2.default.createElement(
-	        'div',
-	        _defineProperty({}, handlerName, this._suppressRootCloseHandler),
-	        child
-	      );
 	    }
 	  }, {
-	    key: 'getWrappedDOMNode',
-	    value: function getWrappedDOMNode() {
-	      // We can't use a ref to identify the wrapped child, since we might be
-	      // stealing the ref from the owner, but we know exactly the DOM structure
-	      // that will be rendered, so we can just do this to get the child's DOM
-	      // node for doing size calculations in OverlayMixin.
-	      var node = _reactDom2.default.findDOMNode(this);
-	      return this.props.noWrap ? node : node.firstChild;
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate(prevProps) {
+	      if (!this.props.disabled && prevProps.disabled) {
+	        this.addEventListeners();
+	      } else if (this.props.disabled && !prevProps.disabled) {
+	        this.removeEventListeners();
+	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      this.unbindRootCloseHandlers();
+	      if (!this.props.disabled) {
+	        this.removeEventListeners();
+	      }
+	    }
+	  }, {
+	    key: 'addEventListeners',
+	    value: function addEventListeners() {
+	      var event = this.props.event;
+
+	      var doc = (0, _ownerDocument2.default)(this);
+
+	      // Use capture for this listener so it fires before React's listener, to
+	      // avoid false positives in the contains() check below if the target DOM
+	      // element is removed in the React mouse callback.
+	      this.documentMouseCaptureListener = (0, _addEventListener2.default)(doc, event, this.handleMouseCapture, true);
+
+	      this.documentMouseListener = (0, _addEventListener2.default)(doc, event, this.handleMouse);
+
+	      this.documentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleKeyUp);
+	    }
+	  }, {
+	    key: 'removeEventListeners',
+	    value: function removeEventListeners() {
+	      if (this.documentMouseCaptureListener) {
+	        this.documentMouseCaptureListener.remove();
+	      }
+
+	      if (this.documentMouseListener) {
+	        this.documentMouseListener.remove();
+	      }
+
+	      if (this.documentKeyupListener) {
+	        this.documentKeyupListener.remove();
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return this.props.children;
 	    }
 	  }]);
 
@@ -29392,18 +29367,13 @@
 
 	RootCloseWrapper.propTypes = {
 	  onRootClose: _react2.default.PropTypes.func,
+	  children: _react2.default.PropTypes.element,
 
 	  /**
 	   * Disable the the RootCloseWrapper, preventing it from triggering
 	   * `onRootClose`.
 	   */
 	  disabled: _react2.default.PropTypes.bool,
-	  /**
-	   * Passes the suppress click handler directly to the child component instead
-	   * of placing it on a wrapping div. Only use when you can be sure the child
-	   * properly handle the click event.
-	   */
-	  noWrap: _react2.default.PropTypes.bool,
 	  /**
 	   * Choose which document mouse event to bind to
 	   */
@@ -29425,11 +29395,12 @@
 	  value: true
 	});
 
-	exports.default = function (node, event, handler) {
-	  (0, _on2.default)(node, event, handler);
+	exports.default = function (node, event, handler, capture) {
+	  (0, _on2.default)(node, event, handler, capture);
+
 	  return {
 	    remove: function remove() {
-	      (0, _off2.default)(node, event, handler);
+	      (0, _off2.default)(node, event, handler, capture);
 	    }
 	  };
 	};
@@ -29470,54 +29441,6 @@
 
 /***/ },
 /* 330 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/**
-	 * Safe chained function
-	 *
-	 * Will only create a new function if needed,
-	 * otherwise will pass back existing functions or null.
-	 *
-	 * @param {function} functions to chain
-	 * @returns {function|null}
-	 */
-	function createChainedFunction() {
-	  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
-	    funcs[_key] = arguments[_key];
-	  }
-
-	  return funcs.filter(function (f) {
-	    return f != null;
-	  }).reduce(function (acc, f) {
-	    if (typeof f !== 'function') {
-	      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-	    }
-
-	    if (acc === null) {
-	      return f;
-	    }
-
-	    return function chainedFunction() {
-	      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-	        args[_key2] = arguments[_key2];
-	      }
-
-	      acc.apply(this, args);
-	      f.apply(this, args);
-	    };
-	  }, null);
-	}
-
-	exports.default = createChainedFunction;
-	module.exports = exports['default'];
-
-/***/ },
-/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29543,7 +29466,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 332 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29656,7 +29579,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 333 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29732,7 +29655,7 @@
 	}
 
 /***/ },
-/* 334 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29767,7 +29690,7 @@
 
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-	var _splitComponentProps2 = __webpack_require__(335);
+	var _splitComponentProps2 = __webpack_require__(334);
 
 	var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
 
@@ -29841,7 +29764,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 335 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29878,7 +29801,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 336 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29998,7 +29921,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 337 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30098,7 +30021,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 338 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -30141,11 +30064,11 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _FormControlFeedback = __webpack_require__(339);
+	var _FormControlFeedback = __webpack_require__(338);
 
 	var _FormControlFeedback2 = _interopRequireDefault(_FormControlFeedback);
 
-	var _FormControlStatic = __webpack_require__(340);
+	var _FormControlStatic = __webpack_require__(339);
 
 	var _FormControlStatic2 = _interopRequireDefault(_FormControlStatic);
 
@@ -30229,7 +30152,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 339 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30347,7 +30270,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 340 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30435,7 +30358,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 341 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30561,7 +30484,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 342 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30660,7 +30583,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 343 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30732,7 +30655,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 344 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30842,7 +30765,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 345 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30877,11 +30800,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _InputGroupAddon = __webpack_require__(346);
+	var _InputGroupAddon = __webpack_require__(345);
 
 	var _InputGroupAddon2 = _interopRequireDefault(_InputGroupAddon);
 
-	var _InputGroupButton = __webpack_require__(347);
+	var _InputGroupButton = __webpack_require__(346);
 
 	var _InputGroupButton2 = _interopRequireDefault(_InputGroupButton);
 
@@ -30927,7 +30850,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 346 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30999,7 +30922,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 347 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31071,7 +30994,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 348 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31159,7 +31082,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 349 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31262,7 +31185,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 350 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31301,7 +31224,7 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _ListGroupItem = __webpack_require__(351);
+	var _ListGroupItem = __webpack_require__(350);
 
 	var _ListGroupItem2 = _interopRequireDefault(_ListGroupItem);
 
@@ -31386,7 +31309,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 351 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31534,7 +31457,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 352 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31573,27 +31496,27 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _MediaBody = __webpack_require__(353);
+	var _MediaBody = __webpack_require__(352);
 
 	var _MediaBody2 = _interopRequireDefault(_MediaBody);
 
-	var _MediaHeading = __webpack_require__(354);
+	var _MediaHeading = __webpack_require__(353);
 
 	var _MediaHeading2 = _interopRequireDefault(_MediaHeading);
 
-	var _MediaLeft = __webpack_require__(355);
+	var _MediaLeft = __webpack_require__(354);
 
 	var _MediaLeft2 = _interopRequireDefault(_MediaLeft);
 
-	var _MediaList = __webpack_require__(356);
+	var _MediaList = __webpack_require__(355);
 
 	var _MediaList2 = _interopRequireDefault(_MediaList);
 
-	var _MediaListItem = __webpack_require__(357);
+	var _MediaListItem = __webpack_require__(356);
 
 	var _MediaListItem2 = _interopRequireDefault(_MediaListItem);
 
-	var _MediaRight = __webpack_require__(358);
+	var _MediaRight = __webpack_require__(357);
 
 	var _MediaRight2 = _interopRequireDefault(_MediaRight);
 
@@ -31653,7 +31576,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 353 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31741,7 +31664,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 354 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31829,7 +31752,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 355 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31864,7 +31787,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Media = __webpack_require__(352);
+	var _Media = __webpack_require__(351);
 
 	var _Media2 = _interopRequireDefault(_Media);
 
@@ -31920,7 +31843,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 356 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31992,7 +31915,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 357 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32064,7 +31987,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 358 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32099,7 +32022,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Media = __webpack_require__(352);
+	var _Media = __webpack_require__(351);
 
 	var _Media2 = _interopRequireDefault(_Media);
 
@@ -32155,7 +32078,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 359 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32357,7 +32280,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 360 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32388,7 +32311,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _events = __webpack_require__(361);
+	var _events = __webpack_require__(360);
 
 	var _events2 = _interopRequireDefault(_events);
 
@@ -32400,7 +32323,7 @@
 
 	var _inDOM2 = _interopRequireDefault(_inDOM);
 
-	var _scrollbarSize = __webpack_require__(364);
+	var _scrollbarSize = __webpack_require__(363);
 
 	var _scrollbarSize2 = _interopRequireDefault(_scrollbarSize);
 
@@ -32412,11 +32335,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Modal = __webpack_require__(365);
+	var _Modal = __webpack_require__(364);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _isOverflowing = __webpack_require__(374);
+	var _isOverflowing = __webpack_require__(373);
 
 	var _isOverflowing2 = _interopRequireDefault(_isOverflowing);
 
@@ -32424,27 +32347,27 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _Fade = __webpack_require__(336);
+	var _Fade = __webpack_require__(335);
 
 	var _Fade2 = _interopRequireDefault(_Fade);
 
-	var _ModalBody = __webpack_require__(378);
+	var _ModalBody = __webpack_require__(377);
 
 	var _ModalBody2 = _interopRequireDefault(_ModalBody);
 
-	var _ModalDialog = __webpack_require__(379);
+	var _ModalDialog = __webpack_require__(378);
 
 	var _ModalDialog2 = _interopRequireDefault(_ModalDialog);
 
-	var _ModalFooter = __webpack_require__(380);
+	var _ModalFooter = __webpack_require__(379);
 
 	var _ModalFooter2 = _interopRequireDefault(_ModalFooter);
 
-	var _ModalHeader = __webpack_require__(381);
+	var _ModalHeader = __webpack_require__(380);
 
 	var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
 
-	var _ModalTitle = __webpack_require__(382);
+	var _ModalTitle = __webpack_require__(381);
 
 	var _ModalTitle2 = _interopRequireDefault(_ModalTitle);
 
@@ -32454,7 +32377,7 @@
 
 	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
 
-	var _splitComponentProps2 = __webpack_require__(335);
+	var _splitComponentProps2 = __webpack_require__(334);
 
 	var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
 
@@ -32707,24 +32630,24 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 361 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var on = __webpack_require__(307),
 	    off = __webpack_require__(329),
-	    filter = __webpack_require__(362);
+	    filter = __webpack_require__(361);
 
 	module.exports = { on: on, off: off, filter: filter };
 
 /***/ },
-/* 362 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var contains = __webpack_require__(311),
-	    qsa = __webpack_require__(363);
+	    qsa = __webpack_require__(362);
 
 	module.exports = function (selector, handler) {
 	  return function (e) {
@@ -32739,7 +32662,7 @@
 	};
 
 /***/ },
-/* 363 */
+/* 362 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32771,7 +32694,7 @@
 	};
 
 /***/ },
-/* 364 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32801,7 +32724,7 @@
 	};
 
 /***/ },
-/* 365 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32821,7 +32744,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _componentOrElement = __webpack_require__(366);
+	var _componentOrElement = __webpack_require__(365);
 
 	var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
@@ -32829,15 +32752,15 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _Portal = __webpack_require__(367);
+	var _Portal = __webpack_require__(366);
 
 	var _Portal2 = _interopRequireDefault(_Portal);
 
-	var _ModalManager = __webpack_require__(369);
+	var _ModalManager = __webpack_require__(368);
 
 	var _ModalManager2 = _interopRequireDefault(_ModalManager);
 
-	var _ownerDocument = __webpack_require__(331);
+	var _ownerDocument = __webpack_require__(330);
 
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
@@ -32845,7 +32768,7 @@
 
 	var _addEventListener2 = _interopRequireDefault(_addEventListener);
 
-	var _addFocusListener = __webpack_require__(377);
+	var _addFocusListener = __webpack_require__(376);
 
 	var _addFocusListener2 = _interopRequireDefault(_addFocusListener);
 
@@ -32861,7 +32784,7 @@
 
 	var _contains2 = _interopRequireDefault(_contains);
 
-	var _getContainer = __webpack_require__(368);
+	var _getContainer = __webpack_require__(367);
 
 	var _getContainer2 = _interopRequireDefault(_getContainer);
 
@@ -32925,6 +32848,16 @@
 	     * Include a backdrop component.
 	     */
 	    backdrop: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.bool, _react2.default.PropTypes.oneOf(['static'])]),
+
+	    /**
+	     * A function that returns a backdrop component. Useful for custom
+	     * backdrop rendering.
+	     *
+	     * ```js
+	     *  renderBackdrop={props => <MyBackdrop {...props} />}
+	     * ```
+	     */
+	    renderBackdrop: _react2.default.PropTypes.func,
 
 	    /**
 	     * A callback fired when the escape key, if specified in `keyboard`, is pressed.
@@ -33024,8 +32957,13 @@
 	    /**
 	     * Callback fired after the Modal finishes transitioning out
 	     */
-	    onExited: _react2.default.PropTypes.func
+	    onExited: _react2.default.PropTypes.func,
 
+	    /**
+	     * A ModalManager instance used to track and manage the state of open
+	     * Modals. Useful when customizing how modals interact within a container
+	     */
+	    manager: _react2.default.PropTypes.object.isRequired
 	  }),
 
 	  getDefaultProps: function getDefaultProps() {
@@ -33037,7 +32975,11 @@
 	      keyboard: true,
 	      autoFocus: true,
 	      enforceFocus: true,
-	      onHide: noop
+	      onHide: noop,
+	      manager: modalManager,
+	      renderBackdrop: function renderBackdrop(props) {
+	        return _react2.default.createElement('div', props);
+	      }
 	    };
 	  },
 	  getInitialState: function getInitialState() {
@@ -33118,12 +33060,22 @@
 	    );
 	  },
 	  renderBackdrop: function renderBackdrop() {
+	    var _this = this;
+
 	    var _props2 = this.props;
+	    var backdropStyle = _props2.backdropStyle;
+	    var backdropClassName = _props2.backdropClassName;
+	    var renderBackdrop = _props2.renderBackdrop;
 	    var Transition = _props2.transition;
 	    var backdropTransitionTimeout = _props2.backdropTransitionTimeout;
 
 
-	    var backdrop = _react2.default.createElement('div', { ref: 'backdrop',
+	    var backdropRef = function backdropRef(ref) {
+	      return _this.backdrop = ref;
+	    };
+
+	    var backdrop = _react2.default.createElement('div', {
+	      ref: backdropRef,
 	      style: this.props.backdropStyle,
 	      className: this.props.backdropClassName,
 	      onClick: this.handleBackdropClick
@@ -33136,7 +33088,12 @@
 	          'in': this.props.show,
 	          timeout: backdropTransitionTimeout
 	        },
-	        backdrop
+	        renderBackdrop({
+	          ref: backdropRef,
+	          style: backdropStyle,
+	          className: backdropClassName,
+	          onClick: this.handleBackdropClick
+	        })
 	      );
 	    }
 
@@ -33185,7 +33142,7 @@
 	    var doc = (0, _ownerDocument2.default)(this);
 	    var container = (0, _getContainer2.default)(this.props.container, doc.body);
 
-	    modalManager.add(this, container, this.props.containerClassName);
+	    this.props.manager.add(this, container, this.props.containerClassName);
 
 	    this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
 
@@ -33198,7 +33155,7 @@
 	    }
 	  },
 	  onHide: function onHide() {
-	    modalManager.remove(this);
+	    this.props.manager.remove(this);
 
 	    this._onDocumentKeyupListener.remove();
 
@@ -33292,17 +33249,17 @@
 	    return node && node.lastChild;
 	  },
 	  isTopModal: function isTopModal() {
-	    return modalManager.isTopModal(this);
+	    return this.props.manager.isTopModal(this);
 	  }
 	});
 
-	Modal.manager = modalManager;
+	Modal.Manager = _ModalManager2.default;
 
 	exports.default = Modal;
 	module.exports = exports['default'];
 
 /***/ },
-/* 366 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33339,7 +33296,7 @@
 	exports.default = (0, _createChainableTypeChecker2.default)(validate);
 
 /***/ },
-/* 367 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33356,15 +33313,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _componentOrElement = __webpack_require__(366);
+	var _componentOrElement = __webpack_require__(365);
 
 	var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
-	var _ownerDocument = __webpack_require__(331);
+	var _ownerDocument = __webpack_require__(330);
 
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
-	var _getContainer = __webpack_require__(368);
+	var _getContainer = __webpack_require__(367);
 
 	var _getContainer2 = _interopRequireDefault(_getContainer);
 
@@ -33450,11 +33407,7 @@
 	    }
 
 	    if (this._overlayInstance) {
-	      if (this._overlayInstance.getWrappedDOMNode) {
-	        return this._overlayInstance.getWrappedDOMNode();
-	      } else {
-	        return _reactDom2.default.findDOMNode(this._overlayInstance);
-	      }
+	      return _reactDom2.default.findDOMNode(this._overlayInstance);
 	    }
 
 	    return null;
@@ -33465,7 +33418,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 368 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33488,7 +33441,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 369 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33503,19 +33456,19 @@
 
 	var _style2 = _interopRequireDefault(_style);
 
-	var _class = __webpack_require__(370);
+	var _class = __webpack_require__(369);
 
 	var _class2 = _interopRequireDefault(_class);
 
-	var _scrollbarSize = __webpack_require__(364);
+	var _scrollbarSize = __webpack_require__(363);
 
 	var _scrollbarSize2 = _interopRequireDefault(_scrollbarSize);
 
-	var _isOverflowing = __webpack_require__(374);
+	var _isOverflowing = __webpack_require__(373);
 
 	var _isOverflowing2 = _interopRequireDefault(_isOverflowing);
 
-	var _manageAriaHidden = __webpack_require__(376);
+	var _manageAriaHidden = __webpack_require__(375);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33538,6 +33491,33 @@
 	  });
 	}
 
+	function setContainerStyle(state, container) {
+	  var style = { overflow: 'hidden' };
+
+	  // we are only interested in the actual `style` here
+	  // becasue we will override it
+	  state.style = {
+	    overflow: container.style.overflow,
+	    paddingRight: container.style.paddingRight
+	  };
+
+	  if (state.overflowing) {
+	    // use computed style, here to get the real padding
+	    // to add our scrollbar width
+	    style.paddingRight = parseInt((0, _style2.default)(container, 'paddingRight') || 0, 10) + (0, _scrollbarSize2.default)() + 'px';
+	  }
+
+	  (0, _style2.default)(container, style);
+	}
+
+	function removeContainerStyle(_ref, container) {
+	  var style = _ref.style;
+
+
+	  Object.keys(style).forEach(function (key) {
+	    return container.style[key] = style[key];
+	  });
+	}
 	/**
 	 * Proper state managment for containers and the modals in those containers.
 	 *
@@ -33546,11 +33526,17 @@
 
 	var ModalManager = function () {
 	  function ModalManager() {
-	    var hideSiblingNodes = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+	    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+	    var _ref2$hideSiblingNode = _ref2.hideSiblingNodes;
+	    var hideSiblingNodes = _ref2$hideSiblingNode === undefined ? true : _ref2$hideSiblingNode;
+	    var _ref2$handleContainer = _ref2.handleContainerOverflow;
+	    var handleContainerOverflow = _ref2$handleContainer === undefined ? true : _ref2$handleContainer;
 
 	    _classCallCheck(this, ModalManager);
 
 	    this.hideSiblingNodes = hideSiblingNodes;
+	    this.handleContainerOverflow = handleContainerOverflow;
 	    this.modals = [];
 	    this.containers = [];
 	    this.data = [];
@@ -33582,24 +33568,13 @@
 	        modals: [modal],
 	        //right now only the first modal of a container will have its classes applied
 	        classes: className ? className.split(/\s+/) : [],
-	        //we are only interested in the actual `style` here becasue we will override it
-	        style: {
-	          overflow: container.style.overflow,
-	          paddingRight: container.style.paddingRight
-	        }
+
+	        overflowing: (0, _isOverflowing2.default)(container)
 	      };
 
-	      var style = { overflow: 'hidden' };
-
-	      data.overflowing = (0, _isOverflowing2.default)(container);
-
-	      if (data.overflowing) {
-	        // use computed style, here to get the real padding
-	        // to add our scrollbar width
-	        style.paddingRight = parseInt((0, _style2.default)(container, 'paddingRight') || 0, 10) + (0, _scrollbarSize2.default)() + 'px';
+	      if (this.handleContainerOverflow) {
+	        setContainerStyle(data, container);
 	      }
-
-	      (0, _style2.default)(container, style);
 
 	      data.classes.forEach(_class2.default.addClass.bind(null, container));
 
@@ -33626,13 +33601,13 @@
 	      this.modals.splice(modalIdx, 1);
 
 	      // if that was the last modal in a container,
-	      // clean up the container stylinhg.
+	      // clean up the container
 	      if (data.modals.length === 0) {
-	        Object.keys(data.style).forEach(function (key) {
-	          return container.style[key] = data.style[key];
-	        });
-
 	        data.classes.forEach(_class2.default.removeClass.bind(null, container));
+
+	        if (this.handleContainerOverflow) {
+	          removeContainerStyle(data, container);
+	        }
 
 	        if (this.hideSiblingNodes) {
 	          (0, _manageAriaHidden.showSiblings)(container, modal.mountNode);
@@ -33658,30 +33633,30 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 370 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	module.exports = {
-	  addClass: __webpack_require__(371),
-	  removeClass: __webpack_require__(373),
-	  hasClass: __webpack_require__(372)
+	  addClass: __webpack_require__(370),
+	  removeClass: __webpack_require__(372),
+	  hasClass: __webpack_require__(371)
 	};
 
 /***/ },
-/* 371 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var hasClass = __webpack_require__(372);
+	var hasClass = __webpack_require__(371);
 
 	module.exports = function addClass(element, className) {
 	  if (element.classList) element.classList.add(className);else if (!hasClass(element)) element.className = element.className + ' ' + className;
 	};
 
 /***/ },
-/* 372 */
+/* 371 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33690,7 +33665,7 @@
 	};
 
 /***/ },
-/* 373 */
+/* 372 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33700,7 +33675,7 @@
 	};
 
 /***/ },
-/* 374 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33710,7 +33685,7 @@
 	});
 	exports.default = isOverflowing;
 
-	var _isWindow = __webpack_require__(375);
+	var _isWindow = __webpack_require__(374);
 
 	var _isWindow2 = _interopRequireDefault(_isWindow);
 
@@ -33746,7 +33721,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 375 */
+/* 374 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33756,7 +33731,7 @@
 	};
 
 /***/ },
-/* 376 */
+/* 375 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33810,7 +33785,7 @@
 	}
 
 /***/ },
-/* 377 */
+/* 376 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33846,7 +33821,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 378 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33918,7 +33893,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 379 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34025,7 +34000,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 380 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34097,7 +34072,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 381 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34218,7 +34193,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-hidden': 'true' },
-	          '×'
+	          '\xD7'
 	        )
 	      ),
 	      children
@@ -34236,7 +34211,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 382 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34308,7 +34283,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 383 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -34718,7 +34693,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 384 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34761,23 +34736,23 @@
 
 	var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
 
-	var _Grid = __webpack_require__(342);
+	var _Grid = __webpack_require__(341);
 
 	var _Grid2 = _interopRequireDefault(_Grid);
 
-	var _NavbarBrand = __webpack_require__(385);
+	var _NavbarBrand = __webpack_require__(384);
 
 	var _NavbarBrand2 = _interopRequireDefault(_NavbarBrand);
 
-	var _NavbarCollapse = __webpack_require__(386);
+	var _NavbarCollapse = __webpack_require__(385);
 
 	var _NavbarCollapse2 = _interopRequireDefault(_NavbarCollapse);
 
-	var _NavbarHeader = __webpack_require__(387);
+	var _NavbarHeader = __webpack_require__(386);
 
 	var _NavbarHeader2 = _interopRequireDefault(_NavbarHeader);
 
-	var _NavbarToggle = __webpack_require__(388);
+	var _NavbarToggle = __webpack_require__(387);
 
 	var _NavbarToggle2 = _interopRequireDefault(_NavbarToggle);
 
@@ -34997,7 +34972,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 385 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35082,7 +35057,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 386 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35165,7 +35140,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 387 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35239,7 +35214,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 388 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35354,7 +35329,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 389 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35393,7 +35368,7 @@
 
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-	var _splitComponentProps2 = __webpack_require__(335);
+	var _splitComponentProps2 = __webpack_require__(334);
 
 	var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
 
@@ -35434,10 +35409,10 @@
 	      return true;
 	    }
 
-	    if (props.children) {
-	      return _ValidComponentChildren2['default'].some(props.children, function (child) {
-	        return _this2.isActive(child, activeKey, activeHref);
-	      });
+	    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
+	      return _this2.isActive(child, activeKey, activeHref);
+	    })) {
+	      return true;
 	    }
 
 	    return props.active;
@@ -35501,7 +35476,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 390 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35632,7 +35607,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 391 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35667,7 +35642,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Overlay = __webpack_require__(392);
+	var _Overlay = __webpack_require__(391);
 
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -35675,7 +35650,7 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _Fade = __webpack_require__(336);
+	var _Fade = __webpack_require__(335);
 
 	var _Fade2 = _interopRequireDefault(_Fade);
 
@@ -35785,7 +35760,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 392 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35802,11 +35777,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Portal = __webpack_require__(367);
+	var _Portal = __webpack_require__(366);
 
 	var _Portal2 = _interopRequireDefault(_Portal);
 
-	var _Position = __webpack_require__(393);
+	var _Position = __webpack_require__(392);
 
 	var _Position2 = _interopRequireDefault(_Position);
 
@@ -35837,7 +35812,7 @@
 	  function Overlay(props, context) {
 	    _classCallCheck(this, Overlay);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Overlay).call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, (Overlay.__proto__ || Object.getPrototypeOf(Overlay)).call(this, props, context));
 
 	    _this.state = { exited: !props.show };
 	    _this.onHiddenListener = _this.handleHidden.bind(_this);
@@ -36018,7 +35993,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 393 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36043,19 +36018,19 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _componentOrElement = __webpack_require__(366);
+	var _componentOrElement = __webpack_require__(365);
 
 	var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
-	var _calculatePosition = __webpack_require__(394);
+	var _calculatePosition = __webpack_require__(393);
 
 	var _calculatePosition2 = _interopRequireDefault(_calculatePosition);
 
-	var _getContainer = __webpack_require__(368);
+	var _getContainer = __webpack_require__(367);
 
 	var _getContainer2 = _interopRequireDefault(_getContainer);
 
-	var _ownerDocument = __webpack_require__(331);
+	var _ownerDocument = __webpack_require__(330);
 
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
@@ -36084,7 +36059,7 @@
 	  function Position(props, context) {
 	    _classCallCheck(this, Position);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Position).call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, (Position.__proto__ || Object.getPrototypeOf(Position)).call(this, props, context));
 
 	    _this.state = {
 	      positionLeft: 0,
@@ -36234,7 +36209,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 394 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36244,19 +36219,19 @@
 	});
 	exports.default = calculatePosition;
 
-	var _offset = __webpack_require__(395);
+	var _offset = __webpack_require__(394);
 
 	var _offset2 = _interopRequireDefault(_offset);
 
-	var _position = __webpack_require__(396);
+	var _position = __webpack_require__(395);
 
 	var _position2 = _interopRequireDefault(_position);
 
-	var _scrollTop = __webpack_require__(398);
+	var _scrollTop = __webpack_require__(397);
 
 	var _scrollTop2 = _interopRequireDefault(_scrollTop);
 
-	var _ownerDocument = __webpack_require__(331);
+	var _ownerDocument = __webpack_require__(330);
 
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
@@ -36368,12 +36343,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 395 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var contains = __webpack_require__(311),
-	    getWindow = __webpack_require__(375),
+	    getWindow = __webpack_require__(374),
 	    ownerDocument = __webpack_require__(310);
 
 	module.exports = function offset(node) {
@@ -36403,7 +36378,7 @@
 	};
 
 /***/ },
-/* 396 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36413,19 +36388,19 @@
 	exports.__esModule = true;
 	exports['default'] = position;
 
-	var _offset = __webpack_require__(395);
+	var _offset = __webpack_require__(394);
 
 	var _offset2 = babelHelpers.interopRequireDefault(_offset);
 
-	var _offsetParent = __webpack_require__(397);
+	var _offsetParent = __webpack_require__(396);
 
 	var _offsetParent2 = babelHelpers.interopRequireDefault(_offsetParent);
 
-	var _scrollTop = __webpack_require__(398);
+	var _scrollTop = __webpack_require__(397);
 
 	var _scrollTop2 = babelHelpers.interopRequireDefault(_scrollTop);
 
-	var _scrollLeft = __webpack_require__(399);
+	var _scrollLeft = __webpack_require__(398);
 
 	var _scrollLeft2 = babelHelpers.interopRequireDefault(_scrollLeft);
 
@@ -36465,7 +36440,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 397 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36501,11 +36476,11 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 398 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var getWindow = __webpack_require__(375);
+	var getWindow = __webpack_require__(374);
 
 	module.exports = function scrollTop(node, val) {
 	  var win = getWindow(node);
@@ -36516,11 +36491,11 @@
 	};
 
 /***/ },
-/* 399 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var getWindow = __webpack_require__(375);
+	var getWindow = __webpack_require__(374);
 
 	module.exports = function scrollTop(node, val) {
 	  var win = getWindow(node);
@@ -36531,7 +36506,7 @@
 	};
 
 /***/ },
-/* 400 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -36574,7 +36549,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _Overlay = __webpack_require__(391);
+	var _Overlay = __webpack_require__(390);
 
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -36883,7 +36858,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 401 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36964,18 +36939,18 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 402 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _PagerItem = __webpack_require__(403);
+	var _PagerItem = __webpack_require__(402);
 
 	var _PagerItem2 = _interopRequireDefault(_PagerItem);
 
-	var _deprecationWarning = __webpack_require__(404);
+	var _deprecationWarning = __webpack_require__(403);
 
 	var _deprecationWarning2 = _interopRequireDefault(_deprecationWarning);
 
@@ -36985,7 +36960,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 403 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37114,7 +37089,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 404 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -37206,7 +37181,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 405 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37241,7 +37216,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _PagerItem = __webpack_require__(403);
+	var _PagerItem = __webpack_require__(402);
 
 	var _PagerItem2 = _interopRequireDefault(_PagerItem);
 
@@ -37308,7 +37283,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 406 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37347,7 +37322,7 @@
 
 	var _elementType2 = _interopRequireDefault(_elementType);
 
-	var _PaginationButton = __webpack_require__(407);
+	var _PaginationButton = __webpack_require__(406);
 
 	var _PaginationButton2 = _interopRequireDefault(_PaginationButton);
 
@@ -37432,8 +37407,8 @@
 
 	    if (maxButtons) {
 	      var hiddenPagesBefore = activePage - parseInt(maxButtons / 2, 10);
-	      startPage = hiddenPagesBefore > 1 ? hiddenPagesBefore : 1;
-	      hasHiddenPagesAfter = startPage + maxButtons <= items;
+	      startPage = hiddenPagesBefore > 2 ? hiddenPagesBefore : 1;
+	      hasHiddenPagesAfter = startPage + maxButtons < items;
 
 	      if (!hasHiddenPagesAfter) {
 	        endPage = items;
@@ -37472,7 +37447,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -37498,7 +37473,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -37561,7 +37536,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'First' },
-	          first === true ? '«' : first
+	          first === true ? '\xAB' : first
 	        )
 	      ),
 	      prev && _react2['default'].createElement(
@@ -37573,7 +37548,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Previous' },
-	          prev === true ? '‹' : prev
+	          prev === true ? '\u2039' : prev
 	        )
 	      ),
 	      this.renderPageButtons(activePage, items, maxButtons, boundaryLinks, ellipsis, buttonProps),
@@ -37586,7 +37561,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Next' },
-	          next === true ? '›' : next
+	          next === true ? '\u203A' : next
 	        )
 	      ),
 	      last && _react2['default'].createElement(
@@ -37598,7 +37573,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Last' },
-	          last === true ? '»' : last
+	          last === true ? '\xBB' : last
 	        )
 	      )
 	    );
@@ -37614,7 +37589,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 407 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37752,7 +37727,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 408 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38022,7 +37997,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 409 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38179,7 +38154,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 410 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38385,7 +38360,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 411 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -38528,7 +38503,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 412 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -38642,7 +38617,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 413 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38730,7 +38705,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 414 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38769,11 +38744,11 @@
 
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-	var _SplitToggle = __webpack_require__(415);
+	var _SplitToggle = __webpack_require__(414);
 
 	var _SplitToggle2 = _interopRequireDefault(_SplitToggle);
 
-	var _splitComponentProps2 = __webpack_require__(335);
+	var _splitComponentProps2 = __webpack_require__(334);
 
 	var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
 
@@ -38864,7 +38839,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 415 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38891,7 +38866,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DropdownToggle = __webpack_require__(332);
+	var _DropdownToggle = __webpack_require__(331);
 
 	var _DropdownToggle2 = _interopRequireDefault(_DropdownToggle);
 
@@ -38921,7 +38896,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 416 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38948,15 +38923,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TabContainer = __webpack_require__(417);
+	var _TabContainer = __webpack_require__(416);
 
 	var _TabContainer2 = _interopRequireDefault(_TabContainer);
 
-	var _TabContent = __webpack_require__(418);
+	var _TabContent = __webpack_require__(417);
 
 	var _TabContent2 = _interopRequireDefault(_TabContent);
 
-	var _TabPane = __webpack_require__(419);
+	var _TabPane = __webpack_require__(418);
 
 	var _TabPane2 = _interopRequireDefault(_TabPane);
 
@@ -39006,7 +38981,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 417 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39162,7 +39137,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 418 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39374,7 +39349,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 419 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39423,7 +39398,7 @@
 
 	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
 
-	var _Fade = __webpack_require__(336);
+	var _Fade = __webpack_require__(335);
 
 	var _Fade2 = _interopRequireDefault(_Fade);
 
@@ -39689,7 +39664,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 420 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39797,7 +39772,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 421 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39836,19 +39811,19 @@
 
 	var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
 
-	var _Nav = __webpack_require__(383);
+	var _Nav = __webpack_require__(382);
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
-	var _NavItem = __webpack_require__(390);
+	var _NavItem = __webpack_require__(389);
 
 	var _NavItem2 = _interopRequireDefault(_NavItem);
 
-	var _TabContainer = __webpack_require__(417);
+	var _TabContainer = __webpack_require__(416);
 
 	var _TabContainer2 = _interopRequireDefault(_TabContainer);
 
-	var _TabContent = __webpack_require__(418);
+	var _TabContent = __webpack_require__(417);
 
 	var _TabContent2 = _interopRequireDefault(_TabContent);
 
@@ -40005,7 +39980,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 422 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40102,7 +40077,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 423 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40247,7 +40222,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 424 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40321,7 +40296,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 425 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40350,13 +40325,13 @@
 	exports.ValidComponentChildren = _ValidComponentChildren3['default'];
 
 /***/ },
-/* 426 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -40367,7 +40342,17 @@
 
 	var _reactBootstrap = __webpack_require__(173);
 
+	var _song = __webpack_require__(426);
+
+	var _song2 = _interopRequireDefault(_song);
+
+	var _jquery = __webpack_require__(427);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -40375,113 +40360,153 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SearchBox = function (_React$Component) {
-	    _inherits(SearchBox, _React$Component);
+	var SearchResult = function (_React$Component) {
+	  _inherits(SearchResult, _React$Component);
 
-	    function SearchBox(props) {
-	        _classCallCheck(this, SearchBox);
+	  function SearchResult(props) {
+	    _classCallCheck(this, SearchResult);
 
-	        var _this = _possibleConstructorReturn(this, (SearchBox.__proto__ || Object.getPrototypeOf(SearchBox)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (SearchResult.__proto__ || Object.getPrototypeOf(SearchResult)).call(this));
 
-	        _this.state = {};
-	        return _this;
+	    _this.state = {
+	      data: [],
+	      searchText: '',
+	      key: '19d6786ab1f2e5aa3b4ac11a87cb89d046e2f8851ebf0c9ab076b4a62ac2e58540216a1d5ebc715fce663'
+	    };
+	    return _this;
+	  }
+
+	  _createClass(SearchResult, [{
+	    key: 'loadPopular',
+	    value: function loadPopular() {
+	      _jquery2.default.ajax({
+	        url: 'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20',
+	        cache: false,
+	        dataType: "jsonp",
+	        success: function (data) {
+	          this.setState({ data: data.response });
+	        }.bind(this),
+	        error: function (xhr, status, err) {
+	          console.error(status, err.toString());
+	          this.setState({ currentBody: 'error' });
+	        }.bind(this)
+	      });
 	    }
+	  }, {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {}
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.loadPopular();
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {}
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(newProps) {}
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {}
+	  }, {
+	    key: 'onChange',
+	    value: function onChange(name, ev) {
+	      this.setState(_defineProperty({}, name, ev.target.value));
+	    }
+	  }, {
+	    key: 'searchSong',
+	    value: function searchSong(ev) {
+	      ev.preventDefault();
+	      var url = this.state.searchText == '' ? 'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20' : 'https://api.vk.com/method/audio.search?access_token=' + this.state.key + '&count=10&auto_complete=0&q=' + this.state.searchText;
+	      _jquery2.default.ajax({
+	        url: url,
+	        dataType: "jsonp",
+	        type: "GET",
+	        success: function (data) {
+	          if (typeof data.response[0] == 'number') {
+	            delete data.response[0];
+	          }
+	          this.setState({ data: data.response });
+	        }.bind(this),
+	        error: function (xhr, status, err) {}.bind(this)
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var songs = this.state.data;
+	      var formInstance = _react2.default.createElement(
+	        'form',
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.FormGroup,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.InputGroup,
+	            null,
+	            _react2.default.createElement(_reactBootstrap.FormControl, { name: 'searchText', type: 'text', onChange: this.onChange.bind(this, 'searchText') }),
+	            _react2.default.createElement(
+	              _reactBootstrap.InputGroup.Button,
+	              null,
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { type: 'submit', bsStyle: 'primary', onClick: this.searchSong.bind(this) },
+	                'Search'
+	              )
+	            )
+	          )
+	        )
+	      );
+	      var resultList = songs.map(function (song) {
+	        return _react2.default.createElement(
+	          'li',
+	          { className: 'list-group-item', key: song.aid },
+	          _react2.default.createElement(_song2.default, { song: song })
+	        );
+	      });
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'search-result' },
+	        formInstance,
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'list-group' },
+	          resultList
+	        )
+	      );
+	    }
+	  }]);
 
-	    _createClass(SearchBox, [{
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(newProps) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate() {}
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var gridInstance = _react2.default.createElement(
-	                _reactBootstrap.Grid,
-	                null,
-	                _react2.default.createElement(
-	                    _reactBootstrap.Row,
-	                    { className: 'show-grid' },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 12, md: 8 },
-	                        'left'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 6, md: 4 },
-	                        'right'
-	                    )
-	                )
-	            );
-	            var formInstance = _react2.default.createElement(
-	                'form',
-	                null,
-	                _react2.default.createElement(
-	                    _reactBootstrap.FormGroup,
-	                    null,
-	                    _react2.default.createElement(
-	                        _reactBootstrap.InputGroup,
-	                        null,
-	                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text' }),
-	                        _react2.default.createElement(
-	                            _reactBootstrap.InputGroup.Button,
-	                            null,
-	                            _react2.default.createElement(
-	                                _reactBootstrap.Button,
-	                                { bsStyle: 'primary' },
-	                                _react2.default.createElement('i', { className: 'fa fa-server' })
-	                            )
-	                        )
-	                    )
-	                )
-	            );
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'search-box' },
-	                formInstance
-	            );
-	        }
-	    }]);
-
-	    return SearchBox;
+	  return SearchResult;
 	}(_react2.default.Component);
 
 	;
 
-	var _default = SearchBox;
+	var _default = SearchResult;
 	exports.default = _default;
 	;
 
 	var _temp = function () {
-	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	        return;
-	    }
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
 
-	    __REACT_HOT_LOADER__.register(SearchBox, 'SearchBox', '/home/w-wonk/RubymineProjects/l_work/app/components/search_box.jsx');
+	  __REACT_HOT_LOADER__.register(SearchResult, 'SearchResult', '/home/nas/www/l_work/app/components/search_result.jsx');
 
-	    __REACT_HOT_LOADER__.register(_default, 'default', '/home/w-wonk/RubymineProjects/l_work/app/components/search_box.jsx');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/nas/www/l_work/app/components/search_result.jsx');
 	}();
 
 	;
 
 /***/ },
-/* 427 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -40492,11 +40517,7 @@
 
 	var _reactBootstrap = __webpack_require__(173);
 
-	var _song = __webpack_require__(428);
-
-	var _song2 = _interopRequireDefault(_song);
-
-	var _jquery = __webpack_require__(429);
+	var _jquery = __webpack_require__(427);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -40508,215 +40529,65 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SearchResult = function (_React$Component) {
-	    _inherits(SearchResult, _React$Component);
-
-	    function SearchResult(props) {
-	        _classCallCheck(this, SearchResult);
-
-	        var _this = _possibleConstructorReturn(this, (SearchResult.__proto__ || Object.getPrototypeOf(SearchResult)).call(this));
-
-	        _this.state = {
-	            data: []
-	        };
-	        return _this;
-	    }
-
-	    _createClass(SearchResult, [{
-	        key: 'loadPopular',
-	        value: function loadPopular() {
-	            _jquery2.default.ajax({
-	                url: 'https://api.vk.com/method/audio.getPopular?access_token=cb5d8b50a44fcb3421e7eedad514989e70580acb41feee41053342b09d2779bf46fc993a26de0c8c3ce34&count=20',
-	                cache: false,
-	                dataType: "jsonp",
-	                success: function (data) {
-	                    this.setState({ data: data.response });
-	                }.bind(this),
-	                error: function (xhr, status, err) {
-	                    console.error(status, err.toString());
-	                    this.setState({ currentBody: 'error' });
-	                }.bind(this)
-	            });
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.loadPopular();
-	        }
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(newProps) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate() {}
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var songs = this.state.data;
-	            var gridInstance = _react2.default.createElement(
-	                _reactBootstrap.Grid,
-	                null,
-	                _react2.default.createElement(
-	                    _reactBootstrap.Row,
-	                    { className: 'show-grid' },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 12, md: 8 },
-	                        'left'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 6, md: 4 },
-	                        'right'
-	                    )
-	                )
-	            );
-	            var resultList = songs.map(function (song) {
-	                return _react2.default.createElement(
-	                    'li',
-	                    { className: 'list-group-item', key: song.aid },
-	                    _react2.default.createElement(_song2.default, { song: song })
-	                );
-	            });
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'search-result' },
-	                _react2.default.createElement(
-	                    'ul',
-	                    { className: 'list-group' },
-	                    resultList
-	                )
-	            );
-	        }
-	    }]);
-
-	    return SearchResult;
-	}(_react2.default.Component);
-
-	;
-
-	var _default = SearchResult;
-	exports.default = _default;
-	;
-
-	var _temp = function () {
-	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	        return;
-	    }
-
-	    __REACT_HOT_LOADER__.register(SearchResult, 'SearchResult', '/home/w-wonk/RubymineProjects/l_work/app/components/search_result.jsx');
-
-	    __REACT_HOT_LOADER__.register(_default, 'default', '/home/w-wonk/RubymineProjects/l_work/app/components/search_result.jsx');
-	}();
-
-	;
-
-/***/ },
-/* 428 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(173);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 	var Song = function (_React$Component) {
-	    _inherits(Song, _React$Component);
+	  _inherits(Song, _React$Component);
 
-	    function Song(props) {
-	        _classCallCheck(this, Song);
+	  function Song(props) {
+	    _classCallCheck(this, Song);
 
-	        var _this = _possibleConstructorReturn(this, (Song.__proto__ || Object.getPrototypeOf(Song)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Song.__proto__ || Object.getPrototypeOf(Song)).call(this, props));
 
-	        _this.state = {};
-	        return _this;
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(Song, [{
+	    key: 'render',
+	    value: function render() {
+	      var song = this.props.song;
+	      var title = song.title;
+	      var artist = song.artist;
+	      var url = song.url;
+	      var aid = song.aid;
+
+	      var gridInstance = _react2.default.createElement(
+	        _reactBootstrap.Grid,
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.Row,
+	          { className: 'show-grid' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 12, md: 10 },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              artist,
+	              ' - ',
+	              title
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 6, md: 2 },
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { bsStyle: 'primary', href: url, target: '_blank' },
+	              'Download me'
+	            )
+	          )
+	        )
+	      );
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        gridInstance
+	      );
 	    }
+	  }]);
 
-	    _createClass(Song, [{
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {}
-	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(newProps) {}
-	    }, {
-	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate() {}
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var song = this.props.song;
-	            var title = song.title;
-	            var artist = song.artist;
-	            var url = song.url;
-	            var aid = song.aid;
-
-	            var gridInstance = _react2.default.createElement(
-	                _reactBootstrap.Grid,
-	                null,
-	                _react2.default.createElement(
-	                    _reactBootstrap.Row,
-	                    { className: 'show-grid' },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 12, md: 10 },
-	                        _react2.default.createElement(
-	                            'h4',
-	                            null,
-	                            artist,
-	                            ' - ',
-	                            title
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { xs: 6, md: 2 },
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Button,
-	                            { bsStyle: 'primary', href: url },
-	                            _react2.default.createElement('i', { className: 'fa fa-download fa-2x', 'aria-hidden': 'true' })
-	                        )
-	                    )
-	                )
-	            );
-
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                gridInstance
-	            );
-	        }
-	    }]);
-
-	    return Song;
+	  return Song;
 	}(_react2.default.Component);
 
 	;
@@ -40726,19 +40597,19 @@
 	;
 
 	var _temp = function () {
-	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	        return;
-	    }
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
 
-	    __REACT_HOT_LOADER__.register(Song, 'Song', '/home/w-wonk/RubymineProjects/l_work/app/components/song.jsx');
+	  __REACT_HOT_LOADER__.register(Song, 'Song', '/home/nas/www/l_work/app/components/song.jsx');
 
-	    __REACT_HOT_LOADER__.register(_default, 'default', '/home/w-wonk/RubymineProjects/l_work/app/components/song.jsx');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/nas/www/l_work/app/components/song.jsx');
 	}();
 
 	;
 
 /***/ },
-/* 429 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -50961,6 +50832,12853 @@
 
 	return jQuery;
 	} );
+
+
+/***/ },
+/* 428 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.createMemoryHistory = exports.hashHistory = exports.browserHistory = exports.applyRouterMiddleware = exports.formatPattern = exports.useRouterHistory = exports.match = exports.routerShape = exports.locationShape = exports.PropTypes = exports.RoutingContext = exports.RouterContext = exports.createRoutes = exports.useRoutes = exports.RouteContext = exports.Lifecycle = exports.History = exports.Route = exports.Redirect = exports.IndexRoute = exports.IndexRedirect = exports.withRouter = exports.IndexLink = exports.Link = exports.Router = undefined;
+
+	var _RouteUtils = __webpack_require__(429);
+
+	Object.defineProperty(exports, 'createRoutes', {
+	  enumerable: true,
+	  get: function get() {
+	    return _RouteUtils.createRoutes;
+	  }
+	});
+
+	var _PropTypes2 = __webpack_require__(430);
+
+	Object.defineProperty(exports, 'locationShape', {
+	  enumerable: true,
+	  get: function get() {
+	    return _PropTypes2.locationShape;
+	  }
+	});
+	Object.defineProperty(exports, 'routerShape', {
+	  enumerable: true,
+	  get: function get() {
+	    return _PropTypes2.routerShape;
+	  }
+	});
+
+	var _PatternUtils = __webpack_require__(435);
+
+	Object.defineProperty(exports, 'formatPattern', {
+	  enumerable: true,
+	  get: function get() {
+	    return _PatternUtils.formatPattern;
+	  }
+	});
+
+	var _Router2 = __webpack_require__(437);
+
+	var _Router3 = _interopRequireDefault(_Router2);
+
+	var _Link2 = __webpack_require__(468);
+
+	var _Link3 = _interopRequireDefault(_Link2);
+
+	var _IndexLink2 = __webpack_require__(469);
+
+	var _IndexLink3 = _interopRequireDefault(_IndexLink2);
+
+	var _withRouter2 = __webpack_require__(470);
+
+	var _withRouter3 = _interopRequireDefault(_withRouter2);
+
+	var _IndexRedirect2 = __webpack_require__(472);
+
+	var _IndexRedirect3 = _interopRequireDefault(_IndexRedirect2);
+
+	var _IndexRoute2 = __webpack_require__(474);
+
+	var _IndexRoute3 = _interopRequireDefault(_IndexRoute2);
+
+	var _Redirect2 = __webpack_require__(473);
+
+	var _Redirect3 = _interopRequireDefault(_Redirect2);
+
+	var _Route2 = __webpack_require__(475);
+
+	var _Route3 = _interopRequireDefault(_Route2);
+
+	var _History2 = __webpack_require__(476);
+
+	var _History3 = _interopRequireDefault(_History2);
+
+	var _Lifecycle2 = __webpack_require__(477);
+
+	var _Lifecycle3 = _interopRequireDefault(_Lifecycle2);
+
+	var _RouteContext2 = __webpack_require__(478);
+
+	var _RouteContext3 = _interopRequireDefault(_RouteContext2);
+
+	var _useRoutes2 = __webpack_require__(479);
+
+	var _useRoutes3 = _interopRequireDefault(_useRoutes2);
+
+	var _RouterContext2 = __webpack_require__(465);
+
+	var _RouterContext3 = _interopRequireDefault(_RouterContext2);
+
+	var _RoutingContext2 = __webpack_require__(480);
+
+	var _RoutingContext3 = _interopRequireDefault(_RoutingContext2);
+
+	var _PropTypes3 = _interopRequireDefault(_PropTypes2);
+
+	var _match2 = __webpack_require__(481);
+
+	var _match3 = _interopRequireDefault(_match2);
+
+	var _useRouterHistory2 = __webpack_require__(485);
+
+	var _useRouterHistory3 = _interopRequireDefault(_useRouterHistory2);
+
+	var _applyRouterMiddleware2 = __webpack_require__(486);
+
+	var _applyRouterMiddleware3 = _interopRequireDefault(_applyRouterMiddleware2);
+
+	var _browserHistory2 = __webpack_require__(487);
+
+	var _browserHistory3 = _interopRequireDefault(_browserHistory2);
+
+	var _hashHistory2 = __webpack_require__(490);
+
+	var _hashHistory3 = _interopRequireDefault(_hashHistory2);
+
+	var _createMemoryHistory2 = __webpack_require__(482);
+
+	var _createMemoryHistory3 = _interopRequireDefault(_createMemoryHistory2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.Router = _Router3.default; /* components */
+
+	exports.Link = _Link3.default;
+	exports.IndexLink = _IndexLink3.default;
+	exports.withRouter = _withRouter3.default;
+
+	/* components (configuration) */
+
+	exports.IndexRedirect = _IndexRedirect3.default;
+	exports.IndexRoute = _IndexRoute3.default;
+	exports.Redirect = _Redirect3.default;
+	exports.Route = _Route3.default;
+
+	/* mixins */
+
+	exports.History = _History3.default;
+	exports.Lifecycle = _Lifecycle3.default;
+	exports.RouteContext = _RouteContext3.default;
+
+	/* utils */
+
+	exports.useRoutes = _useRoutes3.default;
+	exports.RouterContext = _RouterContext3.default;
+	exports.RoutingContext = _RoutingContext3.default;
+	exports.PropTypes = _PropTypes3.default;
+	exports.match = _match3.default;
+	exports.useRouterHistory = _useRouterHistory3.default;
+	exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
+
+	/* histories */
+
+	exports.browserHistory = _browserHistory3.default;
+	exports.hashHistory = _hashHistory3.default;
+	exports.createMemoryHistory = _createMemoryHistory3.default;
+
+/***/ },
+/* 429 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.isReactChildren = isReactChildren;
+	exports.createRouteFromReactElement = createRouteFromReactElement;
+	exports.createRoutesFromReactChildren = createRoutesFromReactChildren;
+	exports.createRoutes = createRoutes;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function isValidChild(object) {
+	  return object == null || _react2.default.isValidElement(object);
+	}
+
+	function isReactChildren(object) {
+	  return isValidChild(object) || Array.isArray(object) && object.every(isValidChild);
+	}
+
+	function createRoute(defaultProps, props) {
+	  return _extends({}, defaultProps, props);
+	}
+
+	function createRouteFromReactElement(element) {
+	  var type = element.type;
+	  var route = createRoute(type.defaultProps, element.props);
+
+	  if (route.children) {
+	    var childRoutes = createRoutesFromReactChildren(route.children, route);
+
+	    if (childRoutes.length) route.childRoutes = childRoutes;
+
+	    delete route.children;
+	  }
+
+	  return route;
+	}
+
+	/**
+	 * Creates and returns a routes object from the given ReactChildren. JSX
+	 * provides a convenient way to visualize how routes in the hierarchy are
+	 * nested.
+	 *
+	 *   import { Route, createRoutesFromReactChildren } from 'react-router'
+	 *
+	 *   const routes = createRoutesFromReactChildren(
+	 *     <Route component={App}>
+	 *       <Route path="home" component={Dashboard}/>
+	 *       <Route path="news" component={NewsFeed}/>
+	 *     </Route>
+	 *   )
+	 *
+	 * Note: This method is automatically used when you provide <Route> children
+	 * to a <Router> component.
+	 */
+	function createRoutesFromReactChildren(children, parentRoute) {
+	  var routes = [];
+
+	  _react2.default.Children.forEach(children, function (element) {
+	    if (_react2.default.isValidElement(element)) {
+	      // Component classes may have a static create* method.
+	      if (element.type.createRouteFromReactElement) {
+	        var route = element.type.createRouteFromReactElement(element, parentRoute);
+
+	        if (route) routes.push(route);
+	      } else {
+	        routes.push(createRouteFromReactElement(element));
+	      }
+	    }
+	  });
+
+	  return routes;
+	}
+
+	/**
+	 * Creates and returns an array of routes from the given object which
+	 * may be a JSX route, a plain object route, or an array of either.
+	 */
+	function createRoutes(routes) {
+	  if (isReactChildren(routes)) {
+	    routes = createRoutesFromReactChildren(routes);
+	  } else if (routes && !Array.isArray(routes)) {
+	    routes = [routes];
+	  }
+
+	  return routes;
+	}
+
+/***/ },
+/* 430 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+	exports.router = exports.routes = exports.route = exports.components = exports.component = exports.location = exports.history = exports.falsy = exports.locationShape = exports.routerShape = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _deprecateObjectProperties = __webpack_require__(431);
+
+	var _deprecateObjectProperties2 = _interopRequireDefault(_deprecateObjectProperties);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	var InternalPropTypes = _interopRequireWildcard(_InternalPropTypes);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var func = _react.PropTypes.func;
+	var object = _react.PropTypes.object;
+	var shape = _react.PropTypes.shape;
+	var string = _react.PropTypes.string;
+	var routerShape = exports.routerShape = shape({
+	  push: func.isRequired,
+	  replace: func.isRequired,
+	  go: func.isRequired,
+	  goBack: func.isRequired,
+	  goForward: func.isRequired,
+	  setRouteLeaveHook: func.isRequired,
+	  isActive: func.isRequired
+	});
+
+	var locationShape = exports.locationShape = shape({
+	  pathname: string.isRequired,
+	  search: string.isRequired,
+	  state: object,
+	  action: string.isRequired,
+	  key: string
+	});
+
+	// Deprecated stuff below:
+
+	var falsy = exports.falsy = InternalPropTypes.falsy;
+	var history = exports.history = InternalPropTypes.history;
+	var location = exports.location = locationShape;
+	var component = exports.component = InternalPropTypes.component;
+	var components = exports.components = InternalPropTypes.components;
+	var route = exports.route = InternalPropTypes.route;
+	var routes = exports.routes = InternalPropTypes.routes;
+	var router = exports.router = routerShape;
+
+	if (process.env.NODE_ENV !== 'production') {
+	  (function () {
+	    var deprecatePropType = function deprecatePropType(propType, message) {
+	      return function () {
+	        process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, message) : void 0;
+	        return propType.apply(undefined, arguments);
+	      };
+	    };
+
+	    var deprecateInternalPropType = function deprecateInternalPropType(propType) {
+	      return deprecatePropType(propType, 'This prop type is not intended for external use, and was previously exported by mistake. These internal prop types are deprecated for external use, and will be removed in a later version.');
+	    };
+
+	    var deprecateRenamedPropType = function deprecateRenamedPropType(propType, name) {
+	      return deprecatePropType(propType, 'The `' + name + '` prop type is now exported as `' + name + 'Shape` to avoid name conflicts. This export is deprecated and will be removed in a later version.');
+	    };
+
+	    exports.falsy = falsy = deprecateInternalPropType(falsy);
+	    exports.history = history = deprecateInternalPropType(history);
+	    exports.component = component = deprecateInternalPropType(component);
+	    exports.components = components = deprecateInternalPropType(components);
+	    exports.route = route = deprecateInternalPropType(route);
+	    exports.routes = routes = deprecateInternalPropType(routes);
+
+	    exports.location = location = deprecateRenamedPropType(location, 'location');
+	    exports.router = router = deprecateRenamedPropType(router, 'router');
+	  })();
+	}
+
+	var defaultExport = {
+	  falsy: falsy,
+	  history: history,
+	  location: location,
+	  component: component,
+	  components: components,
+	  route: route,
+	  // For some reason, routes was never here.
+	  router: router
+	};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  defaultExport = (0, _deprecateObjectProperties2.default)(defaultExport, 'The default export from `react-router/lib/PropTypes` is deprecated. Please use the named exports instead.');
+	}
+
+	exports.default = defaultExport;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 431 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+	exports.canUseMembrane = undefined;
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var canUseMembrane = exports.canUseMembrane = false;
+
+	// No-op by default.
+	var deprecateObjectProperties = function deprecateObjectProperties(object) {
+	  return object;
+	};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  try {
+	    if (Object.defineProperty({}, 'x', {
+	      get: function get() {
+	        return true;
+	      }
+	    }).x) {
+	      exports.canUseMembrane = canUseMembrane = true;
+	    }
+	    /* eslint-disable no-empty */
+	  } catch (e) {}
+	  /* eslint-enable no-empty */
+
+	  if (canUseMembrane) {
+	    deprecateObjectProperties = function deprecateObjectProperties(object, message) {
+	      // Wrap the deprecated object in a membrane to warn on property access.
+	      var membrane = {};
+
+	      var _loop = function _loop(prop) {
+	        if (!Object.prototype.hasOwnProperty.call(object, prop)) {
+	          return 'continue';
+	        }
+
+	        if (typeof object[prop] === 'function') {
+	          // Can't use fat arrow here because of use of arguments below.
+	          membrane[prop] = function () {
+	            process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, message) : void 0;
+	            return object[prop].apply(object, arguments);
+	          };
+	          return 'continue';
+	        }
+
+	        // These properties are non-enumerable to prevent React dev tools from
+	        // seeing them and causing spurious warnings when accessing them. In
+	        // principle this could be done with a proxy, but support for the
+	        // ownKeys trap on proxies is not universal, even among browsers that
+	        // otherwise support proxies.
+	        Object.defineProperty(membrane, prop, {
+	          get: function get() {
+	            process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, message) : void 0;
+	            return object[prop];
+	          }
+	        });
+	      };
+
+	      for (var prop in object) {
+	        var _ret = _loop(prop);
+
+	        if (_ret === 'continue') continue;
+	      }
+
+	      return membrane;
+	    };
+	  }
+	}
+
+	exports.default = deprecateObjectProperties;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 432 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.default = routerWarning;
+	exports._resetWarned = _resetWarned;
+
+	var _warning = __webpack_require__(433);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var warned = {};
+
+	function routerWarning(falseToWarn, message) {
+	  // Only issue deprecation warnings once.
+	  if (message.indexOf('deprecated') !== -1) {
+	    if (warned[message]) {
+	      return;
+	    }
+
+	    warned[message] = true;
+	  }
+
+	  message = '[react-router] ' + message;
+
+	  for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+	    args[_key - 2] = arguments[_key];
+	  }
+
+	  _warning2.default.apply(undefined, [falseToWarn, message].concat(args));
+	}
+
+	function _resetWarned() {
+	  warned = {};
+	}
+
+/***/ },
+/* 433 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	'use strict';
+
+	/**
+	 * Similar to invariant but only logs a warning if the condition is not met.
+	 * This can be used to log issues in development environments in critical
+	 * paths. Removing the logging code for production environments will keep the
+	 * same logic and follow the same code paths.
+	 */
+
+	var warning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  warning = function(condition, format, args) {
+	    var len = arguments.length;
+	    args = new Array(len > 2 ? len - 2 : 0);
+	    for (var key = 2; key < len; key++) {
+	      args[key - 2] = arguments[key];
+	    }
+	    if (format === undefined) {
+	      throw new Error(
+	        '`warning(condition, format, ...args)` requires a warning ' +
+	        'message argument'
+	      );
+	    }
+
+	    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+	      throw new Error(
+	        'The warning format should be able to uniquely identify this ' +
+	        'warning. Please, use a more descriptive format than: ' + format
+	      );
+	    }
+
+	    if (!condition) {
+	      var argIndex = 0;
+	      var message = 'Warning: ' +
+	        format.replace(/%s/g, function() {
+	          return args[argIndex++];
+	        });
+	      if (typeof console !== 'undefined') {
+	        console.error(message);
+	      }
+	      try {
+	        // This error was thrown as a convenience so that you can use this stack
+	        // to find the callsite that caused this warning to fire.
+	        throw new Error(message);
+	      } catch(x) {}
+	    }
+	  };
+	}
+
+	module.exports = warning;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 434 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.routes = exports.route = exports.components = exports.component = exports.history = undefined;
+	exports.falsy = falsy;
+
+	var _react = __webpack_require__(1);
+
+	var func = _react.PropTypes.func;
+	var object = _react.PropTypes.object;
+	var arrayOf = _react.PropTypes.arrayOf;
+	var oneOfType = _react.PropTypes.oneOfType;
+	var element = _react.PropTypes.element;
+	var shape = _react.PropTypes.shape;
+	var string = _react.PropTypes.string;
+	function falsy(props, propName, componentName) {
+	  if (props[propName]) return new Error('<' + componentName + '> should not have a "' + propName + '" prop');
+	}
+
+	var history = exports.history = shape({
+	  listen: func.isRequired,
+	  push: func.isRequired,
+	  replace: func.isRequired,
+	  go: func.isRequired,
+	  goBack: func.isRequired,
+	  goForward: func.isRequired
+	});
+
+	var component = exports.component = oneOfType([func, string]);
+	var components = exports.components = oneOfType([component, object]);
+	var route = exports.route = oneOfType([object, element]);
+	var routes = exports.routes = oneOfType([route, arrayOf(route)]);
+
+/***/ },
+/* 435 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+	exports.compilePattern = compilePattern;
+	exports.matchPattern = matchPattern;
+	exports.getParamNames = getParamNames;
+	exports.getParams = getParams;
+	exports.formatPattern = formatPattern;
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function escapeRegExp(string) {
+	  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	}
+
+	function _compilePattern(pattern) {
+	  var regexpSource = '';
+	  var paramNames = [];
+	  var tokens = [];
+
+	  var match = void 0,
+	      lastIndex = 0,
+	      matcher = /:([a-zA-Z_$][a-zA-Z0-9_$]*)|\*\*|\*|\(|\)/g;
+	  while (match = matcher.exec(pattern)) {
+	    if (match.index !== lastIndex) {
+	      tokens.push(pattern.slice(lastIndex, match.index));
+	      regexpSource += escapeRegExp(pattern.slice(lastIndex, match.index));
+	    }
+
+	    if (match[1]) {
+	      regexpSource += '([^/]+)';
+	      paramNames.push(match[1]);
+	    } else if (match[0] === '**') {
+	      regexpSource += '(.*)';
+	      paramNames.push('splat');
+	    } else if (match[0] === '*') {
+	      regexpSource += '(.*?)';
+	      paramNames.push('splat');
+	    } else if (match[0] === '(') {
+	      regexpSource += '(?:';
+	    } else if (match[0] === ')') {
+	      regexpSource += ')?';
+	    }
+
+	    tokens.push(match[0]);
+
+	    lastIndex = matcher.lastIndex;
+	  }
+
+	  if (lastIndex !== pattern.length) {
+	    tokens.push(pattern.slice(lastIndex, pattern.length));
+	    regexpSource += escapeRegExp(pattern.slice(lastIndex, pattern.length));
+	  }
+
+	  return {
+	    pattern: pattern,
+	    regexpSource: regexpSource,
+	    paramNames: paramNames,
+	    tokens: tokens
+	  };
+	}
+
+	var CompiledPatternsCache = Object.create(null);
+
+	function compilePattern(pattern) {
+	  if (!CompiledPatternsCache[pattern]) CompiledPatternsCache[pattern] = _compilePattern(pattern);
+
+	  return CompiledPatternsCache[pattern];
+	}
+
+	/**
+	 * Attempts to match a pattern on the given pathname. Patterns may use
+	 * the following special characters:
+	 *
+	 * - :paramName     Matches a URL segment up to the next /, ?, or #. The
+	 *                  captured string is considered a "param"
+	 * - ()             Wraps a segment of the URL that is optional
+	 * - *              Consumes (non-greedy) all characters up to the next
+	 *                  character in the pattern, or to the end of the URL if
+	 *                  there is none
+	 * - **             Consumes (greedy) all characters up to the next character
+	 *                  in the pattern, or to the end of the URL if there is none
+	 *
+	 *  The function calls callback(error, matched) when finished.
+	 * The return value is an object with the following properties:
+	 *
+	 * - remainingPathname
+	 * - paramNames
+	 * - paramValues
+	 */
+	function matchPattern(pattern, pathname) {
+	  // Ensure pattern starts with leading slash for consistency with pathname.
+	  if (pattern.charAt(0) !== '/') {
+	    pattern = '/' + pattern;
+	  }
+
+	  var _compilePattern2 = compilePattern(pattern);
+
+	  var regexpSource = _compilePattern2.regexpSource;
+	  var paramNames = _compilePattern2.paramNames;
+	  var tokens = _compilePattern2.tokens;
+
+
+	  if (pattern.charAt(pattern.length - 1) !== '/') {
+	    regexpSource += '/?'; // Allow optional path separator at end.
+	  }
+
+	  // Special-case patterns like '*' for catch-all routes.
+	  if (tokens[tokens.length - 1] === '*') {
+	    regexpSource += '$';
+	  }
+
+	  var match = pathname.match(new RegExp('^' + regexpSource, 'i'));
+	  if (match == null) {
+	    return null;
+	  }
+
+	  var matchedPath = match[0];
+	  var remainingPathname = pathname.substr(matchedPath.length);
+
+	  if (remainingPathname) {
+	    // Require that the match ends at a path separator, if we didn't match
+	    // the full path, so any remaining pathname is a new path segment.
+	    if (matchedPath.charAt(matchedPath.length - 1) !== '/') {
+	      return null;
+	    }
+
+	    // If there is a remaining pathname, treat the path separator as part of
+	    // the remaining pathname for properly continuing the match.
+	    remainingPathname = '/' + remainingPathname;
+	  }
+
+	  return {
+	    remainingPathname: remainingPathname,
+	    paramNames: paramNames,
+	    paramValues: match.slice(1).map(function (v) {
+	      return v && decodeURIComponent(v);
+	    })
+	  };
+	}
+
+	function getParamNames(pattern) {
+	  return compilePattern(pattern).paramNames;
+	}
+
+	function getParams(pattern, pathname) {
+	  var match = matchPattern(pattern, pathname);
+	  if (!match) {
+	    return null;
+	  }
+
+	  var paramNames = match.paramNames;
+	  var paramValues = match.paramValues;
+
+	  var params = {};
+
+	  paramNames.forEach(function (paramName, index) {
+	    params[paramName] = paramValues[index];
+	  });
+
+	  return params;
+	}
+
+	/**
+	 * Returns a version of the given pattern with params interpolated. Throws
+	 * if there is a dynamic segment of the pattern for which there is no param.
+	 */
+	function formatPattern(pattern, params) {
+	  params = params || {};
+
+	  var _compilePattern3 = compilePattern(pattern);
+
+	  var tokens = _compilePattern3.tokens;
+
+	  var parenCount = 0,
+	      pathname = '',
+	      splatIndex = 0;
+
+	  var token = void 0,
+	      paramName = void 0,
+	      paramValue = void 0;
+	  for (var i = 0, len = tokens.length; i < len; ++i) {
+	    token = tokens[i];
+
+	    if (token === '*' || token === '**') {
+	      paramValue = Array.isArray(params.splat) ? params.splat[splatIndex++] : params.splat;
+
+	      !(paramValue != null || parenCount > 0) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'Missing splat #%s for path "%s"', splatIndex, pattern) : (0, _invariant2.default)(false) : void 0;
+
+	      if (paramValue != null) pathname += encodeURI(paramValue);
+	    } else if (token === '(') {
+	      parenCount += 1;
+	    } else if (token === ')') {
+	      parenCount -= 1;
+	    } else if (token.charAt(0) === ':') {
+	      paramName = token.substring(1);
+	      paramValue = params[paramName];
+
+	      !(paramValue != null || parenCount > 0) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'Missing "%s" parameter for path "%s"', paramName, pattern) : (0, _invariant2.default)(false) : void 0;
+
+	      if (paramValue != null) pathname += encodeURIComponent(paramValue);
+	    } else {
+	      pathname += token;
+	    }
+	  }
+
+	  return pathname.replace(/\/+/g, '/');
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 436 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	'use strict';
+
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+
+	var invariant = function(condition, format, a, b, c, d, e, f) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error(
+	        'Minified exception occurred; use the non-minified dev environment ' +
+	        'for the full error message and additional helpful warnings.'
+	      );
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error(
+	        format.replace(/%s/g, function() { return args[argIndex++]; })
+	      );
+	      error.name = 'Invariant Violation';
+	    }
+
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+
+	module.exports = invariant;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 437 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createHashHistory = __webpack_require__(438);
+
+	var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
+
+	var _useQueries = __webpack_require__(454);
+
+	var _useQueries2 = _interopRequireDefault(_useQueries);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _createTransitionManager = __webpack_require__(457);
+
+	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	var _RouterContext = __webpack_require__(465);
+
+	var _RouterContext2 = _interopRequireDefault(_RouterContext);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _RouterUtils = __webpack_require__(467);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function isDeprecatedHistory(history) {
+	  return !history || !history.__v2_compatible__;
+	}
+
+	/* istanbul ignore next: sanity check */
+	function isUnsupportedHistory(history) {
+	  // v3 histories expose getCurrentLocation, but aren't currently supported.
+	  return history && history.getCurrentLocation;
+	}
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var func = _React$PropTypes.func;
+	var object = _React$PropTypes.object;
+
+	/**
+	 * A <Router> is a high-level API for automatically setting up
+	 * a router that renders a <RouterContext> with all the props
+	 * it needs each time the URL changes.
+	 */
+
+	var Router = _react2.default.createClass({
+	  displayName: 'Router',
+
+
+	  propTypes: {
+	    history: object,
+	    children: _InternalPropTypes.routes,
+	    routes: _InternalPropTypes.routes, // alias for children
+	    render: func,
+	    createElement: func,
+	    onError: func,
+	    onUpdate: func,
+
+	    // Deprecated:
+	    parseQueryString: func,
+	    stringifyQuery: func,
+
+	    // PRIVATE: For client-side rehydration of server match.
+	    matchContext: object
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      render: function render(props) {
+	        return _react2.default.createElement(_RouterContext2.default, props);
+	      }
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    return {
+	      location: null,
+	      routes: null,
+	      params: null,
+	      components: null
+	    };
+	  },
+	  handleError: function handleError(error) {
+	    if (this.props.onError) {
+	      this.props.onError.call(this, error);
+	    } else {
+	      // Throw errors by default so we don't silently swallow them!
+	      throw error; // This error probably occurred in getChildRoutes or getComponents.
+	    }
+	  },
+	  componentWillMount: function componentWillMount() {
+	    var _this = this;
+
+	    var _props = this.props;
+	    var parseQueryString = _props.parseQueryString;
+	    var stringifyQuery = _props.stringifyQuery;
+
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(!(parseQueryString || stringifyQuery), '`parseQueryString` and `stringifyQuery` are deprecated. Please create a custom history. http://tiny.cc/router-customquerystring') : void 0;
+
+	    var _createRouterObjects = this.createRouterObjects();
+
+	    var history = _createRouterObjects.history;
+	    var transitionManager = _createRouterObjects.transitionManager;
+	    var router = _createRouterObjects.router;
+
+
+	    this._unlisten = transitionManager.listen(function (error, state) {
+	      if (error) {
+	        _this.handleError(error);
+	      } else {
+	        _this.setState(state, _this.props.onUpdate);
+	      }
+	    });
+
+	    this.history = history;
+	    this.router = router;
+	  },
+	  createRouterObjects: function createRouterObjects() {
+	    var matchContext = this.props.matchContext;
+
+	    if (matchContext) {
+	      return matchContext;
+	    }
+
+	    var history = this.props.history;
+	    var _props2 = this.props;
+	    var routes = _props2.routes;
+	    var children = _props2.children;
+
+
+	    !!isUnsupportedHistory(history) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'You have provided a history object created with history v3.x. ' + 'This version of React Router is not compatible with v3 history ' + 'objects. Please use history v2.x instead.') : (0, _invariant2.default)(false) : void 0;
+
+	    if (isDeprecatedHistory(history)) {
+	      history = this.wrapDeprecatedHistory(history);
+	    }
+
+	    var transitionManager = (0, _createTransitionManager2.default)(history, (0, _RouteUtils.createRoutes)(routes || children));
+	    var router = (0, _RouterUtils.createRouterObject)(history, transitionManager);
+	    var routingHistory = (0, _RouterUtils.createRoutingHistory)(history, transitionManager);
+
+	    return { history: routingHistory, transitionManager: transitionManager, router: router };
+	  },
+	  wrapDeprecatedHistory: function wrapDeprecatedHistory(history) {
+	    var _props3 = this.props;
+	    var parseQueryString = _props3.parseQueryString;
+	    var stringifyQuery = _props3.stringifyQuery;
+
+
+	    var createHistory = void 0;
+	    if (history) {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'It appears you have provided a deprecated history object to `<Router/>`, please use a history provided by ' + 'React Router with `import { browserHistory } from \'react-router\'` or `import { hashHistory } from \'react-router\'`. ' + 'If you are using a custom history please create it with `useRouterHistory`, see http://tiny.cc/router-usinghistory for details.') : void 0;
+	      createHistory = function createHistory() {
+	        return history;
+	      };
+	    } else {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`Router` no longer defaults the history prop to hash history. Please use the `hashHistory` singleton instead. http://tiny.cc/router-defaulthistory') : void 0;
+	      createHistory = _createHashHistory2.default;
+	    }
+
+	    return (0, _useQueries2.default)(createHistory)({ parseQueryString: parseQueryString, stringifyQuery: stringifyQuery });
+	  },
+
+
+	  /* istanbul ignore next: sanity check */
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(nextProps.history === this.props.history, 'You cannot change <Router history>; it will be ignored') : void 0;
+
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)((nextProps.routes || nextProps.children) === (this.props.routes || this.props.children), 'You cannot change <Router routes>; it will be ignored') : void 0;
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    if (this._unlisten) this._unlisten();
+	  },
+	  render: function render() {
+	    var _state = this.state;
+	    var location = _state.location;
+	    var routes = _state.routes;
+	    var params = _state.params;
+	    var components = _state.components;
+	    var _props4 = this.props;
+	    var createElement = _props4.createElement;
+	    var render = _props4.render;
+
+	    var props = _objectWithoutProperties(_props4, ['createElement', 'render']);
+
+	    if (location == null) return null; // Async match
+
+	    // Only forward non-Router-specific props to routing context, as those are
+	    // the only ones that might be custom routing context props.
+	    Object.keys(Router.propTypes).forEach(function (propType) {
+	      return delete props[propType];
+	    });
+
+	    return render(_extends({}, props, {
+	      history: this.history,
+	      router: this.router,
+	      location: location,
+	      routes: routes,
+	      params: params,
+	      components: components,
+	      createElement: createElement
+	    }));
+	  }
+	});
+
+	exports.default = Router;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 438 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _Actions = __webpack_require__(440);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _ExecutionEnvironment = __webpack_require__(442);
+
+	var _DOMUtils = __webpack_require__(443);
+
+	var _DOMStateStorage = __webpack_require__(444);
+
+	var _createDOMHistory = __webpack_require__(445);
+
+	var _createDOMHistory2 = _interopRequireDefault(_createDOMHistory);
+
+	function isAbsolutePath(path) {
+	  return typeof path === 'string' && path.charAt(0) === '/';
+	}
+
+	function ensureSlash() {
+	  var path = _DOMUtils.getHashPath();
+
+	  if (isAbsolutePath(path)) return true;
+
+	  _DOMUtils.replaceHashPath('/' + path);
+
+	  return false;
+	}
+
+	function addQueryStringValueToPath(path, key, value) {
+	  return path + (path.indexOf('?') === -1 ? '?' : '&') + (key + '=' + value);
+	}
+
+	function stripQueryStringValueFromPath(path, key) {
+	  return path.replace(new RegExp('[?&]?' + key + '=[a-zA-Z0-9]+'), '');
+	}
+
+	function getQueryStringValueFromPath(path, key) {
+	  var match = path.match(new RegExp('\\?.*?\\b' + key + '=(.+?)\\b'));
+	  return match && match[1];
+	}
+
+	var DefaultQueryKey = '_k';
+
+	function createHashHistory() {
+	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'Hash history needs a DOM') : _invariant2['default'](false) : undefined;
+
+	  var queryKey = options.queryKey;
+
+	  if (queryKey === undefined || !!queryKey) queryKey = typeof queryKey === 'string' ? queryKey : DefaultQueryKey;
+
+	  function getCurrentLocation() {
+	    var path = _DOMUtils.getHashPath();
+
+	    var key = undefined,
+	        state = undefined;
+	    if (queryKey) {
+	      key = getQueryStringValueFromPath(path, queryKey);
+	      path = stripQueryStringValueFromPath(path, queryKey);
+
+	      if (key) {
+	        state = _DOMStateStorage.readState(key);
+	      } else {
+	        state = null;
+	        key = history.createKey();
+	        _DOMUtils.replaceHashPath(addQueryStringValueToPath(path, queryKey, key));
+	      }
+	    } else {
+	      key = state = null;
+	    }
+
+	    var location = _PathUtils.parsePath(path);
+
+	    return history.createLocation(_extends({}, location, { state: state }), undefined, key);
+	  }
+
+	  function startHashChangeListener(_ref) {
+	    var transitionTo = _ref.transitionTo;
+
+	    function hashChangeListener() {
+	      if (!ensureSlash()) return; // Always make sure hashes are preceeded with a /.
+
+	      transitionTo(getCurrentLocation());
+	    }
+
+	    ensureSlash();
+	    _DOMUtils.addEventListener(window, 'hashchange', hashChangeListener);
+
+	    return function () {
+	      _DOMUtils.removeEventListener(window, 'hashchange', hashChangeListener);
+	    };
+	  }
+
+	  function finishTransition(location) {
+	    var basename = location.basename;
+	    var pathname = location.pathname;
+	    var search = location.search;
+	    var state = location.state;
+	    var action = location.action;
+	    var key = location.key;
+
+	    if (action === _Actions.POP) return; // Nothing to do.
+
+	    var path = (basename || '') + pathname + search;
+
+	    if (queryKey) {
+	      path = addQueryStringValueToPath(path, queryKey, key);
+	      _DOMStateStorage.saveState(key, state);
+	    } else {
+	      // Drop key and state.
+	      location.key = location.state = null;
+	    }
+
+	    var currentHash = _DOMUtils.getHashPath();
+
+	    if (action === _Actions.PUSH) {
+	      if (currentHash !== path) {
+	        window.location.hash = path;
+	      } else {
+	        process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'You cannot PUSH the same path using hash history') : undefined;
+	      }
+	    } else if (currentHash !== path) {
+	      // REPLACE
+	      _DOMUtils.replaceHashPath(path);
+	    }
+	  }
+
+	  var history = _createDOMHistory2['default'](_extends({}, options, {
+	    getCurrentLocation: getCurrentLocation,
+	    finishTransition: finishTransition,
+	    saveState: _DOMStateStorage.saveState
+	  }));
+
+	  var listenerCount = 0,
+	      stopHashChangeListener = undefined;
+
+	  function listenBefore(listener) {
+	    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
+
+	    var unlisten = history.listenBefore(listener);
+
+	    return function () {
+	      unlisten();
+
+	      if (--listenerCount === 0) stopHashChangeListener();
+	    };
+	  }
+
+	  function listen(listener) {
+	    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
+
+	    var unlisten = history.listen(listener);
+
+	    return function () {
+	      unlisten();
+
+	      if (--listenerCount === 0) stopHashChangeListener();
+	    };
+	  }
+
+	  function push(location) {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || location.state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
+
+	    history.push(location);
+	  }
+
+	  function replace(location) {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || location.state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
+
+	    history.replace(location);
+	  }
+
+	  var goIsSupportedWithoutReload = _DOMUtils.supportsGoWithoutReloadUsingHash();
+
+	  function go(n) {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](goIsSupportedWithoutReload, 'Hash history go(n) causes a full page reload in this browser') : undefined;
+
+	    history.go(n);
+	  }
+
+	  function createHref(path) {
+	    return '#' + history.createHref(path);
+	  }
+
+	  // deprecated
+	  function registerTransitionHook(hook) {
+	    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
+
+	    history.registerTransitionHook(hook);
+	  }
+
+	  // deprecated
+	  function unregisterTransitionHook(hook) {
+	    history.unregisterTransitionHook(hook);
+
+	    if (--listenerCount === 0) stopHashChangeListener();
+	  }
+
+	  // deprecated
+	  function pushState(state, path) {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
+
+	    history.pushState(state, path);
+	  }
+
+	  // deprecated
+	  function replaceState(state, path) {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
+
+	    history.replaceState(state, path);
+	  }
+
+	  return _extends({}, history, {
+	    listenBefore: listenBefore,
+	    listen: listen,
+	    push: push,
+	    replace: replace,
+	    go: go,
+	    createHref: createHref,
+
+	    registerTransitionHook: registerTransitionHook, // deprecated - warning is in createHistory
+	    unregisterTransitionHook: unregisterTransitionHook, // deprecated - warning is in createHistory
+	    pushState: pushState, // deprecated - warning is in createHistory
+	    replaceState: replaceState // deprecated - warning is in createHistory
+	  });
+	}
+
+	exports['default'] = createHashHistory;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 439 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	'use strict';
+
+	/**
+	 * Similar to invariant but only logs a warning if the condition is not met.
+	 * This can be used to log issues in development environments in critical
+	 * paths. Removing the logging code for production environments will keep the
+	 * same logic and follow the same code paths.
+	 */
+
+	var warning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  warning = function(condition, format, args) {
+	    var len = arguments.length;
+	    args = new Array(len > 2 ? len - 2 : 0);
+	    for (var key = 2; key < len; key++) {
+	      args[key - 2] = arguments[key];
+	    }
+	    if (format === undefined) {
+	      throw new Error(
+	        '`warning(condition, format, ...args)` requires a warning ' +
+	        'message argument'
+	      );
+	    }
+
+	    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+	      throw new Error(
+	        'The warning format should be able to uniquely identify this ' +
+	        'warning. Please, use a more descriptive format than: ' + format
+	      );
+	    }
+
+	    if (!condition) {
+	      var argIndex = 0;
+	      var message = 'Warning: ' +
+	        format.replace(/%s/g, function() {
+	          return args[argIndex++];
+	        });
+	      if (typeof console !== 'undefined') {
+	        console.error(message);
+	      }
+	      try {
+	        // This error was thrown as a convenience so that you can use this stack
+	        // to find the callsite that caused this warning to fire.
+	        throw new Error(message);
+	      } catch(x) {}
+	    }
+	  };
+	}
+
+	module.exports = warning;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 440 */
+/***/ function(module, exports) {
+
+	/**
+	 * Indicates that navigation was caused by a call to history.push.
+	 */
+	'use strict';
+
+	exports.__esModule = true;
+	var PUSH = 'PUSH';
+
+	exports.PUSH = PUSH;
+	/**
+	 * Indicates that navigation was caused by a call to history.replace.
+	 */
+	var REPLACE = 'REPLACE';
+
+	exports.REPLACE = REPLACE;
+	/**
+	 * Indicates that navigation was caused by some other action such
+	 * as using a browser's back/forward buttons and/or manually manipulating
+	 * the URL in a browser's location bar. This is the default.
+	 *
+	 * See https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
+	 * for more information.
+	 */
+	var POP = 'POP';
+
+	exports.POP = POP;
+	exports['default'] = {
+	  PUSH: PUSH,
+	  REPLACE: REPLACE,
+	  POP: POP
+	};
+
+/***/ },
+/* 441 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+	exports.extractPath = extractPath;
+	exports.parsePath = parsePath;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	function extractPath(string) {
+	  var match = string.match(/^https?:\/\/[^\/]*/);
+
+	  if (match == null) return string;
+
+	  return string.substring(match[0].length);
+	}
+
+	function parsePath(path) {
+	  var pathname = extractPath(path);
+	  var search = '';
+	  var hash = '';
+
+	  process.env.NODE_ENV !== 'production' ? _warning2['default'](path === pathname, 'A path must be pathname + search + hash only, not a fully qualified URL like "%s"', path) : undefined;
+
+	  var hashIndex = pathname.indexOf('#');
+	  if (hashIndex !== -1) {
+	    hash = pathname.substring(hashIndex);
+	    pathname = pathname.substring(0, hashIndex);
+	  }
+
+	  var searchIndex = pathname.indexOf('?');
+	  if (searchIndex !== -1) {
+	    search = pathname.substring(searchIndex);
+	    pathname = pathname.substring(0, searchIndex);
+	  }
+
+	  if (pathname === '') pathname = '/';
+
+	  return {
+	    pathname: pathname,
+	    search: search,
+	    hash: hash
+	  };
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 442 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+	exports.canUseDOM = canUseDOM;
+
+/***/ },
+/* 443 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.addEventListener = addEventListener;
+	exports.removeEventListener = removeEventListener;
+	exports.getHashPath = getHashPath;
+	exports.replaceHashPath = replaceHashPath;
+	exports.getWindowPath = getWindowPath;
+	exports.go = go;
+	exports.getUserConfirmation = getUserConfirmation;
+	exports.supportsHistory = supportsHistory;
+	exports.supportsGoWithoutReloadUsingHash = supportsGoWithoutReloadUsingHash;
+
+	function addEventListener(node, event, listener) {
+	  if (node.addEventListener) {
+	    node.addEventListener(event, listener, false);
+	  } else {
+	    node.attachEvent('on' + event, listener);
+	  }
+	}
+
+	function removeEventListener(node, event, listener) {
+	  if (node.removeEventListener) {
+	    node.removeEventListener(event, listener, false);
+	  } else {
+	    node.detachEvent('on' + event, listener);
+	  }
+	}
+
+	function getHashPath() {
+	  // We can't use window.location.hash here because it's not
+	  // consistent across browsers - Firefox will pre-decode it!
+	  return window.location.href.split('#')[1] || '';
+	}
+
+	function replaceHashPath(path) {
+	  window.location.replace(window.location.pathname + window.location.search + '#' + path);
+	}
+
+	function getWindowPath() {
+	  return window.location.pathname + window.location.search + window.location.hash;
+	}
+
+	function go(n) {
+	  if (n) window.history.go(n);
+	}
+
+	function getUserConfirmation(message, callback) {
+	  callback(window.confirm(message));
+	}
+
+	/**
+	 * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+	 *
+	 * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+	 * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+	 * changed to avoid false negatives for Windows Phones: https://github.com/rackt/react-router/issues/586
+	 */
+
+	function supportsHistory() {
+	  var ua = navigator.userAgent;
+	  if ((ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) && ua.indexOf('Mobile Safari') !== -1 && ua.indexOf('Chrome') === -1 && ua.indexOf('Windows Phone') === -1) {
+	    return false;
+	  }
+	  return window.history && 'pushState' in window.history;
+	}
+
+	/**
+	 * Returns false if using go(n) with hash history causes a full page reload.
+	 */
+
+	function supportsGoWithoutReloadUsingHash() {
+	  var ua = navigator.userAgent;
+	  return ua.indexOf('Firefox') === -1;
+	}
+
+/***/ },
+/* 444 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/*eslint-disable no-empty */
+	'use strict';
+
+	exports.__esModule = true;
+	exports.saveState = saveState;
+	exports.readState = readState;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var KeyPrefix = '@@History/';
+	var QuotaExceededErrors = ['QuotaExceededError', 'QUOTA_EXCEEDED_ERR'];
+
+	var SecurityError = 'SecurityError';
+
+	function createKey(key) {
+	  return KeyPrefix + key;
+	}
+
+	function saveState(key, state) {
+	  try {
+	    if (state == null) {
+	      window.sessionStorage.removeItem(createKey(key));
+	    } else {
+	      window.sessionStorage.setItem(createKey(key), JSON.stringify(state));
+	    }
+	  } catch (error) {
+	    if (error.name === SecurityError) {
+	      // Blocking cookies in Chrome/Firefox/Safari throws SecurityError on any
+	      // attempt to access window.sessionStorage.
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to save state; sessionStorage is not available due to security settings') : undefined;
+
+	      return;
+	    }
+
+	    if (QuotaExceededErrors.indexOf(error.name) >= 0 && window.sessionStorage.length === 0) {
+	      // Safari "private mode" throws QuotaExceededError.
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to save state; sessionStorage is not available in Safari private mode') : undefined;
+
+	      return;
+	    }
+
+	    throw error;
+	  }
+	}
+
+	function readState(key) {
+	  var json = undefined;
+	  try {
+	    json = window.sessionStorage.getItem(createKey(key));
+	  } catch (error) {
+	    if (error.name === SecurityError) {
+	      // Blocking cookies in Chrome/Firefox/Safari throws SecurityError on any
+	      // attempt to access window.sessionStorage.
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to read state; sessionStorage is not available due to security settings') : undefined;
+
+	      return null;
+	    }
+	  }
+
+	  if (json) {
+	    try {
+	      return JSON.parse(json);
+	    } catch (error) {
+	      // Ignore invalid JSON.
+	    }
+	  }
+
+	  return null;
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 445 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _ExecutionEnvironment = __webpack_require__(442);
+
+	var _DOMUtils = __webpack_require__(443);
+
+	var _createHistory = __webpack_require__(446);
+
+	var _createHistory2 = _interopRequireDefault(_createHistory);
+
+	function createDOMHistory(options) {
+	  var history = _createHistory2['default'](_extends({
+	    getUserConfirmation: _DOMUtils.getUserConfirmation
+	  }, options, {
+	    go: _DOMUtils.go
+	  }));
+
+	  function listen(listener) {
+	    !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'DOM history needs a DOM') : _invariant2['default'](false) : undefined;
+
+	    return history.listen(listener);
+	  }
+
+	  return _extends({}, history, {
+	    listen: listen
+	  });
+	}
+
+	exports['default'] = createDOMHistory;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 446 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _deepEqual = __webpack_require__(447);
+
+	var _deepEqual2 = _interopRequireDefault(_deepEqual);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _AsyncUtils = __webpack_require__(450);
+
+	var _Actions = __webpack_require__(440);
+
+	var _createLocation2 = __webpack_require__(451);
+
+	var _createLocation3 = _interopRequireDefault(_createLocation2);
+
+	var _runTransitionHook = __webpack_require__(452);
+
+	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
+
+	var _deprecate = __webpack_require__(453);
+
+	var _deprecate2 = _interopRequireDefault(_deprecate);
+
+	function createRandomKey(length) {
+	  return Math.random().toString(36).substr(2, length);
+	}
+
+	function locationsAreEqual(a, b) {
+	  return a.pathname === b.pathname && a.search === b.search &&
+	  //a.action === b.action && // Different action !== location change.
+	  a.key === b.key && _deepEqual2['default'](a.state, b.state);
+	}
+
+	var DefaultKeyLength = 6;
+
+	function createHistory() {
+	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	  var getCurrentLocation = options.getCurrentLocation;
+	  var finishTransition = options.finishTransition;
+	  var saveState = options.saveState;
+	  var go = options.go;
+	  var getUserConfirmation = options.getUserConfirmation;
+	  var keyLength = options.keyLength;
+
+	  if (typeof keyLength !== 'number') keyLength = DefaultKeyLength;
+
+	  var transitionHooks = [];
+
+	  function listenBefore(hook) {
+	    transitionHooks.push(hook);
+
+	    return function () {
+	      transitionHooks = transitionHooks.filter(function (item) {
+	        return item !== hook;
+	      });
+	    };
+	  }
+
+	  var allKeys = [];
+	  var changeListeners = [];
+	  var location = undefined;
+
+	  function getCurrent() {
+	    if (pendingLocation && pendingLocation.action === _Actions.POP) {
+	      return allKeys.indexOf(pendingLocation.key);
+	    } else if (location) {
+	      return allKeys.indexOf(location.key);
+	    } else {
+	      return -1;
+	    }
+	  }
+
+	  function updateLocation(newLocation) {
+	    var current = getCurrent();
+
+	    location = newLocation;
+
+	    if (location.action === _Actions.PUSH) {
+	      allKeys = [].concat(allKeys.slice(0, current + 1), [location.key]);
+	    } else if (location.action === _Actions.REPLACE) {
+	      allKeys[current] = location.key;
+	    }
+
+	    changeListeners.forEach(function (listener) {
+	      listener(location);
+	    });
+	  }
+
+	  function listen(listener) {
+	    changeListeners.push(listener);
+
+	    if (location) {
+	      listener(location);
+	    } else {
+	      var _location = getCurrentLocation();
+	      allKeys = [_location.key];
+	      updateLocation(_location);
+	    }
+
+	    return function () {
+	      changeListeners = changeListeners.filter(function (item) {
+	        return item !== listener;
+	      });
+	    };
+	  }
+
+	  function confirmTransitionTo(location, callback) {
+	    _AsyncUtils.loopAsync(transitionHooks.length, function (index, next, done) {
+	      _runTransitionHook2['default'](transitionHooks[index], location, function (result) {
+	        if (result != null) {
+	          done(result);
+	        } else {
+	          next();
+	        }
+	      });
+	    }, function (message) {
+	      if (getUserConfirmation && typeof message === 'string') {
+	        getUserConfirmation(message, function (ok) {
+	          callback(ok !== false);
+	        });
+	      } else {
+	        callback(message !== false);
+	      }
+	    });
+	  }
+
+	  var pendingLocation = undefined;
+
+	  function transitionTo(nextLocation) {
+	    if (location && locationsAreEqual(location, nextLocation)) return; // Nothing to do.
+
+	    pendingLocation = nextLocation;
+
+	    confirmTransitionTo(nextLocation, function (ok) {
+	      if (pendingLocation !== nextLocation) return; // Transition was interrupted.
+
+	      if (ok) {
+	        // treat PUSH to current path like REPLACE to be consistent with browsers
+	        if (nextLocation.action === _Actions.PUSH) {
+	          var prevPath = createPath(location);
+	          var nextPath = createPath(nextLocation);
+
+	          if (nextPath === prevPath && _deepEqual2['default'](location.state, nextLocation.state)) nextLocation.action = _Actions.REPLACE;
+	        }
+
+	        if (finishTransition(nextLocation) !== false) updateLocation(nextLocation);
+	      } else if (location && nextLocation.action === _Actions.POP) {
+	        var prevIndex = allKeys.indexOf(location.key);
+	        var nextIndex = allKeys.indexOf(nextLocation.key);
+
+	        if (prevIndex !== -1 && nextIndex !== -1) go(prevIndex - nextIndex); // Restore the URL.
+	      }
+	    });
+	  }
+
+	  function push(location) {
+	    transitionTo(createLocation(location, _Actions.PUSH, createKey()));
+	  }
+
+	  function replace(location) {
+	    transitionTo(createLocation(location, _Actions.REPLACE, createKey()));
+	  }
+
+	  function goBack() {
+	    go(-1);
+	  }
+
+	  function goForward() {
+	    go(1);
+	  }
+
+	  function createKey() {
+	    return createRandomKey(keyLength);
+	  }
+
+	  function createPath(location) {
+	    if (location == null || typeof location === 'string') return location;
+
+	    var pathname = location.pathname;
+	    var search = location.search;
+	    var hash = location.hash;
+
+	    var result = pathname;
+
+	    if (search) result += search;
+
+	    if (hash) result += hash;
+
+	    return result;
+	  }
+
+	  function createHref(location) {
+	    return createPath(location);
+	  }
+
+	  function createLocation(location, action) {
+	    var key = arguments.length <= 2 || arguments[2] === undefined ? createKey() : arguments[2];
+
+	    if (typeof action === 'object') {
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'The state (2nd) argument to history.createLocation is deprecated; use a ' + 'location descriptor instead') : undefined;
+
+	      if (typeof location === 'string') location = _PathUtils.parsePath(location);
+
+	      location = _extends({}, location, { state: action });
+
+	      action = key;
+	      key = arguments[3] || createKey();
+	    }
+
+	    return _createLocation3['default'](location, action, key);
+	  }
+
+	  // deprecated
+	  function setState(state) {
+	    if (location) {
+	      updateLocationState(location, state);
+	      updateLocation(location);
+	    } else {
+	      updateLocationState(getCurrentLocation(), state);
+	    }
+	  }
+
+	  function updateLocationState(location, state) {
+	    location.state = _extends({}, location.state, state);
+	    saveState(location.key, location.state);
+	  }
+
+	  // deprecated
+	  function registerTransitionHook(hook) {
+	    if (transitionHooks.indexOf(hook) === -1) transitionHooks.push(hook);
+	  }
+
+	  // deprecated
+	  function unregisterTransitionHook(hook) {
+	    transitionHooks = transitionHooks.filter(function (item) {
+	      return item !== hook;
+	    });
+	  }
+
+	  // deprecated
+	  function pushState(state, path) {
+	    if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	    push(_extends({ state: state }, path));
+	  }
+
+	  // deprecated
+	  function replaceState(state, path) {
+	    if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	    replace(_extends({ state: state }, path));
+	  }
+
+	  return {
+	    listenBefore: listenBefore,
+	    listen: listen,
+	    transitionTo: transitionTo,
+	    push: push,
+	    replace: replace,
+	    go: go,
+	    goBack: goBack,
+	    goForward: goForward,
+	    createKey: createKey,
+	    createPath: createPath,
+	    createHref: createHref,
+	    createLocation: createLocation,
+
+	    setState: _deprecate2['default'](setState, 'setState is deprecated; use location.key to save state instead'),
+	    registerTransitionHook: _deprecate2['default'](registerTransitionHook, 'registerTransitionHook is deprecated; use listenBefore instead'),
+	    unregisterTransitionHook: _deprecate2['default'](unregisterTransitionHook, 'unregisterTransitionHook is deprecated; use the callback returned from listenBefore instead'),
+	    pushState: _deprecate2['default'](pushState, 'pushState is deprecated; use push instead'),
+	    replaceState: _deprecate2['default'](replaceState, 'replaceState is deprecated; use replace instead')
+	  };
+	}
+
+	exports['default'] = createHistory;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 447 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var pSlice = Array.prototype.slice;
+	var objectKeys = __webpack_require__(448);
+	var isArguments = __webpack_require__(449);
+
+	var deepEqual = module.exports = function (actual, expected, opts) {
+	  if (!opts) opts = {};
+	  // 7.1. All identical values are equivalent, as determined by ===.
+	  if (actual === expected) {
+	    return true;
+
+	  } else if (actual instanceof Date && expected instanceof Date) {
+	    return actual.getTime() === expected.getTime();
+
+	  // 7.3. Other pairs that do not both pass typeof value == 'object',
+	  // equivalence is determined by ==.
+	  } else if (!actual || !expected || typeof actual != 'object' && typeof expected != 'object') {
+	    return opts.strict ? actual === expected : actual == expected;
+
+	  // 7.4. For all other Object pairs, including Array objects, equivalence is
+	  // determined by having the same number of owned properties (as verified
+	  // with Object.prototype.hasOwnProperty.call), the same set of keys
+	  // (although not necessarily the same order), equivalent values for every
+	  // corresponding key, and an identical 'prototype' property. Note: this
+	  // accounts for both named and indexed properties on Arrays.
+	  } else {
+	    return objEquiv(actual, expected, opts);
+	  }
+	}
+
+	function isUndefinedOrNull(value) {
+	  return value === null || value === undefined;
+	}
+
+	function isBuffer (x) {
+	  if (!x || typeof x !== 'object' || typeof x.length !== 'number') return false;
+	  if (typeof x.copy !== 'function' || typeof x.slice !== 'function') {
+	    return false;
+	  }
+	  if (x.length > 0 && typeof x[0] !== 'number') return false;
+	  return true;
+	}
+
+	function objEquiv(a, b, opts) {
+	  var i, key;
+	  if (isUndefinedOrNull(a) || isUndefinedOrNull(b))
+	    return false;
+	  // an identical 'prototype' property.
+	  if (a.prototype !== b.prototype) return false;
+	  //~~~I've managed to break Object.keys through screwy arguments passing.
+	  //   Converting to array solves the problem.
+	  if (isArguments(a)) {
+	    if (!isArguments(b)) {
+	      return false;
+	    }
+	    a = pSlice.call(a);
+	    b = pSlice.call(b);
+	    return deepEqual(a, b, opts);
+	  }
+	  if (isBuffer(a)) {
+	    if (!isBuffer(b)) {
+	      return false;
+	    }
+	    if (a.length !== b.length) return false;
+	    for (i = 0; i < a.length; i++) {
+	      if (a[i] !== b[i]) return false;
+	    }
+	    return true;
+	  }
+	  try {
+	    var ka = objectKeys(a),
+	        kb = objectKeys(b);
+	  } catch (e) {//happens when one is a string literal and the other isn't
+	    return false;
+	  }
+	  // having the same number of owned properties (keys incorporates
+	  // hasOwnProperty)
+	  if (ka.length != kb.length)
+	    return false;
+	  //the same set of keys (although not necessarily the same order),
+	  ka.sort();
+	  kb.sort();
+	  //~~~cheap key test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    if (ka[i] != kb[i])
+	      return false;
+	  }
+	  //equivalent values for every corresponding key, and
+	  //~~~possibly expensive deep test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    key = ka[i];
+	    if (!deepEqual(a[key], b[key], opts)) return false;
+	  }
+	  return typeof a === typeof b;
+	}
+
+
+/***/ },
+/* 448 */
+/***/ function(module, exports) {
+
+	exports = module.exports = typeof Object.keys === 'function'
+	  ? Object.keys : shim;
+
+	exports.shim = shim;
+	function shim (obj) {
+	  var keys = [];
+	  for (var key in obj) keys.push(key);
+	  return keys;
+	}
+
+
+/***/ },
+/* 449 */
+/***/ function(module, exports) {
+
+	var supportsArgumentsClass = (function(){
+	  return Object.prototype.toString.call(arguments)
+	})() == '[object Arguments]';
+
+	exports = module.exports = supportsArgumentsClass ? supported : unsupported;
+
+	exports.supported = supported;
+	function supported(object) {
+	  return Object.prototype.toString.call(object) == '[object Arguments]';
+	};
+
+	exports.unsupported = unsupported;
+	function unsupported(object){
+	  return object &&
+	    typeof object == 'object' &&
+	    typeof object.length == 'number' &&
+	    Object.prototype.hasOwnProperty.call(object, 'callee') &&
+	    !Object.prototype.propertyIsEnumerable.call(object, 'callee') ||
+	    false;
+	};
+
+
+/***/ },
+/* 450 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+	var _slice = Array.prototype.slice;
+	exports.loopAsync = loopAsync;
+
+	function loopAsync(turns, work, callback) {
+	  var currentTurn = 0,
+	      isDone = false;
+	  var sync = false,
+	      hasNext = false,
+	      doneArgs = undefined;
+
+	  function done() {
+	    isDone = true;
+	    if (sync) {
+	      // Iterate instead of recursing if possible.
+	      doneArgs = [].concat(_slice.call(arguments));
+	      return;
+	    }
+
+	    callback.apply(this, arguments);
+	  }
+
+	  function next() {
+	    if (isDone) {
+	      return;
+	    }
+
+	    hasNext = true;
+	    if (sync) {
+	      // Iterate instead of recursing if possible.
+	      return;
+	    }
+
+	    sync = true;
+
+	    while (!isDone && currentTurn < turns && hasNext) {
+	      hasNext = false;
+	      work.call(this, currentTurn++, next, done);
+	    }
+
+	    sync = false;
+
+	    if (isDone) {
+	      // This means the loop finished synchronously.
+	      callback.apply(this, doneArgs);
+	      return;
+	    }
+
+	    if (currentTurn >= turns && hasNext) {
+	      isDone = true;
+	      callback();
+	    }
+	  }
+
+	  next();
+	}
+
+/***/ },
+/* 451 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _Actions = __webpack_require__(440);
+
+	var _PathUtils = __webpack_require__(441);
+
+	function createLocation() {
+	  var location = arguments.length <= 0 || arguments[0] === undefined ? '/' : arguments[0];
+	  var action = arguments.length <= 1 || arguments[1] === undefined ? _Actions.POP : arguments[1];
+	  var key = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+
+	  var _fourthArg = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
+
+	  if (typeof location === 'string') location = _PathUtils.parsePath(location);
+
+	  if (typeof action === 'object') {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'The state (2nd) argument to createLocation is deprecated; use a ' + 'location descriptor instead') : undefined;
+
+	    location = _extends({}, location, { state: action });
+
+	    action = key || _Actions.POP;
+	    key = _fourthArg;
+	  }
+
+	  var pathname = location.pathname || '/';
+	  var search = location.search || '';
+	  var hash = location.hash || '';
+	  var state = location.state || null;
+
+	  return {
+	    pathname: pathname,
+	    search: search,
+	    hash: hash,
+	    state: state,
+	    action: action,
+	    key: key
+	  };
+	}
+
+	exports['default'] = createLocation;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 452 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	function runTransitionHook(hook, location, callback) {
+	  var result = hook(location, callback);
+
+	  if (hook.length < 2) {
+	    // Assume the hook runs synchronously and automatically
+	    // call the callback with the return value.
+	    callback(result);
+	  } else {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](result === undefined, 'You should not "return" in a transition hook with a callback argument; call the callback instead') : undefined;
+	  }
+	}
+
+	exports['default'] = runTransitionHook;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 453 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	function deprecate(fn, message) {
+	  return function () {
+	    process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] ' + message) : undefined;
+	    return fn.apply(this, arguments);
+	  };
+	}
+
+	exports['default'] = deprecate;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 454 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _queryString = __webpack_require__(455);
+
+	var _runTransitionHook = __webpack_require__(452);
+
+	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _deprecate = __webpack_require__(453);
+
+	var _deprecate2 = _interopRequireDefault(_deprecate);
+
+	var SEARCH_BASE_KEY = '$searchBase';
+
+	function defaultStringifyQuery(query) {
+	  return _queryString.stringify(query).replace(/%20/g, '+');
+	}
+
+	var defaultParseQueryString = _queryString.parse;
+
+	function isNestedObject(object) {
+	  for (var p in object) {
+	    if (Object.prototype.hasOwnProperty.call(object, p) && typeof object[p] === 'object' && !Array.isArray(object[p]) && object[p] !== null) return true;
+	  }return false;
+	}
+
+	/**
+	 * Returns a new createHistory function that may be used to create
+	 * history objects that know how to handle URL queries.
+	 */
+	function useQueries(createHistory) {
+	  return function () {
+	    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	    var history = createHistory(options);
+
+	    var stringifyQuery = options.stringifyQuery;
+	    var parseQueryString = options.parseQueryString;
+
+	    if (typeof stringifyQuery !== 'function') stringifyQuery = defaultStringifyQuery;
+
+	    if (typeof parseQueryString !== 'function') parseQueryString = defaultParseQueryString;
+
+	    function addQuery(location) {
+	      if (location.query == null) {
+	        var search = location.search;
+
+	        location.query = parseQueryString(search.substring(1));
+	        location[SEARCH_BASE_KEY] = { search: search, searchBase: '' };
+	      }
+
+	      // TODO: Instead of all the book-keeping here, this should just strip the
+	      // stringified query from the search.
+
+	      return location;
+	    }
+
+	    function appendQuery(location, query) {
+	      var _extends2;
+
+	      var searchBaseSpec = location[SEARCH_BASE_KEY];
+	      var queryString = query ? stringifyQuery(query) : '';
+	      if (!searchBaseSpec && !queryString) {
+	        return location;
+	      }
+
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](stringifyQuery !== defaultStringifyQuery || !isNestedObject(query), 'useQueries does not stringify nested query objects by default; ' + 'use a custom stringifyQuery function') : undefined;
+
+	      if (typeof location === 'string') location = _PathUtils.parsePath(location);
+
+	      var searchBase = undefined;
+	      if (searchBaseSpec && location.search === searchBaseSpec.search) {
+	        searchBase = searchBaseSpec.searchBase;
+	      } else {
+	        searchBase = location.search || '';
+	      }
+
+	      var search = searchBase;
+	      if (queryString) {
+	        search += (search ? '&' : '?') + queryString;
+	      }
+
+	      return _extends({}, location, (_extends2 = {
+	        search: search
+	      }, _extends2[SEARCH_BASE_KEY] = { search: search, searchBase: searchBase }, _extends2));
+	    }
+
+	    // Override all read methods with query-aware versions.
+	    function listenBefore(hook) {
+	      return history.listenBefore(function (location, callback) {
+	        _runTransitionHook2['default'](hook, addQuery(location), callback);
+	      });
+	    }
+
+	    function listen(listener) {
+	      return history.listen(function (location) {
+	        listener(addQuery(location));
+	      });
+	    }
+
+	    // Override all write methods with query-aware versions.
+	    function push(location) {
+	      history.push(appendQuery(location, location.query));
+	    }
+
+	    function replace(location) {
+	      history.replace(appendQuery(location, location.query));
+	    }
+
+	    function createPath(location, query) {
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](!query, 'the query argument to createPath is deprecated; use a location descriptor instead') : undefined;
+
+	      return history.createPath(appendQuery(location, query || location.query));
+	    }
+
+	    function createHref(location, query) {
+	      process.env.NODE_ENV !== 'production' ? _warning2['default'](!query, 'the query argument to createHref is deprecated; use a location descriptor instead') : undefined;
+
+	      return history.createHref(appendQuery(location, query || location.query));
+	    }
+
+	    function createLocation(location) {
+	      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	        args[_key - 1] = arguments[_key];
+	      }
+
+	      var fullLocation = history.createLocation.apply(history, [appendQuery(location, location.query)].concat(args));
+	      if (location.query) {
+	        fullLocation.query = location.query;
+	      }
+	      return addQuery(fullLocation);
+	    }
+
+	    // deprecated
+	    function pushState(state, path, query) {
+	      if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	      push(_extends({ state: state }, path, { query: query }));
+	    }
+
+	    // deprecated
+	    function replaceState(state, path, query) {
+	      if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	      replace(_extends({ state: state }, path, { query: query }));
+	    }
+
+	    return _extends({}, history, {
+	      listenBefore: listenBefore,
+	      listen: listen,
+	      push: push,
+	      replace: replace,
+	      createPath: createPath,
+	      createHref: createHref,
+	      createLocation: createLocation,
+
+	      pushState: _deprecate2['default'](pushState, 'pushState is deprecated; use push instead'),
+	      replaceState: _deprecate2['default'](replaceState, 'replaceState is deprecated; use replace instead')
+	    });
+	  };
+	}
+
+	exports['default'] = useQueries;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 455 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var strictUriEncode = __webpack_require__(456);
+
+	exports.extract = function (str) {
+		return str.split('?')[1] || '';
+	};
+
+	exports.parse = function (str) {
+		if (typeof str !== 'string') {
+			return {};
+		}
+
+		str = str.trim().replace(/^(\?|#|&)/, '');
+
+		if (!str) {
+			return {};
+		}
+
+		return str.split('&').reduce(function (ret, param) {
+			var parts = param.replace(/\+/g, ' ').split('=');
+			// Firefox (pre 40) decodes `%3D` to `=`
+			// https://github.com/sindresorhus/query-string/pull/37
+			var key = parts.shift();
+			var val = parts.length > 0 ? parts.join('=') : undefined;
+
+			key = decodeURIComponent(key);
+
+			// missing `=` should be `null`:
+			// http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
+			val = val === undefined ? null : decodeURIComponent(val);
+
+			if (!ret.hasOwnProperty(key)) {
+				ret[key] = val;
+			} else if (Array.isArray(ret[key])) {
+				ret[key].push(val);
+			} else {
+				ret[key] = [ret[key], val];
+			}
+
+			return ret;
+		}, {});
+	};
+
+	exports.stringify = function (obj) {
+		return obj ? Object.keys(obj).sort().map(function (key) {
+			var val = obj[key];
+
+			if (val === undefined) {
+				return '';
+			}
+
+			if (val === null) {
+				return key;
+			}
+
+			if (Array.isArray(val)) {
+				return val.slice().sort().map(function (val2) {
+					return strictUriEncode(key) + '=' + strictUriEncode(val2);
+				}).join('&');
+			}
+
+			return strictUriEncode(key) + '=' + strictUriEncode(val);
+		}).filter(function (x) {
+			return x.length > 0;
+		}).join('&') : '';
+	};
+
+
+/***/ },
+/* 456 */
+/***/ function(module, exports) {
+
+	'use strict';
+	module.exports = function (str) {
+		return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
+			return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+		});
+	};
+
+
+/***/ },
+/* 457 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = createTransitionManager;
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _computeChangedRoutes2 = __webpack_require__(458);
+
+	var _computeChangedRoutes3 = _interopRequireDefault(_computeChangedRoutes2);
+
+	var _TransitionUtils = __webpack_require__(459);
+
+	var _isActive2 = __webpack_require__(461);
+
+	var _isActive3 = _interopRequireDefault(_isActive2);
+
+	var _getComponents = __webpack_require__(462);
+
+	var _getComponents2 = _interopRequireDefault(_getComponents);
+
+	var _matchRoutes = __webpack_require__(464);
+
+	var _matchRoutes2 = _interopRequireDefault(_matchRoutes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function hasAnyProperties(object) {
+	  for (var p in object) {
+	    if (Object.prototype.hasOwnProperty.call(object, p)) return true;
+	  }return false;
+	}
+
+	function createTransitionManager(history, routes) {
+	  var state = {};
+
+	  // Signature should be (location, indexOnly), but needs to support (path,
+	  // query, indexOnly)
+	  function isActive(location) {
+	    var indexOnlyOrDeprecatedQuery = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+	    var deprecatedIndexOnly = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+
+	    var indexOnly = void 0;
+	    if (indexOnlyOrDeprecatedQuery && indexOnlyOrDeprecatedQuery !== true || deprecatedIndexOnly !== null) {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`isActive(pathname, query, indexOnly) is deprecated; use `isActive(location, indexOnly)` with a location descriptor instead. http://tiny.cc/router-isActivedeprecated') : void 0;
+	      location = { pathname: location, query: indexOnlyOrDeprecatedQuery };
+	      indexOnly = deprecatedIndexOnly || false;
+	    } else {
+	      location = history.createLocation(location);
+	      indexOnly = indexOnlyOrDeprecatedQuery;
+	    }
+
+	    return (0, _isActive3.default)(location, indexOnly, state.location, state.routes, state.params);
+	  }
+
+	  var partialNextState = void 0;
+
+	  function match(location, callback) {
+	    if (partialNextState && partialNextState.location === location) {
+	      // Continue from where we left off.
+	      finishMatch(partialNextState, callback);
+	    } else {
+	      (0, _matchRoutes2.default)(routes, location, function (error, nextState) {
+	        if (error) {
+	          callback(error);
+	        } else if (nextState) {
+	          finishMatch(_extends({}, nextState, { location: location }), callback);
+	        } else {
+	          callback();
+	        }
+	      });
+	    }
+	  }
+
+	  function finishMatch(nextState, callback) {
+	    var _computeChangedRoutes = (0, _computeChangedRoutes3.default)(state, nextState);
+
+	    var leaveRoutes = _computeChangedRoutes.leaveRoutes;
+	    var changeRoutes = _computeChangedRoutes.changeRoutes;
+	    var enterRoutes = _computeChangedRoutes.enterRoutes;
+
+
+	    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes, state);
+
+	    // Tear down confirmation hooks for left routes
+	    leaveRoutes.filter(function (route) {
+	      return enterRoutes.indexOf(route) === -1;
+	    }).forEach(removeListenBeforeHooksForRoute);
+
+	    // change and enter hooks are run in series
+	    (0, _TransitionUtils.runChangeHooks)(changeRoutes, state, nextState, function (error, redirectInfo) {
+	      if (error || redirectInfo) return handleErrorOrRedirect(error, redirectInfo);
+
+	      (0, _TransitionUtils.runEnterHooks)(enterRoutes, nextState, finishEnterHooks);
+	    });
+
+	    function finishEnterHooks(error, redirectInfo) {
+	      if (error || redirectInfo) return handleErrorOrRedirect(error, redirectInfo);
+
+	      // TODO: Fetch components after state is updated.
+	      (0, _getComponents2.default)(nextState, function (error, components) {
+	        if (error) {
+	          callback(error);
+	        } else {
+	          // TODO: Make match a pure function and have some other API
+	          // for "match and update state".
+	          callback(null, null, state = _extends({}, nextState, { components: components }));
+	        }
+	      });
+	    }
+
+	    function handleErrorOrRedirect(error, redirectInfo) {
+	      if (error) callback(error);else callback(null, redirectInfo);
+	    }
+	  }
+
+	  var RouteGuid = 1;
+
+	  function getRouteID(route) {
+	    var create = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+	    return route.__id__ || create && (route.__id__ = RouteGuid++);
+	  }
+
+	  var RouteHooks = Object.create(null);
+
+	  function getRouteHooksForRoutes(routes) {
+	    return routes.reduce(function (hooks, route) {
+	      hooks.push.apply(hooks, RouteHooks[getRouteID(route)]);
+	      return hooks;
+	    }, []);
+	  }
+
+	  function transitionHook(location, callback) {
+	    (0, _matchRoutes2.default)(routes, location, function (error, nextState) {
+	      if (nextState == null) {
+	        // TODO: We didn't actually match anything, but hang
+	        // onto error/nextState so we don't have to matchRoutes
+	        // again in the listen callback.
+	        callback();
+	        return;
+	      }
+
+	      // Cache some state here so we don't have to
+	      // matchRoutes() again in the listen callback.
+	      partialNextState = _extends({}, nextState, { location: location });
+
+	      var hooks = getRouteHooksForRoutes((0, _computeChangedRoutes3.default)(state, partialNextState).leaveRoutes);
+
+	      var result = void 0;
+	      for (var i = 0, len = hooks.length; result == null && i < len; ++i) {
+	        // Passing the location arg here indicates to
+	        // the user that this is a transition hook.
+	        result = hooks[i](location);
+	      }
+
+	      callback(result);
+	    });
+	  }
+
+	  /* istanbul ignore next: untestable with Karma */
+	  function beforeUnloadHook() {
+	    // Synchronously check to see if any route hooks want
+	    // to prevent the current window/tab from closing.
+	    if (state.routes) {
+	      var hooks = getRouteHooksForRoutes(state.routes);
+
+	      var message = void 0;
+	      for (var i = 0, len = hooks.length; typeof message !== 'string' && i < len; ++i) {
+	        // Passing no args indicates to the user that this is a
+	        // beforeunload hook. We don't know the next location.
+	        message = hooks[i]();
+	      }
+
+	      return message;
+	    }
+	  }
+
+	  var unlistenBefore = void 0,
+	      unlistenBeforeUnload = void 0;
+
+	  function removeListenBeforeHooksForRoute(route) {
+	    var routeID = getRouteID(route, false);
+	    if (!routeID) {
+	      return;
+	    }
+
+	    delete RouteHooks[routeID];
+
+	    if (!hasAnyProperties(RouteHooks)) {
+	      // teardown transition & beforeunload hooks
+	      if (unlistenBefore) {
+	        unlistenBefore();
+	        unlistenBefore = null;
+	      }
+
+	      if (unlistenBeforeUnload) {
+	        unlistenBeforeUnload();
+	        unlistenBeforeUnload = null;
+	      }
+	    }
+	  }
+
+	  /**
+	   * Registers the given hook function to run before leaving the given route.
+	   *
+	   * During a normal transition, the hook function receives the next location
+	   * as its only argument and can return either a prompt message (string) to show the user,
+	   * to make sure they want to leave the page; or `false`, to prevent the transition.
+	   * Any other return value will have no effect.
+	   *
+	   * During the beforeunload event (in browsers) the hook receives no arguments.
+	   * In this case it must return a prompt message to prevent the transition.
+	   *
+	   * Returns a function that may be used to unbind the listener.
+	   */
+	  function listenBeforeLeavingRoute(route, hook) {
+	    // TODO: Warn if they register for a route that isn't currently
+	    // active. They're probably doing something wrong, like re-creating
+	    // route objects on every location change.
+	    var routeID = getRouteID(route);
+	    var hooks = RouteHooks[routeID];
+
+	    if (!hooks) {
+	      var thereWereNoRouteHooks = !hasAnyProperties(RouteHooks);
+
+	      RouteHooks[routeID] = [hook];
+
+	      if (thereWereNoRouteHooks) {
+	        // setup transition & beforeunload hooks
+	        unlistenBefore = history.listenBefore(transitionHook);
+
+	        if (history.listenBeforeUnload) unlistenBeforeUnload = history.listenBeforeUnload(beforeUnloadHook);
+	      }
+	    } else {
+	      if (hooks.indexOf(hook) === -1) {
+	        process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'adding multiple leave hooks for the same route is deprecated; manage multiple confirmations in your own code instead') : void 0;
+
+	        hooks.push(hook);
+	      }
+	    }
+
+	    return function () {
+	      var hooks = RouteHooks[routeID];
+
+	      if (hooks) {
+	        var newHooks = hooks.filter(function (item) {
+	          return item !== hook;
+	        });
+
+	        if (newHooks.length === 0) {
+	          removeListenBeforeHooksForRoute(route);
+	        } else {
+	          RouteHooks[routeID] = newHooks;
+	        }
+	      }
+	    };
+	  }
+
+	  /**
+	   * This is the API for stateful environments. As the location
+	   * changes, we update state and call the listener. We can also
+	   * gracefully handle errors and redirects.
+	   */
+	  function listen(listener) {
+	    // TODO: Only use a single history listener. Otherwise we'll
+	    // end up with multiple concurrent calls to match.
+	    return history.listen(function (location) {
+	      if (state.location === location) {
+	        listener(null, state);
+	      } else {
+	        match(location, function (error, redirectLocation, nextState) {
+	          if (error) {
+	            listener(error);
+	          } else if (redirectLocation) {
+	            history.replace(redirectLocation);
+	          } else if (nextState) {
+	            listener(null, nextState);
+	          } else {
+	            process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'Location "%s" did not match any routes', location.pathname + location.search + location.hash) : void 0;
+	          }
+	        });
+	      }
+	    });
+	  }
+
+	  return {
+	    isActive: isActive,
+	    match: match,
+	    listenBeforeLeavingRoute: listenBeforeLeavingRoute,
+	    listen: listen
+	  };
+	}
+
+	//export default useRoutes
+
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 458 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _PatternUtils = __webpack_require__(435);
+
+	function routeParamsChanged(route, prevState, nextState) {
+	  if (!route.path) return false;
+
+	  var paramNames = (0, _PatternUtils.getParamNames)(route.path);
+
+	  return paramNames.some(function (paramName) {
+	    return prevState.params[paramName] !== nextState.params[paramName];
+	  });
+	}
+
+	/**
+	 * Returns an object of { leaveRoutes, changeRoutes, enterRoutes } determined by
+	 * the change from prevState to nextState. We leave routes if either
+	 * 1) they are not in the next state or 2) they are in the next state
+	 * but their params have changed (i.e. /users/123 => /users/456).
+	 *
+	 * leaveRoutes are ordered starting at the leaf route of the tree
+	 * we're leaving up to the common parent route. enterRoutes are ordered
+	 * from the top of the tree we're entering down to the leaf route.
+	 *
+	 * changeRoutes are any routes that didn't leave or enter during
+	 * the transition.
+	 */
+	function computeChangedRoutes(prevState, nextState) {
+	  var prevRoutes = prevState && prevState.routes;
+	  var nextRoutes = nextState.routes;
+
+	  var leaveRoutes = void 0,
+	      changeRoutes = void 0,
+	      enterRoutes = void 0;
+	  if (prevRoutes) {
+	    (function () {
+	      var parentIsLeaving = false;
+	      leaveRoutes = prevRoutes.filter(function (route) {
+	        if (parentIsLeaving) {
+	          return true;
+	        } else {
+	          var isLeaving = nextRoutes.indexOf(route) === -1 || routeParamsChanged(route, prevState, nextState);
+	          if (isLeaving) parentIsLeaving = true;
+	          return isLeaving;
+	        }
+	      });
+
+	      // onLeave hooks start at the leaf route.
+	      leaveRoutes.reverse();
+
+	      enterRoutes = [];
+	      changeRoutes = [];
+
+	      nextRoutes.forEach(function (route) {
+	        var isNew = prevRoutes.indexOf(route) === -1;
+	        var paramsChanged = leaveRoutes.indexOf(route) !== -1;
+
+	        if (isNew || paramsChanged) enterRoutes.push(route);else changeRoutes.push(route);
+	      });
+	    })();
+	  } else {
+	    leaveRoutes = [];
+	    changeRoutes = [];
+	    enterRoutes = nextRoutes;
+	  }
+
+	  return {
+	    leaveRoutes: leaveRoutes,
+	    changeRoutes: changeRoutes,
+	    enterRoutes: enterRoutes
+	  };
+	}
+
+	exports.default = computeChangedRoutes;
+	module.exports = exports['default'];
+
+/***/ },
+/* 459 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+	exports.runEnterHooks = runEnterHooks;
+	exports.runChangeHooks = runChangeHooks;
+	exports.runLeaveHooks = runLeaveHooks;
+
+	var _AsyncUtils = __webpack_require__(460);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function createTransitionHook(hook, route, asyncArity) {
+	  return function () {
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    hook.apply(route, args);
+
+	    if (hook.length < asyncArity) {
+	      var callback = args[args.length - 1];
+	      // Assume hook executes synchronously and
+	      // automatically call the callback.
+	      callback();
+	    }
+	  };
+	}
+
+	function getEnterHooks(routes) {
+	  return routes.reduce(function (hooks, route) {
+	    if (route.onEnter) hooks.push(createTransitionHook(route.onEnter, route, 3));
+
+	    return hooks;
+	  }, []);
+	}
+
+	function getChangeHooks(routes) {
+	  return routes.reduce(function (hooks, route) {
+	    if (route.onChange) hooks.push(createTransitionHook(route.onChange, route, 4));
+	    return hooks;
+	  }, []);
+	}
+
+	function runTransitionHooks(length, iter, callback) {
+	  if (!length) {
+	    callback();
+	    return;
+	  }
+
+	  var redirectInfo = void 0;
+	  function replace(location, deprecatedPathname, deprecatedQuery) {
+	    if (deprecatedPathname) {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`replaceState(state, pathname, query) is deprecated; use `replace(location)` with a location descriptor instead. http://tiny.cc/router-isActivedeprecated') : void 0;
+	      redirectInfo = {
+	        pathname: deprecatedPathname,
+	        query: deprecatedQuery,
+	        state: location
+	      };
+
+	      return;
+	    }
+
+	    redirectInfo = location;
+	  }
+
+	  (0, _AsyncUtils.loopAsync)(length, function (index, next, done) {
+	    iter(index, replace, function (error) {
+	      if (error || redirectInfo) {
+	        done(error, redirectInfo); // No need to continue.
+	      } else {
+	        next();
+	      }
+	    });
+	  }, callback);
+	}
+
+	/**
+	 * Runs all onEnter hooks in the given array of routes in order
+	 * with onEnter(nextState, replace, callback) and calls
+	 * callback(error, redirectInfo) when finished. The first hook
+	 * to use replace short-circuits the loop.
+	 *
+	 * If a hook needs to run asynchronously, it may use the callback
+	 * function. However, doing so will cause the transition to pause,
+	 * which could lead to a non-responsive UI if the hook is slow.
+	 */
+	function runEnterHooks(routes, nextState, callback) {
+	  var hooks = getEnterHooks(routes);
+	  return runTransitionHooks(hooks.length, function (index, replace, next) {
+	    hooks[index](nextState, replace, next);
+	  }, callback);
+	}
+
+	/**
+	 * Runs all onChange hooks in the given array of routes in order
+	 * with onChange(prevState, nextState, replace, callback) and calls
+	 * callback(error, redirectInfo) when finished. The first hook
+	 * to use replace short-circuits the loop.
+	 *
+	 * If a hook needs to run asynchronously, it may use the callback
+	 * function. However, doing so will cause the transition to pause,
+	 * which could lead to a non-responsive UI if the hook is slow.
+	 */
+	function runChangeHooks(routes, state, nextState, callback) {
+	  var hooks = getChangeHooks(routes);
+	  return runTransitionHooks(hooks.length, function (index, replace, next) {
+	    hooks[index](state, nextState, replace, next);
+	  }, callback);
+	}
+
+	/**
+	 * Runs all onLeave hooks in the given array of routes in order.
+	 */
+	function runLeaveHooks(routes, prevState) {
+	  for (var i = 0, len = routes.length; i < len; ++i) {
+	    if (routes[i].onLeave) routes[i].onLeave.call(routes[i], prevState);
+	  }
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 460 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+	exports.loopAsync = loopAsync;
+	exports.mapAsync = mapAsync;
+	function loopAsync(turns, work, callback) {
+	  var currentTurn = 0,
+	      isDone = false;
+	  var sync = false,
+	      hasNext = false,
+	      doneArgs = void 0;
+
+	  function done() {
+	    isDone = true;
+	    if (sync) {
+	      // Iterate instead of recursing if possible.
+	      doneArgs = [].concat(Array.prototype.slice.call(arguments));
+	      return;
+	    }
+
+	    callback.apply(this, arguments);
+	  }
+
+	  function next() {
+	    if (isDone) {
+	      return;
+	    }
+
+	    hasNext = true;
+	    if (sync) {
+	      // Iterate instead of recursing if possible.
+	      return;
+	    }
+
+	    sync = true;
+
+	    while (!isDone && currentTurn < turns && hasNext) {
+	      hasNext = false;
+	      work.call(this, currentTurn++, next, done);
+	    }
+
+	    sync = false;
+
+	    if (isDone) {
+	      // This means the loop finished synchronously.
+	      callback.apply(this, doneArgs);
+	      return;
+	    }
+
+	    if (currentTurn >= turns && hasNext) {
+	      isDone = true;
+	      callback();
+	    }
+	  }
+
+	  next();
+	}
+
+	function mapAsync(array, work, callback) {
+	  var length = array.length;
+	  var values = [];
+
+	  if (length === 0) return callback(null, values);
+
+	  var isDone = false,
+	      doneCount = 0;
+
+	  function done(index, error, value) {
+	    if (isDone) return;
+
+	    if (error) {
+	      isDone = true;
+	      callback(error);
+	    } else {
+	      values[index] = value;
+
+	      isDone = ++doneCount === length;
+
+	      if (isDone) callback(null, values);
+	    }
+	  }
+
+	  array.forEach(function (item, index) {
+	    work(item, index, function (error, value) {
+	      done(index, error, value);
+	    });
+	  });
+	}
+
+/***/ },
+/* 461 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	exports.default = isActive;
+
+	var _PatternUtils = __webpack_require__(435);
+
+	function deepEqual(a, b) {
+	  if (a == b) return true;
+
+	  if (a == null || b == null) return false;
+
+	  if (Array.isArray(a)) {
+	    return Array.isArray(b) && a.length === b.length && a.every(function (item, index) {
+	      return deepEqual(item, b[index]);
+	    });
+	  }
+
+	  if ((typeof a === 'undefined' ? 'undefined' : _typeof(a)) === 'object') {
+	    for (var p in a) {
+	      if (!Object.prototype.hasOwnProperty.call(a, p)) {
+	        continue;
+	      }
+
+	      if (a[p] === undefined) {
+	        if (b[p] !== undefined) {
+	          return false;
+	        }
+	      } else if (!Object.prototype.hasOwnProperty.call(b, p)) {
+	        return false;
+	      } else if (!deepEqual(a[p], b[p])) {
+	        return false;
+	      }
+	    }
+
+	    return true;
+	  }
+
+	  return String(a) === String(b);
+	}
+
+	/**
+	 * Returns true if the current pathname matches the supplied one, net of
+	 * leading and trailing slash normalization. This is sufficient for an
+	 * indexOnly route match.
+	 */
+	function pathIsActive(pathname, currentPathname) {
+	  // Normalize leading slash for consistency. Leading slash on pathname has
+	  // already been normalized in isActive. See caveat there.
+	  if (currentPathname.charAt(0) !== '/') {
+	    currentPathname = '/' + currentPathname;
+	  }
+
+	  // Normalize the end of both path names too. Maybe `/foo/` shouldn't show
+	  // `/foo` as active, but in this case, we would already have failed the
+	  // match.
+	  if (pathname.charAt(pathname.length - 1) !== '/') {
+	    pathname += '/';
+	  }
+	  if (currentPathname.charAt(currentPathname.length - 1) !== '/') {
+	    currentPathname += '/';
+	  }
+
+	  return currentPathname === pathname;
+	}
+
+	/**
+	 * Returns true if the given pathname matches the active routes and params.
+	 */
+	function routeIsActive(pathname, routes, params) {
+	  var remainingPathname = pathname,
+	      paramNames = [],
+	      paramValues = [];
+
+	  // for...of would work here but it's probably slower post-transpilation.
+	  for (var i = 0, len = routes.length; i < len; ++i) {
+	    var route = routes[i];
+	    var pattern = route.path || '';
+
+	    if (pattern.charAt(0) === '/') {
+	      remainingPathname = pathname;
+	      paramNames = [];
+	      paramValues = [];
+	    }
+
+	    if (remainingPathname !== null && pattern) {
+	      var matched = (0, _PatternUtils.matchPattern)(pattern, remainingPathname);
+	      if (matched) {
+	        remainingPathname = matched.remainingPathname;
+	        paramNames = [].concat(paramNames, matched.paramNames);
+	        paramValues = [].concat(paramValues, matched.paramValues);
+	      } else {
+	        remainingPathname = null;
+	      }
+
+	      if (remainingPathname === '') {
+	        // We have an exact match on the route. Just check that all the params
+	        // match.
+	        // FIXME: This doesn't work on repeated params.
+	        return paramNames.every(function (paramName, index) {
+	          return String(paramValues[index]) === String(params[paramName]);
+	        });
+	      }
+	    }
+	  }
+
+	  return false;
+	}
+
+	/**
+	 * Returns true if all key/value pairs in the given query are
+	 * currently active.
+	 */
+	function queryIsActive(query, activeQuery) {
+	  if (activeQuery == null) return query == null;
+
+	  if (query == null) return true;
+
+	  return deepEqual(query, activeQuery);
+	}
+
+	/**
+	 * Returns true if a <Link> to the given pathname/query combination is
+	 * currently active.
+	 */
+	function isActive(_ref, indexOnly, currentLocation, routes, params) {
+	  var pathname = _ref.pathname;
+	  var query = _ref.query;
+
+	  if (currentLocation == null) return false;
+
+	  // TODO: This is a bit ugly. It keeps around support for treating pathnames
+	  // without preceding slashes as absolute paths, but possibly also works
+	  // around the same quirks with basenames as in matchRoutes.
+	  if (pathname.charAt(0) !== '/') {
+	    pathname = '/' + pathname;
+	  }
+
+	  if (!pathIsActive(pathname, currentLocation.pathname)) {
+	    // The path check is necessary and sufficient for indexOnly, but otherwise
+	    // we still need to check the routes.
+	    if (indexOnly || !routeIsActive(pathname, routes, params)) {
+	      return false;
+	    }
+	  }
+
+	  return queryIsActive(query, currentLocation.query);
+	}
+	module.exports = exports['default'];
+
+/***/ },
+/* 462 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _AsyncUtils = __webpack_require__(460);
+
+	var _makeStateWithLocation = __webpack_require__(463);
+
+	var _makeStateWithLocation2 = _interopRequireDefault(_makeStateWithLocation);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function getComponentsForRoute(nextState, route, callback) {
+	  if (route.component || route.components) {
+	    callback(null, route.component || route.components);
+	    return;
+	  }
+
+	  var getComponent = route.getComponent || route.getComponents;
+	  if (!getComponent) {
+	    callback();
+	    return;
+	  }
+
+	  var location = nextState.location;
+
+	  var nextStateWithLocation = (0, _makeStateWithLocation2.default)(nextState, location);
+
+	  getComponent.call(route, nextStateWithLocation, callback);
+	}
+
+	/**
+	 * Asynchronously fetches all components needed for the given router
+	 * state and calls callback(error, components) when finished.
+	 *
+	 * Note: This operation may finish synchronously if no routes have an
+	 * asynchronous getComponents method.
+	 */
+	function getComponents(nextState, callback) {
+	  (0, _AsyncUtils.mapAsync)(nextState.routes, function (route, index, callback) {
+	    getComponentsForRoute(nextState, route, callback);
+	  }, callback);
+	}
+
+	exports.default = getComponents;
+	module.exports = exports['default'];
+
+/***/ },
+/* 463 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = makeStateWithLocation;
+
+	var _deprecateObjectProperties = __webpack_require__(431);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function makeStateWithLocation(state, location) {
+	  if (process.env.NODE_ENV !== 'production' && _deprecateObjectProperties.canUseMembrane) {
+	    var stateWithLocation = _extends({}, state);
+
+	    // I don't use deprecateObjectProperties here because I want to keep the
+	    // same code path between development and production, in that we just
+	    // assign extra properties to the copy of the state object in both cases.
+
+	    var _loop = function _loop(prop) {
+	      if (!Object.prototype.hasOwnProperty.call(location, prop)) {
+	        return 'continue';
+	      }
+
+	      Object.defineProperty(stateWithLocation, prop, {
+	        get: function get() {
+	          process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'Accessing location properties directly from the first argument to `getComponent`, `getComponents`, `getChildRoutes`, and `getIndexRoute` is deprecated. That argument is now the router state (`nextState` or `partialNextState`) rather than the location. To access the location, use `nextState.location` or `partialNextState.location`.') : void 0;
+	          return location[prop];
+	        }
+	      });
+	    };
+
+	    for (var prop in location) {
+	      var _ret = _loop(prop);
+
+	      if (_ret === 'continue') continue;
+	    }
+
+	    return stateWithLocation;
+	  }
+
+	  return _extends({}, state, location);
+	}
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 464 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	exports.default = matchRoutes;
+
+	var _AsyncUtils = __webpack_require__(460);
+
+	var _makeStateWithLocation = __webpack_require__(463);
+
+	var _makeStateWithLocation2 = _interopRequireDefault(_makeStateWithLocation);
+
+	var _PatternUtils = __webpack_require__(435);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function getChildRoutes(route, location, paramNames, paramValues, callback) {
+	  if (route.childRoutes) {
+	    return [null, route.childRoutes];
+	  }
+	  if (!route.getChildRoutes) {
+	    return [];
+	  }
+
+	  var sync = true,
+	      result = void 0;
+
+	  var partialNextState = {
+	    location: location,
+	    params: createParams(paramNames, paramValues)
+	  };
+
+	  var partialNextStateWithLocation = (0, _makeStateWithLocation2.default)(partialNextState, location);
+
+	  route.getChildRoutes(partialNextStateWithLocation, function (error, childRoutes) {
+	    childRoutes = !error && (0, _RouteUtils.createRoutes)(childRoutes);
+	    if (sync) {
+	      result = [error, childRoutes];
+	      return;
+	    }
+
+	    callback(error, childRoutes);
+	  });
+
+	  sync = false;
+	  return result; // Might be undefined.
+	}
+
+	function getIndexRoute(route, location, paramNames, paramValues, callback) {
+	  if (route.indexRoute) {
+	    callback(null, route.indexRoute);
+	  } else if (route.getIndexRoute) {
+	    var partialNextState = {
+	      location: location,
+	      params: createParams(paramNames, paramValues)
+	    };
+
+	    var partialNextStateWithLocation = (0, _makeStateWithLocation2.default)(partialNextState, location);
+
+	    route.getIndexRoute(partialNextStateWithLocation, function (error, indexRoute) {
+	      callback(error, !error && (0, _RouteUtils.createRoutes)(indexRoute)[0]);
+	    });
+	  } else if (route.childRoutes) {
+	    (function () {
+	      var pathless = route.childRoutes.filter(function (childRoute) {
+	        return !childRoute.path;
+	      });
+
+	      (0, _AsyncUtils.loopAsync)(pathless.length, function (index, next, done) {
+	        getIndexRoute(pathless[index], location, paramNames, paramValues, function (error, indexRoute) {
+	          if (error || indexRoute) {
+	            var routes = [pathless[index]].concat(Array.isArray(indexRoute) ? indexRoute : [indexRoute]);
+	            done(error, routes);
+	          } else {
+	            next();
+	          }
+	        });
+	      }, function (err, routes) {
+	        callback(null, routes);
+	      });
+	    })();
+	  } else {
+	    callback();
+	  }
+	}
+
+	function assignParams(params, paramNames, paramValues) {
+	  return paramNames.reduce(function (params, paramName, index) {
+	    var paramValue = paramValues && paramValues[index];
+
+	    if (Array.isArray(params[paramName])) {
+	      params[paramName].push(paramValue);
+	    } else if (paramName in params) {
+	      params[paramName] = [params[paramName], paramValue];
+	    } else {
+	      params[paramName] = paramValue;
+	    }
+
+	    return params;
+	  }, params);
+	}
+
+	function createParams(paramNames, paramValues) {
+	  return assignParams({}, paramNames, paramValues);
+	}
+
+	function matchRouteDeep(route, location, remainingPathname, paramNames, paramValues, callback) {
+	  var pattern = route.path || '';
+
+	  if (pattern.charAt(0) === '/') {
+	    remainingPathname = location.pathname;
+	    paramNames = [];
+	    paramValues = [];
+	  }
+
+	  // Only try to match the path if the route actually has a pattern, and if
+	  // we're not just searching for potential nested absolute paths.
+	  if (remainingPathname !== null && pattern) {
+	    try {
+	      var matched = (0, _PatternUtils.matchPattern)(pattern, remainingPathname);
+	      if (matched) {
+	        remainingPathname = matched.remainingPathname;
+	        paramNames = [].concat(paramNames, matched.paramNames);
+	        paramValues = [].concat(paramValues, matched.paramValues);
+	      } else {
+	        remainingPathname = null;
+	      }
+	    } catch (error) {
+	      callback(error);
+	    }
+
+	    // By assumption, pattern is non-empty here, which is the prerequisite for
+	    // actually terminating a match.
+	    if (remainingPathname === '') {
+	      var _ret2 = function () {
+	        var match = {
+	          routes: [route],
+	          params: createParams(paramNames, paramValues)
+	        };
+
+	        getIndexRoute(route, location, paramNames, paramValues, function (error, indexRoute) {
+	          if (error) {
+	            callback(error);
+	          } else {
+	            if (Array.isArray(indexRoute)) {
+	              var _match$routes;
+
+	              process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(indexRoute.every(function (route) {
+	                return !route.path;
+	              }), 'Index routes should not have paths') : void 0;
+	              (_match$routes = match.routes).push.apply(_match$routes, indexRoute);
+	            } else if (indexRoute) {
+	              process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(!indexRoute.path, 'Index routes should not have paths') : void 0;
+	              match.routes.push(indexRoute);
+	            }
+
+	            callback(null, match);
+	          }
+	        });
+
+	        return {
+	          v: void 0
+	        };
+	      }();
+
+	      if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
+	    }
+	  }
+
+	  if (remainingPathname != null || route.childRoutes) {
+	    // Either a) this route matched at least some of the path or b)
+	    // we don't have to load this route's children asynchronously. In
+	    // either case continue checking for matches in the subtree.
+	    var onChildRoutes = function onChildRoutes(error, childRoutes) {
+	      if (error) {
+	        callback(error);
+	      } else if (childRoutes) {
+	        // Check the child routes to see if any of them match.
+	        matchRoutes(childRoutes, location, function (error, match) {
+	          if (error) {
+	            callback(error);
+	          } else if (match) {
+	            // A child route matched! Augment the match and pass it up the stack.
+	            match.routes.unshift(route);
+	            callback(null, match);
+	          } else {
+	            callback();
+	          }
+	        }, remainingPathname, paramNames, paramValues);
+	      } else {
+	        callback();
+	      }
+	    };
+
+	    var result = getChildRoutes(route, location, paramNames, paramValues, onChildRoutes);
+	    if (result) {
+	      onChildRoutes.apply(undefined, result);
+	    }
+	  } else {
+	    callback();
+	  }
+	}
+
+	/**
+	 * Asynchronously matches the given location to a set of routes and calls
+	 * callback(error, state) when finished. The state object will have the
+	 * following properties:
+	 *
+	 * - routes       An array of routes that matched, in hierarchical order
+	 * - params       An object of URL parameters
+	 *
+	 * Note: This operation may finish synchronously if no routes have an
+	 * asynchronous getChildRoutes method.
+	 */
+	function matchRoutes(routes, location, callback, remainingPathname) {
+	  var paramNames = arguments.length <= 4 || arguments[4] === undefined ? [] : arguments[4];
+	  var paramValues = arguments.length <= 5 || arguments[5] === undefined ? [] : arguments[5];
+
+	  if (remainingPathname === undefined) {
+	    // TODO: This is a little bit ugly, but it works around a quirk in history
+	    // that strips the leading slash from pathnames when using basenames with
+	    // trailing slashes.
+	    if (location.pathname.charAt(0) !== '/') {
+	      location = _extends({}, location, {
+	        pathname: '/' + location.pathname
+	      });
+	    }
+	    remainingPathname = location.pathname;
+	  }
+
+	  (0, _AsyncUtils.loopAsync)(routes.length, function (index, next, done) {
+	    matchRouteDeep(routes[index], location, remainingPathname, paramNames, paramValues, function (error, match) {
+	      if (error || match) {
+	        done(error, match);
+	      } else {
+	        next();
+	      }
+	    });
+	  }, callback);
+	}
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 465 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _deprecateObjectProperties = __webpack_require__(431);
+
+	var _deprecateObjectProperties2 = _interopRequireDefault(_deprecateObjectProperties);
+
+	var _getRouteParams = __webpack_require__(466);
+
+	var _getRouteParams2 = _interopRequireDefault(_getRouteParams);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var array = _React$PropTypes.array;
+	var func = _React$PropTypes.func;
+	var object = _React$PropTypes.object;
+
+	/**
+	 * A <RouterContext> renders the component tree for a given router state
+	 * and sets the history object and the current location in context.
+	 */
+
+	var RouterContext = _react2.default.createClass({
+	  displayName: 'RouterContext',
+
+
+	  propTypes: {
+	    history: object,
+	    router: object.isRequired,
+	    location: object.isRequired,
+	    routes: array.isRequired,
+	    params: object.isRequired,
+	    components: array.isRequired,
+	    createElement: func.isRequired
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      createElement: _react2.default.createElement
+	    };
+	  },
+
+
+	  childContextTypes: {
+	    history: object,
+	    location: object.isRequired,
+	    router: object.isRequired
+	  },
+
+	  getChildContext: function getChildContext() {
+	    var _props = this.props;
+	    var router = _props.router;
+	    var history = _props.history;
+	    var location = _props.location;
+
+	    if (!router) {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`<RouterContext>` expects a `router` rather than a `history`') : void 0;
+
+	      router = _extends({}, history, {
+	        setRouteLeaveHook: history.listenBeforeLeavingRoute
+	      });
+	      delete router.listenBeforeLeavingRoute;
+	    }
+
+	    if (process.env.NODE_ENV !== 'production') {
+	      location = (0, _deprecateObjectProperties2.default)(location, '`context.location` is deprecated, please use a route component\'s `props.location` instead. http://tiny.cc/router-accessinglocation');
+	    }
+
+	    return { history: history, location: location, router: router };
+	  },
+	  createElement: function createElement(component, props) {
+	    return component == null ? null : this.props.createElement(component, props);
+	  },
+	  render: function render() {
+	    var _this = this;
+
+	    var _props2 = this.props;
+	    var history = _props2.history;
+	    var location = _props2.location;
+	    var routes = _props2.routes;
+	    var params = _props2.params;
+	    var components = _props2.components;
+
+	    var element = null;
+
+	    if (components) {
+	      element = components.reduceRight(function (element, components, index) {
+	        if (components == null) return element; // Don't create new children; use the grandchildren.
+
+	        var route = routes[index];
+	        var routeParams = (0, _getRouteParams2.default)(route, params);
+	        var props = {
+	          history: history,
+	          location: location,
+	          params: params,
+	          route: route,
+	          routeParams: routeParams,
+	          routes: routes
+	        };
+
+	        if ((0, _RouteUtils.isReactChildren)(element)) {
+	          props.children = element;
+	        } else if (element) {
+	          for (var prop in element) {
+	            if (Object.prototype.hasOwnProperty.call(element, prop)) props[prop] = element[prop];
+	          }
+	        }
+
+	        if ((typeof components === 'undefined' ? 'undefined' : _typeof(components)) === 'object') {
+	          var elements = {};
+
+	          for (var key in components) {
+	            if (Object.prototype.hasOwnProperty.call(components, key)) {
+	              // Pass through the key as a prop to createElement to allow
+	              // custom createElement functions to know which named component
+	              // they're rendering, for e.g. matching up to fetched data.
+	              elements[key] = _this.createElement(components[key], _extends({
+	                key: key }, props));
+	            }
+	          }
+
+	          return elements;
+	        }
+
+	        return _this.createElement(components, props);
+	      }, element);
+	    }
+
+	    !(element === null || element === false || _react2.default.isValidElement(element)) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'The root route must render a single element') : (0, _invariant2.default)(false) : void 0;
+
+	    return element;
+	  }
+	});
+
+	exports.default = RouterContext;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 466 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _PatternUtils = __webpack_require__(435);
+
+	/**
+	 * Extracts an object of params the given route cares about from
+	 * the given params object.
+	 */
+	function getRouteParams(route, params) {
+	  var routeParams = {};
+
+	  if (!route.path) return routeParams;
+
+	  (0, _PatternUtils.getParamNames)(route.path).forEach(function (p) {
+	    if (Object.prototype.hasOwnProperty.call(params, p)) {
+	      routeParams[p] = params[p];
+	    }
+	  });
+
+	  return routeParams;
+	}
+
+	exports.default = getRouteParams;
+	module.exports = exports['default'];
+
+/***/ },
+/* 467 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.createRouterObject = createRouterObject;
+	exports.createRoutingHistory = createRoutingHistory;
+
+	var _deprecateObjectProperties = __webpack_require__(431);
+
+	var _deprecateObjectProperties2 = _interopRequireDefault(_deprecateObjectProperties);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function createRouterObject(history, transitionManager) {
+	  return _extends({}, history, {
+	    setRouteLeaveHook: transitionManager.listenBeforeLeavingRoute,
+	    isActive: transitionManager.isActive
+	  });
+	}
+
+	// deprecated
+	function createRoutingHistory(history, transitionManager) {
+	  history = _extends({}, history, transitionManager);
+
+	  if (process.env.NODE_ENV !== 'production') {
+	    history = (0, _deprecateObjectProperties2.default)(history, '`props.history` and `context.history` are deprecated. Please use `context.router`. http://tiny.cc/router-contextchanges');
+	  }
+
+	  return history;
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 468 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _PropTypes = __webpack_require__(430);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var bool = _React$PropTypes.bool;
+	var object = _React$PropTypes.object;
+	var string = _React$PropTypes.string;
+	var func = _React$PropTypes.func;
+	var oneOfType = _React$PropTypes.oneOfType;
+
+
+	function isLeftClickEvent(event) {
+	  return event.button === 0;
+	}
+
+	function isModifiedEvent(event) {
+	  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+	}
+
+	// TODO: De-duplicate against hasAnyProperties in createTransitionManager.
+	function isEmptyObject(object) {
+	  for (var p in object) {
+	    if (Object.prototype.hasOwnProperty.call(object, p)) return false;
+	  }return true;
+	}
+
+	function createLocationDescriptor(to, _ref) {
+	  var query = _ref.query;
+	  var hash = _ref.hash;
+	  var state = _ref.state;
+
+	  if (query || hash || state) {
+	    return { pathname: to, query: query, hash: hash, state: state };
+	  }
+
+	  return to;
+	}
+
+	/**
+	 * A <Link> is used to create an <a> element that links to a route.
+	 * When that route is active, the link gets the value of its
+	 * activeClassName prop.
+	 *
+	 * For example, assuming you have the following route:
+	 *
+	 *   <Route path="/posts/:postID" component={Post} />
+	 *
+	 * You could use the following component to link to that route:
+	 *
+	 *   <Link to={`/posts/${post.id}`} />
+	 *
+	 * Links may pass along location state and/or query string parameters
+	 * in the state/query props, respectively.
+	 *
+	 *   <Link ... query={{ show: true }} state={{ the: 'state' }} />
+	 */
+	var Link = _react2.default.createClass({
+	  displayName: 'Link',
+
+
+	  contextTypes: {
+	    router: _PropTypes.routerShape
+	  },
+
+	  propTypes: {
+	    to: oneOfType([string, object]),
+	    query: object,
+	    hash: string,
+	    state: object,
+	    activeStyle: object,
+	    activeClassName: string,
+	    onlyActiveOnIndex: bool.isRequired,
+	    onClick: func,
+	    target: string
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      onlyActiveOnIndex: false,
+	      style: {}
+	    };
+	  },
+	  handleClick: function handleClick(event) {
+	    if (this.props.onClick) this.props.onClick(event);
+
+	    if (event.defaultPrevented) return;
+
+	    !this.context.router ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Link>s rendered outside of a router context cannot navigate.') : (0, _invariant2.default)(false) : void 0;
+
+	    if (isModifiedEvent(event) || !isLeftClickEvent(event)) return;
+
+	    // If target prop is set (e.g. to "_blank"), let browser handle link.
+	    /* istanbul ignore if: untestable with Karma */
+	    if (this.props.target) return;
+
+	    event.preventDefault();
+
+	    var _props = this.props;
+	    var to = _props.to;
+	    var query = _props.query;
+	    var hash = _props.hash;
+	    var state = _props.state;
+
+	    var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
+
+	    this.context.router.push(location);
+	  },
+	  render: function render() {
+	    var _props2 = this.props;
+	    var to = _props2.to;
+	    var query = _props2.query;
+	    var hash = _props2.hash;
+	    var state = _props2.state;
+	    var activeClassName = _props2.activeClassName;
+	    var activeStyle = _props2.activeStyle;
+	    var onlyActiveOnIndex = _props2.onlyActiveOnIndex;
+
+	    var props = _objectWithoutProperties(_props2, ['to', 'query', 'hash', 'state', 'activeClassName', 'activeStyle', 'onlyActiveOnIndex']);
+
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(!(query || hash || state), 'the `query`, `hash`, and `state` props on `<Link>` are deprecated, use `<Link to={{ pathname, query, hash, state }}/>. http://tiny.cc/router-isActivedeprecated') : void 0;
+
+	    // Ignore if rendered outside the context of router, simplifies unit testing.
+	    var router = this.context.router;
+
+
+	    if (router) {
+	      // If user does not specify a `to` prop, return an empty anchor tag.
+	      if (to == null) {
+	        return _react2.default.createElement('a', props);
+	      }
+
+	      var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
+	      props.href = router.createHref(location);
+
+	      if (activeClassName || activeStyle != null && !isEmptyObject(activeStyle)) {
+	        if (router.isActive(location, onlyActiveOnIndex)) {
+	          if (activeClassName) {
+	            if (props.className) {
+	              props.className += ' ' + activeClassName;
+	            } else {
+	              props.className = activeClassName;
+	            }
+	          }
+
+	          if (activeStyle) props.style = _extends({}, props.style, activeStyle);
+	        }
+	      }
+	    }
+
+	    return _react2.default.createElement('a', _extends({}, props, { onClick: this.handleClick }));
+	  }
+	});
+
+	exports.default = Link;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 469 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Link = __webpack_require__(468);
+
+	var _Link2 = _interopRequireDefault(_Link);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * An <IndexLink> is used to link to an <IndexRoute>.
+	 */
+	var IndexLink = _react2.default.createClass({
+	  displayName: 'IndexLink',
+	  render: function render() {
+	    return _react2.default.createElement(_Link2.default, _extends({}, this.props, { onlyActiveOnIndex: true }));
+	  }
+	});
+
+	exports.default = IndexLink;
+	module.exports = exports['default'];
+
+/***/ },
+/* 470 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = withRouter;
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _hoistNonReactStatics = __webpack_require__(471);
+
+	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
+
+	var _PropTypes = __webpack_require__(430);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function getDisplayName(WrappedComponent) {
+	  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+	}
+
+	function withRouter(WrappedComponent, options) {
+	  var withRef = options && options.withRef;
+
+	  var WithRouter = _react2.default.createClass({
+	    displayName: 'WithRouter',
+
+	    contextTypes: { router: _PropTypes.routerShape },
+	    propTypes: { router: _PropTypes.routerShape },
+
+	    getWrappedInstance: function getWrappedInstance() {
+	      !withRef ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'To access the wrapped instance, you need to specify ' + '`{ withRef: true }` as the second argument of the withRouter() call.') : (0, _invariant2.default)(false) : void 0;
+
+	      return this.wrappedInstance;
+	    },
+	    render: function render() {
+	      var _this = this;
+
+	      var router = this.props.router || this.context.router;
+	      var props = _extends({}, this.props, { router: router });
+
+	      if (withRef) {
+	        props.ref = function (c) {
+	          _this.wrappedInstance = c;
+	        };
+	      }
+
+	      return _react2.default.createElement(WrappedComponent, props);
+	    }
+	  });
+
+	  WithRouter.displayName = 'withRouter(' + getDisplayName(WrappedComponent) + ')';
+	  WithRouter.WrappedComponent = WrappedComponent;
+
+	  return (0, _hoistNonReactStatics2.default)(WithRouter, WrappedComponent);
+	}
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 471 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2015, Yahoo! Inc.
+	 * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+	 */
+	'use strict';
+
+	var REACT_STATICS = {
+	    childContextTypes: true,
+	    contextTypes: true,
+	    defaultProps: true,
+	    displayName: true,
+	    getDefaultProps: true,
+	    mixins: true,
+	    propTypes: true,
+	    type: true
+	};
+
+	var KNOWN_STATICS = {
+	    name: true,
+	    length: true,
+	    prototype: true,
+	    caller: true,
+	    arguments: true,
+	    arity: true
+	};
+
+	var isGetOwnPropertySymbolsAvailable = typeof Object.getOwnPropertySymbols === 'function';
+
+	module.exports = function hoistNonReactStatics(targetComponent, sourceComponent, customStatics) {
+	    if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
+	        var keys = Object.getOwnPropertyNames(sourceComponent);
+
+	        /* istanbul ignore else */
+	        if (isGetOwnPropertySymbolsAvailable) {
+	            keys = keys.concat(Object.getOwnPropertySymbols(sourceComponent));
+	        }
+
+	        for (var i = 0; i < keys.length; ++i) {
+	            if (!REACT_STATICS[keys[i]] && !KNOWN_STATICS[keys[i]] && (!customStatics || !customStatics[keys[i]])) {
+	                try {
+	                    targetComponent[keys[i]] = sourceComponent[keys[i]];
+	                } catch (error) {
+
+	                }
+	            }
+	        }
+	    }
+
+	    return targetComponent;
+	};
+
+
+/***/ },
+/* 472 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _Redirect = __webpack_require__(473);
+
+	var _Redirect2 = _interopRequireDefault(_Redirect);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var string = _React$PropTypes.string;
+	var object = _React$PropTypes.object;
+
+	/**
+	 * An <IndexRedirect> is used to redirect from an indexRoute.
+	 */
+
+	var IndexRedirect = _react2.default.createClass({
+	  displayName: 'IndexRedirect',
+
+
+	  statics: {
+	    createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
+	      /* istanbul ignore else: sanity check */
+	      if (parentRoute) {
+	        parentRoute.indexRoute = _Redirect2.default.createRouteFromReactElement(element);
+	      } else {
+	        process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'An <IndexRedirect> does not make sense at the root of your route config') : void 0;
+	      }
+	    }
+	  },
+
+	  propTypes: {
+	    to: string.isRequired,
+	    query: object,
+	    state: object,
+	    onEnter: _InternalPropTypes.falsy,
+	    children: _InternalPropTypes.falsy
+	  },
+
+	  /* istanbul ignore next: sanity check */
+	  render: function render() {
+	     true ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<IndexRedirect> elements are for router configuration only and should not be rendered') : (0, _invariant2.default)(false) : void 0;
+	  }
+	});
+
+	exports.default = IndexRedirect;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 473 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _PatternUtils = __webpack_require__(435);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var string = _React$PropTypes.string;
+	var object = _React$PropTypes.object;
+
+	/**
+	 * A <Redirect> is used to declare another URL path a client should
+	 * be sent to when they request a given URL.
+	 *
+	 * Redirects are placed alongside routes in the route configuration
+	 * and are traversed in the same manner.
+	 */
+
+	var Redirect = _react2.default.createClass({
+	  displayName: 'Redirect',
+
+
+	  statics: {
+	    createRouteFromReactElement: function createRouteFromReactElement(element) {
+	      var route = (0, _RouteUtils.createRouteFromReactElement)(element);
+
+	      if (route.from) route.path = route.from;
+
+	      route.onEnter = function (nextState, replace) {
+	        var location = nextState.location;
+	        var params = nextState.params;
+
+
+	        var pathname = void 0;
+	        if (route.to.charAt(0) === '/') {
+	          pathname = (0, _PatternUtils.formatPattern)(route.to, params);
+	        } else if (!route.to) {
+	          pathname = location.pathname;
+	        } else {
+	          var routeIndex = nextState.routes.indexOf(route);
+	          var parentPattern = Redirect.getRoutePattern(nextState.routes, routeIndex - 1);
+	          var pattern = parentPattern.replace(/\/*$/, '/') + route.to;
+	          pathname = (0, _PatternUtils.formatPattern)(pattern, params);
+	        }
+
+	        replace({
+	          pathname: pathname,
+	          query: route.query || location.query,
+	          state: route.state || location.state
+	        });
+	      };
+
+	      return route;
+	    },
+	    getRoutePattern: function getRoutePattern(routes, routeIndex) {
+	      var parentPattern = '';
+
+	      for (var i = routeIndex; i >= 0; i--) {
+	        var route = routes[i];
+	        var pattern = route.path || '';
+
+	        parentPattern = pattern.replace(/\/*$/, '/') + parentPattern;
+
+	        if (pattern.indexOf('/') === 0) break;
+	      }
+
+	      return '/' + parentPattern;
+	    }
+	  },
+
+	  propTypes: {
+	    path: string,
+	    from: string, // Alias for path
+	    to: string.isRequired,
+	    query: object,
+	    state: object,
+	    onEnter: _InternalPropTypes.falsy,
+	    children: _InternalPropTypes.falsy
+	  },
+
+	  /* istanbul ignore next: sanity check */
+	  render: function render() {
+	     true ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Redirect> elements are for router configuration only and should not be rendered') : (0, _invariant2.default)(false) : void 0;
+	  }
+	});
+
+	exports.default = Redirect;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 474 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var func = _react2.default.PropTypes.func;
+
+	/**
+	 * An <IndexRoute> is used to specify its parent's <Route indexRoute> in
+	 * a JSX route config.
+	 */
+
+	var IndexRoute = _react2.default.createClass({
+	  displayName: 'IndexRoute',
+
+
+	  statics: {
+	    createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
+	      /* istanbul ignore else: sanity check */
+	      if (parentRoute) {
+	        parentRoute.indexRoute = (0, _RouteUtils.createRouteFromReactElement)(element);
+	      } else {
+	        process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'An <IndexRoute> does not make sense at the root of your route config') : void 0;
+	      }
+	    }
+	  },
+
+	  propTypes: {
+	    path: _InternalPropTypes.falsy,
+	    component: _InternalPropTypes.component,
+	    components: _InternalPropTypes.components,
+	    getComponent: func,
+	    getComponents: func
+	  },
+
+	  /* istanbul ignore next: sanity check */
+	  render: function render() {
+	     true ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<IndexRoute> elements are for router configuration only and should not be rendered') : (0, _invariant2.default)(false) : void 0;
+	  }
+	});
+
+	exports.default = IndexRoute;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 475 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var _React$PropTypes = _react2.default.PropTypes;
+	var string = _React$PropTypes.string;
+	var func = _React$PropTypes.func;
+
+	/**
+	 * A <Route> is used to declare which components are rendered to the
+	 * page when the URL matches a given pattern.
+	 *
+	 * Routes are arranged in a nested tree structure. When a new URL is
+	 * requested, the tree is searched depth-first to find a route whose
+	 * path matches the URL.  When one is found, all routes in the tree
+	 * that lead to it are considered "active" and their components are
+	 * rendered into the DOM, nested in the same order as in the tree.
+	 */
+
+	var Route = _react2.default.createClass({
+	  displayName: 'Route',
+
+
+	  statics: {
+	    createRouteFromReactElement: _RouteUtils.createRouteFromReactElement
+	  },
+
+	  propTypes: {
+	    path: string,
+	    component: _InternalPropTypes.component,
+	    components: _InternalPropTypes.components,
+	    getComponent: func,
+	    getComponents: func
+	  },
+
+	  /* istanbul ignore next: sanity check */
+	  render: function render() {
+	     true ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Route> elements are for router configuration only and should not be rendered') : (0, _invariant2.default)(false) : void 0;
+	  }
+	});
+
+	exports.default = Route;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 476 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _InternalPropTypes = __webpack_require__(434);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * A mixin that adds the "history" instance variable to components.
+	 */
+	var History = {
+
+	  contextTypes: {
+	    history: _InternalPropTypes.history
+	  },
+
+	  componentWillMount: function componentWillMount() {
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'the `History` mixin is deprecated, please access `context.router` with your own `contextTypes`. http://tiny.cc/router-historymixin') : void 0;
+	    this.history = this.context.history;
+	  }
+	};
+
+	exports.default = History;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 477 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var object = _react2.default.PropTypes.object;
+
+	/**
+	 * The Lifecycle mixin adds the routerWillLeave lifecycle method to a
+	 * component that may be used to cancel a transition or prompt the user
+	 * for confirmation.
+	 *
+	 * On standard transitions, routerWillLeave receives a single argument: the
+	 * location we're transitioning to. To cancel the transition, return false.
+	 * To prompt the user for confirmation, return a prompt message (string).
+	 *
+	 * During the beforeunload event (assuming you're using the useBeforeUnload
+	 * history enhancer), routerWillLeave does not receive a location object
+	 * because it isn't possible for us to know the location we're transitioning
+	 * to. In this case routerWillLeave must return a prompt message to prevent
+	 * the user from closing the window/tab.
+	 */
+
+	var Lifecycle = {
+
+	  contextTypes: {
+	    history: object.isRequired,
+	    // Nested children receive the route as context, either
+	    // set by the route component using the RouteContext mixin
+	    // or by some other ancestor.
+	    route: object
+	  },
+
+	  propTypes: {
+	    // Route components receive the route object as a prop.
+	    route: object
+	  },
+
+	  componentDidMount: function componentDidMount() {
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'the `Lifecycle` mixin is deprecated, please use `context.router.setRouteLeaveHook(route, hook)`. http://tiny.cc/router-lifecyclemixin') : void 0;
+	    !this.routerWillLeave ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'The Lifecycle mixin requires you to define a routerWillLeave method') : (0, _invariant2.default)(false) : void 0;
+
+	    var route = this.props.route || this.context.route;
+
+	    !route ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'The Lifecycle mixin must be used on either a) a <Route component> or ' + 'b) a descendant of a <Route component> that uses the RouteContext mixin') : (0, _invariant2.default)(false) : void 0;
+
+	    this._unlistenBeforeLeavingRoute = this.context.history.listenBeforeLeavingRoute(route, this.routerWillLeave);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    if (this._unlistenBeforeLeavingRoute) this._unlistenBeforeLeavingRoute();
+	  }
+	};
+
+	exports.default = Lifecycle;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 478 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var object = _react2.default.PropTypes.object;
+
+	/**
+	 * The RouteContext mixin provides a convenient way for route
+	 * components to set the route in context. This is needed for
+	 * routes that render elements that want to use the Lifecycle
+	 * mixin to prevent transitions.
+	 */
+
+	var RouteContext = {
+
+	  propTypes: {
+	    route: object.isRequired
+	  },
+
+	  childContextTypes: {
+	    route: object.isRequired
+	  },
+
+	  getChildContext: function getChildContext() {
+	    return {
+	      route: this.props.route
+	    };
+	  },
+	  componentWillMount: function componentWillMount() {
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, 'The `RouteContext` mixin is deprecated. You can provide `this.props.route` on context with your own `contextTypes`. http://tiny.cc/router-routecontextmixin') : void 0;
+	  }
+	};
+
+	exports.default = RouteContext;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 479 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _useQueries = __webpack_require__(454);
+
+	var _useQueries2 = _interopRequireDefault(_useQueries);
+
+	var _createTransitionManager = __webpack_require__(457);
+
+	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	/**
+	 * Returns a new createHistory function that may be used to create
+	 * history objects that know about routing.
+	 *
+	 * Enhances history objects with the following methods:
+	 *
+	 * - listen((error, nextState) => {})
+	 * - listenBeforeLeavingRoute(route, (nextLocation) => {})
+	 * - match(location, (error, redirectLocation, nextState) => {})
+	 * - isActive(pathname, query, indexOnly=false)
+	 */
+	function useRoutes(createHistory) {
+	  process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`useRoutes` is deprecated. Please use `createTransitionManager` instead.') : void 0;
+
+	  return function () {
+	    var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	    var routes = _ref.routes;
+
+	    var options = _objectWithoutProperties(_ref, ['routes']);
+
+	    var history = (0, _useQueries2.default)(createHistory)(options);
+	    var transitionManager = (0, _createTransitionManager2.default)(history, routes);
+	    return _extends({}, history, transitionManager);
+	  };
+	}
+
+	exports.default = useRoutes;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 480 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _RouterContext = __webpack_require__(465);
+
+	var _RouterContext2 = _interopRequireDefault(_RouterContext);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var RoutingContext = _react2.default.createClass({
+	  displayName: 'RoutingContext',
+	  componentWillMount: function componentWillMount() {
+	    process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(false, '`RoutingContext` has been renamed to `RouterContext`. Please use `import { RouterContext } from \'react-router\'`. http://tiny.cc/router-routercontext') : void 0;
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(_RouterContext2.default, this.props);
+	  }
+	});
+
+	exports.default = RoutingContext;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 481 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _Actions = __webpack_require__(440);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _createMemoryHistory = __webpack_require__(482);
+
+	var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
+
+	var _createTransitionManager = __webpack_require__(457);
+
+	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+	var _RouteUtils = __webpack_require__(429);
+
+	var _RouterUtils = __webpack_require__(467);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	/**
+	 * A high-level API to be used for server-side rendering.
+	 *
+	 * This function matches a location to a set of routes and calls
+	 * callback(error, redirectLocation, renderProps) when finished.
+	 *
+	 * Note: You probably don't want to use this in a browser unless you're using
+	 * server-side rendering with async routes.
+	 */
+	function match(_ref, callback) {
+	  var history = _ref.history;
+	  var routes = _ref.routes;
+	  var location = _ref.location;
+
+	  var options = _objectWithoutProperties(_ref, ['history', 'routes', 'location']);
+
+	  !(history || location) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'match needs a history or a location') : (0, _invariant2.default)(false) : void 0;
+
+	  history = history ? history : (0, _createMemoryHistory2.default)(options);
+	  var transitionManager = (0, _createTransitionManager2.default)(history, (0, _RouteUtils.createRoutes)(routes));
+
+	  var unlisten = void 0;
+
+	  if (location) {
+	    // Allow match({ location: '/the/path', ... })
+	    location = history.createLocation(location);
+	  } else {
+	    // Pick up the location from the history via synchronous history.listen
+	    // call if needed.
+	    unlisten = history.listen(function (historyLocation) {
+	      location = historyLocation;
+	    });
+	  }
+
+	  var router = (0, _RouterUtils.createRouterObject)(history, transitionManager);
+	  history = (0, _RouterUtils.createRoutingHistory)(history, transitionManager);
+
+	  transitionManager.match(location, function (error, redirectLocation, nextState) {
+	    callback(error, redirectLocation && router.createLocation(redirectLocation, _Actions.REPLACE), nextState && _extends({}, nextState, {
+	      history: history,
+	      router: router,
+	      matchContext: { history: history, transitionManager: transitionManager, router: router }
+	    }));
+
+	    // Defer removing the listener to here to prevent DOM histories from having
+	    // to unwind DOM event listeners unnecessarily, in case callback renders a
+	    // <Router> and attaches another history listener.
+	    if (unlisten) {
+	      unlisten();
+	    }
+	  });
+	}
+
+	exports.default = match;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 482 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.default = createMemoryHistory;
+
+	var _useQueries = __webpack_require__(454);
+
+	var _useQueries2 = _interopRequireDefault(_useQueries);
+
+	var _useBasename = __webpack_require__(483);
+
+	var _useBasename2 = _interopRequireDefault(_useBasename);
+
+	var _createMemoryHistory = __webpack_require__(484);
+
+	var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function createMemoryHistory(options) {
+	  // signatures and type checking differ between `useRoutes` and
+	  // `createMemoryHistory`, have to create `memoryHistory` first because
+	  // `useQueries` doesn't understand the signature
+	  var memoryHistory = (0, _createMemoryHistory2.default)(options);
+	  var createHistory = function createHistory() {
+	    return memoryHistory;
+	  };
+	  var history = (0, _useQueries2.default)((0, _useBasename2.default)(createHistory))(options);
+	  history.__v2_compatible__ = true;
+	  return history;
+	}
+	module.exports = exports['default'];
+
+/***/ },
+/* 483 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _ExecutionEnvironment = __webpack_require__(442);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _runTransitionHook = __webpack_require__(452);
+
+	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
+
+	var _deprecate = __webpack_require__(453);
+
+	var _deprecate2 = _interopRequireDefault(_deprecate);
+
+	function useBasename(createHistory) {
+	  return function () {
+	    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	    var history = createHistory(options);
+
+	    var basename = options.basename;
+
+	    var checkedBaseHref = false;
+
+	    function checkBaseHref() {
+	      if (checkedBaseHref) {
+	        return;
+	      }
+
+	      // Automatically use the value of <base href> in HTML
+	      // documents as basename if it's not explicitly given.
+	      if (basename == null && _ExecutionEnvironment.canUseDOM) {
+	        var base = document.getElementsByTagName('base')[0];
+	        var baseHref = base && base.getAttribute('href');
+
+	        if (baseHref != null) {
+	          basename = baseHref;
+
+	          process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'Automatically setting basename using <base href> is deprecated and will ' + 'be removed in the next major release. The semantics of <base href> are ' + 'subtly different from basename. Please pass the basename explicitly in ' + 'the options to createHistory') : undefined;
+	        }
+	      }
+
+	      checkedBaseHref = true;
+	    }
+
+	    function addBasename(location) {
+	      checkBaseHref();
+
+	      if (basename && location.basename == null) {
+	        if (location.pathname.indexOf(basename) === 0) {
+	          location.pathname = location.pathname.substring(basename.length);
+	          location.basename = basename;
+
+	          if (location.pathname === '') location.pathname = '/';
+	        } else {
+	          location.basename = '';
+	        }
+	      }
+
+	      return location;
+	    }
+
+	    function prependBasename(location) {
+	      checkBaseHref();
+
+	      if (!basename) return location;
+
+	      if (typeof location === 'string') location = _PathUtils.parsePath(location);
+
+	      var pname = location.pathname;
+	      var normalizedBasename = basename.slice(-1) === '/' ? basename : basename + '/';
+	      var normalizedPathname = pname.charAt(0) === '/' ? pname.slice(1) : pname;
+	      var pathname = normalizedBasename + normalizedPathname;
+
+	      return _extends({}, location, {
+	        pathname: pathname
+	      });
+	    }
+
+	    // Override all read methods with basename-aware versions.
+	    function listenBefore(hook) {
+	      return history.listenBefore(function (location, callback) {
+	        _runTransitionHook2['default'](hook, addBasename(location), callback);
+	      });
+	    }
+
+	    function listen(listener) {
+	      return history.listen(function (location) {
+	        listener(addBasename(location));
+	      });
+	    }
+
+	    // Override all write methods with basename-aware versions.
+	    function push(location) {
+	      history.push(prependBasename(location));
+	    }
+
+	    function replace(location) {
+	      history.replace(prependBasename(location));
+	    }
+
+	    function createPath(location) {
+	      return history.createPath(prependBasename(location));
+	    }
+
+	    function createHref(location) {
+	      return history.createHref(prependBasename(location));
+	    }
+
+	    function createLocation(location) {
+	      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	        args[_key - 1] = arguments[_key];
+	      }
+
+	      return addBasename(history.createLocation.apply(history, [prependBasename(location)].concat(args)));
+	    }
+
+	    // deprecated
+	    function pushState(state, path) {
+	      if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	      push(_extends({ state: state }, path));
+	    }
+
+	    // deprecated
+	    function replaceState(state, path) {
+	      if (typeof path === 'string') path = _PathUtils.parsePath(path);
+
+	      replace(_extends({ state: state }, path));
+	    }
+
+	    return _extends({}, history, {
+	      listenBefore: listenBefore,
+	      listen: listen,
+	      push: push,
+	      replace: replace,
+	      createPath: createPath,
+	      createHref: createHref,
+	      createLocation: createLocation,
+
+	      pushState: _deprecate2['default'](pushState, 'pushState is deprecated; use push instead'),
+	      replaceState: _deprecate2['default'](replaceState, 'replaceState is deprecated; use replace instead')
+	    });
+	  };
+	}
+
+	exports['default'] = useBasename;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 484 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _warning = __webpack_require__(439);
+
+	var _warning2 = _interopRequireDefault(_warning);
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _Actions = __webpack_require__(440);
+
+	var _createHistory = __webpack_require__(446);
+
+	var _createHistory2 = _interopRequireDefault(_createHistory);
+
+	function createStateStorage(entries) {
+	  return entries.filter(function (entry) {
+	    return entry.state;
+	  }).reduce(function (memo, entry) {
+	    memo[entry.key] = entry.state;
+	    return memo;
+	  }, {});
+	}
+
+	function createMemoryHistory() {
+	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  if (Array.isArray(options)) {
+	    options = { entries: options };
+	  } else if (typeof options === 'string') {
+	    options = { entries: [options] };
+	  }
+
+	  var history = _createHistory2['default'](_extends({}, options, {
+	    getCurrentLocation: getCurrentLocation,
+	    finishTransition: finishTransition,
+	    saveState: saveState,
+	    go: go
+	  }));
+
+	  var _options = options;
+	  var entries = _options.entries;
+	  var current = _options.current;
+
+	  if (typeof entries === 'string') {
+	    entries = [entries];
+	  } else if (!Array.isArray(entries)) {
+	    entries = ['/'];
+	  }
+
+	  entries = entries.map(function (entry) {
+	    var key = history.createKey();
+
+	    if (typeof entry === 'string') return { pathname: entry, key: key };
+
+	    if (typeof entry === 'object' && entry) return _extends({}, entry, { key: key });
+
+	     true ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'Unable to create history entry from %s', entry) : _invariant2['default'](false) : undefined;
+	  });
+
+	  if (current == null) {
+	    current = entries.length - 1;
+	  } else {
+	    !(current >= 0 && current < entries.length) ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'Current index must be >= 0 and < %s, was %s', entries.length, current) : _invariant2['default'](false) : undefined;
+	  }
+
+	  var storage = createStateStorage(entries);
+
+	  function saveState(key, state) {
+	    storage[key] = state;
+	  }
+
+	  function readState(key) {
+	    return storage[key];
+	  }
+
+	  function getCurrentLocation() {
+	    var entry = entries[current];
+	    var basename = entry.basename;
+	    var pathname = entry.pathname;
+	    var search = entry.search;
+
+	    var path = (basename || '') + pathname + (search || '');
+
+	    var key = undefined,
+	        state = undefined;
+	    if (entry.key) {
+	      key = entry.key;
+	      state = readState(key);
+	    } else {
+	      key = history.createKey();
+	      state = null;
+	      entry.key = key;
+	    }
+
+	    var location = _PathUtils.parsePath(path);
+
+	    return history.createLocation(_extends({}, location, { state: state }), undefined, key);
+	  }
+
+	  function canGo(n) {
+	    var index = current + n;
+	    return index >= 0 && index < entries.length;
+	  }
+
+	  function go(n) {
+	    if (n) {
+	      if (!canGo(n)) {
+	        process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'Cannot go(%s) there is not enough history', n) : undefined;
+	        return;
+	      }
+
+	      current += n;
+
+	      var currentLocation = getCurrentLocation();
+
+	      // change action to POP
+	      history.transitionTo(_extends({}, currentLocation, { action: _Actions.POP }));
+	    }
+	  }
+
+	  function finishTransition(location) {
+	    switch (location.action) {
+	      case _Actions.PUSH:
+	        current += 1;
+
+	        // if we are not on the top of stack
+	        // remove rest and push new
+	        if (current < entries.length) entries.splice(current);
+
+	        entries.push(location);
+	        saveState(location.key, location.state);
+	        break;
+	      case _Actions.REPLACE:
+	        entries[current] = location;
+	        saveState(location.key, location.state);
+	        break;
+	    }
+	  }
+
+	  return history;
+	}
+
+	exports['default'] = createMemoryHistory;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 485 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	exports.default = useRouterHistory;
+
+	var _useQueries = __webpack_require__(454);
+
+	var _useQueries2 = _interopRequireDefault(_useQueries);
+
+	var _useBasename = __webpack_require__(483);
+
+	var _useBasename2 = _interopRequireDefault(_useBasename);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function useRouterHistory(createHistory) {
+	  return function (options) {
+	    var history = (0, _useQueries2.default)((0, _useBasename2.default)(createHistory))(options);
+	    history.__v2_compatible__ = true;
+	    return history;
+	  };
+	}
+	module.exports = exports['default'];
+
+/***/ },
+/* 486 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _RouterContext = __webpack_require__(465);
+
+	var _RouterContext2 = _interopRequireDefault(_RouterContext);
+
+	var _routerWarning = __webpack_require__(432);
+
+	var _routerWarning2 = _interopRequireDefault(_routerWarning);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function () {
+	  for (var _len = arguments.length, middlewares = Array(_len), _key = 0; _key < _len; _key++) {
+	    middlewares[_key] = arguments[_key];
+	  }
+
+	  if (process.env.NODE_ENV !== 'production') {
+	    middlewares.forEach(function (middleware, index) {
+	      process.env.NODE_ENV !== 'production' ? (0, _routerWarning2.default)(middleware.renderRouterContext || middleware.renderRouteComponent, 'The middleware specified at index ' + index + ' does not appear to be ' + 'a valid React Router middleware.') : void 0;
+	    });
+	  }
+
+	  var withContext = middlewares.map(function (middleware) {
+	    return middleware.renderRouterContext;
+	  }).filter(Boolean);
+	  var withComponent = middlewares.map(function (middleware) {
+	    return middleware.renderRouteComponent;
+	  }).filter(Boolean);
+
+	  var makeCreateElement = function makeCreateElement() {
+	    var baseCreateElement = arguments.length <= 0 || arguments[0] === undefined ? _react.createElement : arguments[0];
+	    return function (Component, props) {
+	      return withComponent.reduceRight(function (previous, renderRouteComponent) {
+	        return renderRouteComponent(previous, props);
+	      }, baseCreateElement(Component, props));
+	    };
+	  };
+
+	  return function (renderProps) {
+	    return withContext.reduceRight(function (previous, renderRouterContext) {
+	      return renderRouterContext(previous, renderProps);
+	    }, _react2.default.createElement(_RouterContext2.default, _extends({}, renderProps, {
+	      createElement: makeCreateElement(renderProps.createElement)
+	    })));
+	  };
+	};
+
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 487 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _createBrowserHistory = __webpack_require__(488);
+
+	var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
+	var _createRouterHistory = __webpack_require__(489);
+
+	var _createRouterHistory2 = _interopRequireDefault(_createRouterHistory);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = (0, _createRouterHistory2.default)(_createBrowserHistory2.default);
+	module.exports = exports['default'];
+
+/***/ },
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	exports.__esModule = true;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _invariant = __webpack_require__(436);
+
+	var _invariant2 = _interopRequireDefault(_invariant);
+
+	var _Actions = __webpack_require__(440);
+
+	var _PathUtils = __webpack_require__(441);
+
+	var _ExecutionEnvironment = __webpack_require__(442);
+
+	var _DOMUtils = __webpack_require__(443);
+
+	var _DOMStateStorage = __webpack_require__(444);
+
+	var _createDOMHistory = __webpack_require__(445);
+
+	var _createDOMHistory2 = _interopRequireDefault(_createDOMHistory);
+
+	/**
+	 * Creates and returns a history object that uses HTML5's history API
+	 * (pushState, replaceState, and the popstate event) to manage history.
+	 * This is the recommended method of managing history in browsers because
+	 * it provides the cleanest URLs.
+	 *
+	 * Note: In browsers that do not support the HTML5 history API full
+	 * page reloads will be used to preserve URLs.
+	 */
+	function createBrowserHistory() {
+	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'Browser history needs a DOM') : _invariant2['default'](false) : undefined;
+
+	  var forceRefresh = options.forceRefresh;
+
+	  var isSupported = _DOMUtils.supportsHistory();
+	  var useRefresh = !isSupported || forceRefresh;
+
+	  function getCurrentLocation(historyState) {
+	    try {
+	      historyState = historyState || window.history.state || {};
+	    } catch (e) {
+	      historyState = {};
+	    }
+
+	    var path = _DOMUtils.getWindowPath();
+	    var _historyState = historyState;
+	    var key = _historyState.key;
+
+	    var state = undefined;
+	    if (key) {
+	      state = _DOMStateStorage.readState(key);
+	    } else {
+	      state = null;
+	      key = history.createKey();
+
+	      if (isSupported) window.history.replaceState(_extends({}, historyState, { key: key }), null);
+	    }
+
+	    var location = _PathUtils.parsePath(path);
+
+	    return history.createLocation(_extends({}, location, { state: state }), undefined, key);
+	  }
+
+	  function startPopStateListener(_ref) {
+	    var transitionTo = _ref.transitionTo;
+
+	    function popStateListener(event) {
+	      if (event.state === undefined) return; // Ignore extraneous popstate events in WebKit.
+
+	      transitionTo(getCurrentLocation(event.state));
+	    }
+
+	    _DOMUtils.addEventListener(window, 'popstate', popStateListener);
+
+	    return function () {
+	      _DOMUtils.removeEventListener(window, 'popstate', popStateListener);
+	    };
+	  }
+
+	  function finishTransition(location) {
+	    var basename = location.basename;
+	    var pathname = location.pathname;
+	    var search = location.search;
+	    var hash = location.hash;
+	    var state = location.state;
+	    var action = location.action;
+	    var key = location.key;
+
+	    if (action === _Actions.POP) return; // Nothing to do.
+
+	    _DOMStateStorage.saveState(key, state);
+
+	    var path = (basename || '') + pathname + search + hash;
+	    var historyState = {
+	      key: key
+	    };
+
+	    if (action === _Actions.PUSH) {
+	      if (useRefresh) {
+	        window.location.href = path;
+	        return false; // Prevent location update.
+	      } else {
+	          window.history.pushState(historyState, null, path);
+	        }
+	    } else {
+	      // REPLACE
+	      if (useRefresh) {
+	        window.location.replace(path);
+	        return false; // Prevent location update.
+	      } else {
+	          window.history.replaceState(historyState, null, path);
+	        }
+	    }
+	  }
+
+	  var history = _createDOMHistory2['default'](_extends({}, options, {
+	    getCurrentLocation: getCurrentLocation,
+	    finishTransition: finishTransition,
+	    saveState: _DOMStateStorage.saveState
+	  }));
+
+	  var listenerCount = 0,
+	      stopPopStateListener = undefined;
+
+	  function listenBefore(listener) {
+	    if (++listenerCount === 1) stopPopStateListener = startPopStateListener(history);
+
+	    var unlisten = history.listenBefore(listener);
+
+	    return function () {
+	      unlisten();
+
+	      if (--listenerCount === 0) stopPopStateListener();
+	    };
+	  }
+
+	  function listen(listener) {
+	    if (++listenerCount === 1) stopPopStateListener = startPopStateListener(history);
+
+	    var unlisten = history.listen(listener);
+
+	    return function () {
+	      unlisten();
+
+	      if (--listenerCount === 0) stopPopStateListener();
+	    };
+	  }
+
+	  // deprecated
+	  function registerTransitionHook(hook) {
+	    if (++listenerCount === 1) stopPopStateListener = startPopStateListener(history);
+
+	    history.registerTransitionHook(hook);
+	  }
+
+	  // deprecated
+	  function unregisterTransitionHook(hook) {
+	    history.unregisterTransitionHook(hook);
+
+	    if (--listenerCount === 0) stopPopStateListener();
+	  }
+
+	  return _extends({}, history, {
+	    listenBefore: listenBefore,
+	    listen: listen,
+	    registerTransitionHook: registerTransitionHook,
+	    unregisterTransitionHook: unregisterTransitionHook
+	  });
+	}
+
+	exports['default'] = createBrowserHistory;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	exports.default = function (createHistory) {
+	  var history = void 0;
+	  if (canUseDOM) history = (0, _useRouterHistory2.default)(createHistory)();
+	  return history;
+	};
+
+	var _useRouterHistory = __webpack_require__(485);
+
+	var _useRouterHistory2 = _interopRequireDefault(_useRouterHistory);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 490 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _createHashHistory = __webpack_require__(438);
+
+	var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
+
+	var _createRouterHistory = __webpack_require__(489);
+
+	var _createRouterHistory2 = _interopRequireDefault(_createRouterHistory);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
+	module.exports = exports['default'];
+
+/***/ },
+/* 491 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(173);
+
+	var _reactRouter = __webpack_require__(428);
+
+	var _trainer = __webpack_require__(492);
+
+	var _trainer2 = _interopRequireDefault(_trainer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NueralNetwork = function (_React$Component) {
+	  _inherits(NueralNetwork, _React$Component);
+
+	  function NueralNetwork(props) {
+	    _classCallCheck(this, NueralNetwork);
+
+	    var _this = _possibleConstructorReturn(this, (NueralNetwork.__proto__ || Object.getPrototypeOf(NueralNetwork)).call(this));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(NueralNetwork, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {}
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {}
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {}
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(newProps) {}
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {}
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var pageHeaderNN = _react2.default.createElement(
+	        _reactBootstrap.PageHeader,
+	        null,
+	        'Neural Network  ',
+	        _react2.default.createElement(
+	          'small',
+	          null,
+	          'use ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://github.com/harthur/brain', target: '_blank' },
+	            'brain.js'
+	          ),
+	          ' library'
+	        )
+	      );
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'search-result' },
+	        pageHeaderNN,
+	        _react2.default.createElement(_trainer2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          { style: { marginTop: 6 + 'em' } },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'pull-right' },
+	            'Link to the Homework #2 - VK saver'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NueralNetwork;
+	}(_react2.default.Component);
+
+	;
+
+	var _default = NueralNetwork;
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(NueralNetwork, 'NueralNetwork', '/home/nas/www/l_work/app/components/neural_network.jsx');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/home/nas/www/l_work/app/components/neural_network.jsx');
+	}();
+
+	;
+
+/***/ },
+/* 492 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(1);var _react2=_interopRequireDefault(_react);var _reactBootstrap=__webpack_require__(173);var _train=__webpack_require__(493);var _train2=_interopRequireDefault(_train);var _jquery=__webpack_require__(427);var _jquery2=_interopRequireDefault(_jquery);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Trainer=function(_React$Component){_inherits(Trainer,_React$Component);function Trainer(props){_classCallCheck(this,Trainer);var _this=_possibleConstructorReturn(this,(Trainer.__proto__||Object.getPrototypeOf(Trainer)).call(this));_this.state={train:[{input:[292000/4000000,36/72],output:[205000/4000000]},{input:[393928/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[272090/4000000,36/72],output:[205000/4000000]},{input:[339360/4000000,36/72],output:[205000/4000000]},{input:[412960/4000000,36/72],output:[205000/4000000]},{input:[425690/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[297570/4000000,36/72],output:[205000/4000000]},{input:[368220/4000000,36/72],output:[205000/4000000]},{input:[368220/4000000,36/72],output:[205000/4000000]},{input:[362520/4000000,36/72],output:[205000/4000000]},{input:[348825/4000000,36/72],output:[205000/4000000]},{input:[348825/4000000,36/72],output:[205000/4000000]},{input:[348825/4000000,36/72],output:[205000/4000000]},{input:[348825/4000000,36/72],output:[205000/4000000]},{input:[276830/4000000,36/72],output:[206257/4000000]},{input:[272090/4000000,36/72],output:[208000/4000000]},{input:[272090/4000000,36/72],output:[208000/4000000]},{input:[272090/4000000,36/72],output:[208000/4000000]},{input:[272090/4000000,36/72],output:[208000/4000000]},{input:[260750/4000000,48/72],output:[208600/4000000]},{input:[338400/4000000,36/72],output:[210000/4000000]},{input:[338400/4000000,36/72],output:[210000/4000000]},{input:[287350/4000000,36/72],output:[210000/4000000]},{input:[419580/4000000,4/72],output:[210000/4000000]},{input:[282940/4000000,36/72],output:[210000/4000000]},{input:[355150/4000000,8/72],output:[210000/4000000]},{input:[412960/4000000,36/72],output:[210000/4000000]},{input:[325710/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[292040/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,36/72],output:[210000/4000000]},{input:[441200/4000000,4/72],output:[210000/4000000]},{input:[360720/4000000,36/72],output:[210000/4000000]},{input:[290290/4000000,36/72],output:[210000/4000000]},{input:[448540/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[423940/4000000,36/72],output:[210000/4000000]},{input:[425690/4000000,36/72],output:[210000/4000000]},{input:[509100/4000000,36/72],output:[210000/4000000]},{input:[297570/4000000,36/72],output:[210000/4000000]},{input:[297570/4000000,36/72],output:[210000/4000000]},{input:[297570/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,8/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,2/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[436240/4000000,36/72],output:[210000/4000000]},{input:[297570/4000000,36/72],output:[210000/4000000]},{input:[333600/4000000,36/72],output:[210000/4000000]},{input:[437364/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,1/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[362520/4000000,36/72],output:[210000/4000000]},{input:[338400/4000000,36/72],output:[210000/4000000]},{input:[442164/4000000,36/72],output:[210000/4000000]},{input:[339900/4000000,36/72],output:[210000/4000000]},{input:[339900/4000000,36/72],output:[210000/4000000]},{input:[442540/4000000,33/72],output:[210000/4000000]},{input:[439240/4000000,33/72],output:[210000/4000000]},{input:[439240/4000000,33/72],output:[210000/4000000]},{input:[422160/4000000,36/72],output:[210000/4000000]},{input:[422160/4000000,36/72],output:[210000/4000000]},{input:[425160/4000000,36/72],output:[210000/4000000]},{input:[426660/4000000,36/72],output:[210000/4000000]},{input:[426660/4000000,36/72],output:[210000/4000000]},{input:[426660/4000000,36/72],output:[210000/4000000]},{input:[282600/4000000,36/72],output:[212000/4000000]},{input:[355950/4000000,36/72],output:[215000/4000000]},{input:[276830/4000000,36/72],output:[215000/4000000]},{input:[282940/4000000,36/72],output:[215000/4000000]},{input:[282940/4000000,36/72],output:[215000/4000000]},{input:[412960/4000000,36/72],output:[215000/4000000]},{input:[281190/4000000,36/72],output:[215000/4000000]},{input:[281190/4000000,36/72],output:[215000/4000000]},{input:[282940/4000000,36/72],output:[215000/4000000]},{input:[282940/4000000,36/72],output:[215000/4000000]},{input:[281190/4000000,36/72],output:[215000/4000000]},{input:[281190/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[292040/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[314340/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[290290/4000000,36/72],output:[215000/4000000]},{input:[313280/4000000,36/72],output:[215000/4000000]},{input:[313280/4000000,36/72],output:[215000/4000000]},{input:[448540/4000000,36/72],output:[215000/4000000]},{input:[448540/4000000,36/72],output:[215000/4000000]},{input:[448540/4000000,36/72],output:[215000/4000000]},{input:[330898/4000000,36/72],output:[215000/4000000]},{input:[436240/4000000,36/72],output:[215000/4000000]},{input:[297570/4000000,36/72],output:[215000/4000000]},{input:[368990/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[362820/4000000,4/72],output:[215000/4000000]},{input:[368220/4000000,36/72],output:[215000/4000000]},{input:[368220/4000000,36/72],output:[215000/4000000]},{input:[368220/4000000,36/72],output:[215000/4000000]},{input:[368220/4000000,36/72],output:[215000/4000000]},{input:[368220/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[362520/4000000,36/72],output:[215000/4000000]},{input:[362520/4000000,36/72],output:[215000/4000000]},{input:[362520/4000000,36/72],output:[215000/4000000]},{input:[333600/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[336600/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[339900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[336900/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[338400/4000000,36/72],output:[215000/4000000]},{input:[372140/4000000,36/72],output:[215000/4000000]},{input:[371700/4000000,36/72],output:[217000/4000000]},{input:[276830/4000000,36/72],output:[217563/4000000]},{input:[386500/4000000,36/72],output:[218000/4000000]},{input:[338400/4000000,36/72],output:[220000/4000000]},{input:[338400/4000000,36/72],output:[220000/4000000]},{input:[338400/4000000,36/72],output:[220000/4000000]},{input:[358500/4000000,36/72],output:[220000/4000000]},{input:[292000/4000000,36/72],output:[220000/4000000]},{input:[292000/4000000,36/72],output:[220000/4000000]},{input:[352350/4000000,36/72],output:[220000/4000000]},{input:[436950/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[272090/4000000,36/72],output:[220000/4000000]},{input:[374000/4000000,13/72],output:[220000/4000000]},{input:[370077/4000000,12/72],output:[220000/4000000]},{input:[339360/4000000,36/72],output:[220000/4000000]},{input:[281190/4000000,36/72],output:[220000/4000000]},{input:[329270/4000000,36/72],output:[220000/4000000]},{input:[329270/4000000,36/72],output:[220000/4000000]},{input:[329270/4000000,36/72],output:[220000/4000000]},{input:[314340/4000000,36/72],output:[220000/4000000]},{input:[343070/4000000,36/72],output:[220000/4000000]},{input:[349510/4000000,36/72],output:[220000/4000000]},{input:[441200/4000000,36/72],output:[220000/4000000]},{input:[425690/4000000,36/72],output:[220000/4000000]},{input:[425690/4000000,36/72],output:[220000/4000000]},{input:[425690/4000000,36/72],output:[220000/4000000]},{input:[430940/4000000,36/72],output:[220000/4000000]},{input:[430940/4000000,36/72],output:[220000/4000000]},{input:[436240/4000000,36/72],output:[220000/4000000]},{input:[436240/4000000,36/72],output:[220000/4000000]},{input:[297570/4000000,36/72],output:[220000/4000000]},{input:[297570/4000000,36/72],output:[220000/4000000]},{input:[444040/4000000,36/72],output:[220000/4000000]},{input:[368990/4000000,36/72],output:[220000/4000000]},{input:[490320/4000000,36/72],output:[220000/4000000]},{input:[444040/4000000,36/72],output:[220000/4000000]},{input:[442540/4000000,36/72],output:[220000/4000000]},{input:[351825/4000000,36/72],output:[220000/4000000]},{input:[351825/4000000,36/72],output:[220000/4000000]},{input:[366620/4000000,36/72],output:[220000/4000000]},{input:[348825/4000000,36/72],output:[220000/4000000]},{input:[679000/4000000,36/72],output:[221184/4000000]},{input:[323426/4000000,36/72],output:[225000/4000000]},{input:[338400/4000000,36/72],output:[225000/4000000]},{input:[367766/4000000,36/72],output:[225000/4000000]},{input:[367766/4000000,36/72],output:[225000/4000000]},{input:[367766/4000000,36/72],output:[225000/4000000]},{input:[339360/4000000,36/72],output:[225000/4000000]},{input:[343070/4000000,36/72],output:[225000/4000000]},{input:[343070/4000000,36/72],output:[225000/4000000]},{input:[343070/4000000,36/72],output:[225000/4000000]},{input:[448540/4000000,36/72],output:[225000/4000000]},{input:[366620/4000000,36/72],output:[225000/4000000]},{input:[422160/4000000,36/72],output:[225000/4000000]},{input:[361661/4000000,36/72],output:[225000/4000000]},{input:[361661/4000000,36/72],output:[225000/4000000]},{input:[361661/4000000,36/72],output:[225000/4000000]},{input:[367120/4000000,36/72],output:[225000/4000000]},{input:[367120/4000000,36/72],output:[225000/4000000]},{input:[251920/4000000,48/72],output:[226728/4000000]},{input:[361950/4000000,36/72],output:[230000/4000000]},{input:[352350/4000000,36/72],output:[230000/4000000]},{input:[352350/4000000,36/72],output:[230000/4000000]},{input:[361950/4000000,36/72],output:[230000/4000000]},{input:[412960/4000000,36/72],output:[230000/4000000]},{input:[374920/4000000,36/72],output:[230000/4000000]},{input:[430740/4000000,36/72],output:[230000/4000000]},{input:[430740/4000000,36/72],output:[230000/4000000]},{input:[432874/4000000,36/72],output:[230000/4000000]},{input:[425690/4000000,36/72],output:[230000/4000000]},{input:[425690/4000000,36/72],output:[230000/4000000]},{input:[425690/4000000,36/72],output:[230000/4000000]},{input:[425690/4000000,36/72],output:[230000/4000000]},{input:[425690/4000000,36/72],output:[230000/4000000]},{input:[423940/4000000,36/72],output:[230000/4000000]},{input:[423940/4000000,36/72],output:[230000/4000000]},{input:[430940/4000000,36/72],output:[230000/4000000]},{input:[436240/4000000,36/72],output:[230000/4000000]},{input:[436240/4000000,36/72],output:[230000/4000000]},{input:[436240/4000000,36/72],output:[230000/4000000]},{input:[436240/4000000,3/72],output:[230000/4000000]},{input:[436240/4000000,36/72],output:[230000/4000000]},{input:[444040/4000000,36/72],output:[230000/4000000]},{input:[444040/4000000,36/72],output:[230000/4000000]},{input:[443040/4000000,36/72],output:[230000/4000000]},{input:[567486/4000000,36/72],output:[230000/4000000]},{input:[445040/4000000,36/72],output:[230000/4000000]},{input:[363640/4000000,36/72],output:[230000/4000000]},{input:[443664/4000000,36/72],output:[230000/4000000]},{input:[336900/4000000,36/72],output:[230000/4000000]},{input:[353625/4000000,36/72],output:[230000/4000000]},{input:[422160/4000000,36/72],output:[230000/4000000]},{input:[391990/4000000,36/72],output:[230000/4000000]},{input:[394840/4000000,36/72],output:[230000/4000000]},{input:[425160/4000000,36/72],output:[230000/4000000]},{input:[425160/4000000,36/72],output:[230000/4000000]},{input:[361661/4000000,36/72],output:[230000/4000000]},{input:[487000/4000000,36/72],output:[230000/4000000]},{input:[276830/4000000,36/72],output:[234232/4000000]},{input:[276830/4000000,36/72],output:[235000/4000000]},{input:[282940/4000000,36/72],output:[235000/4000000]},{input:[282940/4000000,36/72],output:[235000/4000000]},{input:[370000/4000000,20/72],output:[235000/4000000]},{input:[290290/4000000,36/72],output:[235000/4000000]},{input:[343070/4000000,36/72],output:[235000/4000000]},{input:[330898/4000000,36/72],output:[235000/4000000]},{input:[330898/4000000,36/72],output:[235000/4000000]},{input:[425160/4000000,36/72],output:[235000/4000000]},{input:[425160/4000000,36/72],output:[235000/4000000]},{input:[425160/4000000,36/72],output:[235000/4000000]},{input:[428260/4000000,36/72],output:[235000/4000000]},{input:[428260/4000000,36/72],output:[235000/4000000]},{input:[428260/4000000,36/72],output:[235000/4000000]},{input:[425160/4000000,36/72],output:[235000/4000000]},{input:[351825/4000000,36/72],output:[235000/4000000]},{input:[355950/4000000,36/72],output:[240000/4000000]},{input:[355950/4000000,36/72],output:[240000/4000000]},{input:[355950/4000000,36/72],output:[240000/4000000]},{input:[355950/4000000,36/72],output:[240000/4000000]},{input:[367380/4000000,36/72],output:[240000/4000000]},{input:[367380/4000000,36/72],output:[240000/4000000]},{input:[293750/4000000,36/72],output:[240000/4000000]},{input:[293750/4000000,36/72],output:[240000/4000000]},{input:[293750/4000000,36/72],output:[240000/4000000]},{input:[293750/4000000,36/72],output:[240000/4000000]},{input:[393928/4000000,36/72],output:[240000/4000000]},{input:[441177/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[412960/4000000,36/72],output:[240000/4000000]},{input:[441200/4000000,36/72],output:[240000/4000000]},{input:[448540/4000000,4/72],output:[240000/4000000]},{input:[432940/4000000,36/72],output:[240000/4000000]},{input:[432940/4000000,36/72],output:[240000/4000000]},{input:[432940/4000000,36/72],output:[240000/4000000]},{input:[425690/4000000,36/72],output:[240000/4000000]},{input:[425690/4000000,36/72],output:[240000/4000000]},{input:[425690/4000000,36/72],output:[240000/4000000]},{input:[436240/4000000,36/72],output:[240000/4000000]},{input:[436240/4000000,36/72],output:[240000/4000000]},{input:[436240/4000000,36/72],output:[240000/4000000]},{input:[436240/4000000,36/72],output:[240000/4000000]},{input:[443100/4000000,36/72],output:[240000/4000000]},{input:[443100/4000000,36/72],output:[240000/4000000]},{input:[444040/4000000,36/72],output:[240000/4000000]},{input:[368220/4000000,3/72],output:[240000/4000000]},{input:[445040/4000000,30/72],output:[240000/4000000]},{input:[442540/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[440364/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442600/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[440664/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[442164/4000000,36/72],output:[240000/4000000]},{input:[443664/4000000,36/72],output:[240000/4000000]},{input:[443664/4000000,36/72],output:[240000/4000000]},{input:[443664/4000000,36/72],output:[240000/4000000]},{input:[443664/4000000,36/72],output:[240000/4000000]},{input:[459100/4000000,36/72],output:[240000/4000000]},{input:[353625/4000000,36/72],output:[240000/4000000]},{input:[352350/4000000,36/72],output:[242000/4000000]},{input:[270390/4000000,36/72],output:[242000/4000000]},{input:[293750/4000000,36/72],output:[245000/4000000]},{input:[412960/4000000,36/72],output:[245000/4000000]},{input:[412960/4000000,36/72],output:[245000/4000000]},{input:[412960/4000000,36/72],output:[245000/4000000]},{input:[412960/4000000,36/72],output:[245000/4000000]},{input:[295960/4000000,36/72],output:[245000/4000000]},{input:[412960/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[482126/4000000,36/72],output:[245000/4000000]},{input:[483360/4000000,36/72],output:[245000/4000000]},{input:[478272/4000000,36/72],output:[245000/4000000]},{input:[478272/4000000,36/72],output:[245000/4000000]},{input:[478272/4000000,36/72],output:[245000/4000000]},{input:[478272/4000000,36/72],output:[245000/4000000]},{input:[478272/4000000,36/72],output:[245000/4000000]},{input:[356325/4000000,36/72],output:[245000/4000000]},{input:[527250/4000000,36/72],output:[250000/4000000]},{input:[548400/4000000,25/72],output:[250000/4000000]},{input:[436770/4000000,36/72],output:[250000/4000000]},{input:[432270/4000000,8/72],output:[250000/4000000]},{input:[432270/4000000,8/72],output:[250000/4000000]},{input:[479956/4000000,10/72],output:[250000/4000000]},{input:[448540/4000000,36/72],output:[250000/4000000]},{input:[448540/4000000,36/72],output:[250000/4000000]},{input:[430940/4000000,36/72],output:[250000/4000000]},{input:[430940/4000000,36/72],output:[250000/4000000]},{input:[436240/4000000,36/72],output:[250000/4000000]},{input:[436240/4000000,36/72],output:[250000/4000000]},{input:[642978/4000000,36/72],output:[250000/4000000]},{input:[442540/4000000,36/72],output:[250000/4000000]},{input:[439240/4000000,36/72],output:[250000/4000000]},{input:[336900/4000000,36/72],output:[250000/4000000]},{input:[478272/4000000,36/72],output:[250000/4000000]},{input:[495772/4000000,36/72],output:[250000/4000000]},{input:[509964/4000000,36/72],output:[250000/4000000]},{input:[353625/4000000,36/72],output:[250000/4000000]},{input:[353325/4000000,36/72],output:[250000/4000000]},{input:[353325/4000000,36/72],output:[250000/4000000]},{input:[381870/4000000,4/72],output:[250000/4000000]},{input:[381870/4000000,4/72],output:[250000/4000000]},{input:[381870/4000000,4/72],output:[250000/4000000]},{input:[381870/4000000,4/72],output:[250000/4000000]},{input:[353325/4000000,36/72],output:[250000/4000000]},{input:[513250/4000000,36/72],output:[250800/4000000]},{input:[489700/4000000,36/72],output:[254000/4000000]},{input:[361950/4000000,36/72],output:[255000/4000000]},{input:[414710/4000000,36/72],output:[255000/4000000]},{input:[414710/4000000,36/72],output:[255000/4000000]},{input:[414710/4000000,36/72],output:[255000/4000000]},{input:[513250/4000000,36/72],output:[255000/4000000]},{input:[513250/4000000,36/72],output:[255000/4000000]},{input:[513250/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[361000/4000000,6/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[412960/4000000,36/72],output:[255000/4000000]},{input:[452500/4000000,36/72],output:[255000/4000000]},{input:[470200/4000000,36/72],output:[255000/4000000]},{input:[482126/4000000,36/72],output:[255000/4000000]},{input:[367120/4000000,36/72],output:[255000/4000000]},{input:[256500/4000000,48/72],output:[256500/4000000]},{input:[443040/4000000,36/72],output:[257000/4000000]},{input:[417600/4000000,36/72],output:[260000/4000000]},{input:[417600/4000000,36/72],output:[260000/4000000]},{input:[433470/4000000,36/72],output:[260000/4000000]},{input:[393928/4000000,36/72],output:[260000/4000000]},{input:[393928/4000000,36/72],output:[260000/4000000]},{input:[393928/4000000,36/72],output:[260000/4000000]},{input:[272090/4000000,36/72],output:[260000/4000000]},{input:[457011/4000000,36/72],output:[260000/4000000]},{input:[412960/4000000,36/72],output:[260000/4000000]},{input:[412960/4000000,36/72],output:[260000/4000000]},{input:[448540/4000000,8/72],output:[260000/4000000]},{input:[436240/4000000,11/72],output:[260000/4000000]},{input:[436240/4000000,27/72],output:[260000/4000000]},{input:[458664/4000000,36/72],output:[260000/4000000]},{input:[537200/4000000,60/72],output:[260000/4000000]},{input:[439240/4000000,36/72],output:[260000/4000000]},{input:[444624/4000000,31/72],output:[260000/4000000]},{input:[482272/4000000,36/72],output:[260000/4000000]},{input:[447440/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[482126/4000000,36/72],output:[260000/4000000]},{input:[478272/4000000,36/72],output:[260000/4000000]},{input:[478272/4000000,36/72],output:[260000/4000000]},{input:[439240/4000000,33/72],output:[260000/4000000]},{input:[439240/4000000,33/72],output:[260000/4000000]},{input:[478272/4000000,36/72],output:[260000/4000000]},{input:[422160/4000000,36/72],output:[260000/4000000]},{input:[422160/4000000,36/72],output:[260000/4000000]},{input:[420170/4000000,36/72],output:[260000/4000000]},{input:[425160/4000000,36/72],output:[260000/4000000]},{input:[458650/4000000,36/72],output:[260000/4000000]},{input:[546032/4000000,36/72],output:[260000/4000000]},{input:[386787/4000000,36/72],output:[265000/4000000]},{input:[433470/4000000,36/72],output:[265000/4000000]},{input:[408532/4000000,36/72],output:[265000/4000000]},{input:[423940/4000000,36/72],output:[265000/4000000]},{input:[413742/4000000,5/72],output:[265000/4000000]},{input:[492700/4000000,36/72],output:[270000/4000000]},{input:[412960/4000000,36/72],output:[270000/4000000]},{input:[701250/4000000,12/72],output:[270000/4000000]},{input:[452500/4000000,36/72],output:[270000/4000000]},{input:[489700/4000000,36/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[492000/4000000,60/72],output:[270000/4000000]},{input:[522500/4000000,60/72],output:[270000/4000000]},{input:[595750/4000000,36/72],output:[270000/4000000]},{input:[495772/4000000,36/72],output:[270000/4000000]},{input:[478272/4000000,36/72],output:[270000/4000000]},{input:[478272/4000000,36/72],output:[270000/4000000]},{input:[495772/4000000,36/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[487700/4000000,36/72],output:[270000/4000000]},{input:[498030/4000000,36/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[597110/4000000,36/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413741/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[413742/4000000,13/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[487672/4000000,36/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[627360/4000000,36/72],output:[270000/4000000]},{input:[413742/4000000,4/72],output:[270000/4000000]},{input:[412960/4000000,36/72],output:[275000/4000000]},{input:[444040/4000000,30/72],output:[275000/4000000]},{input:[482126/4000000,36/72],output:[275000/4000000]},{input:[482126/4000000,36/72],output:[275000/4000000]},{input:[482126/4000000,36/72],output:[275000/4000000]},{input:[353625/4000000,36/72],output:[275000/4000000]},{input:[351825/4000000,36/72],output:[275000/4000000]},{input:[351825/4000000,36/72],output:[275000/4000000]},{input:[348825/4000000,36/72],output:[275000/4000000]},{input:[347850/4000000,36/72],output:[275000/4000000]},{input:[351825/4000000,36/72],output:[275000/4000000]},{input:[351825/4000000,36/72],output:[275000/4000000]},{input:[351825/4000000,36/72],output:[275000/4000000]},{input:[354825/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[353325/4000000,36/72],output:[275000/4000000]},{input:[354625/4000000,36/72],output:[275000/4000000]},{input:[354625/4000000,36/72],output:[275000/4000000]},{input:[467665/4000000,36/72],output:[280000/4000000]},{input:[436670/4000000,24/72],output:[280000/4000000]},{input:[408532/4000000,36/72],output:[280000/4000000]},{input:[408532/4000000,36/72],output:[280000/4000000]},{input:[408532/4000000,36/72],output:[280000/4000000]},{input:[408532/4000000,36/72],output:[280000/4000000]},{input:[408532/4000000,36/72],output:[280000/4000000]},{input:[488230/4000000,36/72],output:[280000/4000000]},{input:[488230/4000000,36/72],output:[280000/4000000]},{input:[482126/4000000,36/72],output:[280000/4000000]},{input:[460600/4000000,36/72],output:[280000/4000000]},{input:[460600/4000000,36/72],output:[280000/4000000]},{input:[439240/4000000,36/72],output:[280000/4000000]},{input:[458800/4000000,36/72],output:[280000/4000000]},{input:[458800/4000000,36/72],output:[280000/4000000]},{input:[460600/4000000,36/72],output:[280000/4000000]},{input:[460600/4000000,36/72],output:[280000/4000000]},{input:[478272/4000000,36/72],output:[280000/4000000]},{input:[458800/4000000,36/72],output:[280000/4000000]},{input:[439240/4000000,33/72],output:[280000/4000000]},{input:[444040/4000000,33/72],output:[280000/4000000]},{input:[471600/4000000,36/72],output:[280000/4000000]},{input:[425160/4000000,36/72],output:[280000/4000000]},{input:[425160/4000000,36/72],output:[280000/4000000]},{input:[439240/4000000,33/72],output:[280000/4000000]},{input:[425160/4000000,36/72],output:[280000/4000000]},{input:[527670/4000000,36/72],output:[280000/4000000]},{input:[426660/4000000,36/72],output:[280000/4000000]},{input:[428259/4000000,36/72],output:[280000/4000000]},{input:[428260/4000000,36/72],output:[280000/4000000]},{input:[394920/4000000,23/72],output:[280000/4000000]},{input:[531024/4000000,36/72],output:[280800/4000000]},{input:[371460/4000000,12/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[433470/4000000,36/72],output:[285000/4000000]},{input:[495772/4000000,36/72],output:[285000/4000000]},{input:[495772/4000000,36/72],output:[285000/4000000]},{input:[424923/4000000,22/72],output:[285000/4000000]},{input:[394920/4000000,13/72],output:[285000/4000000]},{input:[394920/4000000,13/72],output:[285000/4000000]},{input:[476250/4000000,36/72],output:[290000/4000000]},{input:[476250/4000000,36/72],output:[290000/4000000]},{input:[468900/4000000,28/72],output:[290000/4000000]},{input:[484497/4000000,36/72],output:[290000/4000000]},{input:[498144/4000000,36/72],output:[290000/4000000]},{input:[488800/4000000,36/72],output:[290000/4000000]},{input:[443100/4000000,26/72],output:[290000/4000000]},{input:[443100/4000000,26/72],output:[290000/4000000]},{input:[488966/4000000,36/72],output:[290000/4000000]},{input:[482126/4000000,36/72],output:[290000/4000000]},{input:[482126/4000000,36/72],output:[290000/4000000]},{input:[482126/4000000,36/72],output:[290000/4000000]},{input:[488448/4000000,36/72],output:[290000/4000000]},{input:[478272/4000000,36/72],output:[290000/4000000]},{input:[482126/4000000,36/72],output:[290000/4000000]},{input:[499626/4000000,36/72],output:[290000/4000000]},{input:[478272/4000000,36/72],output:[290000/4000000]},{input:[439240/4000000,33/72],output:[290000/4000000]},{input:[495772/4000000,36/72],output:[290000/4000000]},{input:[486826/4000000,36/72],output:[290000/4000000]},{input:[481068/4000000,36/72],output:[295000/4000000]},{input:[471969/4000000,36/72],output:[295000/4000000]},{input:[471969/4000000,36/72],output:[295000/4000000]},{input:[537116/4000000,36/72],output:[295000/4000000]},{input:[478272/4000000,36/72],output:[297000/4000000]},{input:[420299/4000000,36/72],output:[300000/4000000]},{input:[760530/4000000,36/72],output:[300000/4000000]},{input:[496781/4000000,36/72],output:[300000/4000000]},{input:[456230/4000000,27/72],output:[300000/4000000]},{input:[673227/4000000,24/72],output:[300000/4000000]},{input:[455400/4000000,36/72],output:[300000/4000000]},{input:[433470/4000000,36/72],output:[300000/4000000]},{input:[433470/4000000,36/72],output:[300000/4000000]},{input:[535000/4000000,36/72],output:[300000/4000000]},{input:[468815/4000000,2/72],output:[300000/4000000]},{input:[512500/4000000,1/72],output:[300000/4000000]},{input:[458130/4000000,2/72],output:[300000/4000000]},{input:[581000/4000000,48/72],output:[300000/4000000]},{input:[570700/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,6/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[506000/4000000,36/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[425690/4000000,36/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[589360/4000000,36/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300000/4000000]},{input:[522500/4000000,60/72],output:[300000/4000000]},{input:[522500/4000000,60/72],output:[300000/4000000]},{input:[522500/4000000,60/72],output:[300000/4000000]},{input:[522500/4000000,60/72],output:[300000/4000000]},{input:[471969/4000000,36/72],output:[300000/4000000]},{input:[537116/4000000,36/72],output:[300000/4000000]},{input:[482126/4000000,36/72],output:[300000/4000000]},{input:[486820/4000000,36/72],output:[300000/4000000]},{input:[482126/4000000,36/72],output:[300000/4000000]},{input:[548993/4000000,36/72],output:[300000/4000000]},{input:[548993/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[495788/4000000,36/72],output:[300000/4000000]},{input:[594500/4000000,36/72],output:[300000/4000000]},{input:[522560/4000000,36/72],output:[300000/4000000]},{input:[484325/4000000,36/72],output:[300000/4000000]},{input:[503720/4000000,36/72],output:[300000/4000000]},{input:[492105/4000000,36/72],output:[300000/4000000]},{input:[505824/4000000,36/72],output:[300000/4000000]},{input:[492105/4000000,36/72],output:[300000/4000000]},{input:[492105/4000000,36/72],output:[300000/4000000]},{input:[506709/4000000,36/72],output:[300000/4000000]},{input:[506709/4000000,36/72],output:[300000/4000000]},{input:[459100/4000000,36/72],output:[300000/4000000]},{input:[458800/4000000,36/72],output:[300000/4000000]},{input:[478270/4000000,36/72],output:[300000/4000000]},{input:[478270/4000000,36/72],output:[300000/4000000]},{input:[478272/4000000,36/72],output:[300000/4000000]},{input:[478272/4000000,36/72],output:[300000/4000000]},{input:[617360/4000000,48/72],output:[300000/4000000]},{input:[617360/4000000,48/72],output:[300000/4000000]},{input:[482126/4000000,36/72],output:[300000/4000000]},{input:[482126/4000000,36/72],output:[300000/4000000]},{input:[482126/4000000,36/72],output:[300000/4000000]},{input:[522560/4000000,48/72],output:[300000/4000000]},{input:[533920/4000000,36/72],output:[300000/4000000]},{input:[495772/4000000,36/72],output:[300000/4000000]},{input:[478272/4000000,36/72],output:[300000/4000000]},{input:[478272/4000000,36/72],output:[300000/4000000]},{input:[478272/4000000,36/72],output:[300000/4000000]},{input:[495772/4000000,36/72],output:[300000/4000000]},{input:[488600/4000000,36/72],output:[300000/4000000]},{input:[496800/4000000,42/72],output:[300000/4000000]},{input:[487672/4000000,36/72],output:[300000/4000000]},{input:[496555/4000000,48/72],output:[300000/4000000]},{input:[507851/4000000,48/72],output:[300000/4000000]},{input:[487700/4000000,36/72],output:[300000/4000000]},{input:[487672/4000000,36/72],output:[300000/4000000]},{input:[531024/4000000,36/72],output:[300000/4000000]},{input:[531024/4000000,36/72],output:[300000/4000000]},{input:[487672/4000000,36/72],output:[300000/4000000]},{input:[531024/4000000,36/72],output:[300000/4000000]},{input:[511546/4000000,36/72],output:[300000/4000000]},{input:[487672/4000000,36/72],output:[300000/4000000]},{input:[454158/4000000,36/72],output:[300000/4000000]},{input:[527670/4000000,36/72],output:[300000/4000000]},{input:[511546/4000000,36/72],output:[300000/4000000]},{input:[454158/4000000,36/72],output:[300000/4000000]},{input:[454158/4000000,36/72],output:[300000/4000000]},{input:[487700/4000000,36/72],output:[300000/4000000]},{input:[454158/4000000,36/72],output:[300000/4000000]},{input:[569778/4000000,36/72],output:[300000/4000000]},{input:[511621/4000000,36/72],output:[300000/4000000]},{input:[585798/4000000,36/72],output:[300000/4000000]},{input:[511546/4000000,36/72],output:[300000/4000000]},{input:[546940/4000000,36/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[540867/4000000,36/72],output:[300000/4000000]},{input:[424924/4000000,24/72],output:[300000/4000000]},{input:[424924/4000000,4/72],output:[300000/4000000]},{input:[533888/4000000,36/72],output:[300000/4000000]},{input:[455223/4000000,36/72],output:[300000/4000000]},{input:[418950/4000000,20/72],output:[300000/4000000]},{input:[442621/4000000,36/72],output:[300000/4000000]},{input:[492000/4000000,60/72],output:[300600/4000000]},{input:[492000/4000000,60/72],output:[301000/4000000]},{input:[492000/4000000,60/72],output:[301000/4000000]},{input:[610300/4000000,29/72],output:[305000/4000000]},{input:[506000/4000000,36/72],output:[305000/4000000]},{input:[478270/4000000,36/72],output:[305000/4000000]},{input:[534400/4000000,36/72],output:[305000/4000000]},{input:[501525/4000000,36/72],output:[310000/4000000]},{input:[432700/4000000,36/72],output:[310000/4000000]},{input:[432700/4000000,36/72],output:[310000/4000000]},{input:[432740/4000000,26/72],output:[310000/4000000]},{input:[453827/4000000,36/72],output:[310000/4000000]},{input:[453827/4000000,36/72],output:[310000/4000000]},{input:[620550/4000000,2/72],output:[310000/4000000]},{input:[506410/4000000,36/72],output:[310000/4000000]},{input:[506410/4000000,36/72],output:[310000/4000000]},{input:[581000/4000000,36/72],output:[310000/4000000]},{input:[625500/4000000,36/72],output:[310000/4000000]},{input:[506000/4000000,36/72],output:[310000/4000000]},{input:[506000/4000000,36/72],output:[310000/4000000]},{input:[506000/4000000,36/72],output:[310000/4000000]},{input:[506000/4000000,36/72],output:[310000/4000000]},{input:[625500/4000000,36/72],output:[310000/4000000]},{input:[521200/4000000,36/72],output:[310000/4000000]},{input:[521200/4000000,36/72],output:[310000/4000000]},{input:[492000/4000000,60/72],output:[310000/4000000]},{input:[492000/4000000,60/72],output:[310000/4000000]},{input:[492000/4000000,60/72],output:[310000/4000000]},{input:[522500/4000000,60/72],output:[310000/4000000]},{input:[415000/4000000,36/72],output:[310000/4000000]},{input:[415000/4000000,36/72],output:[310000/4000000]},{input:[415000/4000000,36/72],output:[310000/4000000]},{input:[471969/4000000,36/72],output:[310000/4000000]},{input:[537116/4000000,36/72],output:[310000/4000000]},{input:[478272/4000000,36/72],output:[310000/4000000]},{input:[482126/4000000,36/72],output:[310000/4000000]},{input:[484325/4000000,36/72],output:[310000/4000000]},{input:[503720/4000000,36/72],output:[310000/4000000]},{input:[506709/4000000,36/72],output:[310000/4000000]},{input:[508509/4000000,36/72],output:[310000/4000000]},{input:[482126/4000000,36/72],output:[310000/4000000]},{input:[478272/4000000,36/72],output:[310000/4000000]},{input:[520737/4000000,36/72],output:[310000/4000000]},{input:[520737/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[531024/4000000,36/72],output:[310000/4000000]},{input:[648976/4000000,48/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[473708/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[527670/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[454158/4000000,36/72],output:[310000/4000000]},{input:[487672/4000000,36/72],output:[310000/4000000]},{input:[531024/4000000,36/72],output:[310000/4000000]},{input:[531024/4000000,36/72],output:[310000/4000000]},{input:[531024/4000000,48/72],output:[310000/4000000]},{input:[527670/4000000,36/72],output:[310000/4000000]},{input:[527670/4000000,36/72],output:[310000/4000000]},{input:[527670/4000000,36/72],output:[310000/4000000]},{input:[455800/4000000,36/72],output:[312365/4000000]},{input:[460200/4000000,15/72],output:[315000/4000000]},{input:[583000/4000000,12/72],output:[315000/4000000]},{input:[506000/4000000,36/72],output:[315000/4000000]},{input:[506000/4000000,36/72],output:[315000/4000000]},{input:[506000/4000000,36/72],output:[315000/4000000]},{input:[506000/4000000,36/72],output:[315000/4000000]},{input:[521200/4000000,36/72],output:[315000/4000000]},{input:[533000/4000000,48/72],output:[315000/4000000]},{input:[507009/4000000,36/72],output:[315000/4000000]},{input:[533888/4000000,36/72],output:[315000/4000000]},{input:[524888/4000000,36/72],output:[315000/4000000]},{input:[492000/4000000,60/72],output:[316400/4000000]},{input:[506000/4000000,36/72],output:[317000/4000000]},{input:[455800/4000000,36/72],output:[318265/4000000]},{input:[443133/4000000,36/72],output:[320000/4000000]},{input:[531450/4000000,36/72],output:[320000/4000000]},{input:[420300/4000000,36/72],output:[320000/4000000]},{input:[420299/4000000,23/72],output:[320000/4000000]},{input:[498000/4000000,36/72],output:[320000/4000000]},{input:[453827/4000000,36/72],output:[320000/4000000]},{input:[610300/4000000,12/72],output:[320000/4000000]},{input:[610300/4000000,12/72],output:[320000/4000000]},{input:[596025/4000000,3/72],output:[320000/4000000]},{input:[550000/4000000,36/72],output:[320000/4000000]},{input:[606750/4000000,48/72],output:[320000/4000000]},{input:[579984/4000000,22/72],output:[320000/4000000]},{input:[579984/4000000,36/72],output:[320000/4000000]},{input:[545500/4000000,36/72],output:[320000/4000000]},{input:[594604/4000000,27/72],output:[320000/4000000]},{input:[633400/4000000,36/72],output:[320000/4000000]},{input:[471969/4000000,36/72],output:[320000/4000000]},{input:[579100/4000000,36/72],output:[320000/4000000]},{input:[579100/4000000,36/72],output:[320000/4000000]},{input:[579100/4000000,36/72],output:[320000/4000000]},{input:[579100/4000000,36/72],output:[320000/4000000]},{input:[599750/4000000,36/72],output:[320000/4000000]},{input:[495788/4000000,36/72],output:[320000/4000000]},{input:[522560/4000000,36/72],output:[320000/4000000]},{input:[455800/4000000,36/72],output:[320000/4000000]},{input:[455800/4000000,36/72],output:[320000/4000000]},{input:[484325/4000000,36/72],output:[320000/4000000]},{input:[484325/4000000,36/72],output:[320000/4000000]},{input:[484325/4000000,36/72],output:[320000/4000000]},{input:[488400/4000000,36/72],output:[320000/4000000]},{input:[617360/4000000,48/72],output:[320000/4000000]},{input:[508520/4000000,36/72],output:[320000/4000000]},{input:[482126/4000000,36/72],output:[320000/4000000]},{input:[473708/4000000,36/72],output:[320000/4000000]},{input:[473708/4000000,36/72],output:[320000/4000000]},{input:[476100/4000000,36/72],output:[320000/4000000]},{input:[520737/4000000,36/72],output:[320000/4000000]},{input:[500180/4000000,36/72],output:[320000/4000000]},{input:[617360/4000000,48/72],output:[320000/4000000]},{input:[569600/4000000,9/72],output:[320000/4000000]},{input:[531024/4000000,36/72],output:[320000/4000000]},{input:[587300/4000000,36/72],output:[320000/4000000]},{input:[527670/4000000,36/72],output:[320000/4000000]},{input:[533888/4000000,36/72],output:[320000/4000000]},{input:[524888/4000000,36/72],output:[320000/4000000]},{input:[455800/4000000,36/72],output:[320560/4000000]},{input:[455800/4000000,36/72],output:[322560/4000000]},{input:[492000/4000000,60/72],output:[323500/4000000]},{input:[506000/4000000,36/72],output:[324000/4000000]},{input:[440756/4000000,30/72],output:[325000/4000000]},{input:[432700/4000000,36/72],output:[325000/4000000]},{input:[505114/4000000,36/72],output:[325000/4000000]},{input:[579984/4000000,36/72],output:[325000/4000000]},{input:[506000/4000000,36/72],output:[325000/4000000]},{input:[473708/4000000,36/72],output:[325000/4000000]},{input:[530670/4000000,36/72],output:[325000/4000000]},{input:[552420/4000000,36/72],output:[325000/4000000]},{input:[506172/4000000,36/72],output:[325000/4000000]},{input:[535170/4000000,36/72],output:[325000/4000000]},{input:[506000/4000000,36/72],output:[326000/4000000]},{input:[506000/4000000,36/72],output:[326000/4000000]},{input:[455800/4000000,36/72],output:[328176/4000000]},{input:[824000/4000000,1/72],output:[329600/4000000]},{input:[434364/4000000,36/72],output:[329600/4000000]},{input:[483000/4000000,36/72],output:[330000/4000000]},{input:[432700/4000000,36/72],output:[330000/4000000]},{input:[492700/4000000,36/72],output:[330000/4000000]},{input:[492700/4000000,36/72],output:[330000/4000000]},{input:[497300/4000000,36/72],output:[330000/4000000]},{input:[628840/4000000,12/72],output:[330000/4000000]},{input:[510000/4000000,36/72],output:[330000/4000000]},{input:[510000/4000000,36/72],output:[330000/4000000]},{input:[560000/4000000,36/72],output:[330000/4000000]},{input:[522000/4000000,36/72],output:[330000/4000000]},{input:[511064/4000000,36/72],output:[330000/4000000]},{input:[550000/4000000,36/72],output:[330000/4000000]},{input:[505764/4000000,36/72],output:[330000/4000000]},{input:[572000/4000000,48/72],output:[330000/4000000]},{input:[477715/4000000,2/72],output:[330000/4000000]},{input:[628840/4000000,48/72],output:[330000/4000000]},{input:[589808/4000000,36/72],output:[330000/4000000]},{input:[506000/4000000,36/72],output:[330000/4000000]},{input:[506000/4000000,36/72],output:[330000/4000000]},{input:[506000/4000000,36/72],output:[330000/4000000]},{input:[506000/4000000,36/72],output:[330000/4000000]},{input:[545500/4000000,36/72],output:[330000/4000000]},{input:[492000/4000000,60/72],output:[330000/4000000]},{input:[594604/4000000,36/72],output:[330000/4000000]},{input:[618600/4000000,48/72],output:[330000/4000000]},{input:[618600/4000000,48/72],output:[330000/4000000]},{input:[582560/4000000,36/72],output:[330000/4000000]},{input:[495788/4000000,36/72],output:[330000/4000000]},{input:[503720/4000000,36/72],output:[330000/4000000]},{input:[503720/4000000,36/72],output:[330000/4000000]},{input:[506709/4000000,36/72],output:[330000/4000000]},{input:[506709/4000000,36/72],output:[330000/4000000]},{input:[679500/4000000,50/72],output:[330000/4000000]},{input:[478272/4000000,36/72],output:[330000/4000000]},{input:[478272/4000000,36/72],output:[330000/4000000]},{input:[622851/4000000,36/72],output:[330000/4000000]},{input:[488600/4000000,36/72],output:[330000/4000000]},{input:[520737/4000000,36/72],output:[330000/4000000]},{input:[530670/4000000,36/72],output:[330000/4000000]},{input:[530670/4000000,36/72],output:[330000/4000000]},{input:[530670/4000000,36/72],output:[330000/4000000]},{input:[661900/4000000,10/72],output:[330000/4000000]},{input:[487700/4000000,36/72],output:[330000/4000000]},{input:[536770/4000000,36/72],output:[330000/4000000]},{input:[454157/4000000,36/72],output:[330000/4000000]},{input:[536770/4000000,36/72],output:[330000/4000000]},{input:[498172/4000000,36/72],output:[330000/4000000]},{input:[536770/4000000,36/72],output:[330000/4000000]},{input:[631400/4000000,40/72],output:[330000/4000000]},{input:[527670/4000000,36/72],output:[330000/4000000]},{input:[548656/4000000,36/72],output:[330000/4000000]},{input:[535170/4000000,36/72],output:[330000/4000000]},{input:[536770/4000000,36/72],output:[330000/4000000]},{input:[533888/4000000,36/72],output:[330000/4000000]},{input:[455800/4000000,36/72],output:[331322/4000000]},{input:[455800/4000000,36/72],output:[331370/4000000]},{input:[545500/4000000,36/72],output:[331600/4000000]},{input:[455800/4000000,36/72],output:[331841/4000000]},{input:[455800/4000000,36/72],output:[332715/4000000]},{input:[455800/4000000,36/72],output:[333117/4000000]},{input:[500100/4000000,36/72],output:[335000/4000000]},{input:[495900/4000000,36/72],output:[335000/4000000]},{input:[488924/4000000,36/72],output:[335000/4000000]},{input:[555000/4000000,36/72],output:[335000/4000000]},{input:[555000/4000000,36/72],output:[335000/4000000]},{input:[555000/4000000,36/72],output:[335000/4000000]},{input:[555000/4000000,36/72],output:[335000/4000000]},{input:[555000/4000000,36/72],output:[335000/4000000]},{input:[637200/4000000,12/72],output:[335000/4000000]},{input:[506410/4000000,36/72],output:[335000/4000000]},{input:[506410/4000000,36/72],output:[335000/4000000]},{input:[581000/4000000,36/72],output:[335000/4000000]},{input:[606750/4000000,48/72],output:[335000/4000000]},{input:[607710/4000000,48/72],output:[335000/4000000]},{input:[478272/4000000,36/72],output:[335000/4000000]},{input:[542449/4000000,36/72],output:[335000/4000000]},{input:[536449/4000000,36/72],output:[335000/4000000]},{input:[455800/4000000,36/72],output:[336708/4000000]},{input:[455800/4000000,36/72],output:[337020/4000000]},{input:[527250/4000000,25/72],output:[338800/4000000]},{input:[479332/4000000,36/72],output:[338983/4000000]},{input:[501150/4000000,36/72],output:[340000/4000000]},{input:[554010/4000000,36/72],output:[340000/4000000]},{input:[477715/4000000,3/72],output:[340000/4000000]},{input:[460000/4000000,36/72],output:[340000/4000000]},{input:[432700/4000000,36/72],output:[340000/4000000]},{input:[420299/4000000,11/72],output:[340000/4000000]},{input:[510000/4000000,36/72],output:[340000/4000000]},{input:[510000/4000000,36/72],output:[340000/4000000]},{input:[553000/4000000,36/72],output:[340000/4000000]},{input:[583000/4000000,12/72],output:[340000/4000000]},{input:[580000/4000000,36/72],output:[340000/4000000]},{input:[550000/4000000,36/72],output:[340000/4000000]},{input:[550000/4000000,36/72],output:[340000/4000000]},{input:[650400/4000000,48/72],output:[340000/4000000]},{input:[545500/4000000,36/72],output:[340000/4000000]},{input:[618600/4000000,48/72],output:[340000/4000000]},{input:[415000/4000000,36/72],output:[340000/4000000]},{input:[415000/4000000,36/72],output:[340000/4000000]},{input:[594500/4000000,36/72],output:[340000/4000000]},{input:[594500/4000000,36/72],output:[340000/4000000]},{input:[594500/4000000,36/72],output:[340000/4000000]},{input:[455800/4000000,36/72],output:[340000/4000000]},{input:[593240/4000000,36/72],output:[340000/4000000]},{input:[592700/4000000,32/72],output:[340000/4000000]},{input:[606400/4000000,36/72],output:[340000/4000000]},{input:[617360/4000000,48/72],output:[340000/4000000]},{input:[482126/4000000,36/72],output:[340000/4000000]},{input:[522560/4000000,48/72],output:[340000/4000000]},{input:[473708/4000000,36/72],output:[340000/4000000]},{input:[478272/4000000,36/72],output:[340000/4000000]},{input:[530670/4000000,36/72],output:[340000/4000000]},{input:[530670/4000000,36/72],output:[340000/4000000]},{input:[530670/4000000,36/72],output:[340000/4000000]},{input:[530670/4000000,36/72],output:[340000/4000000]},{input:[617360/4000000,48/72],output:[340000/4000000]},{input:[617359/4000000,48/72],output:[340000/4000000]},{input:[505075/4000000,36/72],output:[340000/4000000]},{input:[530670/4000000,36/72],output:[340000/4000000]},{input:[542449/4000000,36/72],output:[340000/4000000]},{input:[527670/4000000,36/72],output:[340000/4000000]},{input:[683000/4000000,42/72],output:[340000/4000000]},{input:[631400/4000000,40/72],output:[340000/4000000]},{input:[535170/4000000,36/72],output:[340000/4000000]},{input:[455800/4000000,36/72],output:[340956/4000000]},{input:[455800/4000000,36/72],output:[341690/4000000]},{input:[455800/4000000,36/72],output:[342101/4000000]},{input:[455800/4000000,36/72],output:[344856/4000000]},{input:[460200/4000000,36/72],output:[345000/4000000]},{input:[527250/4000000,25/72],output:[345000/4000000]},{input:[506520/4000000,36/72],output:[345000/4000000]},{input:[506520/4000000,36/72],output:[345000/4000000]},{input:[534618/4000000,36/72],output:[345000/4000000]},{input:[621000/4000000,36/72],output:[345000/4000000]},{input:[888480/4000000,36/72],output:[345000/4000000]},{input:[503720/4000000,36/72],output:[345000/4000000]},{input:[503720/4000000,36/72],output:[345000/4000000]},{input:[507009/4000000,36/72],output:[345000/4000000]},{input:[507009/4000000,36/72],output:[345000/4000000]},{input:[506709/4000000,36/72],output:[345000/4000000]},{input:[508509/4000000,36/72],output:[345000/4000000]},{input:[508509/4000000,36/72],output:[345000/4000000]},{input:[503720/4000000,36/72],output:[345000/4000000]},{input:[507020/4000000,36/72],output:[345000/4000000]},{input:[508520/4000000,36/72],output:[345000/4000000]},{input:[508520/4000000,36/72],output:[345000/4000000]},{input:[508520/4000000,36/72],output:[345000/4000000]},{input:[530670/4000000,36/72],output:[345000/4000000]},{input:[455800/4000000,36/72],output:[345819/4000000]},{input:[527670/4000000,36/72],output:[346000/4000000]},{input:[455800/4000000,36/72],output:[346192/4000000]},{input:[455800/4000000,36/72],output:[346562/4000000]},{input:[455800/4000000,36/72],output:[347060/4000000]},{input:[492000/4000000,48/72],output:[348556/4000000]},{input:[455800/4000000,36/72],output:[349005/4000000]},{input:[501150/4000000,36/72],output:[350000/4000000]},{input:[625280/4000000,36/72],output:[350000/4000000]},{input:[527250/4000000,25/72],output:[350000/4000000]},{input:[492700/4000000,36/72],output:[350000/4000000]},{input:[455282/4000000,10/72],output:[350000/4000000]},{input:[540000/4000000,36/72],output:[350000/4000000]},{input:[511064/4000000,36/72],output:[350000/4000000]},{input:[642900/4000000,12/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[533280/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[533280/4000000,36/72],output:[350000/4000000]},{input:[506410/4000000,36/72],output:[350000/4000000]},{input:[533280/4000000,36/72],output:[350000/4000000]},{input:[532350/4000000,1/72],output:[350000/4000000]},{input:[616000/4000000,36/72],output:[350000/4000000]},{input:[767000/4000000,48/72],output:[350000/4000000]},{input:[579984/4000000,36/72],output:[350000/4000000]},{input:[579984/4000000,36/72],output:[350000/4000000]},{input:[579984/4000000,36/72],output:[350000/4000000]},{input:[545500/4000000,36/72],output:[350000/4000000]},{input:[748800/4000000,36/72],output:[350000/4000000]},{input:[545500/4000000,36/72],output:[350000/4000000]},{input:[545500/4000000,36/72],output:[350000/4000000]},{input:[555400/4000000,36/72],output:[350000/4000000]},{input:[594604/4000000,36/72],output:[350000/4000000]},{input:[496825/4000000,36/72],output:[350000/4000000]},{input:[592700/4000000,36/72],output:[350000/4000000]},{input:[637038/4000000,36/72],output:[350000/4000000]},{input:[482126/4000000,36/72],output:[350000/4000000]},{input:[482126/4000000,36/72],output:[350000/4000000]},{input:[482126/4000000,36/72],output:[350000/4000000]},{input:[478272/4000000,36/72],output:[350000/4000000]},{input:[458800/4000000,36/72],output:[350000/4000000]},{input:[473708/4000000,36/72],output:[350000/4000000]},{input:[648976/4000000,48/72],output:[350000/4000000]},{input:[488600/4000000,36/72],output:[350000/4000000]},{input:[661900/4000000,8/72],output:[350000/4000000]},{input:[587300/4000000,42/72],output:[350000/4000000]},{input:[595808/4000000,36/72],output:[350000/4000000]},{input:[619400/4000000,36/72],output:[350000/4000000]},{input:[651000/4000000,36/72],output:[350000/4000000]},{input:[615200/4000000,36/72],output:[350000/4000000]},{input:[473708/4000000,36/72],output:[350000/4000000]},{input:[637900/4000000,36/72],output:[350000/4000000]},{input:[699700/4000000,36/72],output:[350000/4000000]},{input:[536770/4000000,36/72],output:[350000/4000000]},{input:[513000/4000000,29/72],output:[350000/4000000]},{input:[441500/4000000,12/72],output:[350000/4000000]},{input:[527574/4000000,36/72],output:[351000/4000000]},{input:[455800/4000000,36/72],output:[351010/4000000]},{input:[455800/4000000,36/72],output:[351610/4000000]},{input:[468900/4000000,28/72],output:[352000/4000000]},{input:[455800/4000000,36/72],output:[352360/4000000]},{input:[455800/4000000,36/72],output:[353420/4000000]},{input:[455800/4000000,36/72],output:[353975/4000000]},{input:[455800/4000000,36/72],output:[354890/4000000]},{input:[567000/4000000,36/72],output:[355000/4000000]},{input:[519360/4000000,36/72],output:[355000/4000000]},{input:[511000/4000000,36/72],output:[355000/4000000]},{input:[513000/4000000,36/72],output:[355000/4000000]},{input:[568800/4000000,34/72],output:[355000/4000000]},{input:[632000/4000000,19/72],output:[355000/4000000]},{input:[482126/4000000,36/72],output:[355000/4000000]},{input:[476100/4000000,36/72],output:[355000/4000000]},{input:[476100/4000000,36/72],output:[355000/4000000]},{input:[478016/4000000,5/72],output:[355000/4000000]},{input:[455800/4000000,36/72],output:[355460/4000000]},{input:[455800/4000000,36/72],output:[355885/4000000]},{input:[455800/4000000,36/72],output:[355885/4000000]},{input:[460000/4000000,36/72],output:[356000/4000000]},{input:[455800/4000000,36/72],output:[356125/4000000]},{input:[455800/4000000,36/72],output:[356760/4000000]},{input:[455800/4000000,36/72],output:[356830/4000000]},{input:[460000/4000000,36/72],output:[357000/4000000]},{input:[460000/4000000,36/72],output:[357000/4000000]},{input:[459300/4000000,36/72],output:[357000/4000000]},{input:[459300/4000000,36/72],output:[357000/4000000]},{input:[455800/4000000,36/72],output:[357194/4000000]},{input:[455800/4000000,36/72],output:[357420/4000000]},{input:[485000/4000000,36/72],output:[358000/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[455800/4000000,36/72],output:[358360/4000000]},{input:[533000/4000000,36/72],output:[359000/4000000]},{input:[482126/4000000,36/72],output:[359000/4000000]},{input:[478272/4000000,36/72],output:[359000/4000000]},{input:[448439/4000000,36/72],output:[360000/4000000]},{input:[454692/4000000,36/72],output:[360000/4000000]},{input:[535500/4000000,36/72],output:[360000/4000000]},{input:[493623/4000000,36/72],output:[360000/4000000]},{input:[568170/4000000,36/72],output:[360000/4000000]},{input:[482494/4000000,36/72],output:[360000/4000000]},{input:[628100/4000000,36/72],output:[360000/4000000]},{input:[459300/4000000,36/72],output:[360000/4000000]},{input:[459300/4000000,36/72],output:[360000/4000000]},{input:[459300/4000000,36/72],output:[360000/4000000]},{input:[459300/4000000,36/72],output:[360000/4000000]},{input:[459300/4000000,36/72],output:[360000/4000000]},{input:[548550/4000000,3/72],output:[360000/4000000]},{input:[513250/4000000,36/72],output:[360000/4000000]},{input:[559354/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[533280/4000000,36/72],output:[360000/4000000]},{input:[533280/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[533280/4000000,36/72],output:[360000/4000000]},{input:[533280/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[506410/4000000,36/72],output:[360000/4000000]},{input:[606750/4000000,26/72],output:[360000/4000000]},{input:[615550/4000000,36/72],output:[360000/4000000]},{input:[579984/4000000,24/72],output:[360000/4000000]},{input:[506000/4000000,4/72],output:[360000/4000000]},{input:[545500/4000000,36/72],output:[360000/4000000]},{input:[545500/4000000,36/72],output:[360000/4000000]},{input:[492000/4000000,60/72],output:[360000/4000000]},{input:[594604/4000000,36/72],output:[360000/4000000]},{input:[545500/4000000,36/72],output:[360000/4000000]},{input:[579984/4000000,36/72],output:[360000/4000000]},{input:[582560/4000000,36/72],output:[360000/4000000]},{input:[495788/4000000,36/72],output:[360000/4000000]},{input:[495788/4000000,36/72],output:[360000/4000000]},{input:[495788/4000000,36/72],output:[360000/4000000]},{input:[503720/4000000,36/72],output:[360000/4000000]},{input:[632480/4000000,36/72],output:[360000/4000000]},{input:[679500/4000000,50/72],output:[360000/4000000]},{input:[679500/4000000,48/72],output:[360000/4000000]},{input:[537000/4000000,48/72],output:[360000/4000000]},{input:[716472/4000000,48/72],output:[360000/4000000]},{input:[719382/4000000,36/72],output:[360000/4000000]},{input:[724400/4000000,48/72],output:[360000/4000000]},{input:[708666/4000000,48/72],output:[360000/4000000]},{input:[587300/4000000,36/72],output:[360000/4000000]},{input:[547409/4000000,36/72],output:[360000/4000000]},{input:[653900/4000000,38/72],output:[360000/4000000]},{input:[682400/4000000,37/72],output:[360000/4000000]},{input:[670250/4000000,36/72],output:[360000/4000000]},{input:[717309/4000000,36/72],output:[360000/4000000]},{input:[735999/4000000,36/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[659900/4000000,40/72],output:[360000/4000000]},{input:[692400/4000000,36/72],output:[360000/4000000]},{input:[663076/4000000,36/72],output:[360000/4000000]},{input:[669000/4000000,36/72],output:[360000/4000000]},{input:[668600/4000000,36/72],output:[360000/4000000]},{input:[678900/4000000,36/72],output:[360000/4000000]},{input:[674900/4000000,36/72],output:[360000/4000000]},{input:[730422/4000000,36/72],output:[360000/4000000]},{input:[455800/4000000,36/72],output:[360714/4000000]},{input:[511000/4000000,36/72],output:[361000/4000000]},{input:[511000/4000000,36/72],output:[361000/4000000]},{input:[511000/4000000,36/72],output:[361000/4000000]},{input:[665400/4000000,36/72],output:[363000/4000000]},{input:[579984/4000000,36/72],output:[363000/4000000]},{input:[455800/4000000,36/72],output:[363600/4000000]},{input:[480900/4000000,36/72],output:[365000/4000000]},{input:[511000/4000000,36/72],output:[365000/4000000]},{input:[555000/4000000,36/72],output:[365000/4000000]},{input:[555000/4000000,36/72],output:[365000/4000000]},{input:[555000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[513000/4000000,36/72],output:[365000/4000000]},{input:[513250/4000000,36/72],output:[365000/4000000]},{input:[550000/4000000,36/72],output:[365000/4000000]},{input:[520000/4000000,36/72],output:[365000/4000000]},{input:[579984/4000000,12/72],output:[365000/4000000]},{input:[579984/4000000,36/72],output:[365000/4000000]},{input:[579984/4000000,36/72],output:[365000/4000000]},{input:[579984/4000000,36/72],output:[365000/4000000]},{input:[579984/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[555400/4000000,36/72],output:[365000/4000000]},{input:[555400/4000000,36/72],output:[365000/4000000]},{input:[555400/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[545500/4000000,36/72],output:[365000/4000000]},{input:[648800/4000000,36/72],output:[365000/4000000]},{input:[667100/4000000,36/72],output:[365000/4000000]},{input:[632000/4000000,36/72],output:[365000/4000000]},{input:[606720/4000000,36/72],output:[365000/4000000]},{input:[455800/4000000,36/72],output:[367500/4000000]},{input:[455800/4000000,36/72],output:[367500/4000000]},{input:[455800/4000000,36/72],output:[367500/4000000]},{input:[455800/4000000,36/72],output:[367500/4000000]},{input:[553050/4000000,3/72],output:[368000/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[513250/4000000,36/72],output:[368300/4000000]},{input:[531024/4000000,48/72],output:[368400/4000000]},{input:[442846/4000000,36/72],output:[370000/4000000]},{input:[493000/4000000,36/72],output:[370000/4000000]},{input:[492700/4000000,36/72],output:[370000/4000000]},{input:[772635/4000000,27/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[370000/4000000]},{input:[606150/4000000,36/72],output:[370000/4000000]},{input:[506000/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[545500/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[555400/4000000,36/72],output:[370000/4000000]},{input:[594604/4000000,16/72],output:[370000/4000000]},{input:[594604/4000000,36/72],output:[370000/4000000]},{input:[604560/4000000,36/72],output:[370000/4000000]},{input:[582560/4000000,36/72],output:[370000/4000000]},{input:[594604/4000000,36/72],output:[370000/4000000]},{input:[660000/4000000,36/72],output:[370000/4000000]},{input:[494400/4000000,36/72],output:[370000/4000000]},{input:[530670/4000000,36/72],output:[370000/4000000]},{input:[594500/4000000,36/72],output:[370000/4000000]},{input:[542372/4000000,48/72],output:[370000/4000000]},{input:[736100/4000000,48/72],output:[370000/4000000]},{input:[527670/4000000,36/72],output:[370000/4000000]},{input:[607889/4000000,36/72],output:[370000/4000000]},{input:[498730/4000000,23/72],output:[370000/4000000]},{input:[586250/4000000,60/72],output:[370000/4000000]},{input:[668000/4000000,28/72],output:[370000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[513250/4000000,36/72],output:[373000/4000000]},{input:[555000/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[523500/4000000,36/72],output:[375000/4000000]},{input:[513250/4000000,36/72],output:[375000/4000000]},{input:[506410/4000000,36/72],output:[375000/4000000]},{input:[532350/4000000,2/72],output:[375000/4000000]},{input:[592000/4000000,36/72],output:[375000/4000000]},{input:[546800/4000000,36/72],output:[375000/4000000]},{input:[607710/4000000,48/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[555400/4000000,36/72],output:[375000/4000000]},{input:[595820/4000000,36/72],output:[375000/4000000]},{input:[595820/4000000,36/72],output:[375000/4000000]},{input:[595820/4000000,36/72],output:[375000/4000000]}],test:[],output:'',vehiclePrice:'',vehicleYear:'',vehicleRent:''};return _this;}_createClass(Trainer,[{key:'componentWillMount',value:function componentWillMount(){//var train = file.data;
+	//this.setState({train: train});
+	}},{key:'componentDidMount',value:function componentDidMount(){}},{key:'componentWillUnmount',value:function componentWillUnmount(){}},{key:'componentWillReceiveProps',value:function componentWillReceiveProps(newProps){}},{key:'componentDidUpdate',value:function componentDidUpdate(){}},{key:'onChange',value:function onChange(name,ev){this.setState(_defineProperty({},name,ev.currentTarget.value));}},{key:'train',value:function train(price,rent,ev){ev.preventDefault();var brain=__webpack_require__(494);var net=new brain.NeuralNetwork();net.train(this.state.train,{log:true,logPeriod:500});var output=net.run([parseInt(price)/5000000,parseInt(rent)/60]);var new_test={input:[parseInt(price)/5000000,parseInt(rent)/60],output:[output]};this.state.train.push(new_test);this.setState({output:output});}},{key:'render',value:function render(){var formInstance=_react2.default.createElement('form',null,_react2.default.createElement(_reactBootstrap.FormGroup,{controlId:'formVehiclePrice'},_react2.default.createElement(_reactBootstrap.Col,{componentClass:_reactBootstrap.ControlLabel,xs:2},'Vehicle price'),_react2.default.createElement(_reactBootstrap.Col,{xs:2},_react2.default.createElement(_reactBootstrap.FormControl,{name:'vehiclePrice',type:'text',onChange:this.onChange.bind(this,'vehiclePrice')}))),_react2.default.createElement(_reactBootstrap.FormGroup,{controlId:'formVehicleRent'},_react2.default.createElement(_reactBootstrap.Col,{componentClass:_reactBootstrap.ControlLabel,xs:2},'Vehicle rent period'),_react2.default.createElement(_reactBootstrap.Col,{xs:2},_react2.default.createElement(_reactBootstrap.FormControl,{name:'vehicleRent',type:'text',onChange:this.onChange.bind(this,'vehicleRent')}))),_react2.default.createElement(_reactBootstrap.Col,{xs:2,xsOffset:2},_react2.default.createElement(_reactBootstrap.Button,{type:'submit',bsStyle:'primary',onClick:this.train.bind(this,this.state.vehiclePrice,this.state.vehicleRent)},'Learn')));var trainInput=this.state.train.slice(-10).map(function(obj,i){return _react2.default.createElement('tr',{key:i},_react2.default.createElement('td',null,i+1),_react2.default.createElement('td',null,Math.round(obj.input[0]*5000000)),_react2.default.createElement('td',null,Math.round(obj.input[1]*60),' '),_react2.default.createElement('td',null,Math.round(obj.output*5000000),' '));});var tableInstance=_react2.default.createElement(_reactBootstrap.Table,{striped:true,bordered:true,condensed:true,hover:true},_react2.default.createElement('thead',null,_react2.default.createElement('tr',null,_react2.default.createElement('th',null,'#'),_react2.default.createElement('th',null,'Purchase price'),_react2.default.createElement('th',null,'Rent period'),_react2.default.createElement('th',null,'Sale price'))),_react2.default.createElement('tbody',null,trainInput));return _react2.default.createElement('div',{className:'neural-network'},_react2.default.createElement('h4',null,'Last 10 lines from ',this.state.train.length,' '),_react2.default.createElement('p',{className:'text-muted'},'the best results between 480000 and 780000 rub'),tableInstance,formInstance);}}]);return Trainer;}(_react2.default.Component);;var _default=Trainer;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Trainer,'Trainer','/home/nas/www/l_work/app/components/trainer.jsx');__REACT_HOT_LOADER__.register(_default,'default','/home/nas/www/l_work/app/components/trainer.jsx');}();;
+
+/***/ },
+/* 493 */
+/***/ function(module, exports) {
+
+	"use strict";var train=[{input:[2006/10000,884550/5000000,36/60],output:[410000/5000000]},{input:[2006/10000,884580/5000000,36/60],output:[591800/5000000]},{input:[2006/10000,523200/5000000,36/60],output:[380000/5000000]},{input:[2006/10000,476250/5000000,36/60],output:[290000/5000000]},{input:[2006/10000,476250/5000000,36/60],output:[290000/5000000]},{input:[2006/10000,480900/5000000,36/60],output:[395000/5000000]},{input:[2006/10000,480900/5000000,36/60],output:[365000/5000000]},{input:[2006/10000,1077000/5000000,36/60],output:[640000/5000000]},{input:[2007/10000,443133/5000000,36/60],output:[320000/5000000]},{input:[2007/10000,442846/5000000,36/60],output:[370000/5000000]},{input:[2007/10000,448439/5000000,36/60],output:[360000/5000000]},{input:[2006/10000,467665/5000000,36/60],output:[280000/5000000]},{input:[2006/10000,646971/5000000,36/60],output:[445000/5000000]},{input:[2007/10000,318840/5000000,36/60],output:[182000/5000000]},{input:[2007/10000,318840/5000000,36/60],output:[187000/5000000]},{input:[2007/10000,318840/5000000,36/60],output:[187000/5000000]},{input:[2006/10000,987592/5000000,36/60],output:[525000/5000000]},{input:[2007/10000,379950/5000000,36/60],output:[400000/5000000]},{input:[2007/10000,454692/5000000,36/60],output:[360000/5000000]},{input:[2006/10000,420299/5000000,36/60],output:[180000/5000000]},{input:[2006/10000,420299/5000000,36/60],output:[300000/5000000]},{input:[2007/10000,951755/5000000,36/60],output:[815000/5000000]},{input:[2007/10000,479332/5000000,36/60],output:[338983/5000000]},{input:[2007/10000,1152000/5000000,36/60],output:[840000/5000000]},{input:[2007/10000,531450/5000000,36/60],output:[320000/5000000]},{input:[2007/10000,323426/5000000,36/60],output:[225000/5000000]},{input:[2007/10000,616740/5000000,36/60],output:[450000/5000000]},{input:[2007/10000,1098000/5000000,36/60],output:[641000/5000000]},{input:[2007/10000,501525/5000000,36/60],output:[310000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[200000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[225000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[64748/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[200000/5000000]},{input:[2007/10000,417600/5000000,36/60],output:[260000/5000000]},{input:[2007/10000,417600/5000000,36/60],output:[260000/5000000]},{input:[2007/10000,1887000/5000000,3/60],output:[950000/5000000]},{input:[2007/10000,1887000/5000000,3/60],output:[1010000/5000000]},{input:[2007/10000,1887000/5000000,36/60],output:[1010000/5000000]},{input:[2007/10000,500100/5000000,36/60],output:[335000/5000000]},{input:[2007/10000,495900/5000000,36/60],output:[335000/5000000]},{input:[2007/10000,987120/5000000,36/60],output:[580000/5000000]},{input:[2007/10000,694650/5000000,36/60],output:[425000/5000000]},{input:[2007/10000,527250/5000000,36/60],output:[250000/5000000]},{input:[2007/10000,501150/5000000,36/60],output:[350000/5000000]},{input:[2007/10000,501150/5000000,36/60],output:[340000/5000000]},{input:[2007/10000,501150/5000000,36/60],output:[380000/5000000]},{input:[2007/10000,535500/5000000,36/60],output:[360000/5000000]},{input:[2007/10000,371460/5000000,12/60],output:[285000/5000000]},{input:[2007/10000,1917840/5000000,36/60],output:[750000/5000000]},{input:[2007/10000,1744200/5000000,36/60],output:[980000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[210000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[210000/5000000]},{input:[2007/10000,1009500/5000000,36/60],output:[640000/5000000]},{input:[2007/10000,672840/5000000,36/60],output:[380000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[530000/5000000]},{input:[2007/10000,554010/5000000,36/60],output:[340000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[540000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[519000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[450000/5000000]},{input:[2007/10000,475600/5000000,36/60],output:[380000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[535000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[545000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[450000/5000000]},{input:[2007/10000,910110/5000000,36/60],output:[670000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[300000/5000000]},{input:[2007/10000,760530/5000000,36/60],output:[520000/5000000]},{input:[2007/10000,493623/5000000,36/60],output:[360000/5000000]},{input:[2007/10000,405615/5000000,36/60],output:[84000/5000000]},{input:[2007/10000,783840/5000000,36/60],output:[450000/5000000]},{input:[2007/10000,946784/5000000,12/60],output:[615000/5000000]},{input:[2007/10000,496781/5000000,36/60],output:[300000/5000000]},{input:[2007/10000,477715/5000000,3/60],output:[340000/5000000]},{input:[2007/10000,891471/5000000,36/60],output:[500000/5000000]},{input:[2007/10000,306850/5000000,36/60],output:[83721/5000000]},{input:[2007/10000,483000/5000000,36/60],output:[330000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[220000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[220000/5000000]},{input:[2007/10000,306850/5000000,36/60],output:[195000/5000000]},{input:[2007/10000,306850/5000000,36/60],output:[180000/5000000]},{input:[2007/10000,306850/5000000,36/60],output:[200000/5000000]},{input:[2007/10000,306850/5000000,36/60],output:[180000/5000000]},{input:[2006/10000,1122000/5000000,24/60],output:[610000/5000000]},{input:[2007/10000,930000/5000000,36/60],output:[600000/5000000]},{input:[2007/10000,625280/5000000,36/60],output:[350000/5000000]},{input:[2007/10000,456230/5000000,27/60],output:[300000/5000000]},{input:[2007/10000,349650/5000000,36/60],output:[70000/5000000]},{input:[2007/10000,568170/5000000,36/60],output:[360000/5000000]},{input:[2007/10000,338400/5000000,36/60],output:[220000/5000000]},{input:[2007/10000,420300/5000000,36/60],output:[320000/5000000]},{input:[2007/10000,810603/5000000,36/60],output:[480000/5000000]},{input:[2007/10000,2302400/5000000,36/60],output:[1030000/5000000]},{input:[2008/10000,675400/5000000,36/60],output:[460000/5000000]},{input:[2008/10000,675400/5000000,36/60],output:[470000/5000000]},{input:[2008/10000,675400/5000000,36/60],output:[470000/5000000]},{input:[2008/10000,675400/5000000,36/60],output:[470000/5000000]},{input:[2006/10000,420299/5000000,23/60],output:[320000/5000000]},{input:[2008/10000,680000/5000000,36/60],output:[475000/5000000]},{input:[2008/10000,358500/5000000,36/60],output:[220000/5000000]},{input:[2007/10000,498000/5000000,36/60],output:[320000/5000000]},{input:[2008/10000,488924/5000000,36/60],output:[335000/5000000]},{input:[2008/10000,493000/5000000,36/60],output:[392000/5000000]},{input:[2008/10000,817900/5000000,36/60],output:[637000/5000000]},{input:[2008/10000,493000/5000000,36/60],output:[370000/5000000]},{input:[2008/10000,282600/5000000,36/60],output:[212000/5000000]},{input:[2008/10000,282600/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,282600/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,609089/5000000,36/60],output:[390000/5000000]},{input:[2008/10000,828900/5000000,36/60],output:[525000/5000000]},{input:[2008/10000,828900/5000000,36/60],output:[600000/5000000]},{input:[2008/10000,828900/5000000,36/60],output:[550000/5000000]},{input:[2008/10000,828900/5000000,36/60],output:[620000/5000000]},{input:[2008/10000,282600/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,1111230/5000000,36/60],output:[700000/5000000]},{input:[2008/10000,846500/5000000,36/60],output:[500000/5000000]},{input:[2008/10000,846500/5000000,36/60],output:[525000/5000000]},{input:[2008/10000,713760/5000000,36/60],output:[510000/5000000]},{input:[2007/10000,468900/5000000,28/60],output:[352000/5000000]},{input:[2007/10000,468900/5000000,28/60],output:[290000/5000000]},{input:[2007/10000,460200/5000000,36/60],output:[345000/5000000]},{input:[2007/10000,440756/5000000,30/60],output:[325000/5000000]},{input:[2007/10000,527250/5000000,25/60],output:[345000/5000000]},{input:[2007/10000,527250/5000000,25/60],output:[338800/5000000]},{input:[2007/10000,527250/5000000,25/60],output:[350000/5000000]},{input:[2007/10000,548400/5000000,25/60],output:[95000/5000000]},{input:[2007/10000,548400/5000000,25/60],output:[250000/5000000]},{input:[2008/10000,1041480/5000000,36/60],output:[650000/5000000]},{input:[2008/10000,864506/5000000,36/60],output:[535000/5000000]},{input:[2008/10000,874950/5000000,24/60],output:[650000/5000000]},{input:[2008/10000,874950/5000000,24/60],output:[653000/5000000]},{input:[2008/10000,874950/5000000,24/60],output:[660000/5000000]},{input:[2008/10000,546000/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,460000/5000000,36/60],output:[340000/5000000]},{input:[2008/10000,460000/5000000,36/60],output:[357000/5000000]},{input:[2008/10000,460000/5000000,36/60],output:[357000/5000000]},{input:[2008/10000,460000/5000000,36/60],output:[356000/5000000]},{input:[2008/10000,460000/5000000,36/60],output:[385000/5000000]},{input:[2008/10000,436670/5000000,24/60],output:[280000/5000000]},{input:[2008/10000,846500/5000000,36/60],output:[550000/5000000]},{input:[2008/10000,436770/5000000,36/60],output:[250000/5000000]},{input:[2008/10000,554310/5000000,36/60],output:[380000/5000000]},{input:[2008/10000,287350/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,287350/5000000,36/60],output:[190000/5000000]},{input:[2008/10000,287350/5000000,36/60],output:[210000/5000000]},{input:[2008/10000,567000/5000000,36/60],output:[355000/5000000]},{input:[2008/10000,690950/5000000,36/60],output:[470000/5000000]},{input:[2008/10000,432700/5000000,36/60],output:[310000/5000000]},{input:[2008/10000,432700/5000000,36/60],output:[330000/5000000]},{input:[2008/10000,432700/5000000,36/60],output:[340000/5000000]},{input:[2008/10000,554310/5000000,36/60],output:[390000/5000000]},{input:[2008/10000,554310/5000000,36/60],output:[390000/5000000]},{input:[2008/10000,432700/5000000,36/60],output:[310000/5000000]},{input:[2008/10000,432700/5000000,36/60],output:[325000/5000000]},{input:[2008/10000,287350/5000000,36/60],output:[195000/5000000]},{input:[2008/10000,287350/5000000,36/60],output:[200000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[205000/5000000]},{input:[2008/10000,641097/5000000,36/60],output:[450000/5000000]},{input:[2008/10000,475410/5000000,24/60],output:[395000/5000000]},{input:[2008/10000,475410/5000000,24/60],output:[390000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[220000/5000000]},{input:[2008/10000,1504800/5000000,36/60],output:[910000/5000000]},{input:[2008/10000,829000/5000000,48/60],output:[604700/5000000]},{input:[2008/10000,829000/5000000,48/60],output:[520000/5000000]},{input:[2008/10000,829000/5000000,36/60],output:[525000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[190000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[220000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[190000/5000000]},{input:[2008/10000,829000/5000000,48/60],output:[530000/5000000]},{input:[2008/10000,588990/5000000,36/60],output:[420000/5000000]},{input:[2008/10000,475410/5000000,24/60],output:[400000/5000000]},{input:[2008/10000,628100/5000000,36/60],output:[430000/5000000]},{input:[2008/10000,506520/5000000,36/60],output:[345000/5000000]},{input:[2008/10000,506520/5000000,36/60],output:[345000/5000000]},{input:[2008/10000,679000/5000000,36/60],output:[221184/5000000]},{input:[2008/10000,1059600/5000000,36/60],output:[610000/5000000]},{input:[2008/10000,829000/5000000,48/60],output:[590000/5000000]},{input:[2007/10000,432740/5000000,26/60],output:[310000/5000000]},{input:[2008/10000,680000/5000000,30/60],output:[475000/5000000]},{input:[2008/10000,827150/5000000,36/60],output:[600000/5000000]},{input:[2008/10000,482494/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,512300/5000000,36/60],output:[405000/5000000]},{input:[2008/10000,361950/5000000,36/60],output:[230000/5000000]},{input:[2008/10000,361950/5000000,36/60],output:[255000/5000000]},{input:[2008/10000,628100/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,640000/5000000,36/60],output:[485000/5000000]},{input:[2008/10000,484497/5000000,36/60],output:[290000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[195000/5000000]},{input:[2008/10000,386787/5000000,36/60],output:[265000/5000000]},{input:[2008/10000,352350/5000000,36/60],output:[230000/5000000]},{input:[2008/10000,352350/5000000,36/60],output:[230000/5000000]},{input:[2008/10000,352350/5000000,36/60],output:[242000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[240000/5000000]},{input:[2008/10000,832044/5000000,36/60],output:[570000/5000000]},{input:[2008/10000,361950/5000000,36/60],output:[230000/5000000]},{input:[2008/10000,619634/5000000,36/60],output:[575000/5000000]},{input:[2008/10000,512500/5000000,36/60],output:[380000/5000000]},{input:[2008/10000,453827/5000000,36/60],output:[310000/5000000]},{input:[2008/10000,453827/5000000,36/60],output:[310000/5000000]},{input:[2008/10000,481068/5000000,36/60],output:[295000/5000000]},{input:[2008/10000,519360/5000000,36/60],output:[355000/5000000]},{input:[2008/10000,453827/5000000,36/60],output:[320000/5000000]},{input:[2008/10000,829000/5000000,36/60],output:[530000/5000000]},{input:[2008/10000,837718/5000000,36/60],output:[550000/5000000]},{input:[2008/10000,1766300/5000000,36/60],output:[960000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,492700/5000000,36/60],output:[270000/5000000]},{input:[2008/10000,352350/5000000,36/60],output:[220000/5000000]},{input:[2008/10000,492700/5000000,36/60],output:[370000/5000000]},{input:[2008/10000,492700/5000000,36/60],output:[350000/5000000]},{input:[2008/10000,492700/5000000,36/60],output:[330000/5000000]},{input:[2008/10000,492700/5000000,36/60],output:[330000/5000000]},{input:[2008/10000,925515/5000000,36/60],output:[590000/5000000]},{input:[2008/10000,758480/5000000,12/60],output:[490000/5000000]},{input:[2008/10000,1520000/5000000,11/60],output:[850000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,1520000/5000000,11/60],output:[850000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[360000/5000000]},{input:[2008/10000,1740000/5000000,48/60],output:[1099000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[357000/5000000]},{input:[2008/10000,497300/5000000,36/60],output:[330000/5000000]},{input:[2008/10000,673227/5000000,24/60],output:[300000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[240000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[215000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[240000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[240000/5000000]},{input:[2008/10000,355950/5000000,36/60],output:[170000/5000000]},{input:[2008/10000,976322/5000000,36/60],output:[555000/5000000]},{input:[2008/10000,786045/5000000,36/60],output:[545000/5000000]},{input:[2008/10000,650541/5000000,36/60],output:[430000/5000000]},{input:[2008/10000,450000/5000000,36/60],output:[395000/5000000]},{input:[2008/10000,459300/5000000,36/60],output:[357000/5000000]},{input:[2008/10000,671576/5000000,36/60],output:[455000/5000000]},{input:[2008/10000,1029722/5000000,36/60],output:[500000/5000000]},{input:[2007/10000,777030/5000000,4/60],output:[450000/5000000]},{input:[2008/10000,455400/5000000,36/60],output:[300000/5000000]},{input:[2008/10000,455400/5000000,36/60],output:[380000/5000000]},{input:[2008/10000,367380/5000000,36/60],output:[240000/5000000]},{input:[2008/10000,367380/5000000,36/60],output:[240000/5000000]},{input:[2006/10000,420299/5000000,11/60],output:[340000/5000000]},{input:[2006/10000,432262/5000000,11/60],output:[100000/5000000]},{input:[2007/10000,965520/5000000,24/60],output:[600000/5000000]},{input:[2009/10000,2325000/5000000,24/60],output:[1225000/5000000]},{input:[2008/10000,455282/5000000,10/60],output:[350000/5000000]},{input:[2009/10000,765714/5000000,36/60],output:[505000/5000000]},{input:[2008/10000,292000/5000000,36/60],output:[190000/5000000]},{input:[2008/10000,436950/5000000,36/60],output:[220000/5000000]},{input:[2008/10000,864000/5000000,36/60],output:[560000/5000000]},{input:[2006/10000,772635/5000000,27/60],output:[370000/5000000]},{input:[2007/10000,910110/5000000,16/60],output:[440000/5000000]},{input:[2009/10000,511000/5000000,36/60],output:[355000/5000000]},{input:[2009/10000,511000/5000000,36/60],output:[361000/5000000]},{input:[2009/10000,511000/5000000,36/60],output:[361000/5000000]},{input:[2009/10000,511000/5000000,36/60],output:[361000/5000000]},{input:[2009/10000,1537734/5000000,36/60],output:[678133/5000000]},{input:[2009/10000,511000/5000000,36/60],output:[365000/5000000]},{input:[2009/10000,293750/5000000,36/60],output:[240000/5000000]},{input:[2009/10000,293750/5000000,36/60],output:[240000/5000000]},{input:[2009/10000,293750/5000000,36/60],output:[240000/5000000]},{input:[2009/10000,293750/5000000,36/60],output:[245000/5000000]},{input:[2009/10000,293750/5000000,36/60],output:[240000/5000000]},{input:[2009/10000,270390/5000000,36/60],output:[242000/5000000]},{input:[2009/10000,270390/5000000,36/60],output:[145000/5000000]},{input:[2009/10000,367766/5000000,36/60],output:[225000/5000000]},{input:[2009/10000,367766/5000000,36/60],output:[225000/5000000]},{input:[2009/10000,367766/5000000,36/60],output:[225000/5000000]},{input:[2009/10000,1370000/5000000,24/60],output:[942000/5000000]},{input:[2007/10000,460200/5000000,15/60],output:[315000/5000000]},{input:[2007/10000,1887000/5000000,36/60],output:[1010000/5000000]},{input:[2008/10000,1651935/5000000,18/60],output:[1050000/5000000]},{input:[2007/10000,760530/5000000,24/60],output:[435000/5000000]},{input:[2007/10000,553050/5000000,3/60],output:[368000/5000000]},{input:[2007/10000,1625260/5000000,36/60],output:[1015000/5000000]},{input:[2009/10000,777227/5000000,36/60],output:[510000/5000000]},{input:[2007/10000,760530/5000000,24/60],output:[475000/5000000]},{input:[2008/10000,584830/5000000,35/60],output:[380000/5000000]},{input:[2007/10000,548550/5000000,3/60],output:[360000/5000000]},{input:[2006/10000,574695/5000000,12/60],output:[400000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2006/10000,620550/5000000,24/60],output:[310000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[265000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[300000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[300000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[285000/5000000]},{input:[2009/10000,433470/5000000,36/60],output:[260000/5000000]},{input:[2008/10000,1460000/5000000,36/60],output:[860000/5000000]},{input:[2008/10000,1460000/5000000,36/60],output:[820000/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[206257/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[187635/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[234232/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[183589/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[184059/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[215000/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[200000/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[179949/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[186912/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[181395/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[217563/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[193112/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[181395/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[179920/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[194687/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[186395/5000000]},{input:[2009/10000,295437/5000000,36/60],output:[181395/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[186768/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[186887/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[235000/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[187635/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[185936/5000000]},{input:[2009/10000,276830/5000000,36/60],output:[200000/5000000]},{input:[2007/10000,628840/5000000,12/60],output:[330000/5000000]},{input:[2007/10000,419580/5000000,4/60],output:[210000/5000000]},{input:[2009/10000,616000/5000000,36/60],output:[450000/5000000]},{input:[2009/10000,616000/5000000,36/60],output:[500000/5000000]},{input:[2009/10000,550000/5000000,36/60],output:[1385150/5000000]},{input:[2009/10000,848000/5000000,36/60],output:[500000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[335000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[365000/5000000]},{input:[2009/10000,848000/5000000,36/60],output:[500000/5000000]},{input:[2009/10000,550000/5000000,36/60],output:[380000/5000000]},{input:[2008/10000,393928/5000000,36/60],output:[260000/5000000]},{input:[2008/10000,393928/5000000,36/60],output:[260000/5000000]},{input:[2008/10000,393928/5000000,36/60],output:[205000/5000000]},{input:[2008/10000,393928/5000000,36/60],output:[260000/5000000]},{input:[2008/10000,393928/5000000,36/60],output:[240000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[335000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[335000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[365000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[375000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[380000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[365000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[335000/5000000]},{input:[2009/10000,555000/5000000,36/60],output:[335000/5000000]},{input:[2008/10000,1334500/5000000,36/60],output:[1040000/5000000]},{input:[2008/10000,1520000/5000000,12/60],output:[800000/5000000]},{input:[2009/10000,463562/5000000,36/60],output:[200000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[260000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,467050/5000000,36/60],output:[1150093/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[205000/5000000]},{input:[2009/10000,510000/5000000,36/60],output:[330000/5000000]},{input:[2009/10000,510000/5000000,36/60],output:[340000/5000000]},{input:[2009/10000,510000/5000000,36/60],output:[330000/5000000]},{input:[2009/10000,510000/5000000,36/60],output:[340000/5000000]},{input:[2009/10000,560000/5000000,36/60],output:[330000/5000000]},{input:[2009/10000,535000/5000000,36/60],output:[300000/5000000]},{input:[2009/10000,848390/5000000,36/60],output:[800000/5000000]},{input:[2009/10000,2080360/5000000,48/60],output:[829024/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[208000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[208000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[208000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[220000/5000000]},{input:[2009/10000,272090/5000000,36/60],output:[208000/5000000]},{input:[2009/10000,553000/5000000,36/60],output:[340000/5000000]},{input:[2010/10000,757000/5000000,36/60],output:[1868825/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[144630/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[355000/5000000]},{input:[2010/10000,540000/5000000,36/60],output:[350000/5000000]},{input:[2009/10000,522000/5000000,36/60],output:[330000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,744600/5000000,36/60],output:[510000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[375000/5000000]},{input:[2009/10000,3970000/5000000,36/60],output:[750000/5000000]},{input:[2009/10000,3200000/5000000,36/60],output:[2200000/5000000]},{input:[2010/10000,3200000/5000000,36/60],output:[2400000/5000000]},{input:[2009/10000,1537734/5000000,36/60],output:[950000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[200000/5000000]},{input:[2009/10000,441177/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,523500/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,744600/5000000,36/60],output:[520000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[250800/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,571500/5000000,36/60],output:[390000/5000000]},{input:[2010/10000,883500/5000000,48/60],output:[500000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,511064/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,414710/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,414710/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,414710/5000000,36/60],output:[905958/5000000]},{input:[2010/10000,414710/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,645000/5000000,36/60],output:[415000/5000000]},{input:[2010/10000,511064/5000000,36/60],output:[330000/5000000]},{input:[2010/10000,559354/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2008/10000,374000/5000000,13/60],output:[220000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2007/10000,355150/5000000,8/60],output:[210000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[245000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[245000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[235000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[215000/5000000]},{input:[2007/10000,361000/5000000,6/60],output:[255000/5000000]},{input:[2009/10000,457011/5000000,36/60],output:[260000/5000000]},{input:[2010/10000,953200/5000000,36/60],output:[585000/5000000]},{input:[2010/10000,1027500/5000000,48/60],output:[600000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[235000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[260000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[260000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[275000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2008/10000,370077/5000000,12/60],output:[220000/5000000]},{input:[2008/10000,370077/5000000,12/60],output:[190000/5000000]},{input:[2008/10000,370000/5000000,20/60],output:[235000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[245000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[245000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2009/10000,295960/5000000,36/60],output:[245000/5000000]},{input:[2009/10000,1537734/5000000,36/60],output:[1155000/5000000]},{input:[2010/10000,892800/5000000,12/60],output:[595000/5000000]},{input:[2010/10000,339360/5000000,36/60],output:[225000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[378000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[368300/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,583000/5000000,12/60],output:[315000/5000000]},{input:[2010/10000,583000/5000000,12/60],output:[340000/5000000]},{input:[2010/10000,642900/5000000,12/60],output:[350000/5000000]},{input:[2010/10000,610300/5000000,12/60],output:[320000/5000000]},{input:[2007/10000,468815/5000000,24/60],output:[300000/5000000]},{input:[2009/10000,1033445/5000000,11/60],output:[500000/5000000]},{input:[2008/10000,432270/5000000,8/60],output:[250000/5000000]},{input:[2008/10000,432270/5000000,8/60],output:[250000/5000000]},{input:[2010/10000,568800/5000000,34/60],output:[355000/5000000]},{input:[2010/10000,744600/5000000,36/60],output:[520000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,513250/5000000,36/60],output:[373000/5000000]},{input:[2010/10000,339360/5000000,36/60],output:[205000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[205000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[120000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[180000/5000000]},{input:[2010/10000,596025/5000000,4/60],output:[480000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[245000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[270000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,637200/5000000,12/60],output:[335000/5000000]},{input:[2009/10000,824000/5000000,12/60],output:[329600/5000000]},{input:[2010/10000,550000/5000000,36/60],output:[330000/5000000]},{input:[2010/10000,505764/5000000,36/60],output:[330000/5000000]},{input:[2007/10000,463097/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,339360/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,606150/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,2351728/5000000,36/60],output:[1750000/5000000]},{input:[2008/10000,512500/5000000,12/60],output:[300000/5000000]},{input:[2010/10000,610300/5000000,12/60],output:[320000/5000000]},{input:[2010/10000,1435000/5000000,12/60],output:[800000/5000000]},{input:[2010/10000,1435000/5000000,36/60],output:[770000/5000000]},{input:[2010/10000,1435000/5000000,36/60],output:[750000/5000000]},{input:[2010/10000,580000/5000000,36/60],output:[340000/5000000]},{input:[2010/10000,919800/5000000,12/60],output:[480000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[335000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[400000/5000000]},{input:[2010/10000,596025/5000000,36/60],output:[480000/5000000]},{input:[2010/10000,596025/5000000,3/60],output:[320000/5000000]},{input:[2008/10000,1270700/5000000,12/60],output:[700000/5000000]},{input:[2007/10000,458130/5000000,24/60],output:[300000/5000000]},{input:[2010/10000,412960/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[475000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,1560000/5000000,36/60],output:[800000/5000000]},{input:[2007/10000,946500/5000000,36/60],output:[580000/5000000]},{input:[2010/10000,606150/5000000,36/60],output:[400000/5000000]},{input:[2010/10000,701250/5000000,12/60],output:[270000/5000000]},{input:[2010/10000,838000/5000000,36/60],output:[440000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,281190/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,281190/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,281190/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[310000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[335000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[310000/5000000]},{input:[2010/10000,506410/5000000,36/60],output:[360000/5000000]},{input:[2010/10000,533280/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,402750/5000000,48/60],output:[200000/5000000]},{input:[2010/10000,1139886/5000000,19/60],output:[550000/5000000]},{input:[2007/10000,653045/5000000,36/60],output:[445000/5000000]},{input:[2010/10000,606150/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,325710/5000000,36/60],output:[210000/5000000]},{input:[2007/10000,553500/5000000,24/60],output:[400000/5000000]},{input:[2007/10000,532350/5000000,24/60],output:[375000/5000000]},{input:[2010/10000,1643260/5000000,3/60],output:[975000/5000000]},{input:[2010/10000,2062800/5000000,36/60],output:[1360000/5000000]},{input:[2010/10000,1987200/5000000,36/60],output:[1180000/5000000]},{input:[2010/10000,581000/5000000,48/60],output:[300000/5000000]},{input:[2010/10000,3408893/5000000,36/60],output:[1250000/5000000]},{input:[2008/10000,479956/5000000,10/60],output:[250000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,282940/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,281190/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,281190/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,581000/5000000,36/60],output:[335000/5000000]},{input:[2010/10000,2508500/5000000,36/60],output:[870000/5000000]},{input:[2010/10000,572000/5000000,48/60],output:[330000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[595000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[635000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[550000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[500000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[645000/5000000]},{input:[2010/10000,1291725/5000000,36/60],output:[700000/5000000]},{input:[2010/10000,1009599/5000000,36/60],output:[550000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,592000/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,550000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,550000/5000000,36/60],output:[320000/5000000]},{input:[2010/10000,1291725/5000000,36/60],output:[690000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[235000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,1895000/5000000,36/60],output:[1070000/5000000]},{input:[2010/10000,371310/5000000,48/60],output:[190000/5000000]},{input:[2010/10000,371310/5000000,48/60],output:[190000/5000000]},{input:[2007/10000,532350/5000000,12/60],output:[350000/5000000]},{input:[2010/10000,1291725/5000000,36/60],output:[780000/5000000]},{input:[2010/10000,1291725/5000000,25/60],output:[790000/5000000]},{input:[2010/10000,581000/5000000,36/60],output:[310000/5000000]},{input:[2007/10000,477715/5000000,24/60],output:[330000/5000000]},{input:[2010/10000,627350/5000000,36/60],output:[415000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,292040/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,1159845/5000000,36/60],output:[665000/5000000]},{input:[2010/10000,452500/5000000,36/60],output:[270000/5000000]},{input:[2010/10000,550000/5000000,36/60],output:[340000/5000000]},{input:[2010/10000,550000/5000000,36/60],output:[340000/5000000]},{input:[2010/10000,505114/5000000,36/60],output:[325000/5000000]},{input:[2007/10000,628840/5000000,48/60],output:[330000/5000000]},{input:[2010/10000,1353588/5000000,35/60],output:[436783/5000000]},{input:[2010/10000,638400/5000000,36/60],output:[510000/5000000]},{input:[2010/10000,673000/5000000,36/60],output:[400000/5000000]},{input:[2010/10000,616000/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,452500/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,329270/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,329270/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,520000/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,473000/5000000,36/60],output:[420000/5000000]},{input:[2010/10000,1355818/5000000,36/60],output:[436783/5000000]},{input:[2010/10000,1689787/5000000,36/60],output:[825000/5000000]},{input:[2010/10000,1664281/5000000,36/60],output:[850000/5000000]},{input:[2010/10000,329270/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,314340/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,607710/5000000,36/60],output:[445000/5000000]},{input:[2010/10000,615520/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,606750/5000000,48/60],output:[320000/5000000]},{input:[2010/10000,606750/5000000,48/60],output:[335000/5000000]},{input:[2010/10000,767000/5000000,48/60],output:[350000/5000000]},{input:[2010/10000,606750/5000000,26/60],output:[360000/5000000]},{input:[2010/10000,575750/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,575750/5000000,36/60],output:[1608350/5000000]},{input:[2010/10000,569350/5000000,36/60],output:[390000/5000000]},{input:[2010/10000,1676774/5000000,20/60],output:[810000/5000000]},{input:[2010/10000,314340/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,485000/5000000,36/60],output:[358000/5000000]},{input:[2010/10000,386500/5000000,36/60],output:[218000/5000000]},{input:[2010/10000,343070/5000000,36/60],output:[225000/5000000]},{input:[2010/10000,343070/5000000,36/60],output:[235000/5000000]},{input:[2010/10000,589808/5000000,36/60],output:[330000/5000000]},{input:[2010/10000,665400/5000000,36/60],output:[363000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,579984/5000000,12/60],output:[365000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,1322020/5000000,21/60],output:[710000/5000000]},{input:[2010/10000,1322020/5000000,21/60],output:[755000/5000000]},{input:[2010/10000,1322020/5000000,36/60],output:[720000/5000000]},{input:[2010/10000,1322020/5000000,36/60],output:[785000/5000000]},{input:[2010/10000,1322020/5000000,36/60],output:[765000/5000000]},{input:[2010/10000,498144/5000000,36/60],output:[290000/5000000]},{input:[2010/10000,687000/5000000,48/60],output:[400000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[265000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[280000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[280000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[280000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[280000/5000000]},{input:[2010/10000,546800/5000000,36/60],output:[375000/5000000]},{input:[2010/10000,343070/5000000,36/60],output:[225000/5000000]},{input:[2010/10000,607710/5000000,48/60],output:[375000/5000000]},{input:[2010/10000,408532/5000000,36/60],output:[280000/5000000]},{input:[2010/10000,343070/5000000,36/60],output:[225000/5000000]},{input:[2010/10000,660000/5000000,36/60],output:[465000/5000000]},{input:[2010/10000,826000/5000000,36/60],output:[595000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,534618/5000000,36/60],output:[345000/5000000]},{input:[2010/10000,607710/5000000,48/60],output:[335000/5000000]},{input:[2010/10000,610300/5000000,29/60],output:[305000/5000000]},{input:[2010/10000,343070/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,470200/5000000,36/60],output:[255000/5000000]},{input:[2010/10000,349510/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,313280/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[665000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[685000/5000000]},{input:[2010/10000,709250/5000000,32/60],output:[400000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,441200/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,441200/5000000,4/60],output:[210000/5000000]},{input:[2010/10000,971732/5000000,36/60],output:[540000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[363000/5000000]},{input:[2010/10000,2035383/5000000,36/60],output:[1684109/5000000]},{input:[2010/10000,2016900/5000000,48/60],output:[1100000/5000000]},{input:[2010/10000,820400/5000000,36/60],output:[490000/5000000]},{input:[2010/10000,820400/5000000,22/60],output:[510000/5000000]},{input:[2010/10000,820400/5000000,22/60],output:[530000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[690000/5000000]},{input:[2010/10000,831978/5000000,36/60],output:[453000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[670000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[680000/5000000]},{input:[2010/10000,579984/5000000,22/60],output:[320000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[320000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,820400/5000000,36/60],output:[525000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[670000/5000000]},{input:[2010/10000,489700/5000000,36/60],output:[254000/5000000]},{input:[2010/10000,489700/5000000,36/60],output:[270000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,2184417/5000000,36/60],output:[1280000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[670000/5000000]},{input:[2010/10000,700850/5000000,36/60],output:[450000/5000000]},{input:[2010/10000,488800/5000000,36/60],output:[290000/5000000]},{input:[2010/10000,700850/5000000,36/60],output:[480000/5000000]},{input:[2009/10000,840960/5000000,21/60],output:[505000/5000000]},{input:[2010/10000,739331/5000000,36/60],output:[515000/5000000]},{input:[2010/10000,570700/5000000,36/60],output:[300000/5000000]},{input:[2010/10000,360720/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[665000/5000000]},{input:[2010/10000,886500/5000000,36/60],output:[480000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[550000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[670000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[665000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[670000/5000000]},{input:[2010/10000,1074000/5000000,36/60],output:[665000/5000000]},{input:[2010/10000,313280/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[190000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[190000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[190000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[180000/5000000]},{input:[2010/10000,290290/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,855600/5000000,36/60],output:[520000/5000000]},{input:[2011/10000,855600/5000000,36/60],output:[530000/5000000]},{input:[2010/10000,708000/5000000,36/60],output:[420000/5000000]},{input:[2010/10000,565884/5000000,36/60],output:[385000/5000000]},{input:[2010/10000,890500/5000000,36/60],output:[490000/5000000]},{input:[2010/10000,660000/5000000,36/60],output:[420000/5000000]},{input:[2010/10000,1044300/5000000,36/60],output:[500000/5000000]},{input:[2008/10000,828900/5000000,12/60],output:[560000/5000000]},{input:[2008/10000,846500/5000000,12/60],output:[560000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,367720/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,367720/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,625500/5000000,36/60],output:[310000/5000000]},{input:[2010/10000,615550/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,565000/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[305000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[326000/5000000]},{input:[2011/10000,914500/5000000,24/60],output:[590000/5000000]},{input:[2011/10000,914500/5000000,24/60],output:[610000/5000000]},{input:[2010/10000,712000/5000000,36/60],output:[410000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[325000/5000000]},{input:[2011/10000,2736205/5000000,36/60],output:[1380000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,6/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2010/10000,579984/5000000,24/60],output:[360000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[326000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,506000/5000000,4/60],output:[360000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[325000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[324000/5000000]},{input:[2010/10000,695000/5000000,36/60],output:[410000/5000000]},{input:[2010/10000,695000/5000000,36/60],output:[436000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[317000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,506000/5000000,36/60],output:[300000/5000000]},{input:[2010/10000,621000/5000000,36/60],output:[345000/5000000]},{input:[2010/10000,448540/5000000,4/60],output:[240000/5000000]},{input:[2010/10000,448540/5000000,8/60],output:[260000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[250000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[225000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[250000/5000000]},{input:[2010/10000,448540/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,374920/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,708000/5000000,36/60],output:[390000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[385000/5000000]},{input:[2011/10000,1327590/5000000,24/60],output:[760000/5000000]},{input:[2011/10000,1327590/5000000,36/60],output:[650000/5000000]},{input:[2011/10000,1327590/5000000,36/60],output:[650000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[509100/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,371700/5000000,36/60],output:[217000/5000000]},{input:[2011/10000,374920/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,402600/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,648000/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,648000/5000000,36/60],output:[380000/5000000]},{input:[2010/10000,625500/5000000,36/60],output:[310000/5000000]},{input:[2010/10000,650400/5000000,48/60],output:[340000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,521200/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,521200/5000000,36/60],output:[310000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,430740/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,748800/5000000,36/60],output:[350000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,1184260/5000000,48/60],output:[694000/5000000]},{input:[2011/10000,1184260/5000000,48/60],output:[645000/5000000]},{input:[2011/10000,1184260/5000000,48/60],output:[665000/5000000]},{input:[2010/10000,430740/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,1174200/5000000,59/60],output:[670000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,2118870/5000000,36/60],output:[1300000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[20000/5000000]},{input:[2011/10000,727593/5000000,36/60],output:[530000/5000000]},{input:[2010/10000,432940/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,432940/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,1732771/5000000,36/60],output:[890000/5000000]},{input:[2011/10000,1772983/5000000,36/60],output:[830000/5000000]},{input:[2010/10000,432940/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,432874/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[180000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[310000/5000000]},{input:[2011/10000,492000/5000000,1],output:[310000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[310000/5000000]},{input:[2011/10000,492000/5000000,48/60],output:[472700/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,48/60],output:[155850/5000000]},{input:[2011/10000,1480000/5000000,36/60],output:[830000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[205000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[300000/5000000]},{input:[2010/10000,425690/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,432874/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,430740/5000000,36/60],output:[150000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[301000/5000000]},{input:[2009/10000,997160/5000000,12/60],output:[450000/5000000]},{input:[2010/10000,509100/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,509100/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,509100/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,521200/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,828070/5000000,36/60],output:[520000/5000000]},{input:[2011/10000,828070/5000000,36/60],output:[480000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[370000/5000000]},{input:[2010/10000,933000/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,828070/5000000,36/60],output:[500000/5000000]},{input:[2010/10000,430740/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,589360/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300600/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,854000/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,854000/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[190000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,828070/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,327580/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,330898/5000000,36/60],output:[235000/5000000]},{input:[2011/10000,492000/5000000,1],output:[301000/5000000]},{input:[2011/10000,492000/5000000,1],output:[360000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[316400/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,1131508/5000000,36/60],output:[845000/5000000]},{input:[2011/10000,876340/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,876340/5000000,26/60],output:[500000/5000000]},{input:[2011/10000,594604/5000000,16/60],output:[370000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,330898/5000000,36/60],output:[235000/5000000]},{input:[2011/10000,330898/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,857000/5000000,36/60],output:[495000/5000000]},{input:[2011/10000,857000/5000000,36/60],output:[530000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[300000/5000000]},{input:[2011/10000,330898/5000000,36/60],output:[175000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[330000/5000000]},{input:[2010/10000,423940/5000000,36/60],output:[265000/5000000]},{input:[2011/10000,876340/5000000,25/60],output:[500000/5000000]},{input:[2011/10000,876340/5000000,36/60],output:[520000/5000000]},{input:[2010/10000,594604/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,876340/5000000,36/60],output:[530000/5000000]},{input:[2011/10000,801170/5000000,36/60],output:[440000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[220000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,856300/5000000,1],output:[1000000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[250000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[250000/5000000]},{input:[2010/10000,1097250/5000000,36/60],output:[570000/5000000]},{input:[2011/10000,584470/5000000,36/60],output:[385000/5000000]},{input:[2011/10000,1115730/5000000,36/60],output:[555000/5000000]},{input:[2010/10000,888480/5000000,36/60],output:[345000/5000000]},{input:[2010/10000,430940/5000000,36/60],output:[958561/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,8/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,436240/5000000,24/60],output:[210000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[215000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,436240/5000000,3/60],output:[230000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,12/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[230000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,11/60],output:[260000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,443100/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,443100/5000000,26/60],output:[290000/5000000]},{input:[2011/10000,330871/5000000,36/60],output:[195000/5000000]},{input:[2010/10000,443100/5000000,36/60],output:[240000/5000000]},{input:[2010/10000,443100/5000000,26/60],output:[290000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,2367000/5000000,36/60],output:[1350000/5000000]},{input:[2010/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,545500/5000000,36/60],output:[365000/5000000]},{input:[2010/10000,1166957/5000000,48/60],output:[650000/5000000]},{input:[2010/10000,579984/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,522500/5000000,1],output:[300000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,48/60],output:[481800/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[323500/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,522500/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,522500/5000000,1],output:[300000/5000000]},{input:[2011/10000,522500/5000000,1],output:[300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2010/10000,442240/5000000,26/60],output:[200000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,604560/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,555400/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,2580278/5000000,52/60],output:[1300000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,48/60],output:[348556/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2010/10000,436240/5000000,27/60],output:[260000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2010/10000,436240/5000000,27/60],output:[190000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,594604/5000000,27/60],output:[320000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,492000/5000000,1],output:[270000/5000000]},{input:[2011/10000,522500/5000000,1],output:[310000/5000000]},{input:[2010/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,436240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[656595/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,297570/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,2046252/5000000,12/60],output:[1000000/5000000]},{input:[2011/10000,614700/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,629700/5000000,36/60],output:[430000/5000000]},{input:[2011/10000,522500/5000000,1],output:[270000/5000000]},{input:[2011/10000,458664/5000000,36/60],output:[260000/5000000]},{input:[2010/10000,458664/5000000,12/60],output:[200000/5000000]},{input:[2011/10000,6079945/5000000,48/60],output:[1840000/5000000]},{input:[2010/10000,444040/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,925000/5000000,36/60],output:[600000/5000000]},{input:[2011/10000,522500/5000000,1],output:[380000/5000000]},{input:[2011/10000,1568000/5000000,36/60],output:[937000/5000000]},{input:[2011/10000,922800/5000000,36/60],output:[540000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[540000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1106450/5000000,36/60],output:[610000/5000000]},{input:[2011/10000,717000/5000000,36/60],output:[500000/5000000]},{input:[2010/10000,444040/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[540000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[540000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,1180000/5000000,36/60],output:[660000/5000000]},{input:[2011/10000,415000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[550000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2010/10000,444040/5000000,28/60],output:[195000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[500000/5000000]},{input:[2011/10000,471969/5000000,36/60],output:[295000/5000000]},{input:[2011/10000,828070/5000000,36/60],output:[490000/5000000]},{input:[2010/10000,444040/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,633400/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,618600/5000000,48/60],output:[330000/5000000]},{input:[2011/10000,595750/5000000,36/60],output:[270000/5000000]},{input:[2011/10000,618600/5000000,48/60],output:[330000/5000000]},{input:[2011/10000,618600/5000000,48/60],output:[340000/5000000]},{input:[2011/10000,415000/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,415000/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,1031140/5000000,1],output:[520000/5000000]},{input:[2011/10000,471969/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,471969/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,415000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,415000/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,914400/5000000,36/60],output:[540000/5000000]},{input:[2011/10000,876340/5000000,28/60],output:[550000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60,160]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,930050/5000000,36/60],output:[530000/5000000]},{input:[2011/10000,930050/5000000,36/60],output:[590000/5000000]},{input:[2011/10000,1085500/5000000,1],output:[650000/5000000]},{input:[2011/10000,582560/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,582560/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,1085500/5000000,1],output:[650000/5000000]},{input:[2011/10000,1085500/5000000,1],output:[650000/5000000]},{input:[2011/10000,1085500/5000000,1],output:[780000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[385000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[385000/5000000]},{input:[2011/10000,1673030/5000000,36/60],output:[940000/5000000]},{input:[2011/10000,471969/5000000,36/60],output:[295000/5000000]},{input:[2011/10000,368990/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,471969/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,537116/5000000,36/60],output:[295000/5000000]},{input:[2011/10000,537116/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,537116/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,1456110/5000000,48/60],output:[450000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,488966/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,488230/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,488230/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,488230/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,368990/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,486820/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,478270/5000000,36/60],output:[305000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,579100/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,579100/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,579100/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,639782/5000000,36/60],output:[390000/5000000]},{input:[2011/10000,639570/5000000,36/60],output:[460000/5000000]},{input:[2011/10000,2073588/5000000,12/60],output:[1240000/5000000]},{input:[2011/10000,579100/5000000,36/60],output:[320000/5000000]},{input:[2010/10000,444040/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,639570/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,1410300/5000000,36/60],output:[920000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[530000/5000000]},{input:[2011/10000,368990/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,595820/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,595820/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,595820/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,643000/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,717500/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,639570/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,1285140/5000000,36/60],output:[545000/5000000]},{input:[2011/10000,714776/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,714776/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,645230/5000000,16/60],output:[395000/5000000]},{input:[2011/10000,645230/5000000,16/60],output:[395000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[355460/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[331841/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[352360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[346192/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[367500/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[354890/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[356125/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[336708/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[356760/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[333117/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[341690/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[346562/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[353975/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[345819/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[367500/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[328176/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[331322/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[349005/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[342101/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[340956/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[360714/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[312365/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[367500/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[318265/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[355885/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[363600/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[355885/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[351610/5000000]},{input:[2008/10000,1347558/5000000,36/60],output:[770000/5000000]},{input:[2011/10000,548993/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,548993/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,828070/5000000,29/60],output:[480000/5000000]},{input:[2008/10000,690950/5000000,19/60],output:[390000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,1769400/5000000,36/60],output:[1150000/5000000]},{input:[2011/10000,444040/5000000,30/60],output:[275000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[347060/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[356830/5000000]},{input:[2011/10000,1050732/5000000,36/60],output:[700000/5000000]},{input:[2011/10000,442240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,30/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,30/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,30/60],output:[200000/5000000]},{input:[2011/10000,1431100/5000000,36/60],output:[850000/5000000]},{input:[2011/10000,1273000/5000000,36/60],output:[870000/5000000]},{input:[2011/10000,798000/5000000,1],output:[530000/5000000]},{input:[2011/10000,680778/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,537200/5000000,1],output:[260000/5000000]},{input:[2011/10000,358120/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,442240/5000000,32/60],output:[200000/5000000]},{input:[2011/10000,443040/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,680800/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,443040/5000000,36/60],output:[257000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[351010/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[320560/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[357420/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[353420/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[322560/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[357194/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[520000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[337020/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[367500/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[358360/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[332715/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[344856/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,582560/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,639576/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,1730765/5000000,36/60],output:[1160000/5000000]},{input:[2011/10000,362820/5000000,3/60],output:[190000/5000000]},{input:[2011/10000,362820/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,362820/5000000,4/60],output:[215000/5000000]},{input:[2011/10000,362820/5000000,5/60],output:[180000/5000000]},{input:[2011/10000,362820/5000000,3/60],output:[190000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,368220/5000000,3/60],output:[240000/5000000]},{input:[2011/10000,368220/5000000,3/60],output:[190000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,368220/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,1085500/5000000,1],output:[685000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,567486/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,881500/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,725500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,1135952/5000000,36/60],output:[1226700/5000000]},{input:[2011/10000,1624010/5000000,36/60],output:[1310000/5000000]},{input:[2011/10000,1528100/5000000,36/60],output:[1100000/5000000]},{input:[2011/10000,445040/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,1046164/5000000,36/60],output:[645000/5000000]},{input:[2011/10000,445040/5000000,31/60],output:[200000/5000000]},{input:[2011/10000,1036100/5000000,36/60],output:[600000/5000000]},{input:[2011/10000,760630/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,490320/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,445040/5000000,30/60],output:[240000/5000000]},{input:[2011/10000,615000/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,1987200/5000000,36/60],output:[1000000/5000000]},{input:[2010/10000,444040/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,594604/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[205000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,12/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,362520/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,1130633/5000000,36/60],output:[690000/5000000]},{input:[2011/10000,2170148/5000000,36/60],output:[1800000/5000000]},{input:[2011/10000,630000/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,1172100/5000000,36/60],output:[725000/5000000]},{input:[2011/10000,1109100/5000000,36/60],output:[675000/5000000]},{input:[2011/10000,599750/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,918440/5000000,36/60],output:[506000/5000000]},{input:[2011/10000,1112000/5000000,36/60],output:[640000/5000000]},{input:[2011/10000,1285140/5000000,36/60],output:[545000/5000000]},{input:[2011/10000,1289330/5000000,36/60],output:[545000/5000000]},{input:[2011/10000,442540/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,442540/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,363640/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,1249290/5000000,36/60],output:[655000/5000000]},{input:[2011/10000,721700/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,1370800/5000000,36/60],output:[705000/5000000]},{input:[2011/10000,442240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,791100/5000000,36/60],output:[475000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,442540/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,362820/5000000,3/60],output:[180000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,495788/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,522560/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,522560/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,632489/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,333600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[450000/5000000]},{input:[2011/10000,366620/5000000,36/60],output:[225000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,534400/5000000,36/60],output:[305000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,447440/5000000,32/60],output:[520000/5000000]},{input:[2011/10000,444624/5000000,31/60],output:[260000/5000000]},{input:[2011/10000,1335360/5000000,36/60],output:[780000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,841428/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,496825/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,488400/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,737500/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,643000/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,630000/5000000,36/60],output:[395000/5000000]},{input:[2011/10000,680778/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,647805/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,437364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,672900/5000000,48/60],output:[380000/5000000]},{input:[2011/10000,488448/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,594000/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,492105/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,1000020/50000000,5/60],output:[970000/5000000]},{input:[2011/10000,1000020/50000000,36/60],output:[1880000/5000000]},{input:[2011/10000,680778/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,1845833/5000000,36/60],output:[1340000/5000000]},{input:[2011/10000,681000/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,680778/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,676000/5000000,36/60],output:[415000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[530000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[430000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[430000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,735500/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,593240/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,991500/5000000,36/60],output:[550000/5000000]},{input:[2011/10000,592700/5000000,32/60],output:[340000/5000000]},{input:[2011/10000,592700/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,1029450/5000000,36/60],output:[600000/5000000]},{input:[2011/10000,811400/5000000,36/60],output:[512000/5000000]},{input:[2011/10000,930050/5000000,36/60],output:[730000/5000000]},{input:[2011/10000,962289/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,828072/5000000,32/60],output:[670000/5000000]},{input:[2011/10000,643000/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,813100/5000000,36/60],output:[430000/5000000]},{input:[2011/10000,1119900/5000000,48/60],output:[620000/5000000]},{input:[2011/10000,992000/5000000,36/60],output:[590000/5000000]},{input:[2011/10000,953010/5000000,31/60],output:[550000/5000000]},{input:[2011/10000,632480/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,669000/5000000,24/60],output:[380000/5000000]},{input:[2011/10000,691584/5000000,36/60],output:[425000/5000000]},{input:[2011/10000,828072/5000000,32/60],output:[490000/5000000]},{input:[2011/10000,505824/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,914900/5000000,36/60],output:[660000/5000000]},{input:[2011/10000,630000/5000000,36/60],output:[407000/5000000]},{input:[2011/10000,602000/5000000,36/60],output:[529038/5000000]},{input:[2011/10000,602000/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,606400/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,1509845/5000000,36/60],output:[830000/5000000]},{input:[2011/10000,3033080/5000000,36/60],output:[1365000/5000000]},{input:[2011/10000,3032760/5000000,36/60],output:[1350000/5000000]},{input:[2011/10000,533000/5000000,48/60],output:[315000/5000000]},{input:[2011/10000,533000/5000000,36/60],output:[359000/5000000]},{input:[2011/10000,492105/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,492105/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,484325/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,507009/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,507009/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,507009/5000000,36/60],output:[315000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,506709/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,508509/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,508509/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,508509/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,459100/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,453600/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,458800/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,460600/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,460600/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,455800/5000000,36/60],output:[331370/5000000]},{input:[2011/10000,728800/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,728800/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[520000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,728500/5000000,36/60],output:[470000/5000000]},{input:[2011/10000,730300/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,730300/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[60000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,330600/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[175000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,330600/5000000,36/60],output:[155000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[125000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[165000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[135000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,330600/5000000,36/60],output:[95000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[165000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,336600/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,330600/5000000,36/60],output:[140000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,434364/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,434364/5000000,36/60],output:[329600/5000000]},{input:[2011/10000,440364/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,612353/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,478270/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,478270/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,482272/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,2439400/5000000,36/60],output:[1410000/5000000]},{input:[2011/10000,1036100/5000000,17/60],output:[630000/5000000]},{input:[2011/10000,632000/5000000,19/60],output:[355000/5000000]},{input:[2011/10000,1846100/5000000,34/60],output:[1180000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,812382/5000000,36/60],output:[495000/5000000]},{input:[2011/10000,1676355/5000000,36/60],output:[1120000/5000000]},{input:[2011/10000,1990470/5000000,36/60],output:[1180000/5000000]},{input:[2011/10000,442600/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,447440/5000000,33/60],output:[140000/5000000]},{input:[2011/10000,447440/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,679500/5000000,50/60],output:[360000/5000000]},{input:[2011/10000,679500/5000000,50/60],output:[330000/5000000]},{input:[2011/10000,679500/5000000,48/60],output:[360000/5000000]},{input:[2011/10000,503720/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,742109/5000000,36/60],output:[430000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,439240/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,1170100/5000000,36/60],output:[620000/5000000]},{input:[2011/10000,1191100/5000000,36/60],output:[785000/5000000]},{input:[2011/10000,1131100/5000000,36/60],output:[660000/5000000]},{input:[2011/10000,611300/5000000,36/60],output:[418000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[450000/5000000]},{input:[2011/10000,673134/5000000,36/60],output:[402000/5000000]},{input:[2011/10000,637038/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,1196000/5000000,48/60],output:[840000/5000000]},{input:[2011/10000,1196000/5000000,48/60],output:[725000/5000000]},{input:[2011/10000,1196000/5000000,51/60],output:[735000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[100000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[60000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[499000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[499000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[100000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,339900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,617360/5000000,48/60],output:[340000/5000000]},{input:[2011/10000,617360/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,617360/5000000,48/60],output:[300000/5000000]},{input:[2011/10000,617360/5000000,48/60],output:[300000/5000000]},{input:[2011/10000,617360/5000000,48/60],output:[320000/5000000]},{input:[2011/10000,898270/5000000,48/60],output:[470000/5000000]},{input:[2011/10000,898270/5000000,48/60],output:[530000/5000000]},{input:[2011/10000,507020/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[170000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[140000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[135000/5000000]},{input:[2011/10000,440664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,756400/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,728800/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,728800/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[130000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[140000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[175000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[160000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,1055334/5000000,36/60],output:[750000/5000000]},{input:[2011/10000,1055334/5000000,36/60],output:[800000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[359000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[499000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[275000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[255000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[60000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,660000/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,809472/5000000,36/60],output:[630000/5000000]},{input:[2011/10000,528500/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,528500/5000000,36/60],output:[375000/5000000]},{input:[2011/10000,648800/5000000,36/60],output:[365000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[185000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[100000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[190000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,338400/5000000,36/60],output:[215000/5000000]},{input:[2011/10000,508520/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,508520/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,508520/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,508520/5000000,36/60],output:[345000/5000000]},{input:[2011/10000,730300/5000000,36/60],output:[420000/5000000]},{input:[2011/10000,730300/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,442164/5000000,36/60],output:[195000/5000000]},{input:[2011/10000,996645/5000000,36/60],output:[590000/5000000]},{input:[2011/10000,1016975/5000000,36/60],output:[590000/5000000]},{input:[2011/10000,1016975/5000000,36/60],output:[590000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[359000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[460000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[150000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[140000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,443664/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,1114736/5000000,36/60],output:[665000/5000000]},{input:[2011/10000,1841940/5000000,36/60],output:[1300000/5000000]},{input:[2011/10000,1757200/5000000,36/60],output:[1299000/5000000]},{input:[2011/10000,483360/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,675958/5000000,36/60],output:[480000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[355000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[460000/5000000]},{input:[2011/10000,628860/5000000,36/60],output:[515000/5000000]},{input:[2011/10000,458800/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,458800/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,336900/5000000,36/60],output:[250000/5000000]},{input:[2011/10000,459100/5000000,36/60],output:[240000/5000000]},{input:[2011/10000,731800/5000000,36/60],output:[510000/5000000]},{input:[2011/10000,731800/5000000,36/60],output:[490000/5000000]},{input:[2011/10000,731800/5000000,36/60],output:[410000/5000000]},{input:[2011/10000,522560/5000000,48/60],output:[300000/5000000]},{input:[2011/10000,522560/5000000,48/60],output:[340000/5000000]},{input:[2011/10000,648976/5000000,36/60],output:[499000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,639576/5000000,36/60],output:[475000/5000000]},{input:[2011/10000,981000/5000000,12/60],output:[575000/5000000]},{input:[2011/10000,645524/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[320000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[325000/5000000]},{input:[2012/10000,632700/5000000,36/60],output:[405000/5000000]},{input:[2011/10000,953000/5000000,36/60],output:[640000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,2930000/5000000,36/60],output:[2325000/5000000]},{input:[2011/10000,460600/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,460600/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,933420/5000000,36/60],output:[600000/5000000]},{input:[2011/10000,1551330/5000000,48/60],output:[990000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[275000/5000000]},{input:[2011/10000,482126/5000000,36/60],output:[275000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[130000/5000000]},{input:[2012/10000,533920/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,955500/5000000,6/60],output:[480000/5000000]},{input:[2011/10000,537000/5000000,48/60],output:[360000/5000000]},{input:[2012/10000,1337720/5000000,48/60],output:[856000/5000000]},{input:[2011/10000,499626/5000000,36/60],output:[290000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[245000/5000000]},{input:[2011/10000,665426/5000000,36/60],output:[450000/5000000]},{input:[2010/10000,596025/5000000,6/60],output:[480000/5000000]},{input:[2011/10000,996305/5000000,36/60],output:[635000/5000000]},{input:[2011/10000,996305/5000000,35/60],output:[750000/5000000]},{input:[2012/10000,1646100/5000000,12/60],output:[975000/5000000]},{input:[2012/10000,1090600/5000000,36/60],output:[940000/5000000]},{input:[2012/10000,1090600/5000000,36/60],output:[930000/5000000]},{input:[2012/10000,1956328/5000000,42/60],output:[1250000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[340000/5000000]},{input:[2011/10000,495772/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,458800/5000000,36/60],output:[280000/5000000]},{input:[2011/10000,458800/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,473708/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,1905840/5000000,48/60],output:[1070000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,1090600/5000000,36/60],output:[945000/5000000]},{input:[2012/10000,716472/5000000,48/60],output:[360000/5000000]},{input:[2012/10000,753672/5000000,48/60],output:[410000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,788782/5000000,48/60],output:[380000/5000000]},{input:[2012/10000,648976/5000000,48/60],output:[350000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[330000/5000000]},{input:[2011/10000,639576/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,639576/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,478272/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[335000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[290000/5000000]},{input:[2012/10000,699500/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,699500/5000000,36/60],output:[410000/5000000]},{input:[2012/10000,542372/5000000,48/60],output:[380000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[260000/5000000]},{input:[2012/10000,886800/5000000,48/60],output:[500000/5000000]},{input:[2012/10000,719382/5000000,36/60],output:[360000/5000000]},{input:[2011/10000,875800/5000000,36/60],output:[555000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[285000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[285000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,476100/5000000,36/60],output:[355000/5000000]},{input:[2012/10000,1194500/5000000,36/60],output:[760000/5000000]},{input:[2012/10000,663480/5000000,48/60],output:[380000/5000000]},{input:[2012/10000,639576/5000000,36/60],output:[380000/5000000]},{input:[2012/10000,648900/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,724400/5000000,48/60],output:[360000/5000000]},{input:[2012/10000,1078500/5000000,48/60],output:[500000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,488600/5000000,36/60],output:[350000/5000000]},{input:[2011/10000,442540/5000000,33/60],output:[210000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[260000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[260000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[290000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[210000/5000000]},{input:[2011/10000,442600/5000000,33/60],output:[155000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[210000/5000000]},{input:[2011/10000,1127700/5000000,36/60],output:[720000/5000000]},{input:[2012/10000,955500/5000000,48/60],output:[590000/5000000]},{input:[2012/10000,648976/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,648976/5000000,39/60],output:[420000/5000000]},{input:[2011/10000,997652/5000000,36/60],output:[545000/5000000]},{input:[2012/10000,488600/5000000,36/60],output:[300000/5000000]},{input:[2011/10000,439240/5000000,33/60],output:[280000/5000000]},{input:[2012/10000,852300/5000000,48/60],output:[530000/5000000]},{input:[2012/10000,1712740/5000000,26/60],output:[1300000/5000000]},{input:[2012/10000,476100/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,906600/5000000,36/60],output:[550000/5000000]},{input:[2012/10000,906600/5000000,48/60],output:[579200/5000000]},{input:[2012/10000,622851/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,488600/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[290000/5000000]},{input:[2012/10000,495772/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[390000/5000000]},{input:[2010/10000,1481306/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,496800/5000000,42/60],output:[300000/5000000]},{input:[2012/10000,597839/5000000,36/60],output:[423000/5000000]},{input:[2011/10000,444040/5000000,33/60],output:[280000/5000000]},{input:[2011/10000,617360/5000000,34/60],output:[400000/5000000]},{input:[2012/10000,647500/5000000,48/60],output:[375000/5000000]},{input:[2011/10000,927430/5000000,36/60],output:[535000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[297000/5000000]},{input:[2012/10000,478272/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,617360/5000000,36/60],output:[425000/5000000]},{input:[2012/10000,509964/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,648976/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,648976/5000000,36/60],output:[470000/5000000]},{input:[2012/10000,661900/5000000,8/60],output:[350000/5000000]},{input:[2012/10000,838875/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,995000/5000000,48/60],output:[600000/5000000]},{input:[2012/10000,987700/5000000,48/60],output:[600000/5000000]},{input:[2012/10000,648976/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,818864/5000000,48/60],output:[500000/5000000]},{input:[2012/10000,520737/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,520737/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,520737/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,520737/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,494400/5000000,36/60],output:[370000/5000000]},{input:[2012/10000,476100/5000000,36/60],output:[355000/5000000]},{input:[2012/10000,719200/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,675000/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,500180/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[230000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[240000/5000000]},{input:[2012/10000,353625/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,356325/5000000,36/60],output:[245000/5000000]},{input:[2012/10000,356325/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,392490/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[205000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[190000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[205000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[325000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[345000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[260000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[210000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[225000/5000000]},{input:[2011/10000,422160/5000000,36/60],output:[230000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[195000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,347850/5000000,36/60],output:[180000/5000000]},{input:[2011/10000,420170/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,420170/5000000,36/60],output:[200000/5000000]},{input:[2011/10000,420170/5000000,36/60],output:[260000/5000000]},{input:[2012/10000,527574/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,527574/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,527574/5000000,36/60],output:[351000/5000000]},{input:[2012/10000,391990/5000000,36/60],output:[230000/5000000]},{input:[2012/10000,394840/5000000,36/60],output:[230000/5000000]},{input:[2012/10000,667100/5000000,36/60],output:[365000/5000000]},{input:[2012/10000,392290/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,392290/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,1274000/5000000,36/60],output:[735000/5000000]},{input:[2012/10000,2181900/5000000,36/60],output:[1350000/5000000]},{input:[2011/10000,425160/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,425160/5000000,36/60],output:[230000/5000000]},{input:[2011/10000,425160/5000000,36/60],output:[260000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,852250/5000000,9/60],output:[500000/5000000]},{input:[2012/10000,852250/5000000,9/60],output:[500000/5000000]},{input:[2012/10000,767327/5000000,36/60],output:[565000/5000000]},{input:[2012/10000,839278/5000000,48/60],output:[400000/5000000]},{input:[2012/10000,699600/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,699600/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,354825/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[220000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[130000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[220000/5000000]},{input:[2012/10000,496555/5000000,48/60],output:[300000/5000000]},{input:[2012/10000,507851/5000000,48/60],output:[300000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,721200/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,757800/5000000,48/60],output:[440000/5000000]},{input:[2011/10000,1045250/5000000,36/60],output:[615000/5000000]},{input:[2011/10000,919492/5000000,6/60],output:[610000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[380000/5000000]},{input:[2011/10000,680778/5000000,36/60],output:[425000/5000000]},{input:[2011/10000,642978/5000000,36/60],output:[400000/5000000]},{input:[2011/10000,901270/5000000,36/60],output:[545000/5000000]},{input:[2012/10000,617360/5000000,48/60],output:[320000/5000000]},{input:[2012/10000,509964/5000000,36/60],output:[185000/5000000]},{input:[2012/10000,509964/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,509964/5000000,36/60],output:[190000/5000000]},{input:[2012/10000,617359/5000000,48/60],output:[340000/5000000]},{input:[2012/10000,1031140/5000000,48/60],output:[410000/5000000]},{input:[2012/10000,708666/5000000,48/60],output:[360000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[195000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,1032721/5000000,24/60],output:[650000/5000000]},{input:[2012/10000,577934/5000000,21/60],output:[375000/5000000]},{input:[2012/10000,577934/5000000,13/60],output:[393000/5000000]},{input:[2012/10000,577934/5000000,13/60],output:[395000/5000000]},{input:[2012/10000,716472/5000000,36/60],output:[420000/5000000]},{input:[2012/10000,1860429/5000000,36/60],output:[1100000/5000000]},{input:[2012/10000,632000/5000000,36/60],output:[365000/5000000]},{input:[2012/10000,681782/5000000,48/60],output:[480000/5000000]},{input:[2012/10000,587300/5000000,36/60],output:[415000/5000000]},{input:[2012/10000,587300/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,582300/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,1003112/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,1212030/5000000,7/60],output:[800000/5000000]},{input:[2012/10000,830000/5000000,12/60],output:[635000/5000000]},{input:[2012/10000,487700/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,767327/5000000,36/60],output:[540000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[610000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,653676/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,767327/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,1337720/5000000,36/60],output:[730000/5000000]},{input:[2012/10000,1550000/5000000,36/60],output:[975000/5000000]},{input:[2012/10000,487700/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,661900/5000000,10/60],output:[330000/5000000]},{input:[2012/10000,712640/5000000,36/60],output:[410000/5000000]},{input:[2012/10000,569600/5000000,9/60],output:[320000/5000000]},{input:[2012/10000,576000/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,1272325/5000000,48/60],output:[895000/5000000]},{input:[2012/10000,885870/5000000,36/60],output:[590000/5000000]},{input:[2012/10000,569600/5000000,14/60],output:[385000/5000000]},{input:[2012/10000,569600/5000000,9/60],output:[380000/5000000]},{input:[2012/10000,576000/5000000,36/60],output:[440000/5000000]},{input:[2011/10000,915030/5000000,36/60],output:[480000/5000000]},{input:[2012/10000,505075/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,724000/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,471600/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,498030/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,547409/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[220000/5000000]},{input:[2011/10000,716472/5000000,24/60],output:[545000/5000000]},{input:[2012/10000,1700500/5000000,9/60],output:[1300000/5000000]},{input:[2012/10000,1476000/5000000,36/60],output:[1064000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,830000/5000000,4/60],output:[560000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[205000/5000000]},{input:[2012/10000,587300/5000000,42/60],output:[350000/5000000]},{input:[2011/10000,545500/5000000,36/60],output:[331600/5000000]},{input:[2012/10000,672600/5000000,12/60],output:[400000/5000000]},{input:[2012/10000,381870/5000000,4/60],output:[250000/5000000]},{input:[2011/10000,728800/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,653900/5000000,38/60],output:[360000/5000000]},{input:[2012/10000,917600/5000000,36/60],output:[580000/5000000]},{input:[2012/10000,487700/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,1198974/5000000,39/60],output:[810000/5000000]},{input:[2012/10000,1198974/5000000,36/60],output:[670000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,597110/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,1339791/5000000,39/60],output:[840000/5000000]},{input:[2012/10000,1339791/5000000,36/60],output:[880000/5000000]},{input:[2012/10000,1339791/5000000,39/60],output:[940000/5000000]},{input:[2012/10000,478016/5000000,5/60],output:[355000/5000000]},{input:[2012/10000,908200/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,743374/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,748374/5000000,36/60],output:[533000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,683000/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,542449/5000000,36/60],output:[335000/5000000]},{input:[2012/10000,542449/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,536449/5000000,36/60],output:[335000/5000000]},{input:[2012/10000,531024/5000000,48/60],output:[368400/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,1244500/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,682400/5000000,37/60],output:[410000/5000000]},{input:[2012/10000,682400/5000000,37/60],output:[360000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[280800/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,947200/5000000,36/60],output:[500000/5000000]},{input:[2011/10000,594500/5000000,36/60],output:[370000/5000000]},{input:[2012/10000,1023960/5000000,36/60],output:[685000/5000000]},{input:[2012/10000,1510000/5000000,4/60],output:[950000/5000000]},{input:[2012/10000,381870/5000000,4/60],output:[250000/5000000]},{input:[2012/10000,579300/5000000,4/60],output:[490000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[635000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,579300/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[520000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,648976/5000000,48/60],output:[310000/5000000]},{input:[2012/10000,1040388/5000000,36/60],output:[870284/5000000]},{input:[2012/10000,1028650/5000000,36/60],output:[780000/5000000]},{input:[2012/10000,595808/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[340000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2011/10000,422159/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,655500/5000000,27/60],output:[400000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[180000/5000000]},{input:[2012/10000,982000/5000000,41/60],output:[500000/5000000]},{input:[2012/10000,908200/5000000,36/60],output:[580000/5000000]},{input:[2012/10000,1023960/5000000,36/60],output:[695000/5000000]},{input:[2012/10000,708760/5000000,36/60],output:[480000/5000000]},{input:[2012/10000,683000/5000000,42/60],output:[340000/5000000]},{input:[2012/10000,691276/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,682400/5000000,36/60],output:[420000/5000000]},{input:[2012/10000,511546/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,760710/5000000,36/60],output:[540000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[520000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[560000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,748370/5000000,36/60],output:[545000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,579300/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,473708/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,413742/5000000,5/60],output:[265000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[560000/5000000]},{input:[2012/10000,830000/5000000,4/60],output:[700000/5000000]},{input:[2012/10000,641000/5000000,29/60],output:[450000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,1328554/5000000,41/60],output:[890000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,1124800/5000000,36/60],output:[945000/5000000]},{input:[2012/10000,1112450/5000000,36/60],output:[940000/5000000]},{input:[2012/10000,1782000/5000000,42/60],output:[1100000/5000000]},{input:[2012/10000,722982/5000000,36/60],output:[410000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[635000/5000000]},{input:[2012/10000,542372/5000000,48/60],output:[370000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,734866/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,726406/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,754366/5000000,36/60],output:[445000/5000000]},{input:[2012/10000,900815/5000000,36/60],output:[540000/5000000]},{input:[2012/10000,511546/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,413741/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,1353000/5000000,36/60],output:[785000/5000000]},{input:[2012/10000,648976/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,530670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[190000/5000000]},{input:[2012/10000,579300/5000000,9/60],output:[460000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,768000/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,454157/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,743000/5000000,36/60],output:[535000/5000000]},{input:[2012/10000,743000/5000000,16/60],output:[600000/5000000]},{input:[2012/10000,743000/5000000,36/60],output:[595000/5000000]},{input:[2012/10000,487700/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,1610000/5000000,36/60],output:[920000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,1808050/5000000,36/60],output:[1349000/5000000]},{input:[2012/10000,1640443/5000000,36/60],output:[653255/5000000]},{input:[2012/10000,454158/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,874638/5000000,40/60],output:[585000/5000000]},{input:[2012/10000,971000/5000000,36/60],output:[650000/5000000]},{input:[2012/10000,531024/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,743000/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,619400/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,413742/5000000,13/60],output:[270000/5000000]},{input:[2012/10000,643300/5000000,36/60],output:[410000/5000000]},{input:[2012/10000,582300/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,859040/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,539450/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,734866/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,1328970/5000000,48/60],output:[990000/5000000]},{input:[2012/10000,587300/5000000,36/60],output:[420000/5000000]},{input:[2012/10000,768500/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,874638/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[200000/5000000]},{input:[2012/10000,736100/5000000,48/60],output:[370000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,426660/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,1020000/5000000,17/60],output:[650000/5000000]},{input:[2012/10000,3455506/5000000,36/60],output:[1700000/5000000]},{input:[2012/10000,1126000/5000000,3/60],output:[600000/5000000]},{input:[2012/10000,683000/5000000,42/60],output:[460500/5000000]},{input:[2012/10000,428259/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,428260/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,428260/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,428260/5000000,36/60],output:[280000/5000000]},{input:[2012/10000,428260/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,498172/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,1024882/5000000,24/60],output:[600000/5000000]},{input:[2012/10000,542192/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,936800/5000000,41/60],output:[500000/5000000]},{input:[2012/10000,828000/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,569778/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,511621/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[580000/5000000]},{input:[2012/10000,830000/5000000,8/60],output:[450000/5000000]},{input:[2012/10000,830000/5000000,7/60],output:[570000/5000000]},{input:[2012/10000,830000/5000000,8/60],output:[635000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[600000/5000000]},{input:[2012/10000,830000/5000000,8/60],output:[570000/5000000]},{input:[2012/10000,381870/5000000,4/60],output:[250000/5000000]},{input:[2012/10000,744616/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,962315/5000000,36/60],output:[610000/5000000]},{input:[2012/10000,348825/5000000,36/60],output:[205000/5000000]},{input:[2012/10000,587300/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[330000/5000000]},{input:[2013/10000,670250/5000000,36/60],output:[360000/5000000]},{input:[2013/10000,717309/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,735999/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,730480/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,354625/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,585798/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,659900/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,651000/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,511546/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2013/10000,631400/5000000,40/60],output:[330000/5000000]},{input:[2012/10000,631400/5000000,40/60],output:[340000/5000000]},{input:[2013/10000,659900/5000000,40/60],output:[360000/5000000]},{input:[2012/10000,691276/5000000,36/60],output:[480000/5000000]},{input:[2012/10000,487672/5000000,36/60],output:[270000/5000000]},{input:[2012/10000,353325/5000000,36/60],output:[250000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,580800/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,1056000/5000000,12/60],output:[675000/5000000]},{input:[2012/10000,1056000/5000000,24/60],output:[680000/5000000]},{input:[2012/10000,621300/5000000,36/60],output:[554400/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2013/10000,615200/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,473708/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,531024/5000000,48/60],output:[310000/5000000]},{input:[2012/10000,546032/5000000,36/60],output:[260000/5000000]},{input:[2012/10000,434280/5000000,48/60],output:[434280/5000000]},{input:[2013/10000,1312169/5000000,48/60],output:[1000000/5000000]},{input:[2013/10000,730208/5000000,36/60],output:[592800/5000000]},{input:[2012/10000,434280/5000000,48/60],output:[434280/5000000]},{input:[2012/10000,540656/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,615300/5000000,9/60],output:[460000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[475800/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[420000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[420000/5000000]},{input:[2013/10000,615300/5000000,9/60],output:[420000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[465500/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[472800/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,18/60],output:[470000/5000000]},{input:[2013/10000,546940/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,747676/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,354625/5000000,36/60],output:[275000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[370000/5000000]},{input:[2012/10000,734866/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,390602/5000000,23/60],output:[200000/5000000]},{input:[2013/10000,390602/5000000,23/60],output:[200000/5000000]},{input:[2013/10000,390602/5000000,23/60],output:[200000/5000000]},{input:[2013/10000,390602/5000000,23/60],output:[200000/5000000]},{input:[2013/10000,390602/5000000,23/60],output:[200000/5000000]},{input:[2013/10000,390602/5000000,31/60],output:[200000/5000000]},{input:[2013/10000,718617/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,946000/5000000,14/60],output:[840000/5000000]},{input:[2013/10000,946000/5000000,21/60],output:[800000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[346000/5000000]},{input:[2013/10000,778822/5000000,36/60],output:[520000/5000000]},{input:[2012/10000,767500/5000000,42/60],output:[450000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2013/10000,637900/5000000,36/60],output:[350000/5000000]},{input:[2013/10000,946000/5000000,18/60],output:[880000/5000000]},{input:[2012/10000,535170/5000000,36/60],output:[330000/5000000]},{input:[2013/10000,891800/5000000,36/60],output:[715800/5000000]},{input:[2013/10000,530655/5000000,36/60],output:[430000/5000000]},{input:[2012/10000,699700/5000000,36/60],output:[350000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[315000/5000000]},{input:[2012/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,699700/5000000,36/60],output:[490000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[440000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[472200/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[477400/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[466100/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[465000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[545985/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[465800/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[465800/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[471600/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,394920/5000000,13/60],output:[285000/5000000]},{input:[2013/10000,394920/5000000,13/60],output:[285000/5000000]},{input:[2012/10000,434499/5000000,48/60],output:[434280/5000000]},{input:[2013/10000,398700/5000000,14/60],output:[200000/5000000]},{input:[2013/10000,398700/5000000,14/60],output:[200000/5000000]},{input:[2013/10000,398700/5000000,14/60],output:[200000/5000000]},{input:[2012/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2012/10000,653700/5000000,36/60],output:[420000/5000000]},{input:[2013/10000,615300/5000000,11/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,20/60],output:[430000/5000000]},{input:[2013/10000,615300/5000000,12/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,11/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,540867/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,394920/5000000,23/60],output:[280000/5000000]},{input:[2012/10000,692400/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[330000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,734866/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,1253572/5000000,42/60],output:[885000/5000000]},{input:[2013/10000,627360/5000000,36/60],output:[270000/5000000]},{input:[2013/10000,627360/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,627360/5000000,19/60],output:[380000/5000000]},{input:[2013/10000,627360/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[425000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[415000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,3/60],output:[430000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,606650/5000000,3/60],output:[435000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[390000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[410000/5000000]},{input:[2013/10000,606650/5000000,11/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,11/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,725679/5000000,48/60],output:[400000/5000000]},{input:[2011/10000,806200/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,653676/5000000,36/60],output:[410000/5000000]},{input:[2012/10000,663076/5000000,36/60],output:[360000/5000000]},{input:[2013/10000,503595/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,503595/5000000,36/60],output:[375000/5000000]},{input:[2012/10000,734892/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,615300/5000000,12/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[500000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,13/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,1157000/5000000,36/60],output:[910000/5000000]},{input:[2013/10000,868340/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,669000/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,1112450/5000000,36/60],output:[940000/5000000]},{input:[2012/10000,1490000/5000000,36/60],output:[880000/5000000]},{input:[2013/10000,668600/5000000,36/60],output:[360000/5000000]},{input:[2013/10000,678900/5000000,36/60],output:[360000/5000000]},{input:[2013/10000,424924/5000000,24/60],output:[300000/5000000]},{input:[2013/10000,424924/5000000,4/60],output:[300000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[470000/5000000]},{input:[2013/10000,606650/5000000,23/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,1132460/5000000,42],output:[600000/5000000]},{input:[2013/10000,550458/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,641300/5000000,36/60],output:[540000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,755760/5000000,36/60],output:[755760/5000000]},{input:[2012/10000,756341/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,674900/5000000,36/60],output:[360000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[545985/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[459400/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[500000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[500000/5000000]},{input:[2013/10000,848700/5000000,36/60],output:[600000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,23/60],output:[430000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,606650/5000000,23/60],output:[470000/5000000]},{input:[2013/10000,606650/5000000,23/60],output:[470000/5000000]},{input:[2013/10000,503595/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,935500/5000000,36/60],output:[662300/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,615300/5000000,36/60],output:[500000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[450000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[480000/5000000]},{input:[2013/10000,606650/5000000,36/60],output:[400000/5000000]},{input:[2012/10000,413742/5000000,4/60],output:[270000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[310000/5000000]},{input:[2013/10000,723100/5000000,36/60],output:[420000/5000000]},{input:[2012/10000,230300/5000000,48/60],output:[300000/5000000]},{input:[2012/10000,730422/5000000,36/60],output:[360000/5000000]},{input:[2012/10000,582300/5000000,36/60],output:[460000/5000000]},{input:[2013/10000,1013700/5000000,36/60],output:[815000/5000000]},{input:[2012/10000,535170/5000000,36/60],output:[340000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[330000/5000000]},{input:[2013/10000,878757/5000000,36/60],output:[878760/5000000]},{input:[2012/10000,859040/5000000,48/60],output:[500000/5000000]},{input:[2012/10000,744616/5000000,36/60],output:[500000/5000000]},{input:[2012/10000,648300/5000000,36/60],output:[395000/5000000]},{input:[2012/10000,552420/5000000,36/60],output:[325000/5000000]},{input:[2012/10000,506172/5000000,36/60],output:[325000/5000000]},{input:[2009/10000,455223/5000000,36/60],output:[300000/5000000]},{input:[2013/10000,624416/5000000,24/60],output:[470000/5000000]},{input:[2012/10000,1488320/5000000,36/60],output:[858400/5000000]},{input:[2012/10000,1023960/5000000,36/60],output:[710000/5000000]},{input:[2013/10000,955400/5000000,36/60],output:[660000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[390000/5000000]},{input:[2012/10000,1023960/5000000,36/60],output:[675000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[450000/5000000]},{input:[2012/10000,1023960/5000000,36/60],output:[640000/5000000]},{input:[2012/10000,623350/5000000,36/60],output:[465000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[310000/5000000]},{input:[2012/10000,351825/5000000,36/60],output:[235000/5000000]},{input:[2012/10000,425160/5000000,36/60],output:[210000/5000000]},{input:[2012/10000,426660/5000000,36/60],output:[210000/5000000]},{input:[2012/10000,426660/5000000,36/60],output:[210000/5000000]},{input:[2012/10000,426660/5000000,36/60],output:[210000/5000000]},{input:[2012/10000,535170/5000000,36/60],output:[325000/5000000]},{input:[2012/10000,772500/5000000,36/60],output:[435000/5000000]},{input:[2012/10000,1112450/5000000,36/60],output:[915000/5000000]},{input:[2012/10000,527670/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,830000/5000000,9/60],output:[595000/5000000]},{input:[2012/10000,580800/5000000,36/60],output:[440000/5000000]},{input:[2012/10000,580800/5000000,36/60],output:[460000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[635000/5000000]},{input:[2012/10000,830000/5000000,36/60],output:[635000/5000000]},{input:[2012/10000,536770/5000000,36/60],output:[350000/5000000]},{input:[2012/10000,771000/5000000,36/60],output:[475000/5000000]},{input:[2012/10000,830000/5000000,4/60],output:[635000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[320000/5000000]},{input:[2012/10000,607889/5000000,36/60],output:[370000/5000000]},{input:[2011/10000,372140/5000000,36/60],output:[215000/5000000]},{input:[2013/10000,618300/5000000,36/60],output:[485000/5000000]},{input:[2013/10000,251920/5000000,48/60],output:[226728/5000000]},{input:[2013/10000,619700/5000000,36/60],output:[557730/5000000]},{input:[2013/10000,628700/5000000,36/60],output:[475000/5000000]},{input:[2013/10000,619700/5000000,36/60],output:[400000/5000000]},{input:[2013/10000,619700/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,628700/5000000,36/60],output:[565830/5000000]},{input:[2013/10000,619700/5000000,36/60],output:[420000/5000000]},{input:[2013/10000,660480/5000000,24/60],output:[420000/5000000]},{input:[2013/10000,757055/5000000,36/60],output:[586900/5000000]},{input:[2013/10000,513000/5000000,29/60],output:[350000/5000000]},{input:[2013/10000,524888/5000000,36/60],output:[315000/5000000]},{input:[2013/10000,628700/5000000,18/60],output:[470000/5000000]},{input:[2012/10000,524888/5000000,36/60],output:[320000/5000000]},{input:[2013/10000,595000/5000000,36/60],output:[595000/5000000]},{input:[2013/10000,2465000/5000000,4/60],output:[1670000/5000000]},{input:[2013/10000,533888/5000000,36/60],output:[430000/5000000]},{input:[2013/10000,606720/5000000,36/60],output:[365000/5000000]},{input:[2013/10000,702074/5000000,36/60],output:[525000/5000000]},{input:[2013/10000,921000/5000000,3/60],output:[859750/5000000]},{input:[2013/10000,1500000/5000000,36/60],output:[1400000/5000000]},{input:[2013/10000,509000/5000000,48/60],output:[509000/5000000]},{input:[2013/10000,628700/5000000,36/60],output:[380000/5000000]},{input:[2013/10000,2130300/5000000,48/60],output:[2200000/5000000]},{input:[2013/10000,1084000/5000000,24/60],output:[1084000/5000000]},{input:[2013/10000,418950/5000000,20/60],output:[300000/5000000]},{input:[2013/10000,498730/5000000,23/60],output:[370000/5000000]},{input:[2013/10000,1867800/5000000,48/60],output:[1530000/5000000]},{input:[2013/10000,849600/5000000,24/60],output:[625000/5000000]},{input:[2013/10000,965250/5000000,48/60],output:[720000/5000000]},{input:[2014/10000,586250/5000000,1],output:[370000/5000000]},{input:[2014/10000,668000/5000000,28/60],output:[370000/5000000]},{input:[2013/10000,830000/5000000,48/60],output:[500000/5000000]},{input:[2014/10000,758360/5000000,48/60],output:[680000/5000000]},{input:[2014/10000,812160/5000000,48/60],output:[710000/5000000]},{input:[2013/10000,260750/5000000,48/60],output:[208600/5000000]},{input:[2014/10000,607312/5000000,36/60],output:[510000/5000000]},{input:[2014/10000,819150/5000000,24/60],output:[819150/5000000]},{input:[2014/10000,872600/5000000,48/60],output:[750000/5000000]},{input:[2014/10000,969673/5000000,36/60],output:[935000/5000000]},{input:[2014/10000,2770723/5000000,36/60],output:[2700000/5000000]},{input:[2014/10000,461656/5000000,1],output:[461656/5000000]},{input:[2013/10000,902000/5000000,24/60],output:[800000/5000000]},{input:[2014/10000,990521/5000000,1],output:[990521/5000000]},{input:[2014/10000,990521/5000000,1],output:[891500/5000000]},{input:[2014/10000,681400/5000000,36/60],output:[681400/5000000]},{input:[2014/10000,684600/5000000,36/60],output:[500000/5000000]},{input:[2014/10000,684600/5000000,36/60],output:[500000/5000000]},{input:[2014/10000,684600/5000000,36/60],output:[450000/5000000]},{input:[2014/10000,874540/5000000,48/60],output:[750000/5000000]},{input:[2014/10000,1205901/5000000,1],output:[1050000/5000000]},{input:[2013/10000,442621/5000000,36/60],output:[300000/5000000]},{input:[2014/10000,626100/5000000,48/60],output:[550000/5000000]},{input:[2014/10000,628140/5000000,48/60],output:[550000/5000000]},{input:[2014/10000,626100/5000000,48/60],output:[560000/5000000]},{input:[2014/10000,626100/5000000,48/60],output:[560000/5000000]},{input:[2014/10000,256500/5000000,48/60],output:[256500/5000000]},{input:[2014/10000,652440/5000000,24/60],output:[400000/5000000]},{input:[2014/10000,441500/5000000,12/60],output:[350000/5000000]},{input:[2014/10000,982560/5000000,36/60],output:[960000/5000000]},{input:[2014/10000,982560/5000000,36/60],output:[970000/5000000]},{input:[2014/10000,1004360/5000000,36/60],output:[954800/5000000]},{input:[2015/10000,657837/5000000,36/60],output:[550000/5000000]},{input:[2015/10000,657837/5000000,36/60],output:[550000/5000000]},{input:[2015/10000,657837/5000000,36/60],output:[550000/5000000]},{input:[2015/10000,736020/5000000,36/60],output:[710000/5000000]},{input:[2015/10000,729760/5000000,36/60],output:[660000/5000000]},{input:[2015/10000,1175130/5000000,24/60],output:[1180000/5000000]}];module.exports={data:train};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(train,"train","/home/nas/www/l_work/app/train1.js");}();;
+
+/***/ },
+/* 494 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports.NeuralNetwork = __webpack_require__(495).NeuralNetwork;
+	exports.crossValidate = __webpack_require__(521);
+
+
+/***/ },
+/* 495 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(496),
+	    lookup = __webpack_require__(497),
+	    Writable = __webpack_require__(498).Writable,
+	    inherits = __webpack_require__(520);
+
+	var NeuralNetwork = function(options) {
+	  options = options || {};
+	  this.learningRate = options.learningRate || 0.3;
+	  this.momentum = options.momentum || 0.1;
+	  this.hiddenSizes = options.hiddenLayers;
+
+	  this.binaryThresh = options.binaryThresh || 0.5;
+	}
+
+	NeuralNetwork.prototype = {
+	  initialize: function(sizes) {
+	    this.sizes = sizes;
+	    this.outputLayer = this.sizes.length - 1;
+
+	    this.biases = []; // weights for bias nodes
+	    this.weights = [];
+	    this.outputs = [];
+
+	    // state for training
+	    this.deltas = [];
+	    this.changes = []; // for momentum
+	    this.errors = [];
+
+	    for (var layer = 0; layer <= this.outputLayer; layer++) {
+	      var size = this.sizes[layer];
+	      this.deltas[layer] = zeros(size);
+	      this.errors[layer] = zeros(size);
+	      this.outputs[layer] = zeros(size);
+
+	      if (layer > 0) {
+	        this.biases[layer] = randos(size);
+	        this.weights[layer] = new Array(size);
+	        this.changes[layer] = new Array(size);
+
+	        for (var node = 0; node < size; node++) {
+	          var prevSize = this.sizes[layer - 1];
+	          this.weights[layer][node] = randos(prevSize);
+	          this.changes[layer][node] = zeros(prevSize);
+	        }
+	      }
+	    }
+	  },
+
+	  run: function(input) {
+	    if (this.inputLookup) {
+	      input = lookup.toArray(this.inputLookup, input);
+	    }
+
+	    var output = this.runInput(input);
+
+	    if (this.outputLookup) {
+	      output = lookup.toHash(this.outputLookup, output);
+	    }
+	    return output;
+	  },
+
+	  runInput: function(input) {
+	    this.outputs[0] = input;  // set output state of input layer
+
+	    for (var layer = 1; layer <= this.outputLayer; layer++) {
+	      for (var node = 0; node < this.sizes[layer]; node++) {
+	        var weights = this.weights[layer][node];
+
+	        var sum = this.biases[layer][node];
+	        for (var k = 0; k < weights.length; k++) {
+	          sum += weights[k] * input[k];
+	        }
+	        this.outputs[layer][node] = 1 / (1 + Math.exp(-sum));
+	      }
+	      var output = input = this.outputs[layer];
+	    }
+	    return output;
+	  },
+	  likely: function(input) {
+	    var output = this.run(input);
+	    var maxProp = null;
+	    var maxValue = -1;
+	    for (var prop in output) {
+	      if (output.hasOwnProperty(prop)) {
+	        var value = output[prop];
+	        if (value > maxValue) {
+	          maxProp = prop;
+	          maxValue = value
+	        }
+	      }
+	    }
+	    return maxProp;
+	  },
+	  train: function(data, options) {
+	    data = this.formatData(data);
+
+	    options = options || {};
+	    var iterations = options.iterations || 20000;
+	    var errorThresh = options.errorThresh || 0.005;
+	    var log = options.log ? (_.isFunction(options.log) ? options.log : console.log) : false;
+	    var logPeriod = options.logPeriod || 10;
+	    var learningRate = options.learningRate || this.learningRate || 0.3;
+	    var callback = options.callback;
+	    var callbackPeriod = options.callbackPeriod || 10;
+
+	    var inputSize = data[0].input.length;
+	    var outputSize = data[0].output.length;
+
+	    var hiddenSizes = this.hiddenSizes;
+	    if (!hiddenSizes) {
+	      hiddenSizes = [Math.max(3, Math.floor(inputSize / 2))];
+	    }
+	    var sizes = _([inputSize, hiddenSizes, outputSize]).flatten();
+	    this.initialize(sizes);
+
+	    var error = 1;
+	    for (var i = 0; i < iterations && error > errorThresh; i++) {
+	      var sum = 0;
+	      for (var j = 0; j < data.length; j++) {
+	        var err = this.trainPattern(data[j].input, data[j].output, learningRate);
+	        sum += err;
+	      }
+	      error = sum / data.length;
+
+	      if (log && (i % logPeriod == 0)) {
+	        log("iterations:", i, "training error:", error);
+	      }
+	      if (callback && (i % callbackPeriod == 0)) {
+	        callback({ error: error, iterations: i });
+	      }
+	    }
+
+	    return {
+	      error: error,
+	      iterations: i
+	    };
+	  },
+
+	  trainPattern : function(input, target, learningRate) {
+	    learningRate = learningRate || this.learningRate;
+
+	    // forward propogate
+	    this.runInput(input);
+
+	    // back propogate
+	    this.calculateDeltas(target);
+	    this.adjustWeights(learningRate);
+
+	    var error = mse(this.errors[this.outputLayer]);
+	    return error;
+	  },
+
+	  calculateDeltas: function(target) {
+	    for (var layer = this.outputLayer; layer >= 0; layer--) {
+	      for (var node = 0; node < this.sizes[layer]; node++) {
+	        var output = this.outputs[layer][node];
+
+	        var error = 0;
+	        if (layer == this.outputLayer) {
+	          error = target[node] - output;
+	        }
+	        else {
+	          var deltas = this.deltas[layer + 1];
+	          for (var k = 0; k < deltas.length; k++) {
+	            error += deltas[k] * this.weights[layer + 1][k][node];
+	          }
+	        }
+	        this.errors[layer][node] = error;
+	        this.deltas[layer][node] = error * output * (1 - output);
+	      }
+	    }
+	  },
+
+	  adjustWeights: function(learningRate) {
+	    for (var layer = 1; layer <= this.outputLayer; layer++) {
+	      var incoming = this.outputs[layer - 1];
+
+	      for (var node = 0; node < this.sizes[layer]; node++) {
+	        var delta = this.deltas[layer][node];
+
+	        for (var k = 0; k < incoming.length; k++) {
+	          var change = this.changes[layer][node][k];
+
+	          change = (learningRate * delta * incoming[k])
+	                   + (this.momentum * change);
+
+	          this.changes[layer][node][k] = change;
+	          this.weights[layer][node][k] += change;
+	        }
+	        this.biases[layer][node] += learningRate * delta;
+	      }
+	    }
+	  },
+
+	  formatData: function(data) {
+	    if (!_.isArray(data)) { // turn stream datum into array
+	      var tmp = [];
+	      tmp.push(data);
+	      data = tmp;
+	    }
+	    // turn sparse hash input into arrays with 0s as filler
+	    var datum = data[0].input;
+	    if (!_(datum).isArray() && !(datum instanceof Float64Array)) {
+	      if (!this.inputLookup) {
+	        this.inputLookup = lookup.buildLookup(_(data).pluck("input"));
+	      }
+	      data = data.map(function(datum) {
+	        var array = lookup.toArray(this.inputLookup, datum.input)
+	        return _(_(datum).clone()).extend({ input: array });
+	      }, this);
+	    }
+
+	    if (!_(data[0].output).isArray()) {
+	      if (!this.outputLookup) {
+	        this.outputLookup = lookup.buildLookup(_(data).pluck("output"));
+	      }
+	      data = data.map(function(datum) {
+	        var array = lookup.toArray(this.outputLookup, datum.output);
+	        return _(_(datum).clone()).extend({ output: array });
+	      }, this);
+	    }
+	    return data;
+	  },
+
+	  test : function(data) {
+	    data = this.formatData(data);
+
+	    // for binary classification problems with one output node
+	    var isBinary = data[0].output.length == 1;
+	    var falsePos = 0,
+	        falseNeg = 0,
+	        truePos = 0,
+	        trueNeg = 0;
+
+	    // for classification problems
+	    var misclasses = [];
+
+	    // run each pattern through the trained network and collect
+	    // error and misclassification statistics
+	    var sum = 0;
+	    for (var i = 0; i < data.length; i++) {
+	      var output = this.runInput(data[i].input);
+	      var target = data[i].output;
+
+	      var actual, expected;
+	      if (isBinary) {
+	        actual = output[0] > this.binaryThresh ? 1 : 0;
+	        expected = target[0];
+	      }
+	      else {
+	        actual = output.indexOf(_(output).max());
+	        expected = target.indexOf(_(target).max());
+	      }
+
+	      if (actual != expected) {
+	        var misclass = data[i];
+	        _(misclass).extend({
+	          actual: actual,
+	          expected: expected
+	        })
+	        misclasses.push(misclass);
+	      }
+
+	      if (isBinary) {
+	        if (actual == 0 && expected == 0) {
+	          trueNeg++;
+	        }
+	        else if (actual == 1 && expected == 1) {
+	          truePos++;
+	        }
+	        else if (actual == 0 && expected == 1) {
+	          falseNeg++;
+	        }
+	        else if (actual == 1 && expected == 0) {
+	          falsePos++;
+	        }
+	      }
+
+	      var errors = output.map(function(value, i) {
+	        return target[i] - value;
+	      });
+	      sum += mse(errors);
+	    }
+	    var error = sum / data.length;
+
+	    var stats = {
+	      error: error,
+	      misclasses: misclasses
+	    };
+
+	    if (isBinary) {
+	      _(stats).extend({
+	        trueNeg: trueNeg,
+	        truePos: truePos,
+	        falseNeg: falseNeg,
+	        falsePos: falsePos,
+	        total: data.length,
+	        precision: truePos / (truePos + falsePos),
+	        recall: truePos / (truePos + falseNeg),
+	        accuracy: (trueNeg + truePos) / data.length
+	      })
+	    }
+	    return stats;
+	  },
+
+	  toJSON: function() {
+	    /* make json look like:
+	      {
+	        layers: [
+	          { x: {},
+	            y: {}},
+	          {'0': {bias: -0.98771313, weights: {x: 0.8374838, y: 1.245858},
+	           '1': {bias: 3.48192004, weights: {x: 1.7825821, y: -2.67899}}},
+	          { f: {bias: 0.27205739, weights: {'0': 1.3161821, '1': 2.00436}}}
+	        ]
+	      }
+	    */
+	    var layers = [];
+	    for (var layer = 0; layer <= this.outputLayer; layer++) {
+	      layers[layer] = {};
+
+	      var nodes;
+	      // turn any internal arrays back into hashes for readable json
+	      if (layer == 0 && this.inputLookup) {
+	        nodes = _(this.inputLookup).keys();
+	      }
+	      else if (layer == this.outputLayer && this.outputLookup) {
+	        nodes = _(this.outputLookup).keys();
+	      }
+	      else {
+	        nodes = _.range(0, this.sizes[layer]);
+	      }
+
+	      for (var j = 0; j < nodes.length; j++) {
+	        var node = nodes[j];
+	        layers[layer][node] = {};
+
+	        if (layer > 0) {
+	          layers[layer][node].bias = this.biases[layer][j];
+	          layers[layer][node].weights = {};
+	          for (var k in layers[layer - 1]) {
+	            var index = k;
+	            if (layer == 1 && this.inputLookup) {
+	              index = this.inputLookup[k];
+	            }
+	            layers[layer][node].weights[k] = this.weights[layer][j][index];
+	          }
+	        }
+	      }
+	    }
+	    return { layers: layers, outputLookup:!!this.outputLookup, inputLookup:!!this.inputLookup };
+	  },
+
+	  fromJSON: function(json) {
+	    var size = json.layers.length;
+	    this.outputLayer = size - 1;
+
+	    this.sizes = new Array(size);
+	    this.weights = new Array(size);
+	    this.biases = new Array(size);
+	    this.outputs = new Array(size);
+
+	    for (var i = 0; i <= this.outputLayer; i++) {
+	      var layer = json.layers[i];
+	      if (i == 0 && (!layer[0] || json.inputLookup)) {
+	        this.inputLookup = lookup.lookupFromHash(layer);
+	      }
+	      else if (i == this.outputLayer && (!layer[0] || json.outputLookup)) {
+	        this.outputLookup = lookup.lookupFromHash(layer);
+	      }
+
+	      var nodes = _(layer).keys();
+	      this.sizes[i] = nodes.length;
+	      this.weights[i] = [];
+	      this.biases[i] = [];
+	      this.outputs[i] = [];
+
+	      for (var j in nodes) {
+	        var node = nodes[j];
+	        this.biases[i][j] = layer[node].bias;
+	        this.weights[i][j] = _(layer[node].weights).toArray();
+	      }
+	    }
+	    return this;
+	  },
+
+	   toFunction: function() {
+	    var json = this.toJSON();
+	    // return standalone function that mimics run()
+	    return new Function("input",
+	'  var net = ' + JSON.stringify(json) + ';\n\n\
+	  for (var i = 1; i < net.layers.length; i++) {\n\
+	    var layer = net.layers[i];\n\
+	    var output = {};\n\
+	    \n\
+	    for (var id in layer) {\n\
+	      var node = layer[id];\n\
+	      var sum = node.bias;\n\
+	      \n\
+	      for (var iid in node.weights) {\n\
+	        sum += node.weights[iid] * input[iid];\n\
+	      }\n\
+	      output[id] = (1 / (1 + Math.exp(-sum)));\n\
+	    }\n\
+	    input = output;\n\
+	  }\n\
+	  return output;');
+	  },
+
+	  // This will create a TrainStream (WriteStream)
+	  //  for us to send the training data to.
+	  //  param: opts - the training options
+	  createTrainStream: function(opts) {
+	    opts = opts || {};
+	    opts.neuralNetwork = this;
+	    this.trainStream = new TrainStream(opts);
+	    return this.trainStream;
+	  }
+	}
+
+	function randomWeight() {
+	  return Math.random() * 0.4 - 0.2;
+	}
+
+	function zeros(size) {
+	  var array = new Array(size);
+	  for (var i = 0; i < size; i++) {
+	    array[i] = 0;
+	  }
+	  return array;
+	}
+
+	function randos(size) {
+	  var array = new Array(size);
+	  for (var i = 0; i < size; i++) {
+	    array[i] = randomWeight();
+	  }
+	  return array;
+	}
+
+	function mse(errors) {
+	  // mean squared error
+	  var sum = 0;
+	  for (var i = 0; i < errors.length; i++) {
+	    sum += Math.pow(errors[i], 2);
+	  }
+	  return sum / errors.length;
+	}
+
+	exports.NeuralNetwork = NeuralNetwork;
+
+	function TrainStream(opts) {
+	  Writable.call(this, {
+	    objectMode: true
+	  });
+
+	  opts = opts || {};
+
+	  // require the neuralNetwork
+	  if (!opts.neuralNetwork) {
+	    throw new Error('no neural network specified');
+	  }
+
+	  this.neuralNetwork = opts.neuralNetwork;
+	  this.dataFormatDetermined = false;
+
+	  this.inputKeys = [];
+	  this.outputKeys = []; // keeps track of keys seen
+	  this.i = 0; // keep track of the for loop i variable that we got rid of
+	  this.iterations = opts.iterations || 20000;
+	  this.errorThresh = opts.errorThresh || 0.005;
+	  this.log = opts.log ? (_.isFunction(opts.log) ? opts.log : console.log) : false;
+	  this.logPeriod = opts.logPeriod || 10;
+	  this.callback = opts.callback;
+	  this.callbackPeriod = opts.callbackPeriod || 10;
+	  this.floodCallback = opts.floodCallback;
+	  this.doneTrainingCallback = opts.doneTrainingCallback;
+
+	  this.size = 0;
+	  this.count = 0;
+
+	  this.sum = 0;
+
+	  this.on('finish', this.finishStreamIteration);
+
+	  return this;
+	}
+
+	inherits(TrainStream, Writable);
+
+	/*
+	  _write expects data to be in the form of a datum.
+	  ie. {input: {a: 1 b: 0}, output: {z: 0}}
+	 */
+	TrainStream.prototype._write = function(chunk, enc, next) {
+	  if (!chunk) { // check for the end of one interation of the stream
+	    this.emit('finish');
+	    return next();
+	  }
+
+	  if (!this.dataFormatDetermined) {
+	    this.size++;
+	    this.inputKeys = _.union(this.inputKeys, _.keys(chunk.input));
+	    this.outputKeys = _.union(this.outputKeys, _.keys(chunk.output));
+	    this.firstDatum = this.firstDatum || chunk;
+	    return next();
+	  }
+
+	  this.count++;
+
+	  var data = this.neuralNetwork.formatData(chunk);
+	  this.trainDatum(data[0]);
+
+	  // tell the Readable Stream that we are ready for more data
+	  next();
+	}
+
+	TrainStream.prototype.trainDatum = function(datum) {
+	  var err = this.neuralNetwork.trainPattern(datum.input, datum.output);
+	  this.sum += err;
+	}
+
+	TrainStream.prototype.finishStreamIteration = function() {
+	  if (this.dataFormatDetermined && this.size !== this.count) {
+	    console.log("This iteration's data length was different from the first.");
+	  }
+
+	  if (!this.dataFormatDetermined) {
+	    // create the lookup
+	    this.neuralNetwork.inputLookup = lookup.lookupFromArray(this.inputKeys);
+	    if(!_.isArray(this.firstDatum.output)){
+	      this.neuralNetwork.outputLookup = lookup.lookupFromArray(this.outputKeys);
+	    }
+
+	    var data = this.neuralNetwork.formatData(this.firstDatum);
+	    var inputSize = data[0].input.length;
+	    var outputSize = data[0].output.length;
+
+	    var hiddenSizes = this.hiddenSizes;
+	    if (!hiddenSizes) {
+	      hiddenSizes = [Math.max(3, Math.floor(inputSize / 2))];
+	    }
+	    var sizes = _([inputSize, hiddenSizes, outputSize]).flatten();
+	    this.dataFormatDetermined = true;
+	    this.neuralNetwork.initialize(sizes);
+
+	    if (typeof this.floodCallback === 'function') {
+	      this.floodCallback();
+	    }
+	    return;
+	  }
+
+	  var error = this.sum / this.size;
+
+	  if (this.log && (this.i % this.logPeriod == 0)) {
+	    this.log("iterations:", this.i, "training error:", error);
+	  }
+	  if (this.callback && (this.i % this.callbackPeriod == 0)) {
+	    this.callback({
+	      error: error,
+	      iterations: this.i
+	    });
+	  }
+
+	  this.sum = 0;
+	  this.count = 0;
+	  // update the iterations
+	  this.i++;
+
+	  // do a check here to see if we need the stream again
+	  if (this.i < this.iterations && error > this.errorThresh) {
+	    if (typeof this.floodCallback === 'function') {
+	      return this.floodCallback();
+	    }
+	  } else {
+	    // done training
+	    if (typeof this.doneTrainingCallback === 'function') {
+	      return this.doneTrainingCallback({
+	        error: error,
+	        iterations: this.i
+	      });
+	    }
+	  }
+	}
+
+
+/***/ },
+/* 496 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
+	//     http://underscorejs.org
+	//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	//     Underscore may be freely distributed under the MIT license.
+
+	(function() {
+
+	  // Baseline setup
+	  // --------------
+
+	  // Establish the root object, `window` in the browser, or `exports` on the server.
+	  var root = this;
+
+	  // Save the previous value of the `_` variable.
+	  var previousUnderscore = root._;
+
+	  // Save bytes in the minified (but not gzipped) version:
+	  var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
+
+	  // Create quick reference variables for speed access to core prototypes.
+	  var
+	    push             = ArrayProto.push,
+	    slice            = ArrayProto.slice,
+	    toString         = ObjProto.toString,
+	    hasOwnProperty   = ObjProto.hasOwnProperty;
+
+	  // All **ECMAScript 5** native function implementations that we hope to use
+	  // are declared here.
+	  var
+	    nativeIsArray      = Array.isArray,
+	    nativeKeys         = Object.keys,
+	    nativeBind         = FuncProto.bind,
+	    nativeCreate       = Object.create;
+
+	  // Naked function reference for surrogate-prototype-swapping.
+	  var Ctor = function(){};
+
+	  // Create a safe reference to the Underscore object for use below.
+	  var _ = function(obj) {
+	    if (obj instanceof _) return obj;
+	    if (!(this instanceof _)) return new _(obj);
+	    this._wrapped = obj;
+	  };
+
+	  // Export the Underscore object for **Node.js**, with
+	  // backwards-compatibility for the old `require()` API. If we're in
+	  // the browser, add `_` as a global object.
+	  if (true) {
+	    if (typeof module !== 'undefined' && module.exports) {
+	      exports = module.exports = _;
+	    }
+	    exports._ = _;
+	  } else {
+	    root._ = _;
+	  }
+
+	  // Current version.
+	  _.VERSION = '1.8.3';
+
+	  // Internal function that returns an efficient (for current engines) version
+	  // of the passed-in callback, to be repeatedly applied in other Underscore
+	  // functions.
+	  var optimizeCb = function(func, context, argCount) {
+	    if (context === void 0) return func;
+	    switch (argCount == null ? 3 : argCount) {
+	      case 1: return function(value) {
+	        return func.call(context, value);
+	      };
+	      case 2: return function(value, other) {
+	        return func.call(context, value, other);
+	      };
+	      case 3: return function(value, index, collection) {
+	        return func.call(context, value, index, collection);
+	      };
+	      case 4: return function(accumulator, value, index, collection) {
+	        return func.call(context, accumulator, value, index, collection);
+	      };
+	    }
+	    return function() {
+	      return func.apply(context, arguments);
+	    };
+	  };
+
+	  // A mostly-internal function to generate callbacks that can be applied
+	  // to each element in a collection, returning the desired result — either
+	  // identity, an arbitrary callback, a property matcher, or a property accessor.
+	  var cb = function(value, context, argCount) {
+	    if (value == null) return _.identity;
+	    if (_.isFunction(value)) return optimizeCb(value, context, argCount);
+	    if (_.isObject(value)) return _.matcher(value);
+	    return _.property(value);
+	  };
+	  _.iteratee = function(value, context) {
+	    return cb(value, context, Infinity);
+	  };
+
+	  // An internal function for creating assigner functions.
+	  var createAssigner = function(keysFunc, undefinedOnly) {
+	    return function(obj) {
+	      var length = arguments.length;
+	      if (length < 2 || obj == null) return obj;
+	      for (var index = 1; index < length; index++) {
+	        var source = arguments[index],
+	            keys = keysFunc(source),
+	            l = keys.length;
+	        for (var i = 0; i < l; i++) {
+	          var key = keys[i];
+	          if (!undefinedOnly || obj[key] === void 0) obj[key] = source[key];
+	        }
+	      }
+	      return obj;
+	    };
+	  };
+
+	  // An internal function for creating a new object that inherits from another.
+	  var baseCreate = function(prototype) {
+	    if (!_.isObject(prototype)) return {};
+	    if (nativeCreate) return nativeCreate(prototype);
+	    Ctor.prototype = prototype;
+	    var result = new Ctor;
+	    Ctor.prototype = null;
+	    return result;
+	  };
+
+	  var property = function(key) {
+	    return function(obj) {
+	      return obj == null ? void 0 : obj[key];
+	    };
+	  };
+
+	  // Helper for collection methods to determine whether a collection
+	  // should be iterated as an array or as an object
+	  // Related: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
+	  // Avoids a very nasty iOS 8 JIT bug on ARM-64. #2094
+	  var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
+	  var getLength = property('length');
+	  var isArrayLike = function(collection) {
+	    var length = getLength(collection);
+	    return typeof length == 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
+	  };
+
+	  // Collection Functions
+	  // --------------------
+
+	  // The cornerstone, an `each` implementation, aka `forEach`.
+	  // Handles raw objects in addition to array-likes. Treats all
+	  // sparse array-likes as if they were dense.
+	  _.each = _.forEach = function(obj, iteratee, context) {
+	    iteratee = optimizeCb(iteratee, context);
+	    var i, length;
+	    if (isArrayLike(obj)) {
+	      for (i = 0, length = obj.length; i < length; i++) {
+	        iteratee(obj[i], i, obj);
+	      }
+	    } else {
+	      var keys = _.keys(obj);
+	      for (i = 0, length = keys.length; i < length; i++) {
+	        iteratee(obj[keys[i]], keys[i], obj);
+	      }
+	    }
+	    return obj;
+	  };
+
+	  // Return the results of applying the iteratee to each element.
+	  _.map = _.collect = function(obj, iteratee, context) {
+	    iteratee = cb(iteratee, context);
+	    var keys = !isArrayLike(obj) && _.keys(obj),
+	        length = (keys || obj).length,
+	        results = Array(length);
+	    for (var index = 0; index < length; index++) {
+	      var currentKey = keys ? keys[index] : index;
+	      results[index] = iteratee(obj[currentKey], currentKey, obj);
+	    }
+	    return results;
+	  };
+
+	  // Create a reducing function iterating left or right.
+	  function createReduce(dir) {
+	    // Optimized iterator function as using arguments.length
+	    // in the main function will deoptimize the, see #1991.
+	    function iterator(obj, iteratee, memo, keys, index, length) {
+	      for (; index >= 0 && index < length; index += dir) {
+	        var currentKey = keys ? keys[index] : index;
+	        memo = iteratee(memo, obj[currentKey], currentKey, obj);
+	      }
+	      return memo;
+	    }
+
+	    return function(obj, iteratee, memo, context) {
+	      iteratee = optimizeCb(iteratee, context, 4);
+	      var keys = !isArrayLike(obj) && _.keys(obj),
+	          length = (keys || obj).length,
+	          index = dir > 0 ? 0 : length - 1;
+	      // Determine the initial value if none is provided.
+	      if (arguments.length < 3) {
+	        memo = obj[keys ? keys[index] : index];
+	        index += dir;
+	      }
+	      return iterator(obj, iteratee, memo, keys, index, length);
+	    };
+	  }
+
+	  // **Reduce** builds up a single result from a list of values, aka `inject`,
+	  // or `foldl`.
+	  _.reduce = _.foldl = _.inject = createReduce(1);
+
+	  // The right-associative version of reduce, also known as `foldr`.
+	  _.reduceRight = _.foldr = createReduce(-1);
+
+	  // Return the first value which passes a truth test. Aliased as `detect`.
+	  _.find = _.detect = function(obj, predicate, context) {
+	    var key;
+	    if (isArrayLike(obj)) {
+	      key = _.findIndex(obj, predicate, context);
+	    } else {
+	      key = _.findKey(obj, predicate, context);
+	    }
+	    if (key !== void 0 && key !== -1) return obj[key];
+	  };
+
+	  // Return all the elements that pass a truth test.
+	  // Aliased as `select`.
+	  _.filter = _.select = function(obj, predicate, context) {
+	    var results = [];
+	    predicate = cb(predicate, context);
+	    _.each(obj, function(value, index, list) {
+	      if (predicate(value, index, list)) results.push(value);
+	    });
+	    return results;
+	  };
+
+	  // Return all the elements for which a truth test fails.
+	  _.reject = function(obj, predicate, context) {
+	    return _.filter(obj, _.negate(cb(predicate)), context);
+	  };
+
+	  // Determine whether all of the elements match a truth test.
+	  // Aliased as `all`.
+	  _.every = _.all = function(obj, predicate, context) {
+	    predicate = cb(predicate, context);
+	    var keys = !isArrayLike(obj) && _.keys(obj),
+	        length = (keys || obj).length;
+	    for (var index = 0; index < length; index++) {
+	      var currentKey = keys ? keys[index] : index;
+	      if (!predicate(obj[currentKey], currentKey, obj)) return false;
+	    }
+	    return true;
+	  };
+
+	  // Determine if at least one element in the object matches a truth test.
+	  // Aliased as `any`.
+	  _.some = _.any = function(obj, predicate, context) {
+	    predicate = cb(predicate, context);
+	    var keys = !isArrayLike(obj) && _.keys(obj),
+	        length = (keys || obj).length;
+	    for (var index = 0; index < length; index++) {
+	      var currentKey = keys ? keys[index] : index;
+	      if (predicate(obj[currentKey], currentKey, obj)) return true;
+	    }
+	    return false;
+	  };
+
+	  // Determine if the array or object contains a given item (using `===`).
+	  // Aliased as `includes` and `include`.
+	  _.contains = _.includes = _.include = function(obj, item, fromIndex, guard) {
+	    if (!isArrayLike(obj)) obj = _.values(obj);
+	    if (typeof fromIndex != 'number' || guard) fromIndex = 0;
+	    return _.indexOf(obj, item, fromIndex) >= 0;
+	  };
+
+	  // Invoke a method (with arguments) on every item in a collection.
+	  _.invoke = function(obj, method) {
+	    var args = slice.call(arguments, 2);
+	    var isFunc = _.isFunction(method);
+	    return _.map(obj, function(value) {
+	      var func = isFunc ? method : value[method];
+	      return func == null ? func : func.apply(value, args);
+	    });
+	  };
+
+	  // Convenience version of a common use case of `map`: fetching a property.
+	  _.pluck = function(obj, key) {
+	    return _.map(obj, _.property(key));
+	  };
+
+	  // Convenience version of a common use case of `filter`: selecting only objects
+	  // containing specific `key:value` pairs.
+	  _.where = function(obj, attrs) {
+	    return _.filter(obj, _.matcher(attrs));
+	  };
+
+	  // Convenience version of a common use case of `find`: getting the first object
+	  // containing specific `key:value` pairs.
+	  _.findWhere = function(obj, attrs) {
+	    return _.find(obj, _.matcher(attrs));
+	  };
+
+	  // Return the maximum element (or element-based computation).
+	  _.max = function(obj, iteratee, context) {
+	    var result = -Infinity, lastComputed = -Infinity,
+	        value, computed;
+	    if (iteratee == null && obj != null) {
+	      obj = isArrayLike(obj) ? obj : _.values(obj);
+	      for (var i = 0, length = obj.length; i < length; i++) {
+	        value = obj[i];
+	        if (value > result) {
+	          result = value;
+	        }
+	      }
+	    } else {
+	      iteratee = cb(iteratee, context);
+	      _.each(obj, function(value, index, list) {
+	        computed = iteratee(value, index, list);
+	        if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
+	          result = value;
+	          lastComputed = computed;
+	        }
+	      });
+	    }
+	    return result;
+	  };
+
+	  // Return the minimum element (or element-based computation).
+	  _.min = function(obj, iteratee, context) {
+	    var result = Infinity, lastComputed = Infinity,
+	        value, computed;
+	    if (iteratee == null && obj != null) {
+	      obj = isArrayLike(obj) ? obj : _.values(obj);
+	      for (var i = 0, length = obj.length; i < length; i++) {
+	        value = obj[i];
+	        if (value < result) {
+	          result = value;
+	        }
+	      }
+	    } else {
+	      iteratee = cb(iteratee, context);
+	      _.each(obj, function(value, index, list) {
+	        computed = iteratee(value, index, list);
+	        if (computed < lastComputed || computed === Infinity && result === Infinity) {
+	          result = value;
+	          lastComputed = computed;
+	        }
+	      });
+	    }
+	    return result;
+	  };
+
+	  // Shuffle a collection, using the modern version of the
+	  // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher–Yates_shuffle).
+	  _.shuffle = function(obj) {
+	    var set = isArrayLike(obj) ? obj : _.values(obj);
+	    var length = set.length;
+	    var shuffled = Array(length);
+	    for (var index = 0, rand; index < length; index++) {
+	      rand = _.random(0, index);
+	      if (rand !== index) shuffled[index] = shuffled[rand];
+	      shuffled[rand] = set[index];
+	    }
+	    return shuffled;
+	  };
+
+	  // Sample **n** random values from a collection.
+	  // If **n** is not specified, returns a single random element.
+	  // The internal `guard` argument allows it to work with `map`.
+	  _.sample = function(obj, n, guard) {
+	    if (n == null || guard) {
+	      if (!isArrayLike(obj)) obj = _.values(obj);
+	      return obj[_.random(obj.length - 1)];
+	    }
+	    return _.shuffle(obj).slice(0, Math.max(0, n));
+	  };
+
+	  // Sort the object's values by a criterion produced by an iteratee.
+	  _.sortBy = function(obj, iteratee, context) {
+	    iteratee = cb(iteratee, context);
+	    return _.pluck(_.map(obj, function(value, index, list) {
+	      return {
+	        value: value,
+	        index: index,
+	        criteria: iteratee(value, index, list)
+	      };
+	    }).sort(function(left, right) {
+	      var a = left.criteria;
+	      var b = right.criteria;
+	      if (a !== b) {
+	        if (a > b || a === void 0) return 1;
+	        if (a < b || b === void 0) return -1;
+	      }
+	      return left.index - right.index;
+	    }), 'value');
+	  };
+
+	  // An internal function used for aggregate "group by" operations.
+	  var group = function(behavior) {
+	    return function(obj, iteratee, context) {
+	      var result = {};
+	      iteratee = cb(iteratee, context);
+	      _.each(obj, function(value, index) {
+	        var key = iteratee(value, index, obj);
+	        behavior(result, value, key);
+	      });
+	      return result;
+	    };
+	  };
+
+	  // Groups the object's values by a criterion. Pass either a string attribute
+	  // to group by, or a function that returns the criterion.
+	  _.groupBy = group(function(result, value, key) {
+	    if (_.has(result, key)) result[key].push(value); else result[key] = [value];
+	  });
+
+	  // Indexes the object's values by a criterion, similar to `groupBy`, but for
+	  // when you know that your index values will be unique.
+	  _.indexBy = group(function(result, value, key) {
+	    result[key] = value;
+	  });
+
+	  // Counts instances of an object that group by a certain criterion. Pass
+	  // either a string attribute to count by, or a function that returns the
+	  // criterion.
+	  _.countBy = group(function(result, value, key) {
+	    if (_.has(result, key)) result[key]++; else result[key] = 1;
+	  });
+
+	  // Safely create a real, live array from anything iterable.
+	  _.toArray = function(obj) {
+	    if (!obj) return [];
+	    if (_.isArray(obj)) return slice.call(obj);
+	    if (isArrayLike(obj)) return _.map(obj, _.identity);
+	    return _.values(obj);
+	  };
+
+	  // Return the number of elements in an object.
+	  _.size = function(obj) {
+	    if (obj == null) return 0;
+	    return isArrayLike(obj) ? obj.length : _.keys(obj).length;
+	  };
+
+	  // Split a collection into two arrays: one whose elements all satisfy the given
+	  // predicate, and one whose elements all do not satisfy the predicate.
+	  _.partition = function(obj, predicate, context) {
+	    predicate = cb(predicate, context);
+	    var pass = [], fail = [];
+	    _.each(obj, function(value, key, obj) {
+	      (predicate(value, key, obj) ? pass : fail).push(value);
+	    });
+	    return [pass, fail];
+	  };
+
+	  // Array Functions
+	  // ---------------
+
+	  // Get the first element of an array. Passing **n** will return the first N
+	  // values in the array. Aliased as `head` and `take`. The **guard** check
+	  // allows it to work with `_.map`.
+	  _.first = _.head = _.take = function(array, n, guard) {
+	    if (array == null) return void 0;
+	    if (n == null || guard) return array[0];
+	    return _.initial(array, array.length - n);
+	  };
+
+	  // Returns everything but the last entry of the array. Especially useful on
+	  // the arguments object. Passing **n** will return all the values in
+	  // the array, excluding the last N.
+	  _.initial = function(array, n, guard) {
+	    return slice.call(array, 0, Math.max(0, array.length - (n == null || guard ? 1 : n)));
+	  };
+
+	  // Get the last element of an array. Passing **n** will return the last N
+	  // values in the array.
+	  _.last = function(array, n, guard) {
+	    if (array == null) return void 0;
+	    if (n == null || guard) return array[array.length - 1];
+	    return _.rest(array, Math.max(0, array.length - n));
+	  };
+
+	  // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
+	  // Especially useful on the arguments object. Passing an **n** will return
+	  // the rest N values in the array.
+	  _.rest = _.tail = _.drop = function(array, n, guard) {
+	    return slice.call(array, n == null || guard ? 1 : n);
+	  };
+
+	  // Trim out all falsy values from an array.
+	  _.compact = function(array) {
+	    return _.filter(array, _.identity);
+	  };
+
+	  // Internal implementation of a recursive `flatten` function.
+	  var flatten = function(input, shallow, strict, startIndex) {
+	    var output = [], idx = 0;
+	    for (var i = startIndex || 0, length = getLength(input); i < length; i++) {
+	      var value = input[i];
+	      if (isArrayLike(value) && (_.isArray(value) || _.isArguments(value))) {
+	        //flatten current level of array or arguments object
+	        if (!shallow) value = flatten(value, shallow, strict);
+	        var j = 0, len = value.length;
+	        output.length += len;
+	        while (j < len) {
+	          output[idx++] = value[j++];
+	        }
+	      } else if (!strict) {
+	        output[idx++] = value;
+	      }
+	    }
+	    return output;
+	  };
+
+	  // Flatten out an array, either recursively (by default), or just one level.
+	  _.flatten = function(array, shallow) {
+	    return flatten(array, shallow, false);
+	  };
+
+	  // Return a version of the array that does not contain the specified value(s).
+	  _.without = function(array) {
+	    return _.difference(array, slice.call(arguments, 1));
+	  };
+
+	  // Produce a duplicate-free version of the array. If the array has already
+	  // been sorted, you have the option of using a faster algorithm.
+	  // Aliased as `unique`.
+	  _.uniq = _.unique = function(array, isSorted, iteratee, context) {
+	    if (!_.isBoolean(isSorted)) {
+	      context = iteratee;
+	      iteratee = isSorted;
+	      isSorted = false;
+	    }
+	    if (iteratee != null) iteratee = cb(iteratee, context);
+	    var result = [];
+	    var seen = [];
+	    for (var i = 0, length = getLength(array); i < length; i++) {
+	      var value = array[i],
+	          computed = iteratee ? iteratee(value, i, array) : value;
+	      if (isSorted) {
+	        if (!i || seen !== computed) result.push(value);
+	        seen = computed;
+	      } else if (iteratee) {
+	        if (!_.contains(seen, computed)) {
+	          seen.push(computed);
+	          result.push(value);
+	        }
+	      } else if (!_.contains(result, value)) {
+	        result.push(value);
+	      }
+	    }
+	    return result;
+	  };
+
+	  // Produce an array that contains the union: each distinct element from all of
+	  // the passed-in arrays.
+	  _.union = function() {
+	    return _.uniq(flatten(arguments, true, true));
+	  };
+
+	  // Produce an array that contains every item shared between all the
+	  // passed-in arrays.
+	  _.intersection = function(array) {
+	    var result = [];
+	    var argsLength = arguments.length;
+	    for (var i = 0, length = getLength(array); i < length; i++) {
+	      var item = array[i];
+	      if (_.contains(result, item)) continue;
+	      for (var j = 1; j < argsLength; j++) {
+	        if (!_.contains(arguments[j], item)) break;
+	      }
+	      if (j === argsLength) result.push(item);
+	    }
+	    return result;
+	  };
+
+	  // Take the difference between one array and a number of other arrays.
+	  // Only the elements present in just the first array will remain.
+	  _.difference = function(array) {
+	    var rest = flatten(arguments, true, true, 1);
+	    return _.filter(array, function(value){
+	      return !_.contains(rest, value);
+	    });
+	  };
+
+	  // Zip together multiple lists into a single array -- elements that share
+	  // an index go together.
+	  _.zip = function() {
+	    return _.unzip(arguments);
+	  };
+
+	  // Complement of _.zip. Unzip accepts an array of arrays and groups
+	  // each array's elements on shared indices
+	  _.unzip = function(array) {
+	    var length = array && _.max(array, getLength).length || 0;
+	    var result = Array(length);
+
+	    for (var index = 0; index < length; index++) {
+	      result[index] = _.pluck(array, index);
+	    }
+	    return result;
+	  };
+
+	  // Converts lists into objects. Pass either a single array of `[key, value]`
+	  // pairs, or two parallel arrays of the same length -- one of keys, and one of
+	  // the corresponding values.
+	  _.object = function(list, values) {
+	    var result = {};
+	    for (var i = 0, length = getLength(list); i < length; i++) {
+	      if (values) {
+	        result[list[i]] = values[i];
+	      } else {
+	        result[list[i][0]] = list[i][1];
+	      }
+	    }
+	    return result;
+	  };
+
+	  // Generator function to create the findIndex and findLastIndex functions
+	  function createPredicateIndexFinder(dir) {
+	    return function(array, predicate, context) {
+	      predicate = cb(predicate, context);
+	      var length = getLength(array);
+	      var index = dir > 0 ? 0 : length - 1;
+	      for (; index >= 0 && index < length; index += dir) {
+	        if (predicate(array[index], index, array)) return index;
+	      }
+	      return -1;
+	    };
+	  }
+
+	  // Returns the first index on an array-like that passes a predicate test
+	  _.findIndex = createPredicateIndexFinder(1);
+	  _.findLastIndex = createPredicateIndexFinder(-1);
+
+	  // Use a comparator function to figure out the smallest index at which
+	  // an object should be inserted so as to maintain order. Uses binary search.
+	  _.sortedIndex = function(array, obj, iteratee, context) {
+	    iteratee = cb(iteratee, context, 1);
+	    var value = iteratee(obj);
+	    var low = 0, high = getLength(array);
+	    while (low < high) {
+	      var mid = Math.floor((low + high) / 2);
+	      if (iteratee(array[mid]) < value) low = mid + 1; else high = mid;
+	    }
+	    return low;
+	  };
+
+	  // Generator function to create the indexOf and lastIndexOf functions
+	  function createIndexFinder(dir, predicateFind, sortedIndex) {
+	    return function(array, item, idx) {
+	      var i = 0, length = getLength(array);
+	      if (typeof idx == 'number') {
+	        if (dir > 0) {
+	            i = idx >= 0 ? idx : Math.max(idx + length, i);
+	        } else {
+	            length = idx >= 0 ? Math.min(idx + 1, length) : idx + length + 1;
+	        }
+	      } else if (sortedIndex && idx && length) {
+	        idx = sortedIndex(array, item);
+	        return array[idx] === item ? idx : -1;
+	      }
+	      if (item !== item) {
+	        idx = predicateFind(slice.call(array, i, length), _.isNaN);
+	        return idx >= 0 ? idx + i : -1;
+	      }
+	      for (idx = dir > 0 ? i : length - 1; idx >= 0 && idx < length; idx += dir) {
+	        if (array[idx] === item) return idx;
+	      }
+	      return -1;
+	    };
+	  }
+
+	  // Return the position of the first occurrence of an item in an array,
+	  // or -1 if the item is not included in the array.
+	  // If the array is large and already in sort order, pass `true`
+	  // for **isSorted** to use binary search.
+	  _.indexOf = createIndexFinder(1, _.findIndex, _.sortedIndex);
+	  _.lastIndexOf = createIndexFinder(-1, _.findLastIndex);
+
+	  // Generate an integer Array containing an arithmetic progression. A port of
+	  // the native Python `range()` function. See
+	  // [the Python documentation](http://docs.python.org/library/functions.html#range).
+	  _.range = function(start, stop, step) {
+	    if (stop == null) {
+	      stop = start || 0;
+	      start = 0;
+	    }
+	    step = step || 1;
+
+	    var length = Math.max(Math.ceil((stop - start) / step), 0);
+	    var range = Array(length);
+
+	    for (var idx = 0; idx < length; idx++, start += step) {
+	      range[idx] = start;
+	    }
+
+	    return range;
+	  };
+
+	  // Function (ahem) Functions
+	  // ------------------
+
+	  // Determines whether to execute a function as a constructor
+	  // or a normal function with the provided arguments
+	  var executeBound = function(sourceFunc, boundFunc, context, callingContext, args) {
+	    if (!(callingContext instanceof boundFunc)) return sourceFunc.apply(context, args);
+	    var self = baseCreate(sourceFunc.prototype);
+	    var result = sourceFunc.apply(self, args);
+	    if (_.isObject(result)) return result;
+	    return self;
+	  };
+
+	  // Create a function bound to a given object (assigning `this`, and arguments,
+	  // optionally). Delegates to **ECMAScript 5**'s native `Function.bind` if
+	  // available.
+	  _.bind = function(func, context) {
+	    if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
+	    if (!_.isFunction(func)) throw new TypeError('Bind must be called on a function');
+	    var args = slice.call(arguments, 2);
+	    var bound = function() {
+	      return executeBound(func, bound, context, this, args.concat(slice.call(arguments)));
+	    };
+	    return bound;
+	  };
+
+	  // Partially apply a function by creating a version that has had some of its
+	  // arguments pre-filled, without changing its dynamic `this` context. _ acts
+	  // as a placeholder, allowing any combination of arguments to be pre-filled.
+	  _.partial = function(func) {
+	    var boundArgs = slice.call(arguments, 1);
+	    var bound = function() {
+	      var position = 0, length = boundArgs.length;
+	      var args = Array(length);
+	      for (var i = 0; i < length; i++) {
+	        args[i] = boundArgs[i] === _ ? arguments[position++] : boundArgs[i];
+	      }
+	      while (position < arguments.length) args.push(arguments[position++]);
+	      return executeBound(func, bound, this, this, args);
+	    };
+	    return bound;
+	  };
+
+	  // Bind a number of an object's methods to that object. Remaining arguments
+	  // are the method names to be bound. Useful for ensuring that all callbacks
+	  // defined on an object belong to it.
+	  _.bindAll = function(obj) {
+	    var i, length = arguments.length, key;
+	    if (length <= 1) throw new Error('bindAll must be passed function names');
+	    for (i = 1; i < length; i++) {
+	      key = arguments[i];
+	      obj[key] = _.bind(obj[key], obj);
+	    }
+	    return obj;
+	  };
+
+	  // Memoize an expensive function by storing its results.
+	  _.memoize = function(func, hasher) {
+	    var memoize = function(key) {
+	      var cache = memoize.cache;
+	      var address = '' + (hasher ? hasher.apply(this, arguments) : key);
+	      if (!_.has(cache, address)) cache[address] = func.apply(this, arguments);
+	      return cache[address];
+	    };
+	    memoize.cache = {};
+	    return memoize;
+	  };
+
+	  // Delays a function for the given number of milliseconds, and then calls
+	  // it with the arguments supplied.
+	  _.delay = function(func, wait) {
+	    var args = slice.call(arguments, 2);
+	    return setTimeout(function(){
+	      return func.apply(null, args);
+	    }, wait);
+	  };
+
+	  // Defers a function, scheduling it to run after the current call stack has
+	  // cleared.
+	  _.defer = _.partial(_.delay, _, 1);
+
+	  // Returns a function, that, when invoked, will only be triggered at most once
+	  // during a given window of time. Normally, the throttled function will run
+	  // as much as it can, without ever going more than once per `wait` duration;
+	  // but if you'd like to disable the execution on the leading edge, pass
+	  // `{leading: false}`. To disable execution on the trailing edge, ditto.
+	  _.throttle = function(func, wait, options) {
+	    var context, args, result;
+	    var timeout = null;
+	    var previous = 0;
+	    if (!options) options = {};
+	    var later = function() {
+	      previous = options.leading === false ? 0 : _.now();
+	      timeout = null;
+	      result = func.apply(context, args);
+	      if (!timeout) context = args = null;
+	    };
+	    return function() {
+	      var now = _.now();
+	      if (!previous && options.leading === false) previous = now;
+	      var remaining = wait - (now - previous);
+	      context = this;
+	      args = arguments;
+	      if (remaining <= 0 || remaining > wait) {
+	        if (timeout) {
+	          clearTimeout(timeout);
+	          timeout = null;
+	        }
+	        previous = now;
+	        result = func.apply(context, args);
+	        if (!timeout) context = args = null;
+	      } else if (!timeout && options.trailing !== false) {
+	        timeout = setTimeout(later, remaining);
+	      }
+	      return result;
+	    };
+	  };
+
+	  // Returns a function, that, as long as it continues to be invoked, will not
+	  // be triggered. The function will be called after it stops being called for
+	  // N milliseconds. If `immediate` is passed, trigger the function on the
+	  // leading edge, instead of the trailing.
+	  _.debounce = function(func, wait, immediate) {
+	    var timeout, args, context, timestamp, result;
+
+	    var later = function() {
+	      var last = _.now() - timestamp;
+
+	      if (last < wait && last >= 0) {
+	        timeout = setTimeout(later, wait - last);
+	      } else {
+	        timeout = null;
+	        if (!immediate) {
+	          result = func.apply(context, args);
+	          if (!timeout) context = args = null;
+	        }
+	      }
+	    };
+
+	    return function() {
+	      context = this;
+	      args = arguments;
+	      timestamp = _.now();
+	      var callNow = immediate && !timeout;
+	      if (!timeout) timeout = setTimeout(later, wait);
+	      if (callNow) {
+	        result = func.apply(context, args);
+	        context = args = null;
+	      }
+
+	      return result;
+	    };
+	  };
+
+	  // Returns the first function passed as an argument to the second,
+	  // allowing you to adjust arguments, run code before and after, and
+	  // conditionally execute the original function.
+	  _.wrap = function(func, wrapper) {
+	    return _.partial(wrapper, func);
+	  };
+
+	  // Returns a negated version of the passed-in predicate.
+	  _.negate = function(predicate) {
+	    return function() {
+	      return !predicate.apply(this, arguments);
+	    };
+	  };
+
+	  // Returns a function that is the composition of a list of functions, each
+	  // consuming the return value of the function that follows.
+	  _.compose = function() {
+	    var args = arguments;
+	    var start = args.length - 1;
+	    return function() {
+	      var i = start;
+	      var result = args[start].apply(this, arguments);
+	      while (i--) result = args[i].call(this, result);
+	      return result;
+	    };
+	  };
+
+	  // Returns a function that will only be executed on and after the Nth call.
+	  _.after = function(times, func) {
+	    return function() {
+	      if (--times < 1) {
+	        return func.apply(this, arguments);
+	      }
+	    };
+	  };
+
+	  // Returns a function that will only be executed up to (but not including) the Nth call.
+	  _.before = function(times, func) {
+	    var memo;
+	    return function() {
+	      if (--times > 0) {
+	        memo = func.apply(this, arguments);
+	      }
+	      if (times <= 1) func = null;
+	      return memo;
+	    };
+	  };
+
+	  // Returns a function that will be executed at most one time, no matter how
+	  // often you call it. Useful for lazy initialization.
+	  _.once = _.partial(_.before, 2);
+
+	  // Object Functions
+	  // ----------------
+
+	  // Keys in IE < 9 that won't be iterated by `for key in ...` and thus missed.
+	  var hasEnumBug = !{toString: null}.propertyIsEnumerable('toString');
+	  var nonEnumerableProps = ['valueOf', 'isPrototypeOf', 'toString',
+	                      'propertyIsEnumerable', 'hasOwnProperty', 'toLocaleString'];
+
+	  function collectNonEnumProps(obj, keys) {
+	    var nonEnumIdx = nonEnumerableProps.length;
+	    var constructor = obj.constructor;
+	    var proto = (_.isFunction(constructor) && constructor.prototype) || ObjProto;
+
+	    // Constructor is a special case.
+	    var prop = 'constructor';
+	    if (_.has(obj, prop) && !_.contains(keys, prop)) keys.push(prop);
+
+	    while (nonEnumIdx--) {
+	      prop = nonEnumerableProps[nonEnumIdx];
+	      if (prop in obj && obj[prop] !== proto[prop] && !_.contains(keys, prop)) {
+	        keys.push(prop);
+	      }
+	    }
+	  }
+
+	  // Retrieve the names of an object's own properties.
+	  // Delegates to **ECMAScript 5**'s native `Object.keys`
+	  _.keys = function(obj) {
+	    if (!_.isObject(obj)) return [];
+	    if (nativeKeys) return nativeKeys(obj);
+	    var keys = [];
+	    for (var key in obj) if (_.has(obj, key)) keys.push(key);
+	    // Ahem, IE < 9.
+	    if (hasEnumBug) collectNonEnumProps(obj, keys);
+	    return keys;
+	  };
+
+	  // Retrieve all the property names of an object.
+	  _.allKeys = function(obj) {
+	    if (!_.isObject(obj)) return [];
+	    var keys = [];
+	    for (var key in obj) keys.push(key);
+	    // Ahem, IE < 9.
+	    if (hasEnumBug) collectNonEnumProps(obj, keys);
+	    return keys;
+	  };
+
+	  // Retrieve the values of an object's properties.
+	  _.values = function(obj) {
+	    var keys = _.keys(obj);
+	    var length = keys.length;
+	    var values = Array(length);
+	    for (var i = 0; i < length; i++) {
+	      values[i] = obj[keys[i]];
+	    }
+	    return values;
+	  };
+
+	  // Returns the results of applying the iteratee to each element of the object
+	  // In contrast to _.map it returns an object
+	  _.mapObject = function(obj, iteratee, context) {
+	    iteratee = cb(iteratee, context);
+	    var keys =  _.keys(obj),
+	          length = keys.length,
+	          results = {},
+	          currentKey;
+	      for (var index = 0; index < length; index++) {
+	        currentKey = keys[index];
+	        results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
+	      }
+	      return results;
+	  };
+
+	  // Convert an object into a list of `[key, value]` pairs.
+	  _.pairs = function(obj) {
+	    var keys = _.keys(obj);
+	    var length = keys.length;
+	    var pairs = Array(length);
+	    for (var i = 0; i < length; i++) {
+	      pairs[i] = [keys[i], obj[keys[i]]];
+	    }
+	    return pairs;
+	  };
+
+	  // Invert the keys and values of an object. The values must be serializable.
+	  _.invert = function(obj) {
+	    var result = {};
+	    var keys = _.keys(obj);
+	    for (var i = 0, length = keys.length; i < length; i++) {
+	      result[obj[keys[i]]] = keys[i];
+	    }
+	    return result;
+	  };
+
+	  // Return a sorted list of the function names available on the object.
+	  // Aliased as `methods`
+	  _.functions = _.methods = function(obj) {
+	    var names = [];
+	    for (var key in obj) {
+	      if (_.isFunction(obj[key])) names.push(key);
+	    }
+	    return names.sort();
+	  };
+
+	  // Extend a given object with all the properties in passed-in object(s).
+	  _.extend = createAssigner(_.allKeys);
+
+	  // Assigns a given object with all the own properties in the passed-in object(s)
+	  // (https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+	  _.extendOwn = _.assign = createAssigner(_.keys);
+
+	  // Returns the first key on an object that passes a predicate test
+	  _.findKey = function(obj, predicate, context) {
+	    predicate = cb(predicate, context);
+	    var keys = _.keys(obj), key;
+	    for (var i = 0, length = keys.length; i < length; i++) {
+	      key = keys[i];
+	      if (predicate(obj[key], key, obj)) return key;
+	    }
+	  };
+
+	  // Return a copy of the object only containing the whitelisted properties.
+	  _.pick = function(object, oiteratee, context) {
+	    var result = {}, obj = object, iteratee, keys;
+	    if (obj == null) return result;
+	    if (_.isFunction(oiteratee)) {
+	      keys = _.allKeys(obj);
+	      iteratee = optimizeCb(oiteratee, context);
+	    } else {
+	      keys = flatten(arguments, false, false, 1);
+	      iteratee = function(value, key, obj) { return key in obj; };
+	      obj = Object(obj);
+	    }
+	    for (var i = 0, length = keys.length; i < length; i++) {
+	      var key = keys[i];
+	      var value = obj[key];
+	      if (iteratee(value, key, obj)) result[key] = value;
+	    }
+	    return result;
+	  };
+
+	   // Return a copy of the object without the blacklisted properties.
+	  _.omit = function(obj, iteratee, context) {
+	    if (_.isFunction(iteratee)) {
+	      iteratee = _.negate(iteratee);
+	    } else {
+	      var keys = _.map(flatten(arguments, false, false, 1), String);
+	      iteratee = function(value, key) {
+	        return !_.contains(keys, key);
+	      };
+	    }
+	    return _.pick(obj, iteratee, context);
+	  };
+
+	  // Fill in a given object with default properties.
+	  _.defaults = createAssigner(_.allKeys, true);
+
+	  // Creates an object that inherits from the given prototype object.
+	  // If additional properties are provided then they will be added to the
+	  // created object.
+	  _.create = function(prototype, props) {
+	    var result = baseCreate(prototype);
+	    if (props) _.extendOwn(result, props);
+	    return result;
+	  };
+
+	  // Create a (shallow-cloned) duplicate of an object.
+	  _.clone = function(obj) {
+	    if (!_.isObject(obj)) return obj;
+	    return _.isArray(obj) ? obj.slice() : _.extend({}, obj);
+	  };
+
+	  // Invokes interceptor with the obj, and then returns obj.
+	  // The primary purpose of this method is to "tap into" a method chain, in
+	  // order to perform operations on intermediate results within the chain.
+	  _.tap = function(obj, interceptor) {
+	    interceptor(obj);
+	    return obj;
+	  };
+
+	  // Returns whether an object has a given set of `key:value` pairs.
+	  _.isMatch = function(object, attrs) {
+	    var keys = _.keys(attrs), length = keys.length;
+	    if (object == null) return !length;
+	    var obj = Object(object);
+	    for (var i = 0; i < length; i++) {
+	      var key = keys[i];
+	      if (attrs[key] !== obj[key] || !(key in obj)) return false;
+	    }
+	    return true;
+	  };
+
+
+	  // Internal recursive comparison function for `isEqual`.
+	  var eq = function(a, b, aStack, bStack) {
+	    // Identical objects are equal. `0 === -0`, but they aren't identical.
+	    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
+	    if (a === b) return a !== 0 || 1 / a === 1 / b;
+	    // A strict comparison is necessary because `null == undefined`.
+	    if (a == null || b == null) return a === b;
+	    // Unwrap any wrapped objects.
+	    if (a instanceof _) a = a._wrapped;
+	    if (b instanceof _) b = b._wrapped;
+	    // Compare `[[Class]]` names.
+	    var className = toString.call(a);
+	    if (className !== toString.call(b)) return false;
+	    switch (className) {
+	      // Strings, numbers, regular expressions, dates, and booleans are compared by value.
+	      case '[object RegExp]':
+	      // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
+	      case '[object String]':
+	        // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
+	        // equivalent to `new String("5")`.
+	        return '' + a === '' + b;
+	      case '[object Number]':
+	        // `NaN`s are equivalent, but non-reflexive.
+	        // Object(NaN) is equivalent to NaN
+	        if (+a !== +a) return +b !== +b;
+	        // An `egal` comparison is performed for other numeric values.
+	        return +a === 0 ? 1 / +a === 1 / b : +a === +b;
+	      case '[object Date]':
+	      case '[object Boolean]':
+	        // Coerce dates and booleans to numeric primitive values. Dates are compared by their
+	        // millisecond representations. Note that invalid dates with millisecond representations
+	        // of `NaN` are not equivalent.
+	        return +a === +b;
+	    }
+
+	    var areArrays = className === '[object Array]';
+	    if (!areArrays) {
+	      if (typeof a != 'object' || typeof b != 'object') return false;
+
+	      // Objects with different constructors are not equivalent, but `Object`s or `Array`s
+	      // from different frames are.
+	      var aCtor = a.constructor, bCtor = b.constructor;
+	      if (aCtor !== bCtor && !(_.isFunction(aCtor) && aCtor instanceof aCtor &&
+	                               _.isFunction(bCtor) && bCtor instanceof bCtor)
+	                          && ('constructor' in a && 'constructor' in b)) {
+	        return false;
+	      }
+	    }
+	    // Assume equality for cyclic structures. The algorithm for detecting cyclic
+	    // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
+
+	    // Initializing stack of traversed objects.
+	    // It's done here since we only need them for objects and arrays comparison.
+	    aStack = aStack || [];
+	    bStack = bStack || [];
+	    var length = aStack.length;
+	    while (length--) {
+	      // Linear search. Performance is inversely proportional to the number of
+	      // unique nested structures.
+	      if (aStack[length] === a) return bStack[length] === b;
+	    }
+
+	    // Add the first object to the stack of traversed objects.
+	    aStack.push(a);
+	    bStack.push(b);
+
+	    // Recursively compare objects and arrays.
+	    if (areArrays) {
+	      // Compare array lengths to determine if a deep comparison is necessary.
+	      length = a.length;
+	      if (length !== b.length) return false;
+	      // Deep compare the contents, ignoring non-numeric properties.
+	      while (length--) {
+	        if (!eq(a[length], b[length], aStack, bStack)) return false;
+	      }
+	    } else {
+	      // Deep compare objects.
+	      var keys = _.keys(a), key;
+	      length = keys.length;
+	      // Ensure that both objects contain the same number of properties before comparing deep equality.
+	      if (_.keys(b).length !== length) return false;
+	      while (length--) {
+	        // Deep compare each member
+	        key = keys[length];
+	        if (!(_.has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
+	      }
+	    }
+	    // Remove the first object from the stack of traversed objects.
+	    aStack.pop();
+	    bStack.pop();
+	    return true;
+	  };
+
+	  // Perform a deep comparison to check if two objects are equal.
+	  _.isEqual = function(a, b) {
+	    return eq(a, b);
+	  };
+
+	  // Is a given array, string, or object empty?
+	  // An "empty" object has no enumerable own-properties.
+	  _.isEmpty = function(obj) {
+	    if (obj == null) return true;
+	    if (isArrayLike(obj) && (_.isArray(obj) || _.isString(obj) || _.isArguments(obj))) return obj.length === 0;
+	    return _.keys(obj).length === 0;
+	  };
+
+	  // Is a given value a DOM element?
+	  _.isElement = function(obj) {
+	    return !!(obj && obj.nodeType === 1);
+	  };
+
+	  // Is a given value an array?
+	  // Delegates to ECMA5's native Array.isArray
+	  _.isArray = nativeIsArray || function(obj) {
+	    return toString.call(obj) === '[object Array]';
+	  };
+
+	  // Is a given variable an object?
+	  _.isObject = function(obj) {
+	    var type = typeof obj;
+	    return type === 'function' || type === 'object' && !!obj;
+	  };
+
+	  // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp, isError.
+	  _.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function(name) {
+	    _['is' + name] = function(obj) {
+	      return toString.call(obj) === '[object ' + name + ']';
+	    };
+	  });
+
+	  // Define a fallback version of the method in browsers (ahem, IE < 9), where
+	  // there isn't any inspectable "Arguments" type.
+	  if (!_.isArguments(arguments)) {
+	    _.isArguments = function(obj) {
+	      return _.has(obj, 'callee');
+	    };
+	  }
+
+	  // Optimize `isFunction` if appropriate. Work around some typeof bugs in old v8,
+	  // IE 11 (#1621), and in Safari 8 (#1929).
+	  if (typeof /./ != 'function' && typeof Int8Array != 'object') {
+	    _.isFunction = function(obj) {
+	      return typeof obj == 'function' || false;
+	    };
+	  }
+
+	  // Is a given object a finite number?
+	  _.isFinite = function(obj) {
+	    return isFinite(obj) && !isNaN(parseFloat(obj));
+	  };
+
+	  // Is the given value `NaN`? (NaN is the only number which does not equal itself).
+	  _.isNaN = function(obj) {
+	    return _.isNumber(obj) && obj !== +obj;
+	  };
+
+	  // Is a given value a boolean?
+	  _.isBoolean = function(obj) {
+	    return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
+	  };
+
+	  // Is a given value equal to null?
+	  _.isNull = function(obj) {
+	    return obj === null;
+	  };
+
+	  // Is a given variable undefined?
+	  _.isUndefined = function(obj) {
+	    return obj === void 0;
+	  };
+
+	  // Shortcut function for checking if an object has a given property directly
+	  // on itself (in other words, not on a prototype).
+	  _.has = function(obj, key) {
+	    return obj != null && hasOwnProperty.call(obj, key);
+	  };
+
+	  // Utility Functions
+	  // -----------------
+
+	  // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
+	  // previous owner. Returns a reference to the Underscore object.
+	  _.noConflict = function() {
+	    root._ = previousUnderscore;
+	    return this;
+	  };
+
+	  // Keep the identity function around for default iteratees.
+	  _.identity = function(value) {
+	    return value;
+	  };
+
+	  // Predicate-generating functions. Often useful outside of Underscore.
+	  _.constant = function(value) {
+	    return function() {
+	      return value;
+	    };
+	  };
+
+	  _.noop = function(){};
+
+	  _.property = property;
+
+	  // Generates a function for a given object that returns a given property.
+	  _.propertyOf = function(obj) {
+	    return obj == null ? function(){} : function(key) {
+	      return obj[key];
+	    };
+	  };
+
+	  // Returns a predicate for checking whether an object has a given set of
+	  // `key:value` pairs.
+	  _.matcher = _.matches = function(attrs) {
+	    attrs = _.extendOwn({}, attrs);
+	    return function(obj) {
+	      return _.isMatch(obj, attrs);
+	    };
+	  };
+
+	  // Run a function **n** times.
+	  _.times = function(n, iteratee, context) {
+	    var accum = Array(Math.max(0, n));
+	    iteratee = optimizeCb(iteratee, context, 1);
+	    for (var i = 0; i < n; i++) accum[i] = iteratee(i);
+	    return accum;
+	  };
+
+	  // Return a random integer between min and max (inclusive).
+	  _.random = function(min, max) {
+	    if (max == null) {
+	      max = min;
+	      min = 0;
+	    }
+	    return min + Math.floor(Math.random() * (max - min + 1));
+	  };
+
+	  // A (possibly faster) way to get the current timestamp as an integer.
+	  _.now = Date.now || function() {
+	    return new Date().getTime();
+	  };
+
+	   // List of HTML entities for escaping.
+	  var escapeMap = {
+	    '&': '&amp;',
+	    '<': '&lt;',
+	    '>': '&gt;',
+	    '"': '&quot;',
+	    "'": '&#x27;',
+	    '`': '&#x60;'
+	  };
+	  var unescapeMap = _.invert(escapeMap);
+
+	  // Functions for escaping and unescaping strings to/from HTML interpolation.
+	  var createEscaper = function(map) {
+	    var escaper = function(match) {
+	      return map[match];
+	    };
+	    // Regexes for identifying a key that needs to be escaped
+	    var source = '(?:' + _.keys(map).join('|') + ')';
+	    var testRegexp = RegExp(source);
+	    var replaceRegexp = RegExp(source, 'g');
+	    return function(string) {
+	      string = string == null ? '' : '' + string;
+	      return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+	    };
+	  };
+	  _.escape = createEscaper(escapeMap);
+	  _.unescape = createEscaper(unescapeMap);
+
+	  // If the value of the named `property` is a function then invoke it with the
+	  // `object` as context; otherwise, return it.
+	  _.result = function(object, property, fallback) {
+	    var value = object == null ? void 0 : object[property];
+	    if (value === void 0) {
+	      value = fallback;
+	    }
+	    return _.isFunction(value) ? value.call(object) : value;
+	  };
+
+	  // Generate a unique integer id (unique within the entire client session).
+	  // Useful for temporary DOM ids.
+	  var idCounter = 0;
+	  _.uniqueId = function(prefix) {
+	    var id = ++idCounter + '';
+	    return prefix ? prefix + id : id;
+	  };
+
+	  // By default, Underscore uses ERB-style template delimiters, change the
+	  // following template settings to use alternative delimiters.
+	  _.templateSettings = {
+	    evaluate    : /<%([\s\S]+?)%>/g,
+	    interpolate : /<%=([\s\S]+?)%>/g,
+	    escape      : /<%-([\s\S]+?)%>/g
+	  };
+
+	  // When customizing `templateSettings`, if you don't want to define an
+	  // interpolation, evaluation or escaping regex, we need one that is
+	  // guaranteed not to match.
+	  var noMatch = /(.)^/;
+
+	  // Certain characters need to be escaped so that they can be put into a
+	  // string literal.
+	  var escapes = {
+	    "'":      "'",
+	    '\\':     '\\',
+	    '\r':     'r',
+	    '\n':     'n',
+	    '\u2028': 'u2028',
+	    '\u2029': 'u2029'
+	  };
+
+	  var escaper = /\\|'|\r|\n|\u2028|\u2029/g;
+
+	  var escapeChar = function(match) {
+	    return '\\' + escapes[match];
+	  };
+
+	  // JavaScript micro-templating, similar to John Resig's implementation.
+	  // Underscore templating handles arbitrary delimiters, preserves whitespace,
+	  // and correctly escapes quotes within interpolated code.
+	  // NB: `oldSettings` only exists for backwards compatibility.
+	  _.template = function(text, settings, oldSettings) {
+	    if (!settings && oldSettings) settings = oldSettings;
+	    settings = _.defaults({}, settings, _.templateSettings);
+
+	    // Combine delimiters into one regular expression via alternation.
+	    var matcher = RegExp([
+	      (settings.escape || noMatch).source,
+	      (settings.interpolate || noMatch).source,
+	      (settings.evaluate || noMatch).source
+	    ].join('|') + '|$', 'g');
+
+	    // Compile the template source, escaping string literals appropriately.
+	    var index = 0;
+	    var source = "__p+='";
+	    text.replace(matcher, function(match, escape, interpolate, evaluate, offset) {
+	      source += text.slice(index, offset).replace(escaper, escapeChar);
+	      index = offset + match.length;
+
+	      if (escape) {
+	        source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
+	      } else if (interpolate) {
+	        source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
+	      } else if (evaluate) {
+	        source += "';\n" + evaluate + "\n__p+='";
+	      }
+
+	      // Adobe VMs need the match returned to produce the correct offest.
+	      return match;
+	    });
+	    source += "';\n";
+
+	    // If a variable is not specified, place data values in local scope.
+	    if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
+
+	    source = "var __t,__p='',__j=Array.prototype.join," +
+	      "print=function(){__p+=__j.call(arguments,'');};\n" +
+	      source + 'return __p;\n';
+
+	    try {
+	      var render = new Function(settings.variable || 'obj', '_', source);
+	    } catch (e) {
+	      e.source = source;
+	      throw e;
+	    }
+
+	    var template = function(data) {
+	      return render.call(this, data, _);
+	    };
+
+	    // Provide the compiled source as a convenience for precompilation.
+	    var argument = settings.variable || 'obj';
+	    template.source = 'function(' + argument + '){\n' + source + '}';
+
+	    return template;
+	  };
+
+	  // Add a "chain" function. Start chaining a wrapped Underscore object.
+	  _.chain = function(obj) {
+	    var instance = _(obj);
+	    instance._chain = true;
+	    return instance;
+	  };
+
+	  // OOP
+	  // ---------------
+	  // If Underscore is called as a function, it returns a wrapped object that
+	  // can be used OO-style. This wrapper holds altered versions of all the
+	  // underscore functions. Wrapped objects may be chained.
+
+	  // Helper function to continue chaining intermediate results.
+	  var result = function(instance, obj) {
+	    return instance._chain ? _(obj).chain() : obj;
+	  };
+
+	  // Add your own custom functions to the Underscore object.
+	  _.mixin = function(obj) {
+	    _.each(_.functions(obj), function(name) {
+	      var func = _[name] = obj[name];
+	      _.prototype[name] = function() {
+	        var args = [this._wrapped];
+	        push.apply(args, arguments);
+	        return result(this, func.apply(_, args));
+	      };
+	    });
+	  };
+
+	  // Add all of the Underscore functions to the wrapper object.
+	  _.mixin(_);
+
+	  // Add all mutator Array functions to the wrapper.
+	  _.each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function(name) {
+	    var method = ArrayProto[name];
+	    _.prototype[name] = function() {
+	      var obj = this._wrapped;
+	      method.apply(obj, arguments);
+	      if ((name === 'shift' || name === 'splice') && obj.length === 0) delete obj[0];
+	      return result(this, obj);
+	    };
+	  });
+
+	  // Add all accessor Array functions to the wrapper.
+	  _.each(['concat', 'join', 'slice'], function(name) {
+	    var method = ArrayProto[name];
+	    _.prototype[name] = function() {
+	      return result(this, method.apply(this._wrapped, arguments));
+	    };
+	  });
+
+	  // Extracts the result from a wrapped and chained object.
+	  _.prototype.value = function() {
+	    return this._wrapped;
+	  };
+
+	  // Provide unwrapping proxy for some methods used in engine operations
+	  // such as arithmetic and JSON stringification.
+	  _.prototype.valueOf = _.prototype.toJSON = _.prototype.value;
+
+	  _.prototype.toString = function() {
+	    return '' + this._wrapped;
+	  };
+
+	  // AMD registration happens at the end for compatibility with AMD loaders
+	  // that may not enforce next-turn semantics on modules. Even though general
+	  // practice for AMD registration is to be anonymous, underscore registers
+	  // as a named module because, like jQuery, it is a base library that is
+	  // popular enough to be bundled in a third party lib, but not be part of
+	  // an AMD load request. Those cases could generate an error when an
+	  // anonymous define() is called outside of a loader request.
+	  if (true) {
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	      return _;
+	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  }
+	}.call(this));
+
+
+/***/ },
+/* 497 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(496);
+
+	/* Functions for turning sparse hashes into arrays and vice versa */
+
+	function buildLookup(hashes) {
+	  // [{a: 1}, {b: 6, c: 7}] -> {a: 0, b: 1, c: 2}
+	  var hash = _(hashes).reduce(function(memo, hash) {
+	    return _(memo).extend(hash);
+	  }, {});
+	  return lookupFromHash(hash);
+	}
+
+	function lookupFromHash(hash) {
+	  // {a: 6, b: 7} -> {a: 0, b: 1}
+	  var lookup = {};
+	  var index = 0;
+	  for (var i in hash) {
+	    lookup[i] = index++;
+	  }
+	  return lookup;
+	}
+
+	function toArray(lookup, hash) {
+	  // {a: 0, b: 1}, {a: 6} -> [6, 0]
+	  var array = [];
+	  for (var i in lookup) {
+	    array[lookup[i]] = hash[i] || 0;
+	  }
+	  return array;
+	}
+
+	function toHash(lookup, array) {
+	  // {a: 0, b: 1}, [6, 7] -> {a: 6, b: 7}
+	  var hash = {};
+	  for (var i in lookup) {
+	    hash[i] = array[lookup[i]];
+	  }
+	  return hash;
+	}
+
+	function lookupFromArray(array) {
+	  var lookup = {};
+	  // super fast loop
+	  var z = 0;
+	  var i = array.length;
+	  while (i-- > 0) {
+	    lookup[array[i]] = z++;
+	  };
+	  return lookup;
+	}
+
+	module.exports = {
+	  buildLookup: buildLookup,
+	  lookupFromHash: lookupFromHash,
+	  toArray: toArray,
+	  toHash: toHash,
+	  lookupFromArray: lookupFromArray
+	};
+
+/***/ },
+/* 498 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	module.exports = Stream;
+
+	var EE = __webpack_require__(499).EventEmitter;
+	var inherits = __webpack_require__(500);
+
+	inherits(Stream, EE);
+	Stream.Readable = __webpack_require__(501);
+	Stream.Writable = __webpack_require__(516);
+	Stream.Duplex = __webpack_require__(517);
+	Stream.Transform = __webpack_require__(518);
+	Stream.PassThrough = __webpack_require__(519);
+
+	// Backwards-compat with node 0.4.x
+	Stream.Stream = Stream;
+
+
+
+	// old-style streams.  Note that the pipe method (the only relevant
+	// part of this class) is overridden in the Readable class.
+
+	function Stream() {
+	  EE.call(this);
+	}
+
+	Stream.prototype.pipe = function(dest, options) {
+	  var source = this;
+
+	  function ondata(chunk) {
+	    if (dest.writable) {
+	      if (false === dest.write(chunk) && source.pause) {
+	        source.pause();
+	      }
+	    }
+	  }
+
+	  source.on('data', ondata);
+
+	  function ondrain() {
+	    if (source.readable && source.resume) {
+	      source.resume();
+	    }
+	  }
+
+	  dest.on('drain', ondrain);
+
+	  // If the 'end' option is not supplied, dest.end() will be called when
+	  // source gets the 'end' or 'close' events.  Only dest.end() once.
+	  if (!dest._isStdio && (!options || options.end !== false)) {
+	    source.on('end', onend);
+	    source.on('close', onclose);
+	  }
+
+	  var didOnEnd = false;
+	  function onend() {
+	    if (didOnEnd) return;
+	    didOnEnd = true;
+
+	    dest.end();
+	  }
+
+
+	  function onclose() {
+	    if (didOnEnd) return;
+	    didOnEnd = true;
+
+	    if (typeof dest.destroy === 'function') dest.destroy();
+	  }
+
+	  // don't leave dangling pipes when there are errors.
+	  function onerror(er) {
+	    cleanup();
+	    if (EE.listenerCount(this, 'error') === 0) {
+	      throw er; // Unhandled stream error in pipe.
+	    }
+	  }
+
+	  source.on('error', onerror);
+	  dest.on('error', onerror);
+
+	  // remove all the event listeners that were added.
+	  function cleanup() {
+	    source.removeListener('data', ondata);
+	    dest.removeListener('drain', ondrain);
+
+	    source.removeListener('end', onend);
+	    source.removeListener('close', onclose);
+
+	    source.removeListener('error', onerror);
+	    dest.removeListener('error', onerror);
+
+	    source.removeListener('end', cleanup);
+	    source.removeListener('close', cleanup);
+
+	    dest.removeListener('close', cleanup);
+	  }
+
+	  source.on('end', cleanup);
+	  source.on('close', cleanup);
+
+	  dest.on('close', cleanup);
+
+	  dest.emit('pipe', source);
+
+	  // Allow for unix-like usage: A.pipe(B).pipe(C)
+	  return dest;
+	};
+
+
+/***/ },
+/* 499 */
+/***/ function(module, exports) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	function EventEmitter() {
+	  this._events = this._events || {};
+	  this._maxListeners = this._maxListeners || undefined;
+	}
+	module.exports = EventEmitter;
+
+	// Backwards-compat with node 0.10.x
+	EventEmitter.EventEmitter = EventEmitter;
+
+	EventEmitter.prototype._events = undefined;
+	EventEmitter.prototype._maxListeners = undefined;
+
+	// By default EventEmitters will print a warning if more than 10 listeners are
+	// added to it. This is a useful default which helps finding memory leaks.
+	EventEmitter.defaultMaxListeners = 10;
+
+	// Obviously not all Emitters should be limited to 10. This function allows
+	// that to be increased. Set to zero for unlimited.
+	EventEmitter.prototype.setMaxListeners = function(n) {
+	  if (!isNumber(n) || n < 0 || isNaN(n))
+	    throw TypeError('n must be a positive number');
+	  this._maxListeners = n;
+	  return this;
+	};
+
+	EventEmitter.prototype.emit = function(type) {
+	  var er, handler, len, args, i, listeners;
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // If there is no 'error' event listener then throw.
+	  if (type === 'error') {
+	    if (!this._events.error ||
+	        (isObject(this._events.error) && !this._events.error.length)) {
+	      er = arguments[1];
+	      if (er instanceof Error) {
+	        throw er; // Unhandled 'error' event
+	      } else {
+	        // At least give some kind of context to the user
+	        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
+	        err.context = er;
+	        throw err;
+	      }
+	    }
+	  }
+
+	  handler = this._events[type];
+
+	  if (isUndefined(handler))
+	    return false;
+
+	  if (isFunction(handler)) {
+	    switch (arguments.length) {
+	      // fast cases
+	      case 1:
+	        handler.call(this);
+	        break;
+	      case 2:
+	        handler.call(this, arguments[1]);
+	        break;
+	      case 3:
+	        handler.call(this, arguments[1], arguments[2]);
+	        break;
+	      // slower
+	      default:
+	        args = Array.prototype.slice.call(arguments, 1);
+	        handler.apply(this, args);
+	    }
+	  } else if (isObject(handler)) {
+	    args = Array.prototype.slice.call(arguments, 1);
+	    listeners = handler.slice();
+	    len = listeners.length;
+	    for (i = 0; i < len; i++)
+	      listeners[i].apply(this, args);
+	  }
+
+	  return true;
+	};
+
+	EventEmitter.prototype.addListener = function(type, listener) {
+	  var m;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // To avoid recursion in the case that type === "newListener"! Before
+	  // adding it to the listeners, first emit "newListener".
+	  if (this._events.newListener)
+	    this.emit('newListener', type,
+	              isFunction(listener.listener) ?
+	              listener.listener : listener);
+
+	  if (!this._events[type])
+	    // Optimize the case of one listener. Don't need the extra array object.
+	    this._events[type] = listener;
+	  else if (isObject(this._events[type]))
+	    // If we've already got an array, just append.
+	    this._events[type].push(listener);
+	  else
+	    // Adding the second element, need to change to array.
+	    this._events[type] = [this._events[type], listener];
+
+	  // Check for listener leak
+	  if (isObject(this._events[type]) && !this._events[type].warned) {
+	    if (!isUndefined(this._maxListeners)) {
+	      m = this._maxListeners;
+	    } else {
+	      m = EventEmitter.defaultMaxListeners;
+	    }
+
+	    if (m && m > 0 && this._events[type].length > m) {
+	      this._events[type].warned = true;
+	      console.error('(node) warning: possible EventEmitter memory ' +
+	                    'leak detected. %d listeners added. ' +
+	                    'Use emitter.setMaxListeners() to increase limit.',
+	                    this._events[type].length);
+	      if (typeof console.trace === 'function') {
+	        // not supported in IE 10
+	        console.trace();
+	      }
+	    }
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+	EventEmitter.prototype.once = function(type, listener) {
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  var fired = false;
+
+	  function g() {
+	    this.removeListener(type, g);
+
+	    if (!fired) {
+	      fired = true;
+	      listener.apply(this, arguments);
+	    }
+	  }
+
+	  g.listener = listener;
+	  this.on(type, g);
+
+	  return this;
+	};
+
+	// emits a 'removeListener' event iff the listener was removed
+	EventEmitter.prototype.removeListener = function(type, listener) {
+	  var list, position, length, i;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events || !this._events[type])
+	    return this;
+
+	  list = this._events[type];
+	  length = list.length;
+	  position = -1;
+
+	  if (list === listener ||
+	      (isFunction(list.listener) && list.listener === listener)) {
+	    delete this._events[type];
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+
+	  } else if (isObject(list)) {
+	    for (i = length; i-- > 0;) {
+	      if (list[i] === listener ||
+	          (list[i].listener && list[i].listener === listener)) {
+	        position = i;
+	        break;
+	      }
+	    }
+
+	    if (position < 0)
+	      return this;
+
+	    if (list.length === 1) {
+	      list.length = 0;
+	      delete this._events[type];
+	    } else {
+	      list.splice(position, 1);
+	    }
+
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.removeAllListeners = function(type) {
+	  var key, listeners;
+
+	  if (!this._events)
+	    return this;
+
+	  // not listening for removeListener, no need to emit
+	  if (!this._events.removeListener) {
+	    if (arguments.length === 0)
+	      this._events = {};
+	    else if (this._events[type])
+	      delete this._events[type];
+	    return this;
+	  }
+
+	  // emit removeListener for all listeners on all events
+	  if (arguments.length === 0) {
+	    for (key in this._events) {
+	      if (key === 'removeListener') continue;
+	      this.removeAllListeners(key);
+	    }
+	    this.removeAllListeners('removeListener');
+	    this._events = {};
+	    return this;
+	  }
+
+	  listeners = this._events[type];
+
+	  if (isFunction(listeners)) {
+	    this.removeListener(type, listeners);
+	  } else if (listeners) {
+	    // LIFO order
+	    while (listeners.length)
+	      this.removeListener(type, listeners[listeners.length - 1]);
+	  }
+	  delete this._events[type];
+
+	  return this;
+	};
+
+	EventEmitter.prototype.listeners = function(type) {
+	  var ret;
+	  if (!this._events || !this._events[type])
+	    ret = [];
+	  else if (isFunction(this._events[type]))
+	    ret = [this._events[type]];
+	  else
+	    ret = this._events[type].slice();
+	  return ret;
+	};
+
+	EventEmitter.prototype.listenerCount = function(type) {
+	  if (this._events) {
+	    var evlistener = this._events[type];
+
+	    if (isFunction(evlistener))
+	      return 1;
+	    else if (evlistener)
+	      return evlistener.length;
+	  }
+	  return 0;
+	};
+
+	EventEmitter.listenerCount = function(emitter, type) {
+	  return emitter.listenerCount(type);
+	};
+
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+
+
+/***/ },
+/* 500 */
+/***/ function(module, exports) {
+
+	if (typeof Object.create === 'function') {
+	  // implementation from standard node.js 'util' module
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  };
+	} else {
+	  // old school shim for old browsers
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    var TempCtor = function () {}
+	    TempCtor.prototype = superCtor.prototype
+	    ctor.prototype = new TempCtor()
+	    ctor.prototype.constructor = ctor
+	  }
+	}
+
+
+/***/ },
+/* 501 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {exports = module.exports = __webpack_require__(502);
+	exports.Stream = __webpack_require__(498);
+	exports.Readable = exports;
+	exports.Writable = __webpack_require__(512);
+	exports.Duplex = __webpack_require__(511);
+	exports.Transform = __webpack_require__(514);
+	exports.PassThrough = __webpack_require__(515);
+	if (!process.browser && process.env.READABLE_STREAM === 'disable') {
+	  module.exports = __webpack_require__(498);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 502 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	module.exports = Readable;
+
+	/*<replacement>*/
+	var isArray = __webpack_require__(503);
+	/*</replacement>*/
+
+
+	/*<replacement>*/
+	var Buffer = __webpack_require__(504).Buffer;
+	/*</replacement>*/
+
+	Readable.ReadableState = ReadableState;
+
+	var EE = __webpack_require__(499).EventEmitter;
+
+	/*<replacement>*/
+	if (!EE.listenerCount) EE.listenerCount = function(emitter, type) {
+	  return emitter.listeners(type).length;
+	};
+	/*</replacement>*/
+
+	var Stream = __webpack_require__(498);
+
+	/*<replacement>*/
+	var util = __webpack_require__(508);
+	util.inherits = __webpack_require__(509);
+	/*</replacement>*/
+
+	var StringDecoder;
+
+
+	/*<replacement>*/
+	var debug = __webpack_require__(510);
+	if (debug && debug.debuglog) {
+	  debug = debug.debuglog('stream');
+	} else {
+	  debug = function () {};
+	}
+	/*</replacement>*/
+
+
+	util.inherits(Readable, Stream);
+
+	function ReadableState(options, stream) {
+	  var Duplex = __webpack_require__(511);
+
+	  options = options || {};
+
+	  // the point at which it stops calling _read() to fill the buffer
+	  // Note: 0 is a valid value, means "don't call _read preemptively ever"
+	  var hwm = options.highWaterMark;
+	  var defaultHwm = options.objectMode ? 16 : 16 * 1024;
+	  this.highWaterMark = (hwm || hwm === 0) ? hwm : defaultHwm;
+
+	  // cast to ints.
+	  this.highWaterMark = ~~this.highWaterMark;
+
+	  this.buffer = [];
+	  this.length = 0;
+	  this.pipes = null;
+	  this.pipesCount = 0;
+	  this.flowing = null;
+	  this.ended = false;
+	  this.endEmitted = false;
+	  this.reading = false;
+
+	  // a flag to be able to tell if the onwrite cb is called immediately,
+	  // or on a later tick.  We set this to true at first, because any
+	  // actions that shouldn't happen until "later" should generally also
+	  // not happen before the first write call.
+	  this.sync = true;
+
+	  // whenever we return null, then we set a flag to say
+	  // that we're awaiting a 'readable' event emission.
+	  this.needReadable = false;
+	  this.emittedReadable = false;
+	  this.readableListening = false;
+
+
+	  // object stream flag. Used to make read(n) ignore n and to
+	  // make all the buffer merging and length checks go away
+	  this.objectMode = !!options.objectMode;
+
+	  if (stream instanceof Duplex)
+	    this.objectMode = this.objectMode || !!options.readableObjectMode;
+
+	  // Crypto is kind of old and crusty.  Historically, its default string
+	  // encoding is 'binary' so we have to make this configurable.
+	  // Everything else in the universe uses 'utf8', though.
+	  this.defaultEncoding = options.defaultEncoding || 'utf8';
+
+	  // when piping, we only care about 'readable' events that happen
+	  // after read()ing all the bytes and not getting any pushback.
+	  this.ranOut = false;
+
+	  // the number of writers that are awaiting a drain event in .pipe()s
+	  this.awaitDrain = 0;
+
+	  // if true, a maybeReadMore has been scheduled
+	  this.readingMore = false;
+
+	  this.decoder = null;
+	  this.encoding = null;
+	  if (options.encoding) {
+	    if (!StringDecoder)
+	      StringDecoder = __webpack_require__(513).StringDecoder;
+	    this.decoder = new StringDecoder(options.encoding);
+	    this.encoding = options.encoding;
+	  }
+	}
+
+	function Readable(options) {
+	  var Duplex = __webpack_require__(511);
+
+	  if (!(this instanceof Readable))
+	    return new Readable(options);
+
+	  this._readableState = new ReadableState(options, this);
+
+	  // legacy
+	  this.readable = true;
+
+	  Stream.call(this);
+	}
+
+	// Manually shove something into the read() buffer.
+	// This returns true if the highWaterMark has not been hit yet,
+	// similar to how Writable.write() returns true if you should
+	// write() some more.
+	Readable.prototype.push = function(chunk, encoding) {
+	  var state = this._readableState;
+
+	  if (util.isString(chunk) && !state.objectMode) {
+	    encoding = encoding || state.defaultEncoding;
+	    if (encoding !== state.encoding) {
+	      chunk = new Buffer(chunk, encoding);
+	      encoding = '';
+	    }
+	  }
+
+	  return readableAddChunk(this, state, chunk, encoding, false);
+	};
+
+	// Unshift should *always* be something directly out of read()
+	Readable.prototype.unshift = function(chunk) {
+	  var state = this._readableState;
+	  return readableAddChunk(this, state, chunk, '', true);
+	};
+
+	function readableAddChunk(stream, state, chunk, encoding, addToFront) {
+	  var er = chunkInvalid(state, chunk);
+	  if (er) {
+	    stream.emit('error', er);
+	  } else if (util.isNullOrUndefined(chunk)) {
+	    state.reading = false;
+	    if (!state.ended)
+	      onEofChunk(stream, state);
+	  } else if (state.objectMode || chunk && chunk.length > 0) {
+	    if (state.ended && !addToFront) {
+	      var e = new Error('stream.push() after EOF');
+	      stream.emit('error', e);
+	    } else if (state.endEmitted && addToFront) {
+	      var e = new Error('stream.unshift() after end event');
+	      stream.emit('error', e);
+	    } else {
+	      if (state.decoder && !addToFront && !encoding)
+	        chunk = state.decoder.write(chunk);
+
+	      if (!addToFront)
+	        state.reading = false;
+
+	      // if we want the data now, just emit it.
+	      if (state.flowing && state.length === 0 && !state.sync) {
+	        stream.emit('data', chunk);
+	        stream.read(0);
+	      } else {
+	        // update the buffer info.
+	        state.length += state.objectMode ? 1 : chunk.length;
+	        if (addToFront)
+	          state.buffer.unshift(chunk);
+	        else
+	          state.buffer.push(chunk);
+
+	        if (state.needReadable)
+	          emitReadable(stream);
+	      }
+
+	      maybeReadMore(stream, state);
+	    }
+	  } else if (!addToFront) {
+	    state.reading = false;
+	  }
+
+	  return needMoreData(state);
+	}
+
+
+
+	// if it's past the high water mark, we can push in some more.
+	// Also, if we have no data yet, we can stand some
+	// more bytes.  This is to work around cases where hwm=0,
+	// such as the repl.  Also, if the push() triggered a
+	// readable event, and the user called read(largeNumber) such that
+	// needReadable was set, then we ought to push more, so that another
+	// 'readable' event will be triggered.
+	function needMoreData(state) {
+	  return !state.ended &&
+	         (state.needReadable ||
+	          state.length < state.highWaterMark ||
+	          state.length === 0);
+	}
+
+	// backwards compatibility.
+	Readable.prototype.setEncoding = function(enc) {
+	  if (!StringDecoder)
+	    StringDecoder = __webpack_require__(513).StringDecoder;
+	  this._readableState.decoder = new StringDecoder(enc);
+	  this._readableState.encoding = enc;
+	  return this;
+	};
+
+	// Don't raise the hwm > 128MB
+	var MAX_HWM = 0x800000;
+	function roundUpToNextPowerOf2(n) {
+	  if (n >= MAX_HWM) {
+	    n = MAX_HWM;
+	  } else {
+	    // Get the next highest power of 2
+	    n--;
+	    for (var p = 1; p < 32; p <<= 1) n |= n >> p;
+	    n++;
+	  }
+	  return n;
+	}
+
+	function howMuchToRead(n, state) {
+	  if (state.length === 0 && state.ended)
+	    return 0;
+
+	  if (state.objectMode)
+	    return n === 0 ? 0 : 1;
+
+	  if (isNaN(n) || util.isNull(n)) {
+	    // only flow one buffer at a time
+	    if (state.flowing && state.buffer.length)
+	      return state.buffer[0].length;
+	    else
+	      return state.length;
+	  }
+
+	  if (n <= 0)
+	    return 0;
+
+	  // If we're asking for more than the target buffer level,
+	  // then raise the water mark.  Bump up to the next highest
+	  // power of 2, to prevent increasing it excessively in tiny
+	  // amounts.
+	  if (n > state.highWaterMark)
+	    state.highWaterMark = roundUpToNextPowerOf2(n);
+
+	  // don't have that much.  return null, unless we've ended.
+	  if (n > state.length) {
+	    if (!state.ended) {
+	      state.needReadable = true;
+	      return 0;
+	    } else
+	      return state.length;
+	  }
+
+	  return n;
+	}
+
+	// you can override either this method, or the async _read(n) below.
+	Readable.prototype.read = function(n) {
+	  debug('read', n);
+	  var state = this._readableState;
+	  var nOrig = n;
+
+	  if (!util.isNumber(n) || n > 0)
+	    state.emittedReadable = false;
+
+	  // if we're doing read(0) to trigger a readable event, but we
+	  // already have a bunch of data in the buffer, then just trigger
+	  // the 'readable' event and move on.
+	  if (n === 0 &&
+	      state.needReadable &&
+	      (state.length >= state.highWaterMark || state.ended)) {
+	    debug('read: emitReadable', state.length, state.ended);
+	    if (state.length === 0 && state.ended)
+	      endReadable(this);
+	    else
+	      emitReadable(this);
+	    return null;
+	  }
+
+	  n = howMuchToRead(n, state);
+
+	  // if we've ended, and we're now clear, then finish it up.
+	  if (n === 0 && state.ended) {
+	    if (state.length === 0)
+	      endReadable(this);
+	    return null;
+	  }
+
+	  // All the actual chunk generation logic needs to be
+	  // *below* the call to _read.  The reason is that in certain
+	  // synthetic stream cases, such as passthrough streams, _read
+	  // may be a completely synchronous operation which may change
+	  // the state of the read buffer, providing enough data when
+	  // before there was *not* enough.
+	  //
+	  // So, the steps are:
+	  // 1. Figure out what the state of things will be after we do
+	  // a read from the buffer.
+	  //
+	  // 2. If that resulting state will trigger a _read, then call _read.
+	  // Note that this may be asynchronous, or synchronous.  Yes, it is
+	  // deeply ugly to write APIs this way, but that still doesn't mean
+	  // that the Readable class should behave improperly, as streams are
+	  // designed to be sync/async agnostic.
+	  // Take note if the _read call is sync or async (ie, if the read call
+	  // has returned yet), so that we know whether or not it's safe to emit
+	  // 'readable' etc.
+	  //
+	  // 3. Actually pull the requested chunks out of the buffer and return.
+
+	  // if we need a readable event, then we need to do some reading.
+	  var doRead = state.needReadable;
+	  debug('need readable', doRead);
+
+	  // if we currently have less than the highWaterMark, then also read some
+	  if (state.length === 0 || state.length - n < state.highWaterMark) {
+	    doRead = true;
+	    debug('length less than watermark', doRead);
+	  }
+
+	  // however, if we've ended, then there's no point, and if we're already
+	  // reading, then it's unnecessary.
+	  if (state.ended || state.reading) {
+	    doRead = false;
+	    debug('reading or ended', doRead);
+	  }
+
+	  if (doRead) {
+	    debug('do read');
+	    state.reading = true;
+	    state.sync = true;
+	    // if the length is currently zero, then we *need* a readable event.
+	    if (state.length === 0)
+	      state.needReadable = true;
+	    // call internal read method
+	    this._read(state.highWaterMark);
+	    state.sync = false;
+	  }
+
+	  // If _read pushed data synchronously, then `reading` will be false,
+	  // and we need to re-evaluate how much data we can return to the user.
+	  if (doRead && !state.reading)
+	    n = howMuchToRead(nOrig, state);
+
+	  var ret;
+	  if (n > 0)
+	    ret = fromList(n, state);
+	  else
+	    ret = null;
+
+	  if (util.isNull(ret)) {
+	    state.needReadable = true;
+	    n = 0;
+	  }
+
+	  state.length -= n;
+
+	  // If we have nothing in the buffer, then we want to know
+	  // as soon as we *do* get something into the buffer.
+	  if (state.length === 0 && !state.ended)
+	    state.needReadable = true;
+
+	  // If we tried to read() past the EOF, then emit end on the next tick.
+	  if (nOrig !== n && state.ended && state.length === 0)
+	    endReadable(this);
+
+	  if (!util.isNull(ret))
+	    this.emit('data', ret);
+
+	  return ret;
+	};
+
+	function chunkInvalid(state, chunk) {
+	  var er = null;
+	  if (!util.isBuffer(chunk) &&
+	      !util.isString(chunk) &&
+	      !util.isNullOrUndefined(chunk) &&
+	      !state.objectMode) {
+	    er = new TypeError('Invalid non-string/buffer chunk');
+	  }
+	  return er;
+	}
+
+
+	function onEofChunk(stream, state) {
+	  if (state.decoder && !state.ended) {
+	    var chunk = state.decoder.end();
+	    if (chunk && chunk.length) {
+	      state.buffer.push(chunk);
+	      state.length += state.objectMode ? 1 : chunk.length;
+	    }
+	  }
+	  state.ended = true;
+
+	  // emit 'readable' now to make sure it gets picked up.
+	  emitReadable(stream);
+	}
+
+	// Don't emit readable right away in sync mode, because this can trigger
+	// another read() call => stack overflow.  This way, it might trigger
+	// a nextTick recursion warning, but that's not so bad.
+	function emitReadable(stream) {
+	  var state = stream._readableState;
+	  state.needReadable = false;
+	  if (!state.emittedReadable) {
+	    debug('emitReadable', state.flowing);
+	    state.emittedReadable = true;
+	    if (state.sync)
+	      process.nextTick(function() {
+	        emitReadable_(stream);
+	      });
+	    else
+	      emitReadable_(stream);
+	  }
+	}
+
+	function emitReadable_(stream) {
+	  debug('emit readable');
+	  stream.emit('readable');
+	  flow(stream);
+	}
+
+
+	// at this point, the user has presumably seen the 'readable' event,
+	// and called read() to consume some data.  that may have triggered
+	// in turn another _read(n) call, in which case reading = true if
+	// it's in progress.
+	// However, if we're not ended, or reading, and the length < hwm,
+	// then go ahead and try to read some more preemptively.
+	function maybeReadMore(stream, state) {
+	  if (!state.readingMore) {
+	    state.readingMore = true;
+	    process.nextTick(function() {
+	      maybeReadMore_(stream, state);
+	    });
+	  }
+	}
+
+	function maybeReadMore_(stream, state) {
+	  var len = state.length;
+	  while (!state.reading && !state.flowing && !state.ended &&
+	         state.length < state.highWaterMark) {
+	    debug('maybeReadMore read 0');
+	    stream.read(0);
+	    if (len === state.length)
+	      // didn't get any data, stop spinning.
+	      break;
+	    else
+	      len = state.length;
+	  }
+	  state.readingMore = false;
+	}
+
+	// abstract method.  to be overridden in specific implementation classes.
+	// call cb(er, data) where data is <= n in length.
+	// for virtual (non-string, non-buffer) streams, "length" is somewhat
+	// arbitrary, and perhaps not very meaningful.
+	Readable.prototype._read = function(n) {
+	  this.emit('error', new Error('not implemented'));
+	};
+
+	Readable.prototype.pipe = function(dest, pipeOpts) {
+	  var src = this;
+	  var state = this._readableState;
+
+	  switch (state.pipesCount) {
+	    case 0:
+	      state.pipes = dest;
+	      break;
+	    case 1:
+	      state.pipes = [state.pipes, dest];
+	      break;
+	    default:
+	      state.pipes.push(dest);
+	      break;
+	  }
+	  state.pipesCount += 1;
+	  debug('pipe count=%d opts=%j', state.pipesCount, pipeOpts);
+
+	  var doEnd = (!pipeOpts || pipeOpts.end !== false) &&
+	              dest !== process.stdout &&
+	              dest !== process.stderr;
+
+	  var endFn = doEnd ? onend : cleanup;
+	  if (state.endEmitted)
+	    process.nextTick(endFn);
+	  else
+	    src.once('end', endFn);
+
+	  dest.on('unpipe', onunpipe);
+	  function onunpipe(readable) {
+	    debug('onunpipe');
+	    if (readable === src) {
+	      cleanup();
+	    }
+	  }
+
+	  function onend() {
+	    debug('onend');
+	    dest.end();
+	  }
+
+	  // when the dest drains, it reduces the awaitDrain counter
+	  // on the source.  This would be more elegant with a .once()
+	  // handler in flow(), but adding and removing repeatedly is
+	  // too slow.
+	  var ondrain = pipeOnDrain(src);
+	  dest.on('drain', ondrain);
+
+	  function cleanup() {
+	    debug('cleanup');
+	    // cleanup event handlers once the pipe is broken
+	    dest.removeListener('close', onclose);
+	    dest.removeListener('finish', onfinish);
+	    dest.removeListener('drain', ondrain);
+	    dest.removeListener('error', onerror);
+	    dest.removeListener('unpipe', onunpipe);
+	    src.removeListener('end', onend);
+	    src.removeListener('end', cleanup);
+	    src.removeListener('data', ondata);
+
+	    // if the reader is waiting for a drain event from this
+	    // specific writer, then it would cause it to never start
+	    // flowing again.
+	    // So, if this is awaiting a drain, then we just call it now.
+	    // If we don't know, then assume that we are waiting for one.
+	    if (state.awaitDrain &&
+	        (!dest._writableState || dest._writableState.needDrain))
+	      ondrain();
+	  }
+
+	  src.on('data', ondata);
+	  function ondata(chunk) {
+	    debug('ondata');
+	    var ret = dest.write(chunk);
+	    if (false === ret) {
+	      debug('false write response, pause',
+	            src._readableState.awaitDrain);
+	      src._readableState.awaitDrain++;
+	      src.pause();
+	    }
+	  }
+
+	  // if the dest has an error, then stop piping into it.
+	  // however, don't suppress the throwing behavior for this.
+	  function onerror(er) {
+	    debug('onerror', er);
+	    unpipe();
+	    dest.removeListener('error', onerror);
+	    if (EE.listenerCount(dest, 'error') === 0)
+	      dest.emit('error', er);
+	  }
+	  // This is a brutally ugly hack to make sure that our error handler
+	  // is attached before any userland ones.  NEVER DO THIS.
+	  if (!dest._events || !dest._events.error)
+	    dest.on('error', onerror);
+	  else if (isArray(dest._events.error))
+	    dest._events.error.unshift(onerror);
+	  else
+	    dest._events.error = [onerror, dest._events.error];
+
+
+
+	  // Both close and finish should trigger unpipe, but only once.
+	  function onclose() {
+	    dest.removeListener('finish', onfinish);
+	    unpipe();
+	  }
+	  dest.once('close', onclose);
+	  function onfinish() {
+	    debug('onfinish');
+	    dest.removeListener('close', onclose);
+	    unpipe();
+	  }
+	  dest.once('finish', onfinish);
+
+	  function unpipe() {
+	    debug('unpipe');
+	    src.unpipe(dest);
+	  }
+
+	  // tell the dest that it's being piped to
+	  dest.emit('pipe', src);
+
+	  // start the flow if it hasn't been started already.
+	  if (!state.flowing) {
+	    debug('pipe resume');
+	    src.resume();
+	  }
+
+	  return dest;
+	};
+
+	function pipeOnDrain(src) {
+	  return function() {
+	    var state = src._readableState;
+	    debug('pipeOnDrain', state.awaitDrain);
+	    if (state.awaitDrain)
+	      state.awaitDrain--;
+	    if (state.awaitDrain === 0 && EE.listenerCount(src, 'data')) {
+	      state.flowing = true;
+	      flow(src);
+	    }
+	  };
+	}
+
+
+	Readable.prototype.unpipe = function(dest) {
+	  var state = this._readableState;
+
+	  // if we're not piping anywhere, then do nothing.
+	  if (state.pipesCount === 0)
+	    return this;
+
+	  // just one destination.  most common case.
+	  if (state.pipesCount === 1) {
+	    // passed in one, but it's not the right one.
+	    if (dest && dest !== state.pipes)
+	      return this;
+
+	    if (!dest)
+	      dest = state.pipes;
+
+	    // got a match.
+	    state.pipes = null;
+	    state.pipesCount = 0;
+	    state.flowing = false;
+	    if (dest)
+	      dest.emit('unpipe', this);
+	    return this;
+	  }
+
+	  // slow case. multiple pipe destinations.
+
+	  if (!dest) {
+	    // remove all.
+	    var dests = state.pipes;
+	    var len = state.pipesCount;
+	    state.pipes = null;
+	    state.pipesCount = 0;
+	    state.flowing = false;
+
+	    for (var i = 0; i < len; i++)
+	      dests[i].emit('unpipe', this);
+	    return this;
+	  }
+
+	  // try to find the right one.
+	  var i = indexOf(state.pipes, dest);
+	  if (i === -1)
+	    return this;
+
+	  state.pipes.splice(i, 1);
+	  state.pipesCount -= 1;
+	  if (state.pipesCount === 1)
+	    state.pipes = state.pipes[0];
+
+	  dest.emit('unpipe', this);
+
+	  return this;
+	};
+
+	// set up data events if they are asked for
+	// Ensure readable listeners eventually get something
+	Readable.prototype.on = function(ev, fn) {
+	  var res = Stream.prototype.on.call(this, ev, fn);
+
+	  // If listening to data, and it has not explicitly been paused,
+	  // then call resume to start the flow of data on the next tick.
+	  if (ev === 'data' && false !== this._readableState.flowing) {
+	    this.resume();
+	  }
+
+	  if (ev === 'readable' && this.readable) {
+	    var state = this._readableState;
+	    if (!state.readableListening) {
+	      state.readableListening = true;
+	      state.emittedReadable = false;
+	      state.needReadable = true;
+	      if (!state.reading) {
+	        var self = this;
+	        process.nextTick(function() {
+	          debug('readable nexttick read 0');
+	          self.read(0);
+	        });
+	      } else if (state.length) {
+	        emitReadable(this, state);
+	      }
+	    }
+	  }
+
+	  return res;
+	};
+	Readable.prototype.addListener = Readable.prototype.on;
+
+	// pause() and resume() are remnants of the legacy readable stream API
+	// If the user uses them, then switch into old mode.
+	Readable.prototype.resume = function() {
+	  var state = this._readableState;
+	  if (!state.flowing) {
+	    debug('resume');
+	    state.flowing = true;
+	    if (!state.reading) {
+	      debug('resume read 0');
+	      this.read(0);
+	    }
+	    resume(this, state);
+	  }
+	  return this;
+	};
+
+	function resume(stream, state) {
+	  if (!state.resumeScheduled) {
+	    state.resumeScheduled = true;
+	    process.nextTick(function() {
+	      resume_(stream, state);
+	    });
+	  }
+	}
+
+	function resume_(stream, state) {
+	  state.resumeScheduled = false;
+	  stream.emit('resume');
+	  flow(stream);
+	  if (state.flowing && !state.reading)
+	    stream.read(0);
+	}
+
+	Readable.prototype.pause = function() {
+	  debug('call pause flowing=%j', this._readableState.flowing);
+	  if (false !== this._readableState.flowing) {
+	    debug('pause');
+	    this._readableState.flowing = false;
+	    this.emit('pause');
+	  }
+	  return this;
+	};
+
+	function flow(stream) {
+	  var state = stream._readableState;
+	  debug('flow', state.flowing);
+	  if (state.flowing) {
+	    do {
+	      var chunk = stream.read();
+	    } while (null !== chunk && state.flowing);
+	  }
+	}
+
+	// wrap an old-style stream as the async data source.
+	// This is *not* part of the readable stream interface.
+	// It is an ugly unfortunate mess of history.
+	Readable.prototype.wrap = function(stream) {
+	  var state = this._readableState;
+	  var paused = false;
+
+	  var self = this;
+	  stream.on('end', function() {
+	    debug('wrapped end');
+	    if (state.decoder && !state.ended) {
+	      var chunk = state.decoder.end();
+	      if (chunk && chunk.length)
+	        self.push(chunk);
+	    }
+
+	    self.push(null);
+	  });
+
+	  stream.on('data', function(chunk) {
+	    debug('wrapped data');
+	    if (state.decoder)
+	      chunk = state.decoder.write(chunk);
+	    if (!chunk || !state.objectMode && !chunk.length)
+	      return;
+
+	    var ret = self.push(chunk);
+	    if (!ret) {
+	      paused = true;
+	      stream.pause();
+	    }
+	  });
+
+	  // proxy all the other methods.
+	  // important when wrapping filters and duplexes.
+	  for (var i in stream) {
+	    if (util.isFunction(stream[i]) && util.isUndefined(this[i])) {
+	      this[i] = function(method) { return function() {
+	        return stream[method].apply(stream, arguments);
+	      }}(i);
+	    }
+	  }
+
+	  // proxy certain important events.
+	  var events = ['error', 'close', 'destroy', 'pause', 'resume'];
+	  forEach(events, function(ev) {
+	    stream.on(ev, self.emit.bind(self, ev));
+	  });
+
+	  // when we try to consume some more bytes, simply unpause the
+	  // underlying stream.
+	  self._read = function(n) {
+	    debug('wrapped _read', n);
+	    if (paused) {
+	      paused = false;
+	      stream.resume();
+	    }
+	  };
+
+	  return self;
+	};
+
+
+
+	// exposed for testing purposes only.
+	Readable._fromList = fromList;
+
+	// Pluck off n bytes from an array of buffers.
+	// Length is the combined lengths of all the buffers in the list.
+	function fromList(n, state) {
+	  var list = state.buffer;
+	  var length = state.length;
+	  var stringMode = !!state.decoder;
+	  var objectMode = !!state.objectMode;
+	  var ret;
+
+	  // nothing in the list, definitely empty.
+	  if (list.length === 0)
+	    return null;
+
+	  if (length === 0)
+	    ret = null;
+	  else if (objectMode)
+	    ret = list.shift();
+	  else if (!n || n >= length) {
+	    // read it all, truncate the array.
+	    if (stringMode)
+	      ret = list.join('');
+	    else
+	      ret = Buffer.concat(list, length);
+	    list.length = 0;
+	  } else {
+	    // read just some of it.
+	    if (n < list[0].length) {
+	      // just take a part of the first list item.
+	      // slice is the same for buffers and strings.
+	      var buf = list[0];
+	      ret = buf.slice(0, n);
+	      list[0] = buf.slice(n);
+	    } else if (n === list[0].length) {
+	      // first list is a perfect match
+	      ret = list.shift();
+	    } else {
+	      // complex case.
+	      // we have enough to cover it, but it spans past the first buffer.
+	      if (stringMode)
+	        ret = '';
+	      else
+	        ret = new Buffer(n);
+
+	      var c = 0;
+	      for (var i = 0, l = list.length; i < l && c < n; i++) {
+	        var buf = list[0];
+	        var cpy = Math.min(n - c, buf.length);
+
+	        if (stringMode)
+	          ret += buf.slice(0, cpy);
+	        else
+	          buf.copy(ret, c, 0, cpy);
+
+	        if (cpy < buf.length)
+	          list[0] = buf.slice(cpy);
+	        else
+	          list.shift();
+
+	        c += cpy;
+	      }
+	    }
+	  }
+
+	  return ret;
+	}
+
+	function endReadable(stream) {
+	  var state = stream._readableState;
+
+	  // If we get here before consuming all the bytes, then that is a
+	  // bug in node.  Should never happen.
+	  if (state.length > 0)
+	    throw new Error('endReadable called on non-empty stream');
+
+	  if (!state.endEmitted) {
+	    state.ended = true;
+	    process.nextTick(function() {
+	      // Check that we didn't get one last unshift.
+	      if (!state.endEmitted && state.length === 0) {
+	        state.endEmitted = true;
+	        stream.readable = false;
+	        stream.emit('end');
+	      }
+	    });
+	  }
+	}
+
+	function forEach (xs, f) {
+	  for (var i = 0, l = xs.length; i < l; i++) {
+	    f(xs[i], i);
+	  }
+	}
+
+	function indexOf (xs, x) {
+	  for (var i = 0, l = xs.length; i < l; i++) {
+	    if (xs[i] === x) return i;
+	  }
+	  return -1;
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 503 */
+/***/ function(module, exports) {
+
+	module.exports = Array.isArray || function (arr) {
+	  return Object.prototype.toString.call(arr) == '[object Array]';
+	};
+
+
+/***/ },
+/* 504 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
+	 * The buffer module from node.js, for the browser.
+	 *
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @license  MIT
+	 */
+	/* eslint-disable no-proto */
+
+	'use strict'
+
+	var base64 = __webpack_require__(505)
+	var ieee754 = __webpack_require__(506)
+	var isArray = __webpack_require__(507)
+
+	exports.Buffer = Buffer
+	exports.SlowBuffer = SlowBuffer
+	exports.INSPECT_MAX_BYTES = 50
+
+	/**
+	 * If `Buffer.TYPED_ARRAY_SUPPORT`:
+	 *   === true    Use Uint8Array implementation (fastest)
+	 *   === false   Use Object implementation (most compatible, even IE6)
+	 *
+	 * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
+	 * Opera 11.6+, iOS 4.2+.
+	 *
+	 * Due to various browser bugs, sometimes the Object implementation will be used even
+	 * when the browser supports typed arrays.
+	 *
+	 * Note:
+	 *
+	 *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
+	 *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
+	 *
+	 *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
+	 *
+	 *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
+	 *     incorrect length in some situations.
+
+	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
+	 * get the Object implementation, which is slower but behaves correctly.
+	 */
+	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+	  ? global.TYPED_ARRAY_SUPPORT
+	  : typedArraySupport()
+
+	/*
+	 * Export kMaxLength after typed array support is determined.
+	 */
+	exports.kMaxLength = kMaxLength()
+
+	function typedArraySupport () {
+	  try {
+	    var arr = new Uint8Array(1)
+	    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
+	    return arr.foo() === 42 && // typed array instances can be augmented
+	        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
+	        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
+	  } catch (e) {
+	    return false
+	  }
+	}
+
+	function kMaxLength () {
+	  return Buffer.TYPED_ARRAY_SUPPORT
+	    ? 0x7fffffff
+	    : 0x3fffffff
+	}
+
+	function createBuffer (that, length) {
+	  if (kMaxLength() < length) {
+	    throw new RangeError('Invalid typed array length')
+	  }
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    // Return an augmented `Uint8Array` instance, for best performance
+	    that = new Uint8Array(length)
+	    that.__proto__ = Buffer.prototype
+	  } else {
+	    // Fallback: Return an object instance of the Buffer class
+	    if (that === null) {
+	      that = new Buffer(length)
+	    }
+	    that.length = length
+	  }
+
+	  return that
+	}
+
+	/**
+	 * The Buffer constructor returns instances of `Uint8Array` that have their
+	 * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
+	 * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
+	 * and the `Uint8Array` methods. Square bracket notation works as expected -- it
+	 * returns a single octet.
+	 *
+	 * The `Uint8Array` prototype remains unmodified.
+	 */
+
+	function Buffer (arg, encodingOrOffset, length) {
+	  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
+	    return new Buffer(arg, encodingOrOffset, length)
+	  }
+
+	  // Common case.
+	  if (typeof arg === 'number') {
+	    if (typeof encodingOrOffset === 'string') {
+	      throw new Error(
+	        'If encoding is specified then the first argument must be a string'
+	      )
+	    }
+	    return allocUnsafe(this, arg)
+	  }
+	  return from(this, arg, encodingOrOffset, length)
+	}
+
+	Buffer.poolSize = 8192 // not used by this implementation
+
+	// TODO: Legacy, not needed anymore. Remove in next major version.
+	Buffer._augment = function (arr) {
+	  arr.__proto__ = Buffer.prototype
+	  return arr
+	}
+
+	function from (that, value, encodingOrOffset, length) {
+	  if (typeof value === 'number') {
+	    throw new TypeError('"value" argument must not be a number')
+	  }
+
+	  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+	    return fromArrayBuffer(that, value, encodingOrOffset, length)
+	  }
+
+	  if (typeof value === 'string') {
+	    return fromString(that, value, encodingOrOffset)
+	  }
+
+	  return fromObject(that, value)
+	}
+
+	/**
+	 * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
+	 * if value is a number.
+	 * Buffer.from(str[, encoding])
+	 * Buffer.from(array)
+	 * Buffer.from(buffer)
+	 * Buffer.from(arrayBuffer[, byteOffset[, length]])
+	 **/
+	Buffer.from = function (value, encodingOrOffset, length) {
+	  return from(null, value, encodingOrOffset, length)
+	}
+
+	if (Buffer.TYPED_ARRAY_SUPPORT) {
+	  Buffer.prototype.__proto__ = Uint8Array.prototype
+	  Buffer.__proto__ = Uint8Array
+	  if (typeof Symbol !== 'undefined' && Symbol.species &&
+	      Buffer[Symbol.species] === Buffer) {
+	    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
+	    Object.defineProperty(Buffer, Symbol.species, {
+	      value: null,
+	      configurable: true
+	    })
+	  }
+	}
+
+	function assertSize (size) {
+	  if (typeof size !== 'number') {
+	    throw new TypeError('"size" argument must be a number')
+	  } else if (size < 0) {
+	    throw new RangeError('"size" argument must not be negative')
+	  }
+	}
+
+	function alloc (that, size, fill, encoding) {
+	  assertSize(size)
+	  if (size <= 0) {
+	    return createBuffer(that, size)
+	  }
+	  if (fill !== undefined) {
+	    // Only pay attention to encoding if it's a string. This
+	    // prevents accidentally sending in a number that would
+	    // be interpretted as a start offset.
+	    return typeof encoding === 'string'
+	      ? createBuffer(that, size).fill(fill, encoding)
+	      : createBuffer(that, size).fill(fill)
+	  }
+	  return createBuffer(that, size)
+	}
+
+	/**
+	 * Creates a new filled Buffer instance.
+	 * alloc(size[, fill[, encoding]])
+	 **/
+	Buffer.alloc = function (size, fill, encoding) {
+	  return alloc(null, size, fill, encoding)
+	}
+
+	function allocUnsafe (that, size) {
+	  assertSize(size)
+	  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+	    for (var i = 0; i < size; ++i) {
+	      that[i] = 0
+	    }
+	  }
+	  return that
+	}
+
+	/**
+	 * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
+	 * */
+	Buffer.allocUnsafe = function (size) {
+	  return allocUnsafe(null, size)
+	}
+	/**
+	 * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
+	 */
+	Buffer.allocUnsafeSlow = function (size) {
+	  return allocUnsafe(null, size)
+	}
+
+	function fromString (that, string, encoding) {
+	  if (typeof encoding !== 'string' || encoding === '') {
+	    encoding = 'utf8'
+	  }
+
+	  if (!Buffer.isEncoding(encoding)) {
+	    throw new TypeError('"encoding" must be a valid string encoding')
+	  }
+
+	  var length = byteLength(string, encoding) | 0
+	  that = createBuffer(that, length)
+
+	  var actual = that.write(string, encoding)
+
+	  if (actual !== length) {
+	    // Writing a hex string, for example, that contains invalid characters will
+	    // cause everything after the first invalid character to be ignored. (e.g.
+	    // 'abxxcd' will be treated as 'ab')
+	    that = that.slice(0, actual)
+	  }
+
+	  return that
+	}
+
+	function fromArrayLike (that, array) {
+	  var length = array.length < 0 ? 0 : checked(array.length) | 0
+	  that = createBuffer(that, length)
+	  for (var i = 0; i < length; i += 1) {
+	    that[i] = array[i] & 255
+	  }
+	  return that
+	}
+
+	function fromArrayBuffer (that, array, byteOffset, length) {
+	  array.byteLength // this throws if `array` is not a valid ArrayBuffer
+
+	  if (byteOffset < 0 || array.byteLength < byteOffset) {
+	    throw new RangeError('\'offset\' is out of bounds')
+	  }
+
+	  if (array.byteLength < byteOffset + (length || 0)) {
+	    throw new RangeError('\'length\' is out of bounds')
+	  }
+
+	  if (byteOffset === undefined && length === undefined) {
+	    array = new Uint8Array(array)
+	  } else if (length === undefined) {
+	    array = new Uint8Array(array, byteOffset)
+	  } else {
+	    array = new Uint8Array(array, byteOffset, length)
+	  }
+
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    // Return an augmented `Uint8Array` instance, for best performance
+	    that = array
+	    that.__proto__ = Buffer.prototype
+	  } else {
+	    // Fallback: Return an object instance of the Buffer class
+	    that = fromArrayLike(that, array)
+	  }
+	  return that
+	}
+
+	function fromObject (that, obj) {
+	  if (Buffer.isBuffer(obj)) {
+	    var len = checked(obj.length) | 0
+	    that = createBuffer(that, len)
+
+	    if (that.length === 0) {
+	      return that
+	    }
+
+	    obj.copy(that, 0, 0, len)
+	    return that
+	  }
+
+	  if (obj) {
+	    if ((typeof ArrayBuffer !== 'undefined' &&
+	        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
+	      if (typeof obj.length !== 'number' || isnan(obj.length)) {
+	        return createBuffer(that, 0)
+	      }
+	      return fromArrayLike(that, obj)
+	    }
+
+	    if (obj.type === 'Buffer' && isArray(obj.data)) {
+	      return fromArrayLike(that, obj.data)
+	    }
+	  }
+
+	  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+	}
+
+	function checked (length) {
+	  // Note: cannot use `length < kMaxLength()` here because that fails when
+	  // length is NaN (which is otherwise coerced to zero.)
+	  if (length >= kMaxLength()) {
+	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+	                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
+	  }
+	  return length | 0
+	}
+
+	function SlowBuffer (length) {
+	  if (+length != length) { // eslint-disable-line eqeqeq
+	    length = 0
+	  }
+	  return Buffer.alloc(+length)
+	}
+
+	Buffer.isBuffer = function isBuffer (b) {
+	  return !!(b != null && b._isBuffer)
+	}
+
+	Buffer.compare = function compare (a, b) {
+	  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
+	    throw new TypeError('Arguments must be Buffers')
+	  }
+
+	  if (a === b) return 0
+
+	  var x = a.length
+	  var y = b.length
+
+	  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
+	    if (a[i] !== b[i]) {
+	      x = a[i]
+	      y = b[i]
+	      break
+	    }
+	  }
+
+	  if (x < y) return -1
+	  if (y < x) return 1
+	  return 0
+	}
+
+	Buffer.isEncoding = function isEncoding (encoding) {
+	  switch (String(encoding).toLowerCase()) {
+	    case 'hex':
+	    case 'utf8':
+	    case 'utf-8':
+	    case 'ascii':
+	    case 'latin1':
+	    case 'binary':
+	    case 'base64':
+	    case 'ucs2':
+	    case 'ucs-2':
+	    case 'utf16le':
+	    case 'utf-16le':
+	      return true
+	    default:
+	      return false
+	  }
+	}
+
+	Buffer.concat = function concat (list, length) {
+	  if (!isArray(list)) {
+	    throw new TypeError('"list" argument must be an Array of Buffers')
+	  }
+
+	  if (list.length === 0) {
+	    return Buffer.alloc(0)
+	  }
+
+	  var i
+	  if (length === undefined) {
+	    length = 0
+	    for (i = 0; i < list.length; ++i) {
+	      length += list[i].length
+	    }
+	  }
+
+	  var buffer = Buffer.allocUnsafe(length)
+	  var pos = 0
+	  for (i = 0; i < list.length; ++i) {
+	    var buf = list[i]
+	    if (!Buffer.isBuffer(buf)) {
+	      throw new TypeError('"list" argument must be an Array of Buffers')
+	    }
+	    buf.copy(buffer, pos)
+	    pos += buf.length
+	  }
+	  return buffer
+	}
+
+	function byteLength (string, encoding) {
+	  if (Buffer.isBuffer(string)) {
+	    return string.length
+	  }
+	  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
+	      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
+	    return string.byteLength
+	  }
+	  if (typeof string !== 'string') {
+	    string = '' + string
+	  }
+
+	  var len = string.length
+	  if (len === 0) return 0
+
+	  // Use a for loop to avoid recursion
+	  var loweredCase = false
+	  for (;;) {
+	    switch (encoding) {
+	      case 'ascii':
+	      case 'latin1':
+	      case 'binary':
+	        return len
+	      case 'utf8':
+	      case 'utf-8':
+	      case undefined:
+	        return utf8ToBytes(string).length
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return len * 2
+	      case 'hex':
+	        return len >>> 1
+	      case 'base64':
+	        return base64ToBytes(string).length
+	      default:
+	        if (loweredCase) return utf8ToBytes(string).length // assume utf8
+	        encoding = ('' + encoding).toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+	Buffer.byteLength = byteLength
+
+	function slowToString (encoding, start, end) {
+	  var loweredCase = false
+
+	  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
+	  // property of a typed array.
+
+	  // This behaves neither like String nor Uint8Array in that we set start/end
+	  // to their upper/lower bounds if the value passed is out of range.
+	  // undefined is handled specially as per ECMA-262 6th Edition,
+	  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
+	  if (start === undefined || start < 0) {
+	    start = 0
+	  }
+	  // Return early if start > this.length. Done here to prevent potential uint32
+	  // coercion fail below.
+	  if (start > this.length) {
+	    return ''
+	  }
+
+	  if (end === undefined || end > this.length) {
+	    end = this.length
+	  }
+
+	  if (end <= 0) {
+	    return ''
+	  }
+
+	  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
+	  end >>>= 0
+	  start >>>= 0
+
+	  if (end <= start) {
+	    return ''
+	  }
+
+	  if (!encoding) encoding = 'utf8'
+
+	  while (true) {
+	    switch (encoding) {
+	      case 'hex':
+	        return hexSlice(this, start, end)
+
+	      case 'utf8':
+	      case 'utf-8':
+	        return utf8Slice(this, start, end)
+
+	      case 'ascii':
+	        return asciiSlice(this, start, end)
+
+	      case 'latin1':
+	      case 'binary':
+	        return latin1Slice(this, start, end)
+
+	      case 'base64':
+	        return base64Slice(this, start, end)
+
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return utf16leSlice(this, start, end)
+
+	      default:
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+	        encoding = (encoding + '').toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+
+	// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
+	// Buffer instances.
+	Buffer.prototype._isBuffer = true
+
+	function swap (b, n, m) {
+	  var i = b[n]
+	  b[n] = b[m]
+	  b[m] = i
+	}
+
+	Buffer.prototype.swap16 = function swap16 () {
+	  var len = this.length
+	  if (len % 2 !== 0) {
+	    throw new RangeError('Buffer size must be a multiple of 16-bits')
+	  }
+	  for (var i = 0; i < len; i += 2) {
+	    swap(this, i, i + 1)
+	  }
+	  return this
+	}
+
+	Buffer.prototype.swap32 = function swap32 () {
+	  var len = this.length
+	  if (len % 4 !== 0) {
+	    throw new RangeError('Buffer size must be a multiple of 32-bits')
+	  }
+	  for (var i = 0; i < len; i += 4) {
+	    swap(this, i, i + 3)
+	    swap(this, i + 1, i + 2)
+	  }
+	  return this
+	}
+
+	Buffer.prototype.swap64 = function swap64 () {
+	  var len = this.length
+	  if (len % 8 !== 0) {
+	    throw new RangeError('Buffer size must be a multiple of 64-bits')
+	  }
+	  for (var i = 0; i < len; i += 8) {
+	    swap(this, i, i + 7)
+	    swap(this, i + 1, i + 6)
+	    swap(this, i + 2, i + 5)
+	    swap(this, i + 3, i + 4)
+	  }
+	  return this
+	}
+
+	Buffer.prototype.toString = function toString () {
+	  var length = this.length | 0
+	  if (length === 0) return ''
+	  if (arguments.length === 0) return utf8Slice(this, 0, length)
+	  return slowToString.apply(this, arguments)
+	}
+
+	Buffer.prototype.equals = function equals (b) {
+	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+	  if (this === b) return true
+	  return Buffer.compare(this, b) === 0
+	}
+
+	Buffer.prototype.inspect = function inspect () {
+	  var str = ''
+	  var max = exports.INSPECT_MAX_BYTES
+	  if (this.length > 0) {
+	    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
+	    if (this.length > max) str += ' ... '
+	  }
+	  return '<Buffer ' + str + '>'
+	}
+
+	Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
+	  if (!Buffer.isBuffer(target)) {
+	    throw new TypeError('Argument must be a Buffer')
+	  }
+
+	  if (start === undefined) {
+	    start = 0
+	  }
+	  if (end === undefined) {
+	    end = target ? target.length : 0
+	  }
+	  if (thisStart === undefined) {
+	    thisStart = 0
+	  }
+	  if (thisEnd === undefined) {
+	    thisEnd = this.length
+	  }
+
+	  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
+	    throw new RangeError('out of range index')
+	  }
+
+	  if (thisStart >= thisEnd && start >= end) {
+	    return 0
+	  }
+	  if (thisStart >= thisEnd) {
+	    return -1
+	  }
+	  if (start >= end) {
+	    return 1
+	  }
+
+	  start >>>= 0
+	  end >>>= 0
+	  thisStart >>>= 0
+	  thisEnd >>>= 0
+
+	  if (this === target) return 0
+
+	  var x = thisEnd - thisStart
+	  var y = end - start
+	  var len = Math.min(x, y)
+
+	  var thisCopy = this.slice(thisStart, thisEnd)
+	  var targetCopy = target.slice(start, end)
+
+	  for (var i = 0; i < len; ++i) {
+	    if (thisCopy[i] !== targetCopy[i]) {
+	      x = thisCopy[i]
+	      y = targetCopy[i]
+	      break
+	    }
+	  }
+
+	  if (x < y) return -1
+	  if (y < x) return 1
+	  return 0
+	}
+
+	// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
+	// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
+	//
+	// Arguments:
+	// - buffer - a Buffer to search
+	// - val - a string, Buffer, or number
+	// - byteOffset - an index into `buffer`; will be clamped to an int32
+	// - encoding - an optional encoding, relevant is val is a string
+	// - dir - true for indexOf, false for lastIndexOf
+	function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
+	  // Empty buffer means no match
+	  if (buffer.length === 0) return -1
+
+	  // Normalize byteOffset
+	  if (typeof byteOffset === 'string') {
+	    encoding = byteOffset
+	    byteOffset = 0
+	  } else if (byteOffset > 0x7fffffff) {
+	    byteOffset = 0x7fffffff
+	  } else if (byteOffset < -0x80000000) {
+	    byteOffset = -0x80000000
+	  }
+	  byteOffset = +byteOffset  // Coerce to Number.
+	  if (isNaN(byteOffset)) {
+	    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
+	    byteOffset = dir ? 0 : (buffer.length - 1)
+	  }
+
+	  // Normalize byteOffset: negative offsets start from the end of the buffer
+	  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
+	  if (byteOffset >= buffer.length) {
+	    if (dir) return -1
+	    else byteOffset = buffer.length - 1
+	  } else if (byteOffset < 0) {
+	    if (dir) byteOffset = 0
+	    else return -1
+	  }
+
+	  // Normalize val
+	  if (typeof val === 'string') {
+	    val = Buffer.from(val, encoding)
+	  }
+
+	  // Finally, search either indexOf (if dir is true) or lastIndexOf
+	  if (Buffer.isBuffer(val)) {
+	    // Special case: looking for empty string/buffer always fails
+	    if (val.length === 0) {
+	      return -1
+	    }
+	    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
+	  } else if (typeof val === 'number') {
+	    val = val & 0xFF // Search for a byte value [0-255]
+	    if (Buffer.TYPED_ARRAY_SUPPORT &&
+	        typeof Uint8Array.prototype.indexOf === 'function') {
+	      if (dir) {
+	        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
+	      } else {
+	        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
+	      }
+	    }
+	    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
+	  }
+
+	  throw new TypeError('val must be string, number or Buffer')
+	}
+
+	function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
+	  var indexSize = 1
+	  var arrLength = arr.length
+	  var valLength = val.length
+
+	  if (encoding !== undefined) {
+	    encoding = String(encoding).toLowerCase()
+	    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
+	        encoding === 'utf16le' || encoding === 'utf-16le') {
+	      if (arr.length < 2 || val.length < 2) {
+	        return -1
+	      }
+	      indexSize = 2
+	      arrLength /= 2
+	      valLength /= 2
+	      byteOffset /= 2
+	    }
+	  }
+
+	  function read (buf, i) {
+	    if (indexSize === 1) {
+	      return buf[i]
+	    } else {
+	      return buf.readUInt16BE(i * indexSize)
+	    }
+	  }
+
+	  var i
+	  if (dir) {
+	    var foundIndex = -1
+	    for (i = byteOffset; i < arrLength; i++) {
+	      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
+	        if (foundIndex === -1) foundIndex = i
+	        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
+	      } else {
+	        if (foundIndex !== -1) i -= i - foundIndex
+	        foundIndex = -1
+	      }
+	    }
+	  } else {
+	    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
+	    for (i = byteOffset; i >= 0; i--) {
+	      var found = true
+	      for (var j = 0; j < valLength; j++) {
+	        if (read(arr, i + j) !== read(val, j)) {
+	          found = false
+	          break
+	        }
+	      }
+	      if (found) return i
+	    }
+	  }
+
+	  return -1
+	}
+
+	Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
+	  return this.indexOf(val, byteOffset, encoding) !== -1
+	}
+
+	Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
+	  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
+	}
+
+	Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
+	  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
+	}
+
+	function hexWrite (buf, string, offset, length) {
+	  offset = Number(offset) || 0
+	  var remaining = buf.length - offset
+	  if (!length) {
+	    length = remaining
+	  } else {
+	    length = Number(length)
+	    if (length > remaining) {
+	      length = remaining
+	    }
+	  }
+
+	  // must be an even number of digits
+	  var strLen = string.length
+	  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
+
+	  if (length > strLen / 2) {
+	    length = strLen / 2
+	  }
+	  for (var i = 0; i < length; ++i) {
+	    var parsed = parseInt(string.substr(i * 2, 2), 16)
+	    if (isNaN(parsed)) return i
+	    buf[offset + i] = parsed
+	  }
+	  return i
+	}
+
+	function utf8Write (buf, string, offset, length) {
+	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
+	}
+
+	function asciiWrite (buf, string, offset, length) {
+	  return blitBuffer(asciiToBytes(string), buf, offset, length)
+	}
+
+	function latin1Write (buf, string, offset, length) {
+	  return asciiWrite(buf, string, offset, length)
+	}
+
+	function base64Write (buf, string, offset, length) {
+	  return blitBuffer(base64ToBytes(string), buf, offset, length)
+	}
+
+	function ucs2Write (buf, string, offset, length) {
+	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
+	}
+
+	Buffer.prototype.write = function write (string, offset, length, encoding) {
+	  // Buffer#write(string)
+	  if (offset === undefined) {
+	    encoding = 'utf8'
+	    length = this.length
+	    offset = 0
+	  // Buffer#write(string, encoding)
+	  } else if (length === undefined && typeof offset === 'string') {
+	    encoding = offset
+	    length = this.length
+	    offset = 0
+	  // Buffer#write(string, offset[, length][, encoding])
+	  } else if (isFinite(offset)) {
+	    offset = offset | 0
+	    if (isFinite(length)) {
+	      length = length | 0
+	      if (encoding === undefined) encoding = 'utf8'
+	    } else {
+	      encoding = length
+	      length = undefined
+	    }
+	  // legacy write(string, encoding, offset, length) - remove in v0.13
+	  } else {
+	    throw new Error(
+	      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
+	    )
+	  }
+
+	  var remaining = this.length - offset
+	  if (length === undefined || length > remaining) length = remaining
+
+	  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+	    throw new RangeError('Attempt to write outside buffer bounds')
+	  }
+
+	  if (!encoding) encoding = 'utf8'
+
+	  var loweredCase = false
+	  for (;;) {
+	    switch (encoding) {
+	      case 'hex':
+	        return hexWrite(this, string, offset, length)
+
+	      case 'utf8':
+	      case 'utf-8':
+	        return utf8Write(this, string, offset, length)
+
+	      case 'ascii':
+	        return asciiWrite(this, string, offset, length)
+
+	      case 'latin1':
+	      case 'binary':
+	        return latin1Write(this, string, offset, length)
+
+	      case 'base64':
+	        // Warning: maxLength not taken into account in base64Write
+	        return base64Write(this, string, offset, length)
+
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return ucs2Write(this, string, offset, length)
+
+	      default:
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+	        encoding = ('' + encoding).toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+
+	Buffer.prototype.toJSON = function toJSON () {
+	  return {
+	    type: 'Buffer',
+	    data: Array.prototype.slice.call(this._arr || this, 0)
+	  }
+	}
+
+	function base64Slice (buf, start, end) {
+	  if (start === 0 && end === buf.length) {
+	    return base64.fromByteArray(buf)
+	  } else {
+	    return base64.fromByteArray(buf.slice(start, end))
+	  }
+	}
+
+	function utf8Slice (buf, start, end) {
+	  end = Math.min(buf.length, end)
+	  var res = []
+
+	  var i = start
+	  while (i < end) {
+	    var firstByte = buf[i]
+	    var codePoint = null
+	    var bytesPerSequence = (firstByte > 0xEF) ? 4
+	      : (firstByte > 0xDF) ? 3
+	      : (firstByte > 0xBF) ? 2
+	      : 1
+
+	    if (i + bytesPerSequence <= end) {
+	      var secondByte, thirdByte, fourthByte, tempCodePoint
+
+	      switch (bytesPerSequence) {
+	        case 1:
+	          if (firstByte < 0x80) {
+	            codePoint = firstByte
+	          }
+	          break
+	        case 2:
+	          secondByte = buf[i + 1]
+	          if ((secondByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
+	            if (tempCodePoint > 0x7F) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	          break
+	        case 3:
+	          secondByte = buf[i + 1]
+	          thirdByte = buf[i + 2]
+	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
+	            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	          break
+	        case 4:
+	          secondByte = buf[i + 1]
+	          thirdByte = buf[i + 2]
+	          fourthByte = buf[i + 3]
+	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
+	            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	      }
+	    }
+
+	    if (codePoint === null) {
+	      // we did not generate a valid codePoint so insert a
+	      // replacement char (U+FFFD) and advance only 1 byte
+	      codePoint = 0xFFFD
+	      bytesPerSequence = 1
+	    } else if (codePoint > 0xFFFF) {
+	      // encode to utf16 (surrogate pair dance)
+	      codePoint -= 0x10000
+	      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
+	      codePoint = 0xDC00 | codePoint & 0x3FF
+	    }
+
+	    res.push(codePoint)
+	    i += bytesPerSequence
+	  }
+
+	  return decodeCodePointsArray(res)
+	}
+
+	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+	// the lowest limit is Chrome, with 0x10000 args.
+	// We go 1 magnitude less, for safety
+	var MAX_ARGUMENTS_LENGTH = 0x1000
+
+	function decodeCodePointsArray (codePoints) {
+	  var len = codePoints.length
+	  if (len <= MAX_ARGUMENTS_LENGTH) {
+	    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
+	  }
+
+	  // Decode in chunks to avoid "call stack size exceeded".
+	  var res = ''
+	  var i = 0
+	  while (i < len) {
+	    res += String.fromCharCode.apply(
+	      String,
+	      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
+	    )
+	  }
+	  return res
+	}
+
+	function asciiSlice (buf, start, end) {
+	  var ret = ''
+	  end = Math.min(buf.length, end)
+
+	  for (var i = start; i < end; ++i) {
+	    ret += String.fromCharCode(buf[i] & 0x7F)
+	  }
+	  return ret
+	}
+
+	function latin1Slice (buf, start, end) {
+	  var ret = ''
+	  end = Math.min(buf.length, end)
+
+	  for (var i = start; i < end; ++i) {
+	    ret += String.fromCharCode(buf[i])
+	  }
+	  return ret
+	}
+
+	function hexSlice (buf, start, end) {
+	  var len = buf.length
+
+	  if (!start || start < 0) start = 0
+	  if (!end || end < 0 || end > len) end = len
+
+	  var out = ''
+	  for (var i = start; i < end; ++i) {
+	    out += toHex(buf[i])
+	  }
+	  return out
+	}
+
+	function utf16leSlice (buf, start, end) {
+	  var bytes = buf.slice(start, end)
+	  var res = ''
+	  for (var i = 0; i < bytes.length; i += 2) {
+	    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
+	  }
+	  return res
+	}
+
+	Buffer.prototype.slice = function slice (start, end) {
+	  var len = this.length
+	  start = ~~start
+	  end = end === undefined ? len : ~~end
+
+	  if (start < 0) {
+	    start += len
+	    if (start < 0) start = 0
+	  } else if (start > len) {
+	    start = len
+	  }
+
+	  if (end < 0) {
+	    end += len
+	    if (end < 0) end = 0
+	  } else if (end > len) {
+	    end = len
+	  }
+
+	  if (end < start) end = start
+
+	  var newBuf
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    newBuf = this.subarray(start, end)
+	    newBuf.__proto__ = Buffer.prototype
+	  } else {
+	    var sliceLen = end - start
+	    newBuf = new Buffer(sliceLen, undefined)
+	    for (var i = 0; i < sliceLen; ++i) {
+	      newBuf[i] = this[i + start]
+	    }
+	  }
+
+	  return newBuf
+	}
+
+	/*
+	 * Need to make sure that buffer isn't trying to write out of bounds.
+	 */
+	function checkOffset (offset, ext, length) {
+	  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
+	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
+	}
+
+	Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var val = this[offset]
+	  var mul = 1
+	  var i = 0
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    val += this[offset + i] * mul
+	  }
+
+	  return val
+	}
+
+	Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) {
+	    checkOffset(offset, byteLength, this.length)
+	  }
+
+	  var val = this[offset + --byteLength]
+	  var mul = 1
+	  while (byteLength > 0 && (mul *= 0x100)) {
+	    val += this[offset + --byteLength] * mul
+	  }
+
+	  return val
+	}
+
+	Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 1, this.length)
+	  return this[offset]
+	}
+
+	Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  return this[offset] | (this[offset + 1] << 8)
+	}
+
+	Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  return (this[offset] << 8) | this[offset + 1]
+	}
+
+	Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return ((this[offset]) |
+	      (this[offset + 1] << 8) |
+	      (this[offset + 2] << 16)) +
+	      (this[offset + 3] * 0x1000000)
+	}
+
+	Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset] * 0x1000000) +
+	    ((this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    this[offset + 3])
+	}
+
+	Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var val = this[offset]
+	  var mul = 1
+	  var i = 0
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    val += this[offset + i] * mul
+	  }
+	  mul *= 0x80
+
+	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+	  return val
+	}
+
+	Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var i = byteLength
+	  var mul = 1
+	  var val = this[offset + --i]
+	  while (i > 0 && (mul *= 0x100)) {
+	    val += this[offset + --i] * mul
+	  }
+	  mul *= 0x80
+
+	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+	  return val
+	}
+
+	Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 1, this.length)
+	  if (!(this[offset] & 0x80)) return (this[offset])
+	  return ((0xff - this[offset] + 1) * -1)
+	}
+
+	Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  var val = this[offset] | (this[offset + 1] << 8)
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
+	}
+
+	Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  var val = this[offset + 1] | (this[offset] << 8)
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
+	}
+
+	Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset]) |
+	    (this[offset + 1] << 8) |
+	    (this[offset + 2] << 16) |
+	    (this[offset + 3] << 24)
+	}
+
+	Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset] << 24) |
+	    (this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    (this[offset + 3])
+	}
+
+	Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+	  return ieee754.read(this, offset, true, 23, 4)
+	}
+
+	Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+	  return ieee754.read(this, offset, false, 23, 4)
+	}
+
+	Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 8, this.length)
+	  return ieee754.read(this, offset, true, 52, 8)
+	}
+
+	Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 8, this.length)
+	  return ieee754.read(this, offset, false, 52, 8)
+	}
+
+	function checkInt (buf, value, offset, ext, max, min) {
+	  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
+	  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
+	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+	}
+
+	Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) {
+	    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+	    checkInt(this, value, offset, byteLength, maxBytes, 0)
+	  }
+
+	  var mul = 1
+	  var i = 0
+	  this[offset] = value & 0xFF
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    this[offset + i] = (value / mul) & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) {
+	    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+	    checkInt(this, value, offset, byteLength, maxBytes, 0)
+	  }
+
+	  var i = byteLength - 1
+	  var mul = 1
+	  this[offset + i] = value & 0xFF
+	  while (--i >= 0 && (mul *= 0x100)) {
+	    this[offset + i] = (value / mul) & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+	  this[offset] = (value & 0xff)
+	  return offset + 1
+	}
+
+	function objectWriteUInt16 (buf, value, offset, littleEndian) {
+	  if (value < 0) value = 0xffff + value + 1
+	  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
+	    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+	      (littleEndian ? i : 1 - i) * 8
+	  }
+	}
+
+	Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	  } else {
+	    objectWriteUInt16(this, value, offset, true)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 8)
+	    this[offset + 1] = (value & 0xff)
+	  } else {
+	    objectWriteUInt16(this, value, offset, false)
+	  }
+	  return offset + 2
+	}
+
+	function objectWriteUInt32 (buf, value, offset, littleEndian) {
+	  if (value < 0) value = 0xffffffff + value + 1
+	  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
+	    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
+	  }
+	}
+
+	Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset + 3] = (value >>> 24)
+	    this[offset + 2] = (value >>> 16)
+	    this[offset + 1] = (value >>> 8)
+	    this[offset] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, true)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 24)
+	    this[offset + 1] = (value >>> 16)
+	    this[offset + 2] = (value >>> 8)
+	    this[offset + 3] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, false)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) {
+	    var limit = Math.pow(2, 8 * byteLength - 1)
+
+	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+	  }
+
+	  var i = 0
+	  var mul = 1
+	  var sub = 0
+	  this[offset] = value & 0xFF
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
+	      sub = 1
+	    }
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) {
+	    var limit = Math.pow(2, 8 * byteLength - 1)
+
+	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+	  }
+
+	  var i = byteLength - 1
+	  var mul = 1
+	  var sub = 0
+	  this[offset + i] = value & 0xFF
+	  while (--i >= 0 && (mul *= 0x100)) {
+	    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
+	      sub = 1
+	    }
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+	  if (value < 0) value = 0xff + value + 1
+	  this[offset] = (value & 0xff)
+	  return offset + 1
+	}
+
+	Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	  } else {
+	    objectWriteUInt16(this, value, offset, true)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 8)
+	    this[offset + 1] = (value & 0xff)
+	  } else {
+	    objectWriteUInt16(this, value, offset, false)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	    this[offset + 2] = (value >>> 16)
+	    this[offset + 3] = (value >>> 24)
+	  } else {
+	    objectWriteUInt32(this, value, offset, true)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+	  if (value < 0) value = 0xffffffff + value + 1
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 24)
+	    this[offset + 1] = (value >>> 16)
+	    this[offset + 2] = (value >>> 8)
+	    this[offset + 3] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, false)
+	  }
+	  return offset + 4
+	}
+
+	function checkIEEE754 (buf, value, offset, ext, max, min) {
+	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+	  if (offset < 0) throw new RangeError('Index out of range')
+	}
+
+	function writeFloat (buf, value, offset, littleEndian, noAssert) {
+	  if (!noAssert) {
+	    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
+	  }
+	  ieee754.write(buf, value, offset, littleEndian, 23, 4)
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, true, noAssert)
+	}
+
+	Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, false, noAssert)
+	}
+
+	function writeDouble (buf, value, offset, littleEndian, noAssert) {
+	  if (!noAssert) {
+	    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
+	  }
+	  ieee754.write(buf, value, offset, littleEndian, 52, 8)
+	  return offset + 8
+	}
+
+	Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, true, noAssert)
+	}
+
+	Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, false, noAssert)
+	}
+
+	// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+	Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+	  if (!start) start = 0
+	  if (!end && end !== 0) end = this.length
+	  if (targetStart >= target.length) targetStart = target.length
+	  if (!targetStart) targetStart = 0
+	  if (end > 0 && end < start) end = start
+
+	  // Copy 0 bytes; we're done
+	  if (end === start) return 0
+	  if (target.length === 0 || this.length === 0) return 0
+
+	  // Fatal error conditions
+	  if (targetStart < 0) {
+	    throw new RangeError('targetStart out of bounds')
+	  }
+	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+	  if (end < 0) throw new RangeError('sourceEnd out of bounds')
+
+	  // Are we oob?
+	  if (end > this.length) end = this.length
+	  if (target.length - targetStart < end - start) {
+	    end = target.length - targetStart + start
+	  }
+
+	  var len = end - start
+	  var i
+
+	  if (this === target && start < targetStart && targetStart < end) {
+	    // descending copy from end
+	    for (i = len - 1; i >= 0; --i) {
+	      target[i + targetStart] = this[i + start]
+	    }
+	  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
+	    // ascending copy from start
+	    for (i = 0; i < len; ++i) {
+	      target[i + targetStart] = this[i + start]
+	    }
+	  } else {
+	    Uint8Array.prototype.set.call(
+	      target,
+	      this.subarray(start, start + len),
+	      targetStart
+	    )
+	  }
+
+	  return len
+	}
+
+	// Usage:
+	//    buffer.fill(number[, offset[, end]])
+	//    buffer.fill(buffer[, offset[, end]])
+	//    buffer.fill(string[, offset[, end]][, encoding])
+	Buffer.prototype.fill = function fill (val, start, end, encoding) {
+	  // Handle string cases:
+	  if (typeof val === 'string') {
+	    if (typeof start === 'string') {
+	      encoding = start
+	      start = 0
+	      end = this.length
+	    } else if (typeof end === 'string') {
+	      encoding = end
+	      end = this.length
+	    }
+	    if (val.length === 1) {
+	      var code = val.charCodeAt(0)
+	      if (code < 256) {
+	        val = code
+	      }
+	    }
+	    if (encoding !== undefined && typeof encoding !== 'string') {
+	      throw new TypeError('encoding must be a string')
+	    }
+	    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
+	      throw new TypeError('Unknown encoding: ' + encoding)
+	    }
+	  } else if (typeof val === 'number') {
+	    val = val & 255
+	  }
+
+	  // Invalid ranges are not set to a default, so can range check early.
+	  if (start < 0 || this.length < start || this.length < end) {
+	    throw new RangeError('Out of range index')
+	  }
+
+	  if (end <= start) {
+	    return this
+	  }
+
+	  start = start >>> 0
+	  end = end === undefined ? this.length : end >>> 0
+
+	  if (!val) val = 0
+
+	  var i
+	  if (typeof val === 'number') {
+	    for (i = start; i < end; ++i) {
+	      this[i] = val
+	    }
+	  } else {
+	    var bytes = Buffer.isBuffer(val)
+	      ? val
+	      : utf8ToBytes(new Buffer(val, encoding).toString())
+	    var len = bytes.length
+	    for (i = 0; i < end - start; ++i) {
+	      this[i + start] = bytes[i % len]
+	    }
+	  }
+
+	  return this
+	}
+
+	// HELPER FUNCTIONS
+	// ================
+
+	var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
+
+	function base64clean (str) {
+	  // Node strips out invalid characters like \n and \t from the string, base64-js does not
+	  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
+	  // Node converts strings with length < 2 to ''
+	  if (str.length < 2) return ''
+	  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
+	  while (str.length % 4 !== 0) {
+	    str = str + '='
+	  }
+	  return str
+	}
+
+	function stringtrim (str) {
+	  if (str.trim) return str.trim()
+	  return str.replace(/^\s+|\s+$/g, '')
+	}
+
+	function toHex (n) {
+	  if (n < 16) return '0' + n.toString(16)
+	  return n.toString(16)
+	}
+
+	function utf8ToBytes (string, units) {
+	  units = units || Infinity
+	  var codePoint
+	  var length = string.length
+	  var leadSurrogate = null
+	  var bytes = []
+
+	  for (var i = 0; i < length; ++i) {
+	    codePoint = string.charCodeAt(i)
+
+	    // is surrogate component
+	    if (codePoint > 0xD7FF && codePoint < 0xE000) {
+	      // last char was a lead
+	      if (!leadSurrogate) {
+	        // no lead yet
+	        if (codePoint > 0xDBFF) {
+	          // unexpected trail
+	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	          continue
+	        } else if (i + 1 === length) {
+	          // unpaired lead
+	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	          continue
+	        }
+
+	        // valid lead
+	        leadSurrogate = codePoint
+
+	        continue
+	      }
+
+	      // 2 leads in a row
+	      if (codePoint < 0xDC00) {
+	        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	        leadSurrogate = codePoint
+	        continue
+	      }
+
+	      // valid surrogate pair
+	      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
+	    } else if (leadSurrogate) {
+	      // valid bmp char, but last char was a lead
+	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	    }
+
+	    leadSurrogate = null
+
+	    // encode utf8
+	    if (codePoint < 0x80) {
+	      if ((units -= 1) < 0) break
+	      bytes.push(codePoint)
+	    } else if (codePoint < 0x800) {
+	      if ((units -= 2) < 0) break
+	      bytes.push(
+	        codePoint >> 0x6 | 0xC0,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else if (codePoint < 0x10000) {
+	      if ((units -= 3) < 0) break
+	      bytes.push(
+	        codePoint >> 0xC | 0xE0,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else if (codePoint < 0x110000) {
+	      if ((units -= 4) < 0) break
+	      bytes.push(
+	        codePoint >> 0x12 | 0xF0,
+	        codePoint >> 0xC & 0x3F | 0x80,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else {
+	      throw new Error('Invalid code point')
+	    }
+	  }
+
+	  return bytes
+	}
+
+	function asciiToBytes (str) {
+	  var byteArray = []
+	  for (var i = 0; i < str.length; ++i) {
+	    // Node's code seems to be doing this and not & 0x7F..
+	    byteArray.push(str.charCodeAt(i) & 0xFF)
+	  }
+	  return byteArray
+	}
+
+	function utf16leToBytes (str, units) {
+	  var c, hi, lo
+	  var byteArray = []
+	  for (var i = 0; i < str.length; ++i) {
+	    if ((units -= 2) < 0) break
+
+	    c = str.charCodeAt(i)
+	    hi = c >> 8
+	    lo = c % 256
+	    byteArray.push(lo)
+	    byteArray.push(hi)
+	  }
+
+	  return byteArray
+	}
+
+	function base64ToBytes (str) {
+	  return base64.toByteArray(base64clean(str))
+	}
+
+	function blitBuffer (src, dst, offset, length) {
+	  for (var i = 0; i < length; ++i) {
+	    if ((i + offset >= dst.length) || (i >= src.length)) break
+	    dst[i + offset] = src[i]
+	  }
+	  return i
+	}
+
+	function isnan (val) {
+	  return val !== val // eslint-disable-line no-self-compare
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504).Buffer, (function() { return this; }())))
+
+/***/ },
+/* 505 */
+/***/ function(module, exports) {
+
+	'use strict'
+
+	exports.byteLength = byteLength
+	exports.toByteArray = toByteArray
+	exports.fromByteArray = fromByteArray
+
+	var lookup = []
+	var revLookup = []
+	var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
+
+	var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+	for (var i = 0, len = code.length; i < len; ++i) {
+	  lookup[i] = code[i]
+	  revLookup[code.charCodeAt(i)] = i
+	}
+
+	revLookup['-'.charCodeAt(0)] = 62
+	revLookup['_'.charCodeAt(0)] = 63
+
+	function placeHoldersCount (b64) {
+	  var len = b64.length
+	  if (len % 4 > 0) {
+	    throw new Error('Invalid string. Length must be a multiple of 4')
+	  }
+
+	  // the number of equal signs (place holders)
+	  // if there are two placeholders, than the two characters before it
+	  // represent one byte
+	  // if there is only one, then the three characters before it represent 2 bytes
+	  // this is just a cheap hack to not do indexOf twice
+	  return b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
+	}
+
+	function byteLength (b64) {
+	  // base64 is 4/3 + up to two characters of the original data
+	  return b64.length * 3 / 4 - placeHoldersCount(b64)
+	}
+
+	function toByteArray (b64) {
+	  var i, j, l, tmp, placeHolders, arr
+	  var len = b64.length
+	  placeHolders = placeHoldersCount(b64)
+
+	  arr = new Arr(len * 3 / 4 - placeHolders)
+
+	  // if there are placeholders, only get up to the last complete 4 chars
+	  l = placeHolders > 0 ? len - 4 : len
+
+	  var L = 0
+
+	  for (i = 0, j = 0; i < l; i += 4, j += 3) {
+	    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)]
+	    arr[L++] = (tmp >> 16) & 0xFF
+	    arr[L++] = (tmp >> 8) & 0xFF
+	    arr[L++] = tmp & 0xFF
+	  }
+
+	  if (placeHolders === 2) {
+	    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4)
+	    arr[L++] = tmp & 0xFF
+	  } else if (placeHolders === 1) {
+	    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2)
+	    arr[L++] = (tmp >> 8) & 0xFF
+	    arr[L++] = tmp & 0xFF
+	  }
+
+	  return arr
+	}
+
+	function tripletToBase64 (num) {
+	  return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
+	}
+
+	function encodeChunk (uint8, start, end) {
+	  var tmp
+	  var output = []
+	  for (var i = start; i < end; i += 3) {
+	    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
+	    output.push(tripletToBase64(tmp))
+	  }
+	  return output.join('')
+	}
+
+	function fromByteArray (uint8) {
+	  var tmp
+	  var len = uint8.length
+	  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
+	  var output = ''
+	  var parts = []
+	  var maxChunkLength = 16383 // must be multiple of 3
+
+	  // go through the array every three bytes, we'll deal with trailing stuff later
+	  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
+	    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
+	  }
+
+	  // pad the end with zeros, but make sure to not forget the extra bytes
+	  if (extraBytes === 1) {
+	    tmp = uint8[len - 1]
+	    output += lookup[tmp >> 2]
+	    output += lookup[(tmp << 4) & 0x3F]
+	    output += '=='
+	  } else if (extraBytes === 2) {
+	    tmp = (uint8[len - 2] << 8) + (uint8[len - 1])
+	    output += lookup[tmp >> 10]
+	    output += lookup[(tmp >> 4) & 0x3F]
+	    output += lookup[(tmp << 2) & 0x3F]
+	    output += '='
+	  }
+
+	  parts.push(output)
+
+	  return parts.join('')
+	}
+
+
+/***/ },
+/* 506 */
+/***/ function(module, exports) {
+
+	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
+	  var e, m
+	  var eLen = nBytes * 8 - mLen - 1
+	  var eMax = (1 << eLen) - 1
+	  var eBias = eMax >> 1
+	  var nBits = -7
+	  var i = isLE ? (nBytes - 1) : 0
+	  var d = isLE ? -1 : 1
+	  var s = buffer[offset + i]
+
+	  i += d
+
+	  e = s & ((1 << (-nBits)) - 1)
+	  s >>= (-nBits)
+	  nBits += eLen
+	  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+	  m = e & ((1 << (-nBits)) - 1)
+	  e >>= (-nBits)
+	  nBits += mLen
+	  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+	  if (e === 0) {
+	    e = 1 - eBias
+	  } else if (e === eMax) {
+	    return m ? NaN : ((s ? -1 : 1) * Infinity)
+	  } else {
+	    m = m + Math.pow(2, mLen)
+	    e = e - eBias
+	  }
+	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
+	}
+
+	exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
+	  var e, m, c
+	  var eLen = nBytes * 8 - mLen - 1
+	  var eMax = (1 << eLen) - 1
+	  var eBias = eMax >> 1
+	  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
+	  var i = isLE ? 0 : (nBytes - 1)
+	  var d = isLE ? 1 : -1
+	  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
+
+	  value = Math.abs(value)
+
+	  if (isNaN(value) || value === Infinity) {
+	    m = isNaN(value) ? 1 : 0
+	    e = eMax
+	  } else {
+	    e = Math.floor(Math.log(value) / Math.LN2)
+	    if (value * (c = Math.pow(2, -e)) < 1) {
+	      e--
+	      c *= 2
+	    }
+	    if (e + eBias >= 1) {
+	      value += rt / c
+	    } else {
+	      value += rt * Math.pow(2, 1 - eBias)
+	    }
+	    if (value * c >= 2) {
+	      e++
+	      c /= 2
+	    }
+
+	    if (e + eBias >= eMax) {
+	      m = 0
+	      e = eMax
+	    } else if (e + eBias >= 1) {
+	      m = (value * c - 1) * Math.pow(2, mLen)
+	      e = e + eBias
+	    } else {
+	      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
+	      e = 0
+	    }
+	  }
+
+	  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+
+	  e = (e << mLen) | m
+	  eLen += mLen
+	  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
+	  buffer[offset + i - d] |= s * 128
+	}
+
+
+/***/ },
+/* 507 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+
+	module.exports = Array.isArray || function (arr) {
+	  return toString.call(arr) == '[object Array]';
+	};
+
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	// NOTE: These type checking functions intentionally don't use `instanceof`
+	// because it is fragile and can be easily faked with `Object.create()`.
+
+	function isArray(arg) {
+	  if (Array.isArray) {
+	    return Array.isArray(arg);
+	  }
+	  return objectToString(arg) === '[object Array]';
+	}
+	exports.isArray = isArray;
+
+	function isBoolean(arg) {
+	  return typeof arg === 'boolean';
+	}
+	exports.isBoolean = isBoolean;
+
+	function isNull(arg) {
+	  return arg === null;
+	}
+	exports.isNull = isNull;
+
+	function isNullOrUndefined(arg) {
+	  return arg == null;
+	}
+	exports.isNullOrUndefined = isNullOrUndefined;
+
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+	exports.isNumber = isNumber;
+
+	function isString(arg) {
+	  return typeof arg === 'string';
+	}
+	exports.isString = isString;
+
+	function isSymbol(arg) {
+	  return typeof arg === 'symbol';
+	}
+	exports.isSymbol = isSymbol;
+
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+	exports.isUndefined = isUndefined;
+
+	function isRegExp(re) {
+	  return objectToString(re) === '[object RegExp]';
+	}
+	exports.isRegExp = isRegExp;
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+	exports.isObject = isObject;
+
+	function isDate(d) {
+	  return objectToString(d) === '[object Date]';
+	}
+	exports.isDate = isDate;
+
+	function isError(e) {
+	  return (objectToString(e) === '[object Error]' || e instanceof Error);
+	}
+	exports.isError = isError;
+
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+	exports.isFunction = isFunction;
+
+	function isPrimitive(arg) {
+	  return arg === null ||
+	         typeof arg === 'boolean' ||
+	         typeof arg === 'number' ||
+	         typeof arg === 'string' ||
+	         typeof arg === 'symbol' ||  // ES6 symbol
+	         typeof arg === 'undefined';
+	}
+	exports.isPrimitive = isPrimitive;
+
+	exports.isBuffer = Buffer.isBuffer;
+
+	function objectToString(o) {
+	  return Object.prototype.toString.call(o);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504).Buffer))
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	if (typeof Object.create === 'function') {
+	  // implementation from standard node.js 'util' module
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  };
+	} else {
+	  // old school shim for old browsers
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    var TempCtor = function () {}
+	    TempCtor.prototype = superCtor.prototype
+	    ctor.prototype = new TempCtor()
+	    ctor.prototype.constructor = ctor
+	  }
+	}
+
+
+/***/ },
+/* 510 */
+/***/ function(module, exports) {
+
+	/* (ignored) */
+
+/***/ },
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	// a duplex stream is just a stream that is both readable and writable.
+	// Since JS doesn't have multiple prototypal inheritance, this class
+	// prototypally inherits from Readable, and then parasitically from
+	// Writable.
+
+	module.exports = Duplex;
+
+	/*<replacement>*/
+	var objectKeys = Object.keys || function (obj) {
+	  var keys = [];
+	  for (var key in obj) keys.push(key);
+	  return keys;
+	}
+	/*</replacement>*/
+
+
+	/*<replacement>*/
+	var util = __webpack_require__(508);
+	util.inherits = __webpack_require__(509);
+	/*</replacement>*/
+
+	var Readable = __webpack_require__(502);
+	var Writable = __webpack_require__(512);
+
+	util.inherits(Duplex, Readable);
+
+	forEach(objectKeys(Writable.prototype), function(method) {
+	  if (!Duplex.prototype[method])
+	    Duplex.prototype[method] = Writable.prototype[method];
+	});
+
+	function Duplex(options) {
+	  if (!(this instanceof Duplex))
+	    return new Duplex(options);
+
+	  Readable.call(this, options);
+	  Writable.call(this, options);
+
+	  if (options && options.readable === false)
+	    this.readable = false;
+
+	  if (options && options.writable === false)
+	    this.writable = false;
+
+	  this.allowHalfOpen = true;
+	  if (options && options.allowHalfOpen === false)
+	    this.allowHalfOpen = false;
+
+	  this.once('end', onend);
+	}
+
+	// the no-half-open enforcer
+	function onend() {
+	  // if we allow half-open state, or if the writable side ended,
+	  // then we're ok.
+	  if (this.allowHalfOpen || this._writableState.ended)
+	    return;
+
+	  // no more data can be written.
+	  // But allow more writes to happen in this tick.
+	  process.nextTick(this.end.bind(this));
+	}
+
+	function forEach (xs, f) {
+	  for (var i = 0, l = xs.length; i < l; i++) {
+	    f(xs[i], i);
+	  }
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 512 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	// A bit simpler than readable streams.
+	// Implement an async ._write(chunk, cb), and it'll handle all
+	// the drain event emission and buffering.
+
+	module.exports = Writable;
+
+	/*<replacement>*/
+	var Buffer = __webpack_require__(504).Buffer;
+	/*</replacement>*/
+
+	Writable.WritableState = WritableState;
+
+
+	/*<replacement>*/
+	var util = __webpack_require__(508);
+	util.inherits = __webpack_require__(509);
+	/*</replacement>*/
+
+	var Stream = __webpack_require__(498);
+
+	util.inherits(Writable, Stream);
+
+	function WriteReq(chunk, encoding, cb) {
+	  this.chunk = chunk;
+	  this.encoding = encoding;
+	  this.callback = cb;
+	}
+
+	function WritableState(options, stream) {
+	  var Duplex = __webpack_require__(511);
+
+	  options = options || {};
+
+	  // the point at which write() starts returning false
+	  // Note: 0 is a valid value, means that we always return false if
+	  // the entire buffer is not flushed immediately on write()
+	  var hwm = options.highWaterMark;
+	  var defaultHwm = options.objectMode ? 16 : 16 * 1024;
+	  this.highWaterMark = (hwm || hwm === 0) ? hwm : defaultHwm;
+
+	  // object stream flag to indicate whether or not this stream
+	  // contains buffers or objects.
+	  this.objectMode = !!options.objectMode;
+
+	  if (stream instanceof Duplex)
+	    this.objectMode = this.objectMode || !!options.writableObjectMode;
+
+	  // cast to ints.
+	  this.highWaterMark = ~~this.highWaterMark;
+
+	  this.needDrain = false;
+	  // at the start of calling end()
+	  this.ending = false;
+	  // when end() has been called, and returned
+	  this.ended = false;
+	  // when 'finish' is emitted
+	  this.finished = false;
+
+	  // should we decode strings into buffers before passing to _write?
+	  // this is here so that some node-core streams can optimize string
+	  // handling at a lower level.
+	  var noDecode = options.decodeStrings === false;
+	  this.decodeStrings = !noDecode;
+
+	  // Crypto is kind of old and crusty.  Historically, its default string
+	  // encoding is 'binary' so we have to make this configurable.
+	  // Everything else in the universe uses 'utf8', though.
+	  this.defaultEncoding = options.defaultEncoding || 'utf8';
+
+	  // not an actual buffer we keep track of, but a measurement
+	  // of how much we're waiting to get pushed to some underlying
+	  // socket or file.
+	  this.length = 0;
+
+	  // a flag to see when we're in the middle of a write.
+	  this.writing = false;
+
+	  // when true all writes will be buffered until .uncork() call
+	  this.corked = 0;
+
+	  // a flag to be able to tell if the onwrite cb is called immediately,
+	  // or on a later tick.  We set this to true at first, because any
+	  // actions that shouldn't happen until "later" should generally also
+	  // not happen before the first write call.
+	  this.sync = true;
+
+	  // a flag to know if we're processing previously buffered items, which
+	  // may call the _write() callback in the same tick, so that we don't
+	  // end up in an overlapped onwrite situation.
+	  this.bufferProcessing = false;
+
+	  // the callback that's passed to _write(chunk,cb)
+	  this.onwrite = function(er) {
+	    onwrite(stream, er);
+	  };
+
+	  // the callback that the user supplies to write(chunk,encoding,cb)
+	  this.writecb = null;
+
+	  // the amount that is being written when _write is called.
+	  this.writelen = 0;
+
+	  this.buffer = [];
+
+	  // number of pending user-supplied write callbacks
+	  // this must be 0 before 'finish' can be emitted
+	  this.pendingcb = 0;
+
+	  // emit prefinish if the only thing we're waiting for is _write cbs
+	  // This is relevant for synchronous Transform streams
+	  this.prefinished = false;
+
+	  // True if the error was already emitted and should not be thrown again
+	  this.errorEmitted = false;
+	}
+
+	function Writable(options) {
+	  var Duplex = __webpack_require__(511);
+
+	  // Writable ctor is applied to Duplexes, though they're not
+	  // instanceof Writable, they're instanceof Readable.
+	  if (!(this instanceof Writable) && !(this instanceof Duplex))
+	    return new Writable(options);
+
+	  this._writableState = new WritableState(options, this);
+
+	  // legacy.
+	  this.writable = true;
+
+	  Stream.call(this);
+	}
+
+	// Otherwise people can pipe Writable streams, which is just wrong.
+	Writable.prototype.pipe = function() {
+	  this.emit('error', new Error('Cannot pipe. Not readable.'));
+	};
+
+
+	function writeAfterEnd(stream, state, cb) {
+	  var er = new Error('write after end');
+	  // TODO: defer error events consistently everywhere, not just the cb
+	  stream.emit('error', er);
+	  process.nextTick(function() {
+	    cb(er);
+	  });
+	}
+
+	// If we get something that is not a buffer, string, null, or undefined,
+	// and we're not in objectMode, then that's an error.
+	// Otherwise stream chunks are all considered to be of length=1, and the
+	// watermarks determine how many objects to keep in the buffer, rather than
+	// how many bytes or characters.
+	function validChunk(stream, state, chunk, cb) {
+	  var valid = true;
+	  if (!util.isBuffer(chunk) &&
+	      !util.isString(chunk) &&
+	      !util.isNullOrUndefined(chunk) &&
+	      !state.objectMode) {
+	    var er = new TypeError('Invalid non-string/buffer chunk');
+	    stream.emit('error', er);
+	    process.nextTick(function() {
+	      cb(er);
+	    });
+	    valid = false;
+	  }
+	  return valid;
+	}
+
+	Writable.prototype.write = function(chunk, encoding, cb) {
+	  var state = this._writableState;
+	  var ret = false;
+
+	  if (util.isFunction(encoding)) {
+	    cb = encoding;
+	    encoding = null;
+	  }
+
+	  if (util.isBuffer(chunk))
+	    encoding = 'buffer';
+	  else if (!encoding)
+	    encoding = state.defaultEncoding;
+
+	  if (!util.isFunction(cb))
+	    cb = function() {};
+
+	  if (state.ended)
+	    writeAfterEnd(this, state, cb);
+	  else if (validChunk(this, state, chunk, cb)) {
+	    state.pendingcb++;
+	    ret = writeOrBuffer(this, state, chunk, encoding, cb);
+	  }
+
+	  return ret;
+	};
+
+	Writable.prototype.cork = function() {
+	  var state = this._writableState;
+
+	  state.corked++;
+	};
+
+	Writable.prototype.uncork = function() {
+	  var state = this._writableState;
+
+	  if (state.corked) {
+	    state.corked--;
+
+	    if (!state.writing &&
+	        !state.corked &&
+	        !state.finished &&
+	        !state.bufferProcessing &&
+	        state.buffer.length)
+	      clearBuffer(this, state);
+	  }
+	};
+
+	function decodeChunk(state, chunk, encoding) {
+	  if (!state.objectMode &&
+	      state.decodeStrings !== false &&
+	      util.isString(chunk)) {
+	    chunk = new Buffer(chunk, encoding);
+	  }
+	  return chunk;
+	}
+
+	// if we're already writing something, then just put this
+	// in the queue, and wait our turn.  Otherwise, call _write
+	// If we return false, then we need a drain event, so set that flag.
+	function writeOrBuffer(stream, state, chunk, encoding, cb) {
+	  chunk = decodeChunk(state, chunk, encoding);
+	  if (util.isBuffer(chunk))
+	    encoding = 'buffer';
+	  var len = state.objectMode ? 1 : chunk.length;
+
+	  state.length += len;
+
+	  var ret = state.length < state.highWaterMark;
+	  // we must ensure that previous needDrain will not be reset to false.
+	  if (!ret)
+	    state.needDrain = true;
+
+	  if (state.writing || state.corked)
+	    state.buffer.push(new WriteReq(chunk, encoding, cb));
+	  else
+	    doWrite(stream, state, false, len, chunk, encoding, cb);
+
+	  return ret;
+	}
+
+	function doWrite(stream, state, writev, len, chunk, encoding, cb) {
+	  state.writelen = len;
+	  state.writecb = cb;
+	  state.writing = true;
+	  state.sync = true;
+	  if (writev)
+	    stream._writev(chunk, state.onwrite);
+	  else
+	    stream._write(chunk, encoding, state.onwrite);
+	  state.sync = false;
+	}
+
+	function onwriteError(stream, state, sync, er, cb) {
+	  if (sync)
+	    process.nextTick(function() {
+	      state.pendingcb--;
+	      cb(er);
+	    });
+	  else {
+	    state.pendingcb--;
+	    cb(er);
+	  }
+
+	  stream._writableState.errorEmitted = true;
+	  stream.emit('error', er);
+	}
+
+	function onwriteStateUpdate(state) {
+	  state.writing = false;
+	  state.writecb = null;
+	  state.length -= state.writelen;
+	  state.writelen = 0;
+	}
+
+	function onwrite(stream, er) {
+	  var state = stream._writableState;
+	  var sync = state.sync;
+	  var cb = state.writecb;
+
+	  onwriteStateUpdate(state);
+
+	  if (er)
+	    onwriteError(stream, state, sync, er, cb);
+	  else {
+	    // Check if we're actually ready to finish, but don't emit yet
+	    var finished = needFinish(stream, state);
+
+	    if (!finished &&
+	        !state.corked &&
+	        !state.bufferProcessing &&
+	        state.buffer.length) {
+	      clearBuffer(stream, state);
+	    }
+
+	    if (sync) {
+	      process.nextTick(function() {
+	        afterWrite(stream, state, finished, cb);
+	      });
+	    } else {
+	      afterWrite(stream, state, finished, cb);
+	    }
+	  }
+	}
+
+	function afterWrite(stream, state, finished, cb) {
+	  if (!finished)
+	    onwriteDrain(stream, state);
+	  state.pendingcb--;
+	  cb();
+	  finishMaybe(stream, state);
+	}
+
+	// Must force callback to be called on nextTick, so that we don't
+	// emit 'drain' before the write() consumer gets the 'false' return
+	// value, and has a chance to attach a 'drain' listener.
+	function onwriteDrain(stream, state) {
+	  if (state.length === 0 && state.needDrain) {
+	    state.needDrain = false;
+	    stream.emit('drain');
+	  }
+	}
+
+
+	// if there's something in the buffer waiting, then process it
+	function clearBuffer(stream, state) {
+	  state.bufferProcessing = true;
+
+	  if (stream._writev && state.buffer.length > 1) {
+	    // Fast case, write everything using _writev()
+	    var cbs = [];
+	    for (var c = 0; c < state.buffer.length; c++)
+	      cbs.push(state.buffer[c].callback);
+
+	    // count the one we are adding, as well.
+	    // TODO(isaacs) clean this up
+	    state.pendingcb++;
+	    doWrite(stream, state, true, state.length, state.buffer, '', function(err) {
+	      for (var i = 0; i < cbs.length; i++) {
+	        state.pendingcb--;
+	        cbs[i](err);
+	      }
+	    });
+
+	    // Clear buffer
+	    state.buffer = [];
+	  } else {
+	    // Slow case, write chunks one-by-one
+	    for (var c = 0; c < state.buffer.length; c++) {
+	      var entry = state.buffer[c];
+	      var chunk = entry.chunk;
+	      var encoding = entry.encoding;
+	      var cb = entry.callback;
+	      var len = state.objectMode ? 1 : chunk.length;
+
+	      doWrite(stream, state, false, len, chunk, encoding, cb);
+
+	      // if we didn't call the onwrite immediately, then
+	      // it means that we need to wait until it does.
+	      // also, that means that the chunk and cb are currently
+	      // being processed, so move the buffer counter past them.
+	      if (state.writing) {
+	        c++;
+	        break;
+	      }
+	    }
+
+	    if (c < state.buffer.length)
+	      state.buffer = state.buffer.slice(c);
+	    else
+	      state.buffer.length = 0;
+	  }
+
+	  state.bufferProcessing = false;
+	}
+
+	Writable.prototype._write = function(chunk, encoding, cb) {
+	  cb(new Error('not implemented'));
+
+	};
+
+	Writable.prototype._writev = null;
+
+	Writable.prototype.end = function(chunk, encoding, cb) {
+	  var state = this._writableState;
+
+	  if (util.isFunction(chunk)) {
+	    cb = chunk;
+	    chunk = null;
+	    encoding = null;
+	  } else if (util.isFunction(encoding)) {
+	    cb = encoding;
+	    encoding = null;
+	  }
+
+	  if (!util.isNullOrUndefined(chunk))
+	    this.write(chunk, encoding);
+
+	  // .end() fully uncorks
+	  if (state.corked) {
+	    state.corked = 1;
+	    this.uncork();
+	  }
+
+	  // ignore unnecessary end() calls.
+	  if (!state.ending && !state.finished)
+	    endWritable(this, state, cb);
+	};
+
+
+	function needFinish(stream, state) {
+	  return (state.ending &&
+	          state.length === 0 &&
+	          !state.finished &&
+	          !state.writing);
+	}
+
+	function prefinish(stream, state) {
+	  if (!state.prefinished) {
+	    state.prefinished = true;
+	    stream.emit('prefinish');
+	  }
+	}
+
+	function finishMaybe(stream, state) {
+	  var need = needFinish(stream, state);
+	  if (need) {
+	    if (state.pendingcb === 0) {
+	      prefinish(stream, state);
+	      state.finished = true;
+	      stream.emit('finish');
+	    } else
+	      prefinish(stream, state);
+	  }
+	  return need;
+	}
+
+	function endWritable(stream, state, cb) {
+	  state.ending = true;
+	  finishMaybe(stream, state);
+	  if (cb) {
+	    if (state.finished)
+	      process.nextTick(cb);
+	    else
+	      stream.once('finish', cb);
+	  }
+	  state.ended = true;
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 513 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	var Buffer = __webpack_require__(504).Buffer;
+
+	var isBufferEncoding = Buffer.isEncoding
+	  || function(encoding) {
+	       switch (encoding && encoding.toLowerCase()) {
+	         case 'hex': case 'utf8': case 'utf-8': case 'ascii': case 'binary': case 'base64': case 'ucs2': case 'ucs-2': case 'utf16le': case 'utf-16le': case 'raw': return true;
+	         default: return false;
+	       }
+	     }
+
+
+	function assertEncoding(encoding) {
+	  if (encoding && !isBufferEncoding(encoding)) {
+	    throw new Error('Unknown encoding: ' + encoding);
+	  }
+	}
+
+	// StringDecoder provides an interface for efficiently splitting a series of
+	// buffers into a series of JS strings without breaking apart multi-byte
+	// characters. CESU-8 is handled as part of the UTF-8 encoding.
+	//
+	// @TODO Handling all encodings inside a single object makes it very difficult
+	// to reason about this code, so it should be split up in the future.
+	// @TODO There should be a utf8-strict encoding that rejects invalid UTF-8 code
+	// points as used by CESU-8.
+	var StringDecoder = exports.StringDecoder = function(encoding) {
+	  this.encoding = (encoding || 'utf8').toLowerCase().replace(/[-_]/, '');
+	  assertEncoding(encoding);
+	  switch (this.encoding) {
+	    case 'utf8':
+	      // CESU-8 represents each of Surrogate Pair by 3-bytes
+	      this.surrogateSize = 3;
+	      break;
+	    case 'ucs2':
+	    case 'utf16le':
+	      // UTF-16 represents each of Surrogate Pair by 2-bytes
+	      this.surrogateSize = 2;
+	      this.detectIncompleteChar = utf16DetectIncompleteChar;
+	      break;
+	    case 'base64':
+	      // Base-64 stores 3 bytes in 4 chars, and pads the remainder.
+	      this.surrogateSize = 3;
+	      this.detectIncompleteChar = base64DetectIncompleteChar;
+	      break;
+	    default:
+	      this.write = passThroughWrite;
+	      return;
+	  }
+
+	  // Enough space to store all bytes of a single character. UTF-8 needs 4
+	  // bytes, but CESU-8 may require up to 6 (3 bytes per surrogate).
+	  this.charBuffer = new Buffer(6);
+	  // Number of bytes received for the current incomplete multi-byte character.
+	  this.charReceived = 0;
+	  // Number of bytes expected for the current incomplete multi-byte character.
+	  this.charLength = 0;
+	};
+
+
+	// write decodes the given buffer and returns it as JS string that is
+	// guaranteed to not contain any partial multi-byte characters. Any partial
+	// character found at the end of the buffer is buffered up, and will be
+	// returned when calling write again with the remaining bytes.
+	//
+	// Note: Converting a Buffer containing an orphan surrogate to a String
+	// currently works, but converting a String to a Buffer (via `new Buffer`, or
+	// Buffer#write) will replace incomplete surrogates with the unicode
+	// replacement character. See https://codereview.chromium.org/121173009/ .
+	StringDecoder.prototype.write = function(buffer) {
+	  var charStr = '';
+	  // if our last write ended with an incomplete multibyte character
+	  while (this.charLength) {
+	    // determine how many remaining bytes this buffer has to offer for this char
+	    var available = (buffer.length >= this.charLength - this.charReceived) ?
+	        this.charLength - this.charReceived :
+	        buffer.length;
+
+	    // add the new bytes to the char buffer
+	    buffer.copy(this.charBuffer, this.charReceived, 0, available);
+	    this.charReceived += available;
+
+	    if (this.charReceived < this.charLength) {
+	      // still not enough chars in this buffer? wait for more ...
+	      return '';
+	    }
+
+	    // remove bytes belonging to the current character from the buffer
+	    buffer = buffer.slice(available, buffer.length);
+
+	    // get the character that was split
+	    charStr = this.charBuffer.slice(0, this.charLength).toString(this.encoding);
+
+	    // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
+	    var charCode = charStr.charCodeAt(charStr.length - 1);
+	    if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+	      this.charLength += this.surrogateSize;
+	      charStr = '';
+	      continue;
+	    }
+	    this.charReceived = this.charLength = 0;
+
+	    // if there are no more bytes in this buffer, just emit our char
+	    if (buffer.length === 0) {
+	      return charStr;
+	    }
+	    break;
+	  }
+
+	  // determine and set charLength / charReceived
+	  this.detectIncompleteChar(buffer);
+
+	  var end = buffer.length;
+	  if (this.charLength) {
+	    // buffer the incomplete character bytes we got
+	    buffer.copy(this.charBuffer, 0, buffer.length - this.charReceived, end);
+	    end -= this.charReceived;
+	  }
+
+	  charStr += buffer.toString(this.encoding, 0, end);
+
+	  var end = charStr.length - 1;
+	  var charCode = charStr.charCodeAt(end);
+	  // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
+	  if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+	    var size = this.surrogateSize;
+	    this.charLength += size;
+	    this.charReceived += size;
+	    this.charBuffer.copy(this.charBuffer, size, 0, size);
+	    buffer.copy(this.charBuffer, 0, 0, size);
+	    return charStr.substring(0, end);
+	  }
+
+	  // or just emit the charStr
+	  return charStr;
+	};
+
+	// detectIncompleteChar determines if there is an incomplete UTF-8 character at
+	// the end of the given buffer. If so, it sets this.charLength to the byte
+	// length that character, and sets this.charReceived to the number of bytes
+	// that are available for this character.
+	StringDecoder.prototype.detectIncompleteChar = function(buffer) {
+	  // determine how many bytes we have to check at the end of this buffer
+	  var i = (buffer.length >= 3) ? 3 : buffer.length;
+
+	  // Figure out if one of the last i bytes of our buffer announces an
+	  // incomplete char.
+	  for (; i > 0; i--) {
+	    var c = buffer[buffer.length - i];
+
+	    // See http://en.wikipedia.org/wiki/UTF-8#Description
+
+	    // 110XXXXX
+	    if (i == 1 && c >> 5 == 0x06) {
+	      this.charLength = 2;
+	      break;
+	    }
+
+	    // 1110XXXX
+	    if (i <= 2 && c >> 4 == 0x0E) {
+	      this.charLength = 3;
+	      break;
+	    }
+
+	    // 11110XXX
+	    if (i <= 3 && c >> 3 == 0x1E) {
+	      this.charLength = 4;
+	      break;
+	    }
+	  }
+	  this.charReceived = i;
+	};
+
+	StringDecoder.prototype.end = function(buffer) {
+	  var res = '';
+	  if (buffer && buffer.length)
+	    res = this.write(buffer);
+
+	  if (this.charReceived) {
+	    var cr = this.charReceived;
+	    var buf = this.charBuffer;
+	    var enc = this.encoding;
+	    res += buf.slice(0, cr).toString(enc);
+	  }
+
+	  return res;
+	};
+
+	function passThroughWrite(buffer) {
+	  return buffer.toString(this.encoding);
+	}
+
+	function utf16DetectIncompleteChar(buffer) {
+	  this.charReceived = buffer.length % 2;
+	  this.charLength = this.charReceived ? 2 : 0;
+	}
+
+	function base64DetectIncompleteChar(buffer) {
+	  this.charReceived = buffer.length % 3;
+	  this.charLength = this.charReceived ? 3 : 0;
+	}
+
+
+/***/ },
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+	// a transform stream is a readable/writable stream where you do
+	// something with the data.  Sometimes it's called a "filter",
+	// but that's not a great name for it, since that implies a thing where
+	// some bits pass through, and others are simply ignored.  (That would
+	// be a valid example of a transform, of course.)
+	//
+	// While the output is causally related to the input, it's not a
+	// necessarily symmetric or synchronous transformation.  For example,
+	// a zlib stream might take multiple plain-text writes(), and then
+	// emit a single compressed chunk some time in the future.
+	//
+	// Here's how this works:
+	//
+	// The Transform stream has all the aspects of the readable and writable
+	// stream classes.  When you write(chunk), that calls _write(chunk,cb)
+	// internally, and returns false if there's a lot of pending writes
+	// buffered up.  When you call read(), that calls _read(n) until
+	// there's enough pending readable data buffered up.
+	//
+	// In a transform stream, the written data is placed in a buffer.  When
+	// _read(n) is called, it transforms the queued up data, calling the
+	// buffered _write cb's as it consumes chunks.  If consuming a single
+	// written chunk would result in multiple output chunks, then the first
+	// outputted bit calls the readcb, and subsequent chunks just go into
+	// the read buffer, and will cause it to emit 'readable' if necessary.
+	//
+	// This way, back-pressure is actually determined by the reading side,
+	// since _read has to be called to start processing a new chunk.  However,
+	// a pathological inflate type of transform can cause excessive buffering
+	// here.  For example, imagine a stream where every byte of input is
+	// interpreted as an integer from 0-255, and then results in that many
+	// bytes of output.  Writing the 4 bytes {ff,ff,ff,ff} would result in
+	// 1kb of data being output.  In this case, you could write a very small
+	// amount of input, and end up with a very large amount of output.  In
+	// such a pathological inflating mechanism, there'd be no way to tell
+	// the system to stop doing the transform.  A single 4MB write could
+	// cause the system to run out of memory.
+	//
+	// However, even in such a pathological case, only a single written chunk
+	// would be consumed, and then the rest would wait (un-transformed) until
+	// the results of the previous transformed chunk were consumed.
+
+	module.exports = Transform;
+
+	var Duplex = __webpack_require__(511);
+
+	/*<replacement>*/
+	var util = __webpack_require__(508);
+	util.inherits = __webpack_require__(509);
+	/*</replacement>*/
+
+	util.inherits(Transform, Duplex);
+
+
+	function TransformState(options, stream) {
+	  this.afterTransform = function(er, data) {
+	    return afterTransform(stream, er, data);
+	  };
+
+	  this.needTransform = false;
+	  this.transforming = false;
+	  this.writecb = null;
+	  this.writechunk = null;
+	}
+
+	function afterTransform(stream, er, data) {
+	  var ts = stream._transformState;
+	  ts.transforming = false;
+
+	  var cb = ts.writecb;
+
+	  if (!cb)
+	    return stream.emit('error', new Error('no writecb in Transform class'));
+
+	  ts.writechunk = null;
+	  ts.writecb = null;
+
+	  if (!util.isNullOrUndefined(data))
+	    stream.push(data);
+
+	  if (cb)
+	    cb(er);
+
+	  var rs = stream._readableState;
+	  rs.reading = false;
+	  if (rs.needReadable || rs.length < rs.highWaterMark) {
+	    stream._read(rs.highWaterMark);
+	  }
+	}
+
+
+	function Transform(options) {
+	  if (!(this instanceof Transform))
+	    return new Transform(options);
+
+	  Duplex.call(this, options);
+
+	  this._transformState = new TransformState(options, this);
+
+	  // when the writable side finishes, then flush out anything remaining.
+	  var stream = this;
+
+	  // start out asking for a readable event once data is transformed.
+	  this._readableState.needReadable = true;
+
+	  // we have implemented the _read method, and done the other things
+	  // that Readable wants before the first _read call, so unset the
+	  // sync guard flag.
+	  this._readableState.sync = false;
+
+	  this.once('prefinish', function() {
+	    if (util.isFunction(this._flush))
+	      this._flush(function(er) {
+	        done(stream, er);
+	      });
+	    else
+	      done(stream);
+	  });
+	}
+
+	Transform.prototype.push = function(chunk, encoding) {
+	  this._transformState.needTransform = false;
+	  return Duplex.prototype.push.call(this, chunk, encoding);
+	};
+
+	// This is the part where you do stuff!
+	// override this function in implementation classes.
+	// 'chunk' is an input chunk.
+	//
+	// Call `push(newChunk)` to pass along transformed output
+	// to the readable side.  You may call 'push' zero or more times.
+	//
+	// Call `cb(err)` when you are done with this chunk.  If you pass
+	// an error, then that'll put the hurt on the whole operation.  If you
+	// never call cb(), then you'll never get another chunk.
+	Transform.prototype._transform = function(chunk, encoding, cb) {
+	  throw new Error('not implemented');
+	};
+
+	Transform.prototype._write = function(chunk, encoding, cb) {
+	  var ts = this._transformState;
+	  ts.writecb = cb;
+	  ts.writechunk = chunk;
+	  ts.writeencoding = encoding;
+	  if (!ts.transforming) {
+	    var rs = this._readableState;
+	    if (ts.needTransform ||
+	        rs.needReadable ||
+	        rs.length < rs.highWaterMark)
+	      this._read(rs.highWaterMark);
+	  }
+	};
+
+	// Doesn't matter what the args are here.
+	// _transform does all the work.
+	// That we got here means that the readable side wants more data.
+	Transform.prototype._read = function(n) {
+	  var ts = this._transformState;
+
+	  if (!util.isNull(ts.writechunk) && ts.writecb && !ts.transforming) {
+	    ts.transforming = true;
+	    this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
+	  } else {
+	    // mark that we need a transform, so that any data that comes in
+	    // will get processed, now that we've asked for it.
+	    ts.needTransform = true;
+	  }
+	};
+
+
+	function done(stream, er) {
+	  if (er)
+	    return stream.emit('error', er);
+
+	  // if there's nothing in the write buffer, then that means
+	  // that nothing more will ever be provided
+	  var ws = stream._writableState;
+	  var ts = stream._transformState;
+
+	  if (ws.length)
+	    throw new Error('calling transform done when ws.length != 0');
+
+	  if (ts.transforming)
+	    throw new Error('calling transform done when still transforming');
+
+	  return stream.push(null);
+	}
+
+
+/***/ },
+/* 515 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	// a passthrough stream.
+	// basically just the most minimal sort of Transform stream.
+	// Every written chunk gets output as-is.
+
+	module.exports = PassThrough;
+
+	var Transform = __webpack_require__(514);
+
+	/*<replacement>*/
+	var util = __webpack_require__(508);
+	util.inherits = __webpack_require__(509);
+	/*</replacement>*/
+
+	util.inherits(PassThrough, Transform);
+
+	function PassThrough(options) {
+	  if (!(this instanceof PassThrough))
+	    return new PassThrough(options);
+
+	  Transform.call(this, options);
+	}
+
+	PassThrough.prototype._transform = function(chunk, encoding, cb) {
+	  cb(null, chunk);
+	};
+
+
+/***/ },
+/* 516 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(512)
+
+
+/***/ },
+/* 517 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(511)
+
+
+/***/ },
+/* 518 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(514)
+
+
+/***/ },
+/* 519 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(515)
+
+
+/***/ },
+/* 520 */
+/***/ function(module, exports) {
+
+	if (typeof Object.create === 'function') {
+	  // implementation from standard node.js 'util' module
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  };
+	} else {
+	  // old school shim for old browsers
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    var TempCtor = function () {}
+	    TempCtor.prototype = superCtor.prototype
+	    ctor.prototype = new TempCtor()
+	    ctor.prototype.constructor = ctor
+	  }
+	}
+
+
+/***/ },
+/* 521 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(496)._;
+
+	function testPartition(classifierConst, opts, trainOpts, trainSet, testSet) {
+	  var classifier = new classifierConst(opts);
+
+	  var beginTrain = Date.now();
+
+	  var trainingStats = classifier.train(trainSet, trainOpts);
+
+	  var beginTest = Date.now();
+
+	  var testStats = classifier.test(testSet);
+
+	  var endTest = Date.now();
+
+	  var stats = _(testStats).extend({
+	    trainTime : beginTest - beginTrain,
+	    testTime : endTest - beginTest,
+	    iterations: trainingStats.iterations,
+	    trainError: trainingStats.error,
+	    learningRate: trainOpts.learningRate,
+	    hidden: classifier.hiddenSizes,
+	    network: classifier.toJSON()
+	  });
+
+	  return stats;
+	}
+
+	module.exports = function crossValidate(classifierConst, data, opts, trainOpts, k) {
+	  k = k || 4;
+	  var size = data.length / k;
+
+	  data = _(data).sortBy(function() {
+	    return Math.random();
+	  });
+
+	  var avgs = {
+	    error : 0,
+	    trainTime : 0,
+	    testTime : 0,
+	    iterations: 0,
+	    trainError: 0
+	  };
+
+	  var stats = {
+	    truePos: 0,
+	    trueNeg: 0,
+	    falsePos: 0,
+	    falseNeg: 0,
+	    total: 0
+	  };
+
+	  var misclasses = [];
+
+	  var results = _.range(k).map(function(i) {
+	    var dclone = _(data).clone();
+	    var testSet = dclone.splice(i * size, size);
+	    var trainSet = dclone;
+
+	    var result = testPartition(classifierConst, opts, trainOpts, trainSet, testSet);
+
+	    _(avgs).each(function(sum, stat) {
+	      avgs[stat] = sum + result[stat];
+	    });
+
+	    _(stats).each(function(sum, stat) {
+	      stats[stat] = sum + result[stat];
+	    })
+
+	    misclasses.push(result.misclasses);
+
+	    return result;
+	  });
+
+	  _(avgs).each(function(sum, i) {
+	    avgs[i] = sum / k;
+	  });
+
+	  stats.precision = stats.truePos / (stats.truePos + stats.falsePos);
+	  stats.recall = stats.truePos / (stats.truePos + stats.falseNeg);
+	  stats.accuracy = (stats.trueNeg + stats.truePos) / stats.total;
+
+	  stats.testSize = size;
+	  stats.trainSize = data.length - size;
+
+	  return {
+	    avgs: avgs,
+	    stats: stats,
+	    sets: results,
+	    misclasses: _(misclasses).flatten()
+	  };
+	}
 
 
 /***/ }
