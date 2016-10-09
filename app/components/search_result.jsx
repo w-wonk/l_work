@@ -9,13 +9,13 @@ class SearchResult extends React.Component {
     this.state = {
       data: [],
       searchText: '',
-      key: '978e4cdc21e60f3367e8bd2cae4cde582d6c20af3840781ee0d5f9d30b14ae54efb75b9f4086ce2bb3939'
+      key: '6fb3f0ca4ace0b6a9e2267b84706bd368f1ae44ddd2b33f3da927811a443ad4630cfecbbd386c54304cb9'
     };
   }
 
   loadPopular() {
     $.ajax({
-      url: 'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20',
+      url: 'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=30',
       cache: false,
       dataType: "jsonp",
       success: function (data) {
@@ -28,21 +28,8 @@ class SearchResult extends React.Component {
     });
   }
 
-  componentWillMount() {
-  }
-
   componentDidMount() {
     this.loadPopular();
-  }
-
-  componentWillUnmount() {
-
-  }
-
-  componentWillReceiveProps(newProps) {
-  }
-
-  componentDidUpdate() {
   }
 
   onChange(name, ev) {
@@ -52,7 +39,7 @@ class SearchResult extends React.Component {
   searchSong(ev) {
     ev.preventDefault();
     var url = this.state.searchText == '' ?
-      'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=20' :
+      'https://api.vk.com/method/audio.getPopular?access_token=' + this.state.key + '&count=30' :
     'https://api.vk.com/method/audio.search?access_token=' + this.state.key + '&count=10&auto_complete=0&q=' + this.state.searchText
     $.ajax({
       url: url,

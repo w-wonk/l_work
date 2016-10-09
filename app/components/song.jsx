@@ -1,6 +1,5 @@
 import React from 'react';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
-import $ from 'jquery';
 
 class Song extends React.Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class Song extends React.Component {
           <Col xs={12} md={10}><h4>{artist} - {title}</h4></Col>
           <Col xs={6} md={2}>
             <Button bsStyle="primary" href={url} target="_blank">
-              Download me
+              Play me
             </Button>
           </Col>
         </Row>

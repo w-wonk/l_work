@@ -6,7 +6,7 @@ import {Link} from 'react-router'
 class Main extends React.Component {
   render() {
     const pageHeaderInstance = (
-      <PageHeader>VK saver  <small>test application use <a href="https://vk.com/dev/main" target="_blank" > api.vk.com</a></small>
+      <PageHeader>VK music  <small>test application use <a href="https://vk.com/dev/main" target="_blank" > api.vk.com</a></small>
       </PageHeader>
     );
     return (
